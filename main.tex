@@ -1,14 +1,52 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[a4paper, 11pt,twoside,openright]{book}
 
-\title{Thèse}
-\author{antoine.tenart96 }
-\date{June 2021}
+\input{structure}
+
+\title{TBD}
+
+\author{Antoine Ténart}
+
+\institute{Institut d'Optique Graduate School}
+\doctoralschool{Ondes et Matière}{572}{EDOM}
+\specialty{Physique}
+\date{TBD}
+\NNT{TBD}
+
+%\jurymember{1}{Prénom NOM}{Titre, \'etablissement}{Président}
+%% Faut-il mettre le grade des personnes ?)
+% \jurymember{4}{Jean-François CLEMENT}{Maître de conférences au Laboratoire de Physique des Lasers, Atomes et Molécules - Université de Lille}{Examinateur}
+% \jurymember{3}{Robin KAISER}{Directeur de recherche à l'Institut de Physique de Nice - Université Côte d'Azur}{Rapporteur}
+% \jurymember{2}{Dominique DELANDE}{Directeur de recherche au Laboratoire Kastler Brossel - Sorbonne Université}{Rapporteur}
+% \jurymember{1}{Laurence PRUVOST}{Directrice de recherche au Laboratoire Aimé Cotton - Université Paris Saclay}{Présidente}
+% \jurymember{6}{Alain ASPECT}{Directeur de recherche émérite au Laboratoire Charles Fabry - Institut d'Optique Graduate School - Université Paris Saclay}{Membre invité}
+% \jurymember{5}{Vincent JOSSE}{Maître de conférences au Laboratoire Charles Fabry - Institut d'Optique Graduate School - Université Paris Saclay}{Directeur de thèse}
+
+\frtitle{Titre}
+
+\entitle{Title}
+
+\frabstract{
+Abstract français
+}
+
+\enabstract{
+Abstract anglais
+
+}
+
+\frkeywords{keywords français}
+\enkeywords{keywords anglais}
+
+
 
 \begin{document}
+\maketitle{}
 
-\maketitle
+\usechapterimagetrue
+\setlength{\parskip}{\parskipnew}
+\input{Chapters/Intro.tex}
+\setlength{\parskip}{\parskipinitial}
+%\usechapterimagefalse
 
-\section{Introduction}
 
 \end{document}
