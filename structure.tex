@@ -14,9 +14,10 @@
 \usepackage{tikz} % Required for drawing custom shapes
 %\usepackage{stmaryrd}
 \usepackage[english]{babel}%\usepackage[french]{} % English language/hyphenation
-\usepackage{algpseudocode}
+
 \usepackage{algorithm}
 \usepackage{algorithmicx}
+\usepackage{algpseudocode}
 \usepackage{nameref}
 \usepackage{enumitem} % Customize lists
 \setlist{nolistsep} % Reduce spacing between bullet points and numbered lists
@@ -111,10 +112,13 @@
 %----------------------------------------------------------------------------------------
 %\usepackage[square,authoryear]{natbib} 
 \usepackage[square,numbers]{natbib}
+\bibliographystyle{abbrvnat}
 
 %\usepackage[style=alphabetic,citestyle=authoryear,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber,natbib=true]{biblatex}
 %\addbibresource{biblio.bib} % BibTeX bibliography file
 %\defbibheading{bibempty}{}
+
+
 
 \usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
 \usepackage{makeidx} % Required to make an index
@@ -136,23 +140,23 @@
 {}
 
 % Chapter text styling
-\titlecontents{chapter}[1.25cm] % Indentation
+\titlecontents{chapter}[0.5cm] % Indentation
 {\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
-{\color{MainColor}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{MainColor}} % Chapter number
+{\color{MainColor}\contentslabel[\Large\thecontentslabel]{0.8cm}\color{MainColor}} % Chapter number
 {\color{MainColor}}  
 {\color{MainColor}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
-\titlecontents{section}[1.25cm] % Indentation
-{\addvspace{3pt}\sffamily\bfseries} % Spacing and font options for sections
+\titlecontents{section}[2cm] % Indentation
+{\addvspace{-8pt}\sffamily\bfseries} % Spacing and font options for sections
 {\contentslabel[\thecontentslabel]{1.25cm}} % Section number
 {}
 {\hfill\color{black}\thecontentspage} % Page number
 []
 
 % Subsection text styling
-\titlecontents{subsection}[1.25cm] % Indentation
-{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
+\titlecontents{subsection}[2.5cm] % Indentation
+{\addvspace{-8pt}\sffamily\small} % Spacing and font options for subsections
 {\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
 {}
 {\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
@@ -234,7 +238,7 @@
 %	THEOREM STYLES
 %----------------------------------------------------------------------------------------
 
-\usepackage{amsmath,amsfonts,amssymb,amsthm} % For math equations, theorems, symbols, etc
+\usepackage{amsmath,amsfonts,amssymb,amsthm,bm} % For math equations, theorems, symbols, etc
 %\newcommand{\hb}{\mathchar'26\mkern-9mu h}
 %\newcommand{\hb}{\hslash}
  
@@ -539,8 +543,12 @@ addtohook={%
 
 \renewcommand{\arraystretch}{1.1}
 
-%\newcommand{\hb}{\mathchar'26\mkern-9mu h}
-\newcommand{\hb}{\hslash}
+
+%%%%%%%%%%%%% Commandes %%%%%%%%%%%%%
+\newcommand{\kmk}[0]{$\bm{k}$/$-\bm{k}$ }
+\newcommand{\kk}[0]{$\bm{k}$/$\bm{k}$ }
+\newcommand{\gtwo}[0]{g^{(2)}}
+
 %%%%%%%%%%%%%% Commandes Manip et atome %%%%%%%%%%
 \newcommand{\kB}[0]{k_{\mathrm{B}}}
 \newcommand{\ldb}[0]{\lambda_{\mathrm{dB}}}
