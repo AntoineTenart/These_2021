@@ -89,14 +89,58 @@ Before using the algorithm to look for a supposedly small \kmk pairing signal in
 \section{Accessing the BEC depletion}
 
 In order to detect \kmk pairs in the depletion, it is absolutely crucial to remove from the analysis all atoms belonging to the BEC and its diffracted copies showing no correlations as it is a pure coherent state. These atoms indeed largely outnumber the depleted atoms and will therefore entirely drown out the \kmk correlation signal of the quantum depletion, would they not be removed. 
+For each recorded data set, we begin the analysis by removing all atoms outside the volume $\Omega_k$ that we design to exclude momentum regions with condensed atoms as illustrated on Fig-\ref{fig:omega_k}. We set $\Omega_k$ to have a cubic symmetry that matches the symmetry of the momentum distribution in a cubic lattice. We remove all atoms with $|k_i| < k_{\rm{min}}$ and $|k_i| > k_{\rm{max}}$ where $k_i$ is the momentum projection along an axis $i=x,y,z$. We use $k_{\rm{min}}=0.15 \, k_d$, corresponding to $\sim 6$ times the RMS width of the BEC peaks, in order to ensure that all condensed atoms have been removed. The high limit is set to $k_{\rm{max}}=0.85 \, k_d$ to exclude higher order peaks and is slightly smaller than the momentum range probed by the MCP.
 
-For each record data set, we begin the analysis by removing all atoms outside the volume $\Omega_k$ that we design to exclude momentum regions with condensed atoms. 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Fig/Chapter4/densite.png}
+    \caption{1D cut of the momentum density illustrating the integration volume $\Omega_k$. The central peak corresponds to the BEC and the lateral peaks at $\pm \ k_d$ to diffraction peaks induced by the presence of the optical lattice. The green area shows the volume $\Omega_k$ containing the depleted atoms selected for the correlation measurement. While barely visible in linear scale, they can be seen in the log scale plot shown in inset.}
+    \label{fig:omega_k}
+\end{figure}
 
 
+\section{Observation of the pair correlation signal}
 
-\section{k/-k correlation signal}
+\subsection{Experimental parameters}
+
+We prepare a BEC with a target number of $\NBEC=5 \times 10^3$ atoms in an optical lattice of amplitude $V=7.75 \ E_r$. With this lattice amplitude, we are in the superfluid domain of the phase diagram in which we expect the \kmk correlations. In order to have sufficient statistics, we repeat the experiment $\sim 4,000$ times. In practice, we cannot prepare BECs with the exact same number of atoms at each shot. We then need to post-select the data and remove runs with a detected atom number falling too far from the target number. We allow for $30 \%$ fluctuations around the target number and end up conserving around $\sim 2,000$ runs.
+
+\subsection{$g^{(2)}_A$ correlation function}
+
+We have plotted on Fig-\ref{fig:kmk_signal} 1D cuts through the $g_{A}^{(2)}$ function on which we can see clear correlation peaks standing out from the noise! At this point, we must stress out that the novelty of this signal is that it is the first experimental observation of \kmk pairs in an \textbf{at-equilibrium system}. They have indeed been numerous observations of \kmk pairs, but always in \textbf{out-of-equilibrium} configurations. To a cite a few examples:
+
+\begin{itemize}
+    \item Parametric down conversion in quantum optics \cite{burnham1970}.
+    \item Dissociation of diatomic molecules in atomic physics \cite{greiner2005}.
+    \item Elastic collisions in high energy physics \cite{arnison1982} or with ultracold atoms \cite{perrin2007observation}.
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{Fig/Chapter4/1d_cuts.png}
+    \caption{1D cuts through $g_{A}^{(2)} (\delta {\bm k})$ along the axis of the 3D optical lattice. The transverse integration is $\Delta k_{\perp}=3 \times 10^{-2} \ k_d$ and the longitudinal pixel size is $\Delta k_{\parallel}=1.2 \times 10^{-2} \ k_d$. The data is fitted by Gaussian functions (solid lines). The nice correlation peaks signal the presence of \kmk pairs.}
+    \label{fig:kmk_signal}
+\end{figure}
+
+In our experiment, the \kmk pairs are present in an at-rest BEC and are predicted to be populated through the interplay between interactions and quantum fluctuations for which we cannot draw any classical picture.
+
+As we have seen in the previous chapter, the \kmk pairs results from $T=0$ quantum coherences and are expected to be destroyed by temperature. We will now test this prediction experimentally to confirm the origin of the correlation signal.
 
 \section{Effect of temperature}
+
+The temperature can be increased in a rather simple manner by holding the atoms at the final amplitude for a longer duration, the gas being continuously heated over time (attributed to imperfections such as spontaneous emission or mechanical vibrations). We repeat the experiment with a holding time of $500 \ \rm{ms}$ corresponding to hundreds of tunneling times $225 \times h/J$. The increase in temperature can be seen by looking at the momentum density profile as shown in the panel b) of Fig-\ref{fig:kmk_temperature}. As expected, the thermal depletion has increased, increasing the momentum density in the depletion region. Note however that we did not increase the temperature too much to keep a significant condensed fraction of the order of $f_c = 29 \%$ not to entirely remove the quantum depletion.
+
+We plot on Fig-\ref{fig:kmk_temperature} panel a) the $\gtwo_A (\delta \bm{k})$ correlation function for the two different temperatures. 
+
+\begin{figure}
+    \centering
+    \includegraphics{Fig/Chapter4/kmk_temperature.png}
+    \caption{Atom-atom correlations in weakly-interacting BECs at two different temperatures. The data for the low-temperature BEC ($f_{c}=84\%$), {\it resp.} for the heated BEC ($f_{c}=29\%$), are depicted in blue, {\it resp.} in red. 
+    {\bf (a)}. Anomalous correlations $g_{A}^{(2)}(\delta k)$ at opposite momenta. The ${\bm k}$/$-{\bm k}$ peak disappears as the temperature increases.
+    {\bf (b)}. 1D cut of the density $\rho(k)$ in semilog scale. The depletion density increases with temperature.
+    {\bf (c)}. Normal correlations $g_{N}^{(2)}(\delta k)$ for the same datasets and $\Omega_k$. The peak amplitude shows no significant change as the temperature increases. Note that the transverse integration $\Delta k_{\perp}=1.5 \times 10^{-2} \, k_d$ used here reduces the amplitude of the peaks.}
+    \label{fig:kmk_temperature}
+\end{figure}
 
 \section{Study of the amplitude of the correlation peaks}
 
