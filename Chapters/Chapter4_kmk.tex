@@ -107,7 +107,7 @@ We prepare a BEC with a target number of $\NBEC=5 \times 10^3$ atoms in an optic
 
 \subsection{$g^{(2)}_A$ correlation function}
 
-We have plotted on Fig-\ref{fig:kmk_signal} 1D cuts through the $g_{A}^{(2)}$ function on which we can see clear correlation peaks standing out from the noise! At this point, we must stress out that the novelty of this signal is that it is the first experimental observation of \kmk pairs in an \textbf{at-equilibrium system}. They have indeed been numerous observations of \kmk pairs, but always in \textbf{out-of-equilibrium} configurations. To a cite a few examples:
+We have plotted on Fig-\ref{fig:kmk_signal} 1D cuts through the $g_{A}^{(2)}$ function on which we can see clear correlation peaks standing out from the noise! (\NOTE{COMMENT WIDTH?}) The peaks are well-fitted with a Gaussian function (\NOTE{COMPLETER}). At this point, we must stress out that the novelty of this signal is that it is the first experimental observation of \kmk pairs in an \textbf{at-equilibrium system}. They have indeed been numerous observations of \kmk pairs, but always in \textbf{out-of-equilibrium} configurations. To a cite a few examples:
 
 \begin{itemize}
     \item Parametric down conversion in quantum optics \cite{burnham1970}.
@@ -128,9 +128,11 @@ As we have seen in the previous chapter, the \kmk pairs results from $T=0$ quant
 
 \section{Effect of temperature}
 
-The temperature can be increased in a rather simple manner by holding the atoms at the final amplitude for a longer duration, the gas being continuously heated over time (attributed to imperfections such as spontaneous emission or mechanical vibrations). We repeat the experiment with a holding time of $500 \ \rm{ms}$ corresponding to hundreds of tunneling times $225 \times h/J$. The increase in temperature can be seen by looking at the momentum density profile as shown in the panel b) of Fig-\ref{fig:kmk_temperature}. As expected, the thermal depletion has increased, increasing the momentum density in the depletion region. Note however that we did not increase the temperature too much to keep a significant condensed fraction of the order of $f_c = 29 \%$ not to entirely remove the quantum depletion.
+The temperature can be increased in a rather simple manner by holding the atoms at the final amplitude for a longer duration, the gas being continuously heated over time (attributed to imperfections such as spontaneous emission or mechanical vibrations). We repeat the experiment with a holding time of $500 \ \rm{ms}$ corresponding to hundreds of tunneling times $225 \times h/J$. The increase in temperature can be seen by looking at the momentum density profile as shown in the panel b) of Fig-\ref{fig:kmk_temperature}. As expected, the thermal depletion has increased, increasing the momentum density in the depletion region by a factor 4. Note however that we did not increase the temperature too much to keep a significant condensed fraction of the order of $f_c = 29 \%$ not to entirely remove the quantum depletion. This increase of the thermal depletion implies a decrease of $\gtwo_A (\bm{0})$ of at least a factor $4^2$, bringing it under the experimental noise, as we see on Fig-\ref{fig:kmk_temperature} panel a).
 
-We plot on Fig-\ref{fig:kmk_temperature} panel a) the $\gtwo_A (\delta \bm{k})$ correlation function for the two different temperatures. 
+We thus see that the \kmk correlation signal is extremely sensitive to temperature as predicted, hinting to the fact that it is indeed related to a $T=0$ ground-state effect. It is also quite illuminating to compare the \kmk correlations to the bosonic bunching \kk correlations. As explained in the previous chapter, the bosonic bunching effect is the consequence of chaotic statistics, a property shared by the thermal and quantum depletion. Therefore, changing the temperature and thus the balance between thermal and quantum depletion has no effect on bosonic bunching. This is what we observe experimentally as shown on Fig-\ref{fig:kmk_temperature} panel c).
+
+In conclusion, we have on the same experimental data two very different behaviours with temperature that illustrate nicely the natures of the correlation signals. On the one hand, \kk correlations unaffected by temperature revealing the chaotic statistics of the system, on the other hand, \kmk correlations revealing the many-body ground state quantum coherences.
 
 \begin{figure}
     \centering
@@ -142,9 +144,26 @@ We plot on Fig-\ref{fig:kmk_temperature} panel a) the $\gtwo_A (\delta \bm{k})$ 
     \label{fig:kmk_temperature}
 \end{figure}
 
+The attentive reader would have noticed than even though we expect perfect bosonic bunching $\gtwo_N (\bm{0})=2$, we rather observe $\gtwo_N (\bm{0}) \simeq 1.8$. This is due to transverse integration effects of the 3D $\gtwo$ function that we will now discuss.
+
 \section{Study of the amplitude of the correlation peaks}
 
 \subsection{Transverse integration effects}
+
+The "true" theoretical, normalized and integrated two-body correlation function is modelled by a 3D Gaussian function:
+
+\begin{equation}
+    \gtwo_{A,N} (\delta \bm{k}) = 1 + \eta_{A,N} \prod_{i=x,y,z} \exp \left(\frac{-\delta k_i^2}{2 \sigma_i}\right)
+\end{equation}
+
+Practically speaking, the values of the $\gtwo$ function are recorded in a 3D histograms made of cubic voxels whose size will be denoted $\Delta k_{\parallel}$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{Fig/Chapter4/cube_integration.png}
+    \caption{Illustration of the transverse integration. Every voxel contains the value of the $\gtwo$ function for a given value of $\delta \bm{k}=(\delta k_x, \delta k_y, \delta k_z$. The figure illustrates the procedure to take a 1D cut in the $x$ direction: we average over several pixel lines to increase the signal-to-noise ratio. This is the transverse integration $\Delta k_{\perp}$ as defined on the schematic.}
+    \label{fig:my_label}
+\end{figure}
 
 \subsection{Scaling with momentum density}
 
