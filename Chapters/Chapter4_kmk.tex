@@ -274,18 +274,146 @@ When applying this procedure for the data set $\NBEC=5 \times 10^3$, $f_c=84 \%$
     \label{eq:Npairs}
 \end{equation}
 
-This equation can be understood as follows. We initially have a given number of depleted atoms that we detect only a fraction because of the MCP detection efficiency. This number is $N_{\Omega_k}$. In all these atoms, only the fraction of quantum depleted ones $\alpha_Q$ will be \kmk paired. In addition, we will miss some pairs as we detect only one atom of the pair, hence the addition of $\alpha_{\rm{MCP}}$ in the formula.
+This equation can be understood as follows. We initially have a given number of depleted atoms that we detect only a fraction of because of the MCP detection efficiency. This number is $N_{\Omega_k}$. In all these atoms, only the fraction of quantum depleted ones $\alpha_Q$ will be \kmk paired. In addition, we miss some pairs when detecting only one atom of the pair because of the detection efficiency, hence the addition of $\alpha_{\rm{MCP}}$ in the formula.
 
 We use equation \ref{eq:Npairs} to evaluate $\alpha_Q$ and find $\alpha_Q \simeq 2 \%$. Using a $T=0$ Gutzwiller approach (see \cite{bouton_these}) (\NOTE{COMPLETER?}), we estimate the quantum depletion to be $5\%$ and infer that the thermal depletion must then be $\simeq 10\%$ as the overall condensed fraction is $f_c=84 \%$. This would mean that we should rather have $\alpha_Q \simeq 33 \%$, so an order of magnitude larger than our experimental measurement. Finding a clear explanation for this discrepancy remains an open question and would require an extensive theoretical work far beyond the scope of this thesis. We can however suggests a few possible explanations:
 
 \begin{itemize}
     \item The balance between thermal and quantum depletion depends from the momentum $k$. It is then not so clear of what this number should be averaged over $\Omega_k$. In addition, a significant amount of \kmk pairs can be located in the low $k$ region that we remove from the analysis, thus reducing the number of detected pairs.
-    \item Dipsersion relation of the lattice \NOTE{COMPLETER}
-    \item Is is also not so clear of the pairs are projected into the different Brillouin zones when performing the time-of-flight measurement. This could also makes us miss some pairs (\NOTE{BOF}).
+    \item Dispersion relation of the lattice \NOTE{COMPLETER}
+    \item Is is also not so clear how the pairs are projected into the different Brillouin zones when performing the time-of-flight measurement. This could also makes us miss some pairs (\NOTE{BOF}).
 \end{itemize}
 
 
-\section{Relative number squeezing}
+\section{Towards measuring entanglement}
+
+As we underlined in the first Chapter of this thesis (\NOTE{A VERIFIER}), it would be of great interest to characterize how entanglement emerges in at-equilibrium many-body systems such as the one we are working with here. Although we do not have all the experimental tools to claim that we are indeed seeing entanglement in our experiment yet, we nevertheless observe clear signatures of quantum phenomena that hints towards it as we will discuss now.
+
+\subsection{Violation of the Cauchy-Schwarz inequality}
+
+The very famous Cauchy-Schwarz inequality has seen countless applications in mathematics and physics. What will most interest us here is its formulation in the framework in probability theory. In classical physics, with two fluctuating quantities $I_1$ and $I_2$, the Cauchy-Schwarz inequality writes:
+
+\begin{equation}
+    \mean{I_1 I_2} \leq \sqrt{\mean{I_1^2} \mean{I_2^2}}
+\end{equation}
+
+This inequality can be rewritten with creation/annihilation operators to work with two-body correlation functions. For simplicity sake, let's consider only two modes 1 and 2. We introduce the notation $G^{(2)}_{i,j} = \mean{\hat{a}(i)^{\dagger} \hat{a}(j)^{\dagger} \hat{a}(i) \hat{a}(j)}$. The Cauchy-Schwarz inequality becomes \cite{kheruntsyan2012violation,walls2008}:
+
+\begin{equation}
+    G^{(2)}_{1,2} \leq \sqrt{G^{(2)}_{1,1} G^{(2)}_{2,2} }
+\end{equation}
+
+If we now chose mode $1 \rightarrow \bm{k}$, mode $2 \rightarrow -\bm{k}$ and consider a symmetrical case with $\mean{\hat{a}^{\dagger}(\bm{k}) \hat{a}(\bm{k})}=\mean{\hat{a}^{\dagger}(-\bm{k}) \hat{a}(-\bm{k})}$ (consistent at $T=0$ where the depletion is fully quantum and exclusively populated in pairs), we obtain $G^{(2)}_{\bm{k},\bm{k}}=G^{(2)}_{-\bm{k},-\bm{k}}$ and finally:
+
+\begin{equation}
+    \gtwo_A (\bm{k},\bm{-k}) \leq \gtwo_N (\bm{k},\bm{k})
+\end{equation}
+
+Therefore, the Cauchy-Schwarz inequality states that the cross-correlation amplitude between opposite momenta cannot exceed the amplitude of the auto-correlation with a classical model. As shown on Fig-.\ref{fig:amplitude_vs_rhob}, the experimental amplitude of the anomalous correlations goes significantly higher than for normal correlations, thus clearly violating the Cauchy-Schwarz inequality for classical quantities: we are thus observing quantum correlations. As developed in \cite{kheruntsyan2012violation}, violating the Cauchy-Schwarz inequality is one of the easiest way to prove the presence of non-classical correlations and represents a first, necessary step towards obtaining more significant results such as proving the presence of entanglement.
+
+\subsection{Relative number squeezing}
+
+A slightly higher level proof of quantum behavior than the violation of the Cauchy-Schwarz inequality is observing \textbf{squeezing}. Before going into our experimental details and observations, let us briefly remind what is squeezing is.
+
+In quantum mechanics, the maximum precision with which one can hope to measure two conjugate quantities such as position and momentum is bound by the very famous Heisenberg inequality:
+
+\begin{equation}
+    \Delta x \Delta p \geq \frac{\hbar}{2}
+\end{equation}
+
+In most cases, notably the quantum harmonic oscillator ground state $\ket{0}$ and coherent states $\ket{\alpha}$, the minimum uncertainties values saturating the Hesienberg inequality are the same for the two conjugate quantities $\Delta x_{g} = \Delta p_g$. The specificity of squeezed states is that the uncertainty one of the quantities has been reduced below the lower limit of the ground state, at the detriment of the uncertainty of the conjugate quantity. If we were to represent the uncertainty in quadrature space, we would get a perfect circle for a coherent state and a "squeezed" circle, {\it i.e.} an ellipse, for a squeezed state, hence the name. \NOTE{BIBLIO/EXEMPLES}, \NOTE{VOIR AVEC CHAPITRE 1 OU METTRE CA}
+
+A well-known example of how to obtain squeezing is the non degenerate parametric amplifier in non linear quantum optics. \NOTE{A faire quand le chapitre 1 est fait}
+
+Our experiment is not suited to observe squeezing per say as we only have access to the momentum of the atoms and not their position. \NOTE{COMPLETER}. What we can measure however is what we call \textbf{relative number squeezing}. The idea is to measure the statistics of the difference of atom numbers in modes $\bm{k}$ and $-\bm{k}$ that we will refer to as $N(\bm{k})$ and $N(-\bm{k})$. For one of the modes, the fluctuations of the number of atoms are set by the \textbf{shot noise} and follow a Poisson law. The particularity of the Poisson law for a random variable is that the variance of the variable is equal to its mean, giving for instance for mode $\bm{k}$:
+
+\begin{equation}
+    \sigma_{N(\bm{k})} =\sqrt{\mean{N(\bm{k})^2}-\mean{N(\bm{k})}^2} = \sqrt{\mean{N(\bm{k})}}
+\end{equation}
+
+What can we tell of the statistics of the number difference in two modes $\bm{k}$ and $\bm{k}'$, $N(\bm{k}) - N(\bm{k}')$? If the populations in the two modes are totally uncorrelated, the difference of two independent Poissonian random variables is Poissonian as well and we then get:
+
+\begin{equation}
+    \sigma_{N(\bm{k})-N(\bm{k}')} = \sqrt{\mean{N(\bm{k})-N(\bm{k}')}}
+\end{equation}
+
+If we now chose $\bm{k}'=-\bm{k}$, we know that the populations are expected to be correlated. In the simple situation $T=0$, the depletion is entirely quantum and thus exclusively populated in pairs. Therefore, we always have $N(\bm{k})=N(-\bm{k})$ and then $\sigma_{N(\bm{k})-N(-\bm{k})}=0$. Obviously, this is just an ideal case that is not reproducible with our experiment. With $T \neq 0$, we expect the \kmk correlations present in the depletion to reduce the fluctuations of the number difference, yielding what is called a \textbf{sub-Poissonian} law. This effect is called \textbf{relative number squeezing}. Just like the \kmk correlation signal is lost with temperature, we expect that the reduction of the number difference fluctuations becomes smaller and smaller as temperature increases, increasing the fraction of thermally, uncorrelated, depleted atoms. 
+
+Our goal is then to measure $\sigma_{N(\bm{k})-N(-\bm{k})}$ and see whether it is smaller than the expected value for a Poisson law. To this end, we define a convenient quantity that we call the squeezing parameter $\xi$: 
+
+\begin{equation}
+    \xi_{\bm{k},\bm{k'}}^2=\frac{\langle (N_{\bm{k}} - N_{\bm{k'}})^2 \rangle - \langle N_{\bm{k}} - N_{\bm{k'}} \rangle^2}{\langle N_{\bm{k}} \rangle + \langle N_{\bm{k'}} \rangle}
+\end{equation}
+
+This squeezing parameter to the square is simply the standard deviation of the number difference normalized by the expected standard deviation for uncorrelated variables. Therefore, we expect $\xi_{\bm{k},\bm{k}'}=1$ if there are no correlations between modes $\bm{k}$ and $\bm{k'}$, and $\xi_{\bm{k},\bm{k}'} < 1$ if the modes populations are correlated.
+
+To evaluate $\xi$, we record for each experimental shots the number of detected atoms in cubic boxes paving the entire integration volume $\Omega_k$. The boxes need to be quite large in order to have enough atoms in each boxes. We chose a size of $(0.3 \ k_d)^3$ \NOTE{VERIFIER CHIFFRES}. Having access to the atom number for each run at various values of $\bm{k}$, we compute the squeezing parameter between different pairs of boxes as illustrated on Fig.-\ref{fig:squeezing}, either correlated or uncorrelated for reference. The measured values of $\xi$ are averaged over all possible pairs of boxes for a given configuration. The uncertainty on $\xi$ is evaluated statistically on all the $\xi$ values obtained on the different boxes pairs and defined as the standard error.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Fig/Chapter4/squeezing.png}
+    \caption{Relative number squeezing measurement. The number of detected atoms in cubic boxes are recorded for each experimental run. We compute the squeezing parameter $\xi$ between correlated (orange) boxes as illustrated on the right, or uncorrelated (blue) boxes on the left. The central black box corresponds to the BEC, removed from the analysis.}
+    \label{fig:squeezing}
+\end{figure}
+
+The results are summarized in table \ref{tab:squeezing}. For the low-temperature, high condensed fraction data, we are indeed able to observe a small relative number squeezing within the errorbars. For uncorrelated modes, the squeezing parameter is very slightly above 1, highlighting that the correlations indeed reduce the fluctuations of the number difference. For higher temperatures (lower condensed fraction), no relative number squeezing is observed as the correlations are drowned out. In addition, we see that the squeezing parameter increases as we increase the temperature. This is due to global atom number fluctuations of the order of $30\%$ in our experiment. At low temperature, there are few detected atoms and the shot noise is thus large and dominating the total atom number fluctuations. On the opposite, at higher temperatures, the number of depleted atoms increases, reducing the shot noise. The contribution of total atom number fluctuations are then not negligible anymore and increase the fluctuations of the number difference, higher than what is expected for a Poisson law, explaining why we observe $\xi^2 > 1$.
+
+\begin{table}[]
+    \arrayrulecolor{black}
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $f_c$ & $\xi^2_{\bm{k},-\bm{k}}$ & $\xi^2_{\bm{k},\bm{k}}$ \\
+        \hline
+        0.84 & 0.992(3) & 1.004(3) \\
+        \hline
+        0.55 & 1.017(4) & 1.017(3) \\
+        \hline
+        0.29 & 1.040(5) & 1.045(5) \\
+        \hline
+    \end{tabular}
+    \caption{Experimental values of the squeezing parameter for correlated and uncorrelated modes and different condensed fractions.}
+    \label{tab:squeezing}
+\end{table}
+
 
 \section{Study of the width of the correlation peaks}
+
+The last aspect of the \kmk correlation signal that remains to be studied so far is the width of the correlation peak. Once again, this quantity contains meaningful information about the many-body ground state. The key aspect is the same used by Hanbury Brown and Twiss in their seminal paper to measure the size of Sirius through the measurement of the second order correlation function: the width of the correlation is inversely proportional to the spatial size of the source. 
+
+As we have done throughout this chapter, we will compare the predictions for both anomalous and normal correlations. We then need to determine what are the sizes of the components responsible for both correlation signals. On the one hand, the anomalous correlations are exclusively caused by quantum depleted atoms. The quantum depletion is non-existent outside of the BEC so its spatial is the one of the BEC. Therefore, we expect the width of the anomalous correlation peak $\sigma_A$ to be inversely proportional to the size of the BEC $L_{\rm{BEC}}$. On the other hand, the normal correlations are caused by quantum depleted atoms but also and importantly thermally depleted atoms whose spatial size extends beyond the BEC because of the increased kinetic energy. This tells us that the width of the normal correlations peak $\sigma_N$ should be smaller than for anomalous correlations.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{Fig/Chapter4/width.png}
+    \caption{Caption}
+    \label{fig:width}
+\end{figure}
+
+We plot on Fig.-\ref{fig:width} the experimental correlation peaks widths for different total atom numbers. As expected, we observe that for all atom numbers, $\sigma_A > \sigma_N$. In addition, one would expect to see both widths decrease with the total atom number as the size of the system grows. This is more or less what the experimental data suggests but the error bar are not small enough to make a proper conclusion on this point. Note that in the Thomas-Fermi regime, the size of the BEC changes slowly with the total atom number $L_{\rm{BEC}} \propto \NBEC^{1/5}$ \NOTE{COMPLETER}
+
+We now look at the quantitative value of $\sigma_A$ for which we have a theoretical prediction. This prediction has been obtained by S. Butera and I. Carusotto from the BEC center in Trento, Italy, applying the Bogoliubov theory for a trapped system. Their numerical calculations predict $\sigma_{A,\rm{theo}} = 0.94 \sigma_{\rm{BEC}}$, with $\sigma_{\rm{BEC}}$ the RMS width in momentum space of the condensante (\NOTE{REF}). 
+
+To extract the value of $\sigma_{\rm{BEC}}$, we need to be careful of the saturation of the detector. Indeed, the BEC is very dense resulting in a high flux of atoms totally saturating the detector. If we plot 1D cuts of the momentum density, the BEC momentum profile is then flattened at the top and fitting with a Gaussian function over-evaluates the momentum width of the condensate. To circumvent this issue, we adapt the parameters of the Raman transfer (\NOTE{RAJOUTER SECTION}) to reduce drastically the detection efficiency and thus the flux of atoms to avoid saturation of the detector and ensure proper fitting.
+
+During our first analysis, we noticed that the anomalous correlation peak was larger than the BEC, contrary to what we would have expected. We also noticed that the momentum width of the BEC was larger than what we obtained applying the Gutzwiller ansatz with our calibrated atom numbers. We attribute this to an imperfection in our experiment, the shot-to-shot fluctuations of the center-of-mass of the atomic distribution. When averaging over many experimental runs, these fluctuations enlarges artificially the measured width of the BEC, as well as the width of the anomalous correlation peak. These fluctuations are nevertheless easy to characterize by comparing the experimental momentum width of the BEC to the one predicted by the Gutzwiller variational approach.
+
+When accounting for center-of-mass fluctuations, the measured momentum density results from the convolution with the distribution of center-of-mass displacements and has a RMS width:
+
+\begin{equation}
+    \sigma_{\rm{BEC}}=\sqrt{\sigma_{\rm{BEC},0}^2+\Delta k_{\rm{com}}^2}
+\end{equation}
+
+where $\sigma_{\rm{BEC},0}$ is the "true" BEC momentum width. The Gutzwiller variational approach gives  $\sigma_{\rm{BEC},0} \simeq 1.7 \times 10^{-2} \ k_d$ for a total atom number $\NBEC = 5 \times 10^5$ and we measure $\sigma_{\rm{BEC}}=2.0(1) \times 10^{-2} \ k_d$. From this we deduce $\Delta k_{\rm{com}}=1.1(1) \times 10^{-2} \ k_d$.
+
+For a \kmk pair of atoms, a center-of-mass displacement ${\rm{d}} \bm{k}$ induces a momentum difference $\delta \bm{k}=2 {\rm{d}} \bm{k}$. The effect of the fluctuations are thus twice larger for anomalous correlations peak width than for the BEC momentum width:
+
+\begin{equation}
+    \sigma_A = \sqrt{\sigma_{A,0}^2+4\Delta k_{\rm{com}}^2}
+\end{equation}
+
+Injecting the theoretical prediction, we find that we should observe $\sigma_A \simeq 1.4(1) \sigma_{\rm BEC}$. This is consistent with our measurement, $\sigma_A = 1.2(1) \sigma_{\rm BEC}$.
+
+
+
 
