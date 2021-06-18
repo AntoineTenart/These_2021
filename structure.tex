@@ -37,6 +37,7 @@
 \definecolor{niceblue}{RGB}{51,70,126}
 \definecolor{niceblue2}{RGB}{51,70,150}
 \definecolor{ocre}{RGB}{243,102,25}
+\definecolor{green}{rgb}{0,0.7,0}
 \usepackage{listings}
 \usepackage{stackrel}
 
@@ -72,7 +73,7 @@
 %----------------------------------------------------------------------------------------
 %	NOUVELLES COMMANDES
 %----------------------------------------------------------------------------------------
-
+\usepackage{mathtools}
 % Intervalles
 \newcommand{\intervalle}[4]{\mathopen{#1}#2
  \mathclose{}\mathpunct{};#3
@@ -81,6 +82,8 @@
 \newcommand{\intervalleof}[2]{\intervalle{]}{#1}{#2}{]}}
 \newcommand{\intervallefo}[2]{\intervalle{[}{#1}{#2}{[}}
 \newcommand{\intervalleoo}[2]{\intervalle{]}{#1}{#2}{[}}
+\newcommand\underrel[3][]{\mathrel{\mathop{#3}\limits_{%
+      \ifx c#1\relax\mathclap{#2}\else#2\fi}}}
 %\newcommand{\intervalleentier}{\intervalle\llbracket{#1}{#2}\rrbracket}
  
  % Ensembles Nombres
