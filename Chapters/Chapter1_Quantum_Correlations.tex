@@ -125,6 +125,7 @@ the famous Bogoliubov dispersion relation. The Hamiltonian has now been diagonal
 The system of interacting particles has thus been transformed into a system of non-interacting Bogoliubov quasi-particles associated to creation and annihilation operators $\hat{b}^{\dagger}_{\bm{k}}$ and $\hat{b}_{\bm{k}}$ with a dispersion relation $\varepsilon(k)$. The prediction of this excitation spectrum is one of the key results of Bogoliubov theory that we will now discuss in further details.
 
 \subsection{Spectrum of excitations}
+\label{sec:spectrum}
 
 The Bogoliubov dispersion relation has two clear asymptotic trends for small and high momentum values. For low values of $k$, using $\frac{\hbar^2 k^2}{2m} \ll 2gn$, we obtain:
 
@@ -165,6 +166,7 @@ As we have just seen, the Bogoliubov approach describes the weakly-interacting B
 
 \begin{equation}
     \langle b^{\dagger}_{\bm{k}}  b_{\bm{k}} \rangle=\frac{1}{e^{-\varepsilon(k)/(k_B T)}-1} 
+    \label{eq:bose_qp}
 \end{equation}
 
 Naturally, at $T=0$, the population of quasi-particles is null: $\langle b^{\dagger}_{\bm{k}}  b_{\bm{k}} \rangle_{T=0}=0$. That being said, let us now write the population of real particles for a given momentum $k \neq 0$:
@@ -177,20 +179,82 @@ The blue term corresponds to the Bogoliubov excitations populated by temperature
 
 We are thus looking at a system which seems to fall into our general area of interest described in the introduction of this thesis, namely many-body systems with interactions displaying quantum behaviors. The weakly-interacting Bose gas shows the advantage to be one of the conceptually simplest many-body systems for which a theory can be derived as we just have shown. As explained in the beginning of this chapter, many-body systems are often efficiently characterized by correlation functions. Let us now discuss what are the relevant correlation functions to study for the weakly-interacting Bose gas.
 
-\section{Hanbury Brown and Twiss effect with interacting atoms}
 
+\section{Two-body correlations in the weakly-interacting Bose gas}
 
-\section{k/-k correlations in the many-body ground-state}
+\subsection{k/-k correlations in the many-body ground state}
 
 Let us now come back to the ground-state of the weakly-interacting Bose gas and the quantum depletion. We will now try to build a microscopic, physically meaningful picture of how the quantum depletion emerges. We remind that a key ingredient of the Bogoliubov theory is that the only considered interaction processes are the ones involving two particles of the BEC or two particles outside of the BEC being brought into it. From this consideration, we understand that the atoms belonging to the quantum depletion were initially in the BEC and were removed from it after undergoing a two-body interaction process. The interaction process populating the quantum depletion thus involves two atoms in the BEC with a momentum $k \simeq 0$. To conserve the overall momentum, the two atoms leaving the BEC then have opposite momenta $\bm{k}$ and $-\bm{k}$ and form a momentum correlated pair. This falls exactly into the kind of signal we are interested in, namely correlations between several particles, here two, caused by a quantum, interaction-induced effect.
 
 The common factor with quantum effects is that they usually defy our intuition built on our observation of the everyday world, well described by classical physics. In this case, the "quantum weirdness" comes from the fact this process seems to violate the conservation of energy: the two at atoms initially at rest each have an extra kinetic energy $\frac{\hbar^2 k^2}{2m}$ after the interaction process giving them the $\bm{k}$ and $-\bm{k}$ momenta. Naturally, the conservation of energy is still well respected here. The apparent contradiction comes from the fact that it is conceptually wrong to isolate two atoms in the BEC. The ground-state must rather be understood as a single many-body wave-function describing indistinguishable atoms, with a non zero component for momentum values $k \neq 0$. The energy of the many-body ground state of the weakly-interacting Bose gas contains a small correction that corresponds to the presence of the \kmk pairs of the quantum depletion. This small correction is called the Lee-Huang-Yang correction, named after the authors of the seminal 1957 article \cite{lee1957} that first predicted the presence of the \kmk pairs.
 
-Although being more than 60 years old, the prediction of the presence \kmk correlations in the ground-state of a weakly interacting Bose gas still lacks an experimental observation of the microscopic \kmk pairing. This will be the main objective and central theme of this thesis. \NOTE{RAJOUTER UN TRUC SUR HAWKING TOUSSA ?}
+Although being more than 60 years old, the prediction of the presence \kmk correlations in the ground-state of a weakly interacting Bose gas still lacks an experimental observation of the microscopic \kmk pairing. This will be the main objective and central theme of this thesis. As the \kmk pairing induces correlations between two individual particles, it is natural to use second order correlation functions to detect them as we will now discuss.
 
-Observing such a correlation signal requires some key experimental ingredients. The principal one is to have an experiment capable of measuring the momentum of individual atoms in momentum space and not only the momentum density as in most cold atoms experiment. This will be the subject of Chapter 3. In addition, there are several key features of the \kmk correlation signal that we need to properly understand to design an experimental scheme where the \kmk correlation signal can be properly detected.
 
-\subsection{Momentum spread of the quantum depletion}
+
+\subsection{Second order correlation functions within Bogoliubov theory}
+
+We start by describing the general case of the two-body correlator between two modes $\bm{k}$ and $\bm{k'}$:
+
+\begin{equation}
+    G(\bm{k},\bm{k}')=\langle \hat{a}^{\dagger}({\bm k}) \hat{a}^{\dagger}({\bm k}') \hat{a}({\bm k}) a({\bm k}') \rangle
+\end{equation}
+
+As we have seen in the previous section, the Bogoliubov Hamiltonian is diagonal in the quasi-particle basis. All quantum thus have Gaussian statistics, allowing us to use Wick's theorem to simplify correlator:
+
+\begin{equation}
+    G(\bm{k},\bm{k}')=\langle \hat{a}^{\dagger}({\bm k}) \hat{a}^{\dagger}({\bm k}') \rangle \mean{\hat{a}({\bm k}) a({\bm k}')} + \langle \hat{a}^{\dagger}({\bm k}) \hat{a}({\bm k}) \rangle \langle \hat{a}^{\dagger}({\bm k}') a({\bm k}') \rangle + \langle \hat{a}^{\dagger}({\bm k}) \hat{a}({\bm k}') \rangle \langle \hat{a}^{\dagger}({\bm k}') a({\bm k}) \rangle
+\end{equation}
+
+We end up with three different terms:
+
+\begin{itemize}
+    \item The first term equals $| \langle \hat{a}^{\dagger}({\bm k}) \hat{a}^{\dagger}({\bm k}') \rangle |^2$ and is non zero only when $\bm{k}'=-\bm{k}$. This corresponds to the \kmk correlations.
+    \item We recognize in the second term the product of the first-order correlation functions for modes $\bm{k}$ and $\bm{k}'$ which is simply the product of the momentum densities $\rho(\bm{k}) \rho(\bm{k}')$.
+    \item The third term equals $| \langle \hat{a}^{\dagger}({\bm k}) \hat{a}({\bm k}') \rangle |^2$ and is non zero only when $\bm{k}'=\bm{k}$. This correspond to the Hanbury Brown and Twiss effect or bosonic bunching described earlier.
+\end{itemize}
+
+We regroup the two last terms in the function $G^{(2)}_{N}({\bm k},{\bm k}')= \rho({\bm k})\rho({\bm k}') + | \langle \hat{a}^{\dagger}({\bm k}) \hat{a}({\bm k}') \rangle |^2$ that we call the \textbf{normal} correlation function as the operators are normally ordered to match the interpretation of the detection of two particles \NOTE{FISHY}. In opposition, we introduce for the last term the function $G^{(2)}_{A}({\bm k},{\bm k}')=| \langle \hat{a}^{\dagger}({\bm k}) \hat{a}^{\dagger}({\bm k}') \rangle |^2 $ that we call the \textbf{anomalous} correlation function. 
+
+We end up with two correlation functions of interest well separated in momentum space and containing very different types of information. On the one hand, the normal correlations correspond to close-by correlations and bosonic bunching: this effect is caused by chaotic statistics and this correlation function thus gives information about the statistics of the system. On the other hand, the anomalous correlations correspond to \kmk correlations and reveal the quantum coherences of the many-body ground state.
+
+\NOTE{VOIR CETTE TRANSITION} While our main goal will be to measure the anomalous \kmk correlations for the reasons mentioned earlier, it will also be of great interest to measure the local normal correlations as a point of comparison. 
+
+
+% As we will see in Chapter 4, the clear separation of the contribution of the two correlation functions in momentum space (close-by or \kmk) allows to measure them separately on the same experimental data set.
+
+
+
+Now that we have formed a clear picture of the kind of correlation functions we want to measure, we need to identify the key experimental ingredients necessary to observe such signals. The principal one is to have an experiment capable of measuring the momentum of individual atoms in momentum space and not only the momentum density as in most cold atoms experiment. This will be the subject of Chapter 3. 
+
+In addition, there are several key features of the \kmk correlation signal that we need to properly understand to design an experimental scheme where the \kmk correlation signal can be properly detected.
+
+
+\subsection{Momentum extent of the quantum depletion}
+
+A crucial aspect of studying the correlations in the depletion is the ability to separate the depleted atoms from the condensed ones. As a matter of fact, the BEC is a fully coherent state with macroscopic occupation of a single mode. In analogy with laser light in optics, the statistics of the BEC are not chaotic and no bosonic bunching can therefore be observed. In addition, no \kmk correlations are expected for atoms belonging to the condensate. Furthermore, the number of condensed atoms is very often way larger than the number of depleted atoms. This has a direct consequence for our measurement: if we are unable to remove condensed atoms from the analysis, they will entirely drown out the correlation signals of the depletion.
+
+Fortunately, the BEC and the depletion extent in momentum space are very different. Positions and momenta are related to one other by means of Fourier transform. This tells us that the typical momentum width of the condensate is $1/L_{\rm{BEC}}$ where $L_{\rm{BEC}$ is the spatial size of the BEC. On the other hand, the typical momentum width of the quantum depletion is $1/\xi$. \NOTE{WHAT ABT THERMAL DEPLETION?}. Since $\xi \ll L_{\rm{BEC}}$, $1/\xi \gg 1/L_{\rm{BEC}}$ meaning that the depletion extends on a much larger momentum area than the BEC. This provides us with a natural to separate the condensate from its depletion and defines one of the experimental ingredient: we need an experimental setup allowing us to exclude \NOTE{FINIR MOCHE}
+
 
 \subsection{Finite temperature effects}
 
+Another parameter that we must be very careful of is the temperature. In an ideal situation, we would conduct the experiment at zero temperature where the depletion is entirely quantum and all atoms consequently \kmk paired. Obviously this is impossible to do in practice and the experiment will always be done at finite temperature.
+
+Temperature is an absolutely crucial parameter when measuring \kmk correlations as it sets the population of the thermal depletion, {\it i.e.} the population of the Bogoliubov quasi-particles (see equation \ref{eq:bose_qp}). At first glance, if the temperature is too high, the thermally depleted atoms will significantly outnumber the quantum depleted ones and it will then be impossible to detect the \kmk correlations. However, this observation needs to be nuanced as the thermal depletion can also show \kmk correlations, albeit for different reasons than the quantum depletion. As discussed in \ref{sec:spectrum}, for low $k$ values such as $k \xi \ll 1$, the Bogoliubov quasi-particles have a strong phononic character and therefore exhibits \kmk correlations in terms of real particles. Nonetheless, this low $k$ region corresponds more or less to the region that will need to be removed to exclude the BEC from the analysis (experimental numbers will be given in Chapter 4). We therefore do not have to care for the contribution of the thermal depletion to the \kmk correlation signal that will in our case only reflect the quantum depletion correlations.
+
+In order to quantify the effect of temperature, we compare the typical thermal energy $k_B T$ to the chemical potential of the condensate $\mu$ quantifying the effect of interactions. We aim to be in an experimental regime where $k_B T \ll \mu$, {\it i.e.} where interactions effects dominate temperature effect. The first idea that comes to mind is then to reduce the temperature as much as possible. We however quickly hit a brick wall: the lowest temperature in ultracold experiments are obtained through evaporative cooling. This process will detailed in Chapter 3 but we can quickly give here the main idea, which is to remove the hottest atoms of the gas to let the other thermalize at a colder temperature. We quickly see the problem here: if we further evaporatively cool the gas, we lose more atoms, reduce the density therefore reduce the effect of interactions and make no progress. This method allows us to typically reach $k_B T \sim \mu$ which is not sufficient to ensure the proper detection of \kmk correlations.
+
+We are thus left with one only possible solution which is to increase the interactions. To this end, we will use a \textbf{3D optical lattice}. As a brief overview, a 3D optical lattice is formed by interference of 3 pairs of countra-propagating beams, one for each direction of space. The interferences create a sinusoidal potential trapping the atoms at the minimum (\NOTE{CHECK}) of the light intensity profile, {\it i.e.} in periodically arranged wells, mimicking a condensed matter crystal. In our case, the density will increased inside of the individual wells as a result of higher local trapping frequencies, allowing us to increase the strength of interactions.
+
+\section{Conclusion}
+
+In this chapter, we have shown that correlation functions are an important and powerful tool that was first developed to describe classical effects of the light such as interferences. \NOTE{BLAH BLAH HBT}. These functions were then latter used in atomic physics and are of great interest to characterize \textbf{many-body interacting} systems. We made the proposition to study one of the simplest many-body system, the weakly-interacting Bose gas described by the Bogoliubov theory that we detailed the main lines of. We have shown that the Bogoliubov theory predicts the existence of the quantum depletion, a fraction of atoms removed from the condensate through the interplay between interactions and quantum fluctuations, and that we expect these atoms to form \kmk correlated pairs, that we will aim to detect by measuring second-order correlation functions. To this end, we have devised that our experimental setup should:
+
+\begin{itemize}
+    \item Detect single atoms in momentum space.
+    \item Isolate the contribution of the depletion from the one of condensed atoms.
+    \item Be in the low-temperature regime where interactions dominate temperature effects $k_B T \ll \mu $. 
+\end{itemize}
+
+We decided for this last point to use 3D optical lattices that we will discuss in details in the next chapter of this thesis.
