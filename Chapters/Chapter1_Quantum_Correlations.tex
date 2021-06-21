@@ -28,7 +28,7 @@ Let us begin our journey with correlation functions with the simple example of t
 \end{figure}
 
 
-To illustrate where correlation functions come from, let us begin by taking a look at time coherence in the emblematic Michelson interferometer (see Fig.-\ref{fig:michelson}). We send at the input of the interferometer a complex light field $E(t)$. The intensity measured by the detector writes:
+To illustrate where correlation functions come from, let us begin by taking a look at time coherence in the emblematic Michelson interferometer (see Fig.-\ref{fig:michelson}). For simplicity sake, we will not discuss spatial coherence effects and will thus consider a punctual source producing a complex light field $E(t)$ that we send into the interferometer. The intensity measured by the detector writes:
 
 \begin{equation}
     I=\mean{\abs{E(t)+E(t-\tau)}^2}
@@ -39,23 +39,144 @@ where $\mean{...}$ denotes the time average made by the detector and $\tau=\frac
 
 \begin{equation}
     I=\mean{\abs{E(t)}^2} + \mean{\abs{E(t-\tau)}^2} + 2 {\rm{Re}} \mean{E(t) E^*(t-\tau)}
+    \label{eq:def_g1}
 \end{equation}
 
-For simplicity sake, let's assume that the source is stationary to write $\mean{\abs{E(t)}^2} = \mean{\abs{E(t-\tau)}^2} = I_0$, we then obtain :
+For simplicity sake, let us assume that the source is stationary to write $\mean{\abs{E(t)}^2} = \mean{\abs{E(t-\tau)}^2} = I_0$, we then obtain :
 
 \begin{equation}
     I= 2 I_0 (1 + {\rm{Re}} (g^{(1)} (\tau))) \ , \ g^{(1)} (\tau) = \frac{ \mean{E(t) E^*(t-\tau)}}{\mean{\abs{E}^2}}
 \end{equation}
 
-We have introduced the normalized \textbf{first-order correlation function} $g^{(1)}$ that characterizes the interference term. If $E(t)$ and $E(t-\tau)$ are independent and thus uncorrelated, $\mean{E(t) E^*(t-\tau)} = \mean{E(t)} \mean{ E^*(t-\tau)}=0$ and interference cannot be observed \NOTE{corriger}. On the other hand, if there is a \textbf{correlation} between these two quantities, an interference phenomenon can be observed. The same reasoning can be conducted for the spatial coherence for instance with the non less famous Young double slit experiment. 
+We have introduced the normalized \textbf{first-order correlation function} $g^{(1)}$ that characterizes the interference term. If $E(t)$ and $E(t-\tau)$ are independent and thus uncorrelated, $\mean{E(t) E^*(t-\tau)} = \mean{E(t)} \mean{ E^*(t-\tau)}=0$ and interference cannot be observed \NOTE{corriger}. On the other hand, if there is a \textbf{correlation} between these two quantities, an interference phenomenon can be observed. 
 
-We will not detail here all the intricacies of the study of first-order correlation functions for different light sources. The main point to remember is that the first order correlation function is a natural way to characterize the coherence properties of a light source, and thus its ability to produce interferences. 
+To illustrate what kind of information are contained in this first-order correlation function, let us compute it for the simple case of a monochromatic light source of frequency $\omega_0$. The light field writes:
+
+\begin{equation}
+    E(t)=E_0 e^{i \omega_0 t}
+\end{equation}
+
+From this, we calculate the first-order correlation function:
+
+\begin{equation}
+    g^{(1)} (\tau) = \frac{|E_0|^2 \mean{e^{i\omega_0 t} e^{i \omega_0 (t-\tau)}}}{|E_0|^2} = e^{i \omega_0 \tau}
+\end{equation}
+
+The detected intensity is thus a perfect sinusoidal function of $\tau$ that is scanned by changing the position of the second mirror and thus the value of $x$:
+
+\begin{equation}
+I(x)= 2 I_0 (1+\cos(\omega_0 \frac{2x}{c}))
+\end{equation}
+
+Measuring the intensity pattern as a function of $x$ thus gives a measurement of $\omega_0$. What happens if we make things slightly more complex a light source with two monochromatic compononents $\omega_1$ and $\omega_2$? The new light field writes:
+
+\begin{equation}
+    E(t)= E_1 e^{i \omega_1 t} + E_2 e^{i \omega_2 t}
+\end{equation}
+
+Let us compute the numerator of the first-order correlation function:
+
+\begin{equation}
+       \mean{E(t) E^*(t-\tau)} & = \mean{|E_1|^2 e^{i \omega_1 \tau} + |E_2|^2 e^{i \omega_2 \tau} + E_1 E_2^* e^{i \omega_2 \tau} e^{i (\omega_1 - \omega_2)t} + E_2 E_1^* e^{i \omega_1 \tau} e^{i (\omega_2 - \omega_1)t}}  
+\end{equation}
+
+In most practical situations, the detector time average is large compared to $1/(\omega_1 - \omega_2)$, the two last terms thus get averaged out. If we consider the simple case where $|E_1|^2=|E_2|^2$, the normalized first-order correlation function writes:
+
+\begin{equation}
+    g^{(1)} (\tau) = \frac{1}{2} (e^{i \omega_1 \tau} + e^{i \omega_2 \tau})
+\end{equation}
+
+We simply get the sum of the contribution of the two frequencies. The intensity pattern as a function of $x$ is thus the sum of two cosine functions with different frequencies. Using trigonometric identities, we find that the intensity pattern consists of a "fast" oscillation of frequency $\omega_0=(\omega_1 + \omega_2)/2$, modulated by a "slow" oscillation of frequency $\Delta \omega = |\omega_1 - \omega_2|$, reducing the visibility of the interference pattern (see Fig.-\ref{fig:michelson_two_lambda}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.78\textwidth]{Fig/Chapter1/michelson_two_lambda.png}
+    \caption{Intensity pattern for a light source with two monochromatic component of frequencies $\omega_1$ and $\omega_2$. The fast oscillation of frequency $\omega_0=(\omega_1+\omega_2)/2$ is modulated by a slow oscillation of frequency $\Delta \omega = |\omega_1 - \omega_2|$.}
+    \label{fig:michelson_two_lambda}
+\end{figure}
+
+Through this very simple example, we understand that the observed interference pattern strongly depends on the spectrum of the source. This is quantified by the \textbf{Wiener-Khintchine} theorem. For a source with an arbitrary spectrum $S(\omega)$, the overall intensity pattern results of the sum of the contribution of each spectral component:
+
+\begin{equation}
+    I=\int_{-\infty}^{\infty} 2 S(\omega)[1+\cos (\omega \tau)] \mathrm{d} \omega
+\end{equation}
+
+Writing $\int_{-\infty}^{\infty} S(\omega) \mathrm{d} \omega=I_{0}$ and $s(\omega)=S(\omega) / I_{0}$, we obtain
+
+\begin{equation}
+    I=2 I_{0}\left[1+\int_{-\infty}^{\infty} s(\omega) \cos (\omega \tau) \mathrm{d} \omega\right]
+\end{equation}
+
+Since $s(\omega)$ is real, we can rewrite:
+
+\begin{equation}
+    I=2 I_{0}\left[1+\mathrm{Re} \left(\int_{-\infty}^{\infty} s(\omega) \cos (\omega \tau) \mathrm{d} \omega\right)\right]
+\end{equation}
+
+From which we get, using equation \ref{eq:def_g1}:
+
+\begin{equation}
+    g^{(1)}(\tau)=\int_{-\infty}^{\infty} s(\omega) \mathrm{e}^{\mathrm{i} \omega \tau} \mathrm{d} \omega
+\end{equation}
+
+where we recognize the formula of the Fourier transform. We have thus seen that the first-order correlation function, measurable with an interferometric measurement, contains information about the spectrum of the light source. 
 
 
 
+% Note that this is only one example in the ensemble of the many possible applications of the study of first-order correlation. We can also quote for instance the characterization of the spatial coherence of a non punctual source with the famous Young's slits experiment. 
+
+In this introductory paragraph, we have seen a concrete and evocative example of how correlation functions can be used to obtain meaningful information about a given system, here a light source, with the simplest correlation function there is, correlating two values of the light field. At this point, the link with our initial goal, {\it i.e.} characterizing quantum many-body interacting systems, do not seem so clear. As we mentioned earlier, interactions induce correlations between several particles for which we will need higher order correlation functions. Let us now take the next step in this direction and look at \textbf{second-order correlation functions}. We will do so still in the context of optics for which this formalism was historically developed and that provides well-known, easy to understand examples.
+
+% The same reasoning can be conducted for the spatial coherence for instance with the non less famous Young double slit experiment. 
+
+% We will not detail here all the intricacies of the study of first-order correlation functions for different light sources. The main point to remember is that the first order correlation function is a natural way to characterize the coherence properties of a light source and thus contains a lot of meaningful information.
 
 
-\subsection{Classical example : HBT with chaotic light}
+\subsection{Second order correlation function of light: The Hanbury Brown and Twiss effect}
+
+The idea to use the second-correlation function of light was introduced by Hanbury Brown and Twiss in their really famous 1956 article \cite{brown1954lxxiv}, as a mean to improve the resolution of the Michelson interferometer for measuring the size of the stars. To understand how it works, we will take another approach than the one developed in the last paragraph and look at the spatial properties of the light source. 
+
+We consider an incoherent, non-punctual, monochromatic (wavelength $\lambda$) light source and write $S$ the surface of the source. We model it as an ensemble of elementary, punctual and incoherent emitters and note their spatial location $\bm{s}$. The amplitude at a point $\bm{r}$ in an observation plane situated at distance $L$, far-away from the source so that we are in the Fraunhofer regime $L \gg \lambda, r,s$, writes:
+
+\begin{equation}
+    A(\bm{r}) \propto \int_{S} a(\bm{s}) e^{\frac{i \pi}{\lambda L}|\bm{r}-\bm{s}|^{2}} d \bm{s}
+    \label{eq:amp_HBT}
+\end{equation}
+
+The second-order correlation function correlates the values of the intensity of the light field at two different points of space $\bm{r}_1$ and $\bm{r}_2$. In terms of field amplitude, it corresponds to the four-term correlator:
+
+\begin{equation}
+    G^{(2)} (\bm{r}_1,\bm{r}_2) = \mean{A^*(\bm{r}_1) A(\bm{r}_1) A^*(\bm{r}_2) A(\bm{r}_2)}
+\end{equation}
+
+All the elementary emitters are incoherent and thus each have a random phase value, determined by an uniform probability law defined on the interval $[0,2\pi]$ (\NOTE{INTRODUIRE CHAOTIC}). They thus form an ensemble of \textbf{independent} random variables with the \textbf{same statistics}. We can therefore apply the Central Limit Theorem to find that the variable $A$ follows Gaussian statistics. This allows us to simplify the four-term correlator into:
+
+\begin{equation}
+     G^{(2)} (\bm{r}_1,\bm{r}_2) = \mean{I(\bm{r}_1)} \mean{I(\bm{r}_2)} + \mean{A^*(\bm{r}_1) A(\bm{r}_2)} \mean{A(\bm{r}_1) A^*(\bm{r}_2)}
+\end{equation}
+
+We recognize in the second term the spatial counterpart of the temporal first-order correlation function discussed in the previous paragraph. Using equation \ref{eq:amp_HBT}, we obtain:
+
+\begin{equation}
+    G^{(1)}\left(\bm{r}_{1}, \bm{r}_{2}\right)=\left\langle A^*(\bm{r}_1) A(\bm{r}_2)\right\rangle \propto \iint_{S}\left\langle a^{*}(\bm{s}_1) a(\bm{s}_2)\right\rangle e^{-\frac{i \pi}{\lambda L}\left(\left|\bm{r}_{1}-\bm{s}_1\right|^{2}-\left|\bm{r}_{2}-\bm{s}_2\right|^{2}\right)} \mathrm{d} \bm{s}_1 \mathrm{d} \bm{s}_2
+\end{equation}
+
+Since the source is incoherent, we simplify $\left\langle a^{*}(\bm{s}_1) a(\bm{s}_2)\right\rangle = I(\bm{s}_1) \delta_{\bm{s}_1,\bm{s}_2}$, giving
+
+\begin{equation}
+    G^{(1)}\left(\bm{r}_{1}, \bm{r}_{2}\right) \propto \iint_{S} I(\bm{s}_1) e^{-\frac{2 i \pi}{\lambda L}\left(\bm{r}_{1}-\bm{r}_{2}\right) \bm{s}_1} \mathrm{d} \bm{s}_1 d \bm{s}_2
+\end{equation}
+
+In analogy with what we showed in the last paragraph for the temporal coherence, the first-order spatial correlation function is the Fourier transform of the spatial intensity profile. 
+
+In a nutshell, the second-order normalized correlation function has the simple expression:
+
+\begin{equation}
+    \gtwo (\bm{r}_1,\bm{r}_2) = \frac{\mean{I(\bm{r}_1)} \mean{I(\bm{r}_2)} + \mean{A^*(\bm{r}_1) A(\bm{r}_2)} \mean{A(\bm{r}_1) A^*(\bm{r}_2)}}{\mean{I(\bm{r}_1)}\mean{I(\bm{r}_2)}} = 1 + |g^{(1)}(\bm{r}_1,\bm{r}_2)|^2
+\end{equation}
+
+Inter
+
 
 \subsection{HBT with the perfect Bose gas}
 
@@ -188,7 +309,7 @@ Let us now come back to the ground-state of the weakly-interacting Bose gas and 
 
 The common factor with quantum effects is that they usually defy our intuition built on our observation of the everyday world, well described by classical physics. In this case, the "quantum weirdness" comes from the fact this process seems to violate the conservation of energy: the two at atoms initially at rest each have an extra kinetic energy $\frac{\hbar^2 k^2}{2m}$ after the interaction process giving them the $\bm{k}$ and $-\bm{k}$ momenta. Naturally, the conservation of energy is still well respected here. The apparent contradiction comes from the fact that it is conceptually wrong to isolate two atoms in the BEC. The ground-state must rather be understood as a single many-body wave-function describing indistinguishable atoms, with a non zero component for momentum values $k \neq 0$. The energy of the many-body ground state of the weakly-interacting Bose gas contains a small correction that corresponds to the presence of the \kmk pairs of the quantum depletion. This small correction is called the Lee-Huang-Yang correction, named after the authors of the seminal 1957 article \cite{lee1957} that first predicted the presence of the \kmk pairs.
 
-Although being more than 60 years old, the prediction of the presence \kmk correlations in the ground-state of a weakly interacting Bose gas still lacks an experimental observation of the microscopic \kmk pairing. This will be the main objective and central theme of this thesis. As the \kmk pairing induces correlations between two individual particles, it is natural to use second order correlation functions to detect them as we will now discuss.
+\subsection{Finite temperature effects} functions to detect them as we will now discuss.
 
 
 
