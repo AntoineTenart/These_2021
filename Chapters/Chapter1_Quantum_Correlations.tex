@@ -1,5 +1,7 @@
 \chapter{Quantum correlations in the weakly-interacting Bose gas}
 
+\label{sec:chapter_1}
+
 \NOTE{TOUT CECI EST MAL ECRIT, A FAIRE EN FONCTION DES ARGUMENTS DE L'INTRO}
 
 One of the key and on-going challenges of quantum mechanics is to understand macroscopic systems containing a large number of particles $N$, commonly referred as many-body physics. Trying to consider all the possible degrees of freedom of each individual particle and interactions effects would result in an incredibly complex problem impossible to solve theoretically. Studying such systems thus require to use approximations ...
@@ -134,11 +136,18 @@ In this introductory paragraph, we have seen a concrete and evocative example of
 
 \subsection{Second order correlation function of light: The Hanbury Brown and Twiss effect}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Fig/Chapter1/HBT_apparatus.png}
+    \caption{Diagram of the historical Hanbury Brown and Twiss apparatus, taken from \cite{brown1956test}. The novelty of this apparatus was to use two detectors, $P_1$ and $P_2$, to measure the second-order correlation function.}
+    \label{fig:HBT_apparatus}
+\end{figure}
+
 \label{sec:hbt_classical}
 
-The idea to use the second-correlation function of light was introduced by Hanbury Brown and Twiss in their really famous 1955 article \cite{brown1954lxxiv}, as a mean to improve the resolution of the Michelson interferometer for measuring the size of the stars. To understand how it works, we will follow the complementary approach to the one developed in the last paragraph and look at the spatial properties of the light source. 
+In their really famous 1955 article \cite{brown1954lxxiv}, Hanbury Brown and Twiss proposed a new scheme relying on the measurement of cross-correlations between the intensities measured by two independent photodetectors (see Fig-\ref{fig:HBT_apparatus}), \ie a measurement of the second-order correlation function, as a mean to improve the resolution of the Michelson interferometer for measuring the size of the stars. To understand how it works, we will follow the complementary approach to the one developed in the last paragraph and look at the spatial properties of the light source. 
 
-We consider an incoherent, non-punctual, monochromatic (wavelength $\lambda$) light source and write $S$ the surface of the source. We model it as an ensemble of elementary, punctual and incoherent emitters and note their spatial location $\bm{s}$. The amplitude at a point $\bm{r}$ in an observation plane situated at distance $L$, far-away from the source so that we are in the Fraunhofer regime $L \gg \lambda, r,s$, writes (see Fig-.\ref{fig:source_and_plane}):
+We consider an incoherent, non-punctual, monochromatic (wavelength $\lambda$) light source and write $S$ the surface of the source. We model it as an ensemble of elementary, punctual and independent emitters and note their spatial location $\bm{s}$. The amplitude at a point $\bm{r}$ in an observation plane situated at distance $L$, far-away from the source so that we are in the Fraunhofer regime $L \gg \lambda, r,s$, writes (see Fig-.\ref{fig:source_and_plane}):
 
 \begin{equation}
     A(\bm{r}) \propto \int_{S} a(\bm{s}) e^{\frac{i \pi}{\lambda L}|\bm{r}-\bm{s}|^{2}} d \bm{s}
@@ -194,12 +203,12 @@ In a nutshell, the second-order normalized correlation function has the simple e
 
 \noindent The size of the source can thus be obtained by progressively increasing the distance between the two detectors and measuring the length scale on which the second order correlation function decreases. This was done successfully by Hanbury Brown and Twiss \cite{brown1956test} to measure the size of Sirius in 1956.
 
-If we take a deeper look at what happens for $\bm{r}_1=\bm{r}_2$, we see that a peculiar phenomenon occurs. The normalized second-order correlation function can be interpreted as the probability to detect simultaneously two photons on the detector located at $\bm{r}_1$ and $\bm{r}_2$, normalized by the probability to detect them independently. Therefore, since $\gtwo (\bm{r}_1,\bm{r}_2)=2$ for $\bm{r}_1=\bm{r}_2$, the probability to detect two photons at the same position is twice as high as it is to detect them independently! This effect has been named the Hanbury Brown and Twiss effect or \textbf{bosonic bunching}. While this effect bears a fully classical explanation for non quantized light fields, a quantum interpretation was suggested by Fano in 1961 \cite{fano1961quantum}. Considering a pair of source points A and B and two detectors 1 and 2, Fig-.\ref{fig:HBT_scheme} illustrates the two possibilities for a joint detection of two photons on the couple of detectors. For indistinguishable photons, the paths amplitudes interfere constructively resulting in a joint detection probability higher than for independent events. While the interference effect is averaged out considering all the possible pairs of elementary emitters in the source, it can be observed when the distance between the two detectors is very close to zero, as observed by Hanbury Brown and Twiss. Interestingly, the interferences are destructive for fermions, resulting in a reduced probability of joint detection, also referred as \textbf{anti-bunching}, an effect than cannot be explained classically contrary to the Hanbury Brown and Twiss effect. 
+If we take a deeper look at what happens for $\bm{r}_1=\bm{r}_2$, we see that a peculiar phenomenon occurs. The normalized second-order correlation function can be interpreted as the probability to detect simultaneously two photons on the detector located at $\bm{r}_1$ and $\bm{r}_2$, normalized by the probability to detect them independently. Therefore, since $\gtwo (\bm{r}_1,\bm{r}_2)=2$ for $\bm{r}_1=\bm{r}_2$, the probability to detect two photons at the same position is twice as high as it is to detect them independently! This effect has been named the Hanbury Brown and Twiss effect or \textbf{bosonic bunching}. While this effect bears a fully classical explanation for non quantized light fields, its quantum interpretation puzzled the physicists of the time. It was only after a few years that an explanation was suggested by Fano in 1961 \cite{fano1961quantum}. Considering a pair of source points A and B and two detectors 1 and 2, Fig-.\ref{fig:HBT_scheme} illustrates the two possibilities for a joint detection of two photons on the couple of detectors. For indistinguishable photons, the paths amplitudes interfere constructively resulting in a joint detection probability higher than for independent events. While the interference effect is averaged out considering all the possible pairs of elementary emitters in the source, it can be observed when the distance between the two detectors is very close to zero, as observed by Hanbury Brown and Twiss. Interestingly, the interferences are destructive for fermions, resulting in a reduced probability of joint detection, also referred as \textbf{anti-bunching}, an effect than cannot be explained classically contrary to the Hanbury Brown and Twiss effect. 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.55\textwidth]{Fig/Chapter1/HBT_scheme.png}
-    \caption{Quantum interpretation of the Hanbury Brown and Twiss effect. For two source points A and B, a joint detection occurs if a photon produced by A is detected in 1 and a photon produced by B is detected in 2 (red arrows), or the other way around A $\rightarrow$ 2 and B $\rightarrow$ 1 (green arrows).}
+    \caption{Quantum interpretation of the Hanbury Brown and Twiss effect. For two source points A and B, a joint detection occurs if a photon produced by A is detected in 1 and a photon produced by B is detected in 2 (red arrows), or the other way around A $\rightarrow$ 2 and B $\rightarrow$ 1 (green arrows). Interferences of the paths amplitudes explain the Hanbury Brown and Twiss effect.}
     \label{fig:HBT_scheme}
 \end{figure}
 
@@ -207,14 +216,14 @@ At this point we want to underline, as it will be a crucial point in the followi
 
 % This is notably not the case for laser light which is fully coherent and results in $\gtwo (\bm{r}_1,\bm{r}_2)=1$ for all values of $\bm{r}_1$ and $\bm{r}_2$.
 
-To summarize, we have seen in this paragraph an example of a second-order correlation effect, the Hanbury Brown and Twiss effect, and its classical description with a chaotic light source. The observations of Hanbury Brown and Twiss sparked interest in the community and lead to the development of the new formalism of quantum optics \cite{glauber1963quantum} with quantized light fields or light particles, {\it i.e.} photons, with the great success that we know of today. The ``problem'' with photons however is that they are essentially mass-less, non-interacting particles, which is not what we want to study. In order to add interactions into these famous quantum optics problems, physicists naturally turned to atoms. As a matter of fact, the quantum optics formalism for photons can be extended quite easily to matter and atoms and gives an incentive to reproduce famous quantum optics effects with massive particles.
+To summarize, we have seen in this paragraph an example of a second-order correlation effect, the Hanbury Brown and Twiss effect, and its classical description with a chaotic light source. The observations of Hanbury Brown and Twiss sparked interest in the community and lead to the development of the new formalism of Quantum Optics \cite{glauber1963quantum} with quantized light fields or light particles, {\it i.e.} photons, with the great success that we know of today. The ``problem'' with photons however is that they are essentially mass-less, non-interacting particles, which is not what we want to study. In order to add interactions into these famous quantum optics problems, physicists naturally turned to atoms. As a matter of fact, the quantum optics formalism for photons can be extended quite easily to matter and atoms and gives an incentive to reproduce famous quantum optics effects with massive particles.
 
 In the next paragraph, we will give the main elements of the theory of Quantum Optics and their extension to atomic physics. This will allow us to understand correlations at the single particle level and to build a bridge between the Optics examples we have described so far and our subject of interest, the study of correlation functions in many-body interacting systems.
 
 
 \subsection{Second quantization and correlations with individual particles}
 
-The first quantum theories, such as the one developed by Planck to described blackbody radiation, were in fact semiclassical theories in the sense that only the energy of the atoms is quantized, while the radiation fields are still described classically. While semiclassical theories found great success, the observations of Hanbury Brown and Twiss, as well as the development of laser light called for a theory accounting for the corpuscular aspect of light. This gave birth to the Quantum Optics theory whose core element is to push further the idea of quantization by quantizing the radiation fields. While the term is most often associated with atomic physics as we will see later on, we can speak here of \textbf{second quantization}, the first quantization being the one of the energy.
+The first quantum theories, such as the one developed by Planck to describe black-body radiation, were in fact semi-classical theories in the sense that only the energy of the atoms is quantized, while the radiation fields are still described classically. While semi-classical theories found great success, the observations of Hanbury Brown and Twiss, as well as the development of laser light called for a theory accounting for the corpuscular aspect of light. This gave birth to the Quantum Optics theory whose core element is to push further the idea of quantization by quantizing the radiation fields. While the term is most often associated with atomic physics as we will see later on, we can speak here of \textbf{second quantization}, the first quantization being the one of the energy.
 
 The general idea behind the quantization of the light field is to describe it as a collection of independent quantum harmonic oscillators for the different modes of the field. For a field defined in a box of volume $V=L^3$ with periodic boundary conditions, the field can be described as a superposition of plane waves with a wave vector $k=\frac{2 \pi}{L} n$ with $n \in \N$ each described by a harmonic oscillator \cite{walls2008}:
 
@@ -242,20 +251,21 @@ To show the effect of $\hat{a}_{l}$ and $\hat{a}_{l}^{\dagger}$, we introduce th
 \noindent From this, we see that every Fock state can be obtained by applying the creation operator on the vacuum state the right amount of times:
 
 \begin{equation}
-    \left|n_{l}\right\rangle=\frac{1}{\sqrt{n_{\alpha} !}}\left(a_{l}^{\dagger}\right)^{n_{l}}\left|0\right\rangle
+    \left|n_{l}\right\rangle=\frac{1}{\sqrt{n_{l} !}}\left(\hat{a}_{l}^{\dagger}\right)^{n_{l}}\left|0\right\rangle
 \end{equation}
 
 
-Finally we can write the Hamiltonian as:
+\noindent Finally we can write the Hamiltonian as:
 
 \begin{equation}
     \hat{H}=\sum_{l} \hbar \omega_{l}\left(\hat{N}_{l}+\frac{1}{2}\right)
 \end{equation}
 
+\noindent with $\hbar \omega_l$ being the energy of a photon in mode $l$.
 
 \subsubsection{Coherent state and correlation functions}
 
-As we have seen in the last sub-sections, there is a strong connection between correlation functions and the notion of coherence. Motivated by Hanbury Brown and Twiss experiment measurement involving intensity measurements, Roy J. Glauber introduced in a very famous paper of 1963 \cite{glauber1963quantum} the notion of $n-$th order coherence in the formalism of Quantum Optics through correlation functions as we will see now.
+As we have seen in the last paragraphs, there is a strong connection between correlation functions and the notion of coherence. Motivated by the measurement of cross-correlation between two photodetectors by Hanbury Brown and Twiss, Roy J. Glauber introduced in a very famous paper of 1963 \cite{glauber1963quantum} the notion of $n$-th order coherence in the formalism of Quantum Optics and linked it to $n$-th order correlation functions, as we will see now.
 
 We have talked so far about correlation functions of up to the second order. The concept of correlation functions can be extended to any order $n$ to describe to probability of joint detection of $n$ photons at a set of positions and parameters $\{(\bm{r}_1,t_1),(\bm{r}_2,t_2),...,(\bm{r}_n,t_n)\}$: 
 
@@ -272,7 +282,7 @@ Likewise, we introduce the normalized $n-$th order correlation function.
     g^{(n)}\left(\bm{r}_{1}, t_{1}, ...,  \bm{r}_{n}, t_{n}\right)=\frac{G^{(n)}\left(\bm{r}_{1}, t_{1}, ...,  \bm{r}_{n}, t_{n}\right)}{\displaystyle \prod_{j=1}^{n} G^{(1)}\left(\bm{r}_{1}, t_{1}, ..., \bm{r}_{n}, t_{n}\right)}
 \end{equation}
 
-\noindent From this definition, we define a fully coherent field as a field that verifies, for any value of $n \in \N^*$:
+\noindent From this definition, we define a fully coherent field as a field that verifies, for any value of $n \in \N^*$ \cite{glauber1963quantum}:
 
 \begin{equation}
     g^{(n)}\left(\bm{r}_{1}, t_{1}, ...,  \bm{r}_{n}, t_{n}\right)  = 1
@@ -282,7 +292,7 @@ Likewise, we introduce the normalized $n-$th order correlation function.
 \noindent This means that for a fully coherent field, we have the simple relation:
 
 \begin{equation}
-    G^{(j)}\left(\bm{r}_{1}, t_{1}, ... , \bm{r}_{n}, t_{n}\right) = \prod_{i=1}^{j} G^{(j)}(\bm{r}_{i}, t_{i})
+    G^{(j)}\left(\bm{r}_{1}, t_{1}, ... , \bm{r}_{j}, t_{j}\right) = \prod_{i=1}^{j} G^{(j)}(\bm{r}_{i}, t_{i})
     \label{eq:cond_G_coherent}
 \end{equation}
 
@@ -343,9 +353,7 @@ This is formalism is particularly useful to describe light sources made of a lar
 \begin{equation}
     \hat{\rho}=\frac{1}{1+\langle n\rangle} \sum_{m=0}^{\infty}\left(\frac{\langle n\rangle}{1+\langle n\rangle}\right)^{m}|m\rangle\langle m|
     \label{eq:rho_chaotic}
-\end{equation}This time-dependent problem is best solved in the interaction picture, {\it i.e.} where the time dependence is carried by the operators and not the states. The interaction Hamiltonian then writes:
-
-
+\end{equation}
 
 \noindent The probability to find $m$ photons then writes (see Fig.-\ref{fig:light_statistics}):
 
@@ -355,7 +363,7 @@ This is formalism is particularly useful to describe light sources made of a lar
 \end{equation}
 
 
-\noindent A light source following these statistics is called a \textbf{chaotic} light source. This is notably the case of thermal light, described by the Planck's distribution with $\mean{n}=1/(e^{h\nu/\kB T}-1)$. From equation \ref{eq:chaotic_light}, we show that the variance of the photon number $N$ writes:
+\noindent A light source with these statistics is called a \textbf{chaotic} light source. This is notably the case of thermal light, described by the Planck's distribution with $\mean{n}=1/(e^{h\nu/\kB T}-1)$. From equation \ref{eq:chaotic_light}, we show that the variance of the photon number $N$ writes:
 
 \begin{equation}
     \sigma_N^2=\mean{N}^2+\mean{N}
@@ -379,13 +387,13 @@ where $\sigma$ denotes all possible permutations changing the order $1,2,...,2m$
 
 \end{tcolorbox}
 
-As shown in equations \ref{eq:p_alpha} and \ref{eq:rho_chaotic}, the density matrix of a chaotic light source is Gaussian, it is therefore possible to use Wick's theorem to simplify the second-order correlation function exactly as we did classically in \ref{hbt_classical} :
+As shown in equations \ref{eq:p_alpha} and \ref{eq:rho_chaotic}, the density matrix of a chaotic light source is Gaussian, it is therefore possible to use Wick's theorem to simplify the second-order correlation function exactly as we did classically in \ref{sec:hbt_classical} :
 
 \begin{equation}
     \gtwo \left(\bm{r}_{1}, t_{1}, \bm{r}_{2}, t_{2}\right) = 1 + |g^{(1)}\left(\bm{r}_{1}, t_{1}, \bm{r}_{2}, t_{2}\right)|^2
 \end{equation}
 
-\noindent As $g^{(1)}\left(\bm{r}_{1}, t_{1}, \bm{r}_{2}, t_{2}\right)=1$ for $\bm{r}_1=\bm{r}_2$ and $t_1=t_2$, we find back that $\gtwo \left(\bm{r}_{1}, t_{1}, \bm{r}_{2}, t_{2}\right)=2$ for $\bm{r}_1=\bm{r}_2$ and $t_1=t_2$. Actually, this procedure can be extended up to any order to show that the $n$-th order correlation function can be simplified to a linear combination of first order correlation functions. This means that the entirety of the information is contained in the first order correlation function. This gives that the normalized probability of joint detection of $n$ photons writes:
+\noindent As $g^{(1)}\left(\bm{r}_{1}, t_{1}, \bm{r}_{2}, t_{2}\right)=1$ for $\bm{r}_1=\bm{r}_2$ and $t_1=t_2$, we find back that $\gtwo \left(\bm{r}_{1}, t_{1}, \bm{r}_{2}, t_{2}\right)=2$ for $\bm{r}_1=\bm{r}_2$ and $t_1=t_2$. Actually, this procedure can be extended up to any order to show that the $n$-th order correlation function can be simplified to a linear combination of first order correlation functions. This means that the entirety of the information is contained in the first order correlation function. The normalized probability of joint detection of $n$ photons then writes:
 
 \begin{equation}
     g^{(n)} (\bm{r}_1,...,\bm{r}_n,t_1,...,t_n) = n! \ \mathrm{for} \ \bm{r}_1=\bm{r}_2= ... =\bm{r}_n \ \mathrm{and} \ t_1=t_2=...=t_n
@@ -393,7 +401,7 @@ As shown in equations \ref{eq:p_alpha} and \ref{eq:rho_chaotic}, the density mat
 
 \noindent which is a generalisation of the two particles bosonic bunching, seen previously, for $n$ particles. On a side note, notice that Wick's theorem does not apply to laser light as the density matrix describing it is not Gaussian.
 
-We have thus seen how the Hanbury Brown and Twiss effect can be explained in the formalism of Quantum Optics and shown the differences between a coherent and chaotic light source. We will keep this result in the back of our minds as it will be of primary importance when we will study second order correlation functions with interacting atoms a little further down the line.
+We have thus seen how the Hanbury Brown and Twiss effect writes in the formalism of Quantum Optics and shown the differences between a coherent and chaotic light source. We will keep this result in the back of our minds as it will be of primary importance when we will study second order correlation functions with interacting atoms a little further down the line.
 
 
 
@@ -411,7 +419,7 @@ The key point is to switch things around by counting the number of particles in 
    \ket{ \{n_{\alpha}\}} = \ket{n_1,n_2,...,n_{\alpha},...}
 \end{equation}
 
-\noindent where $n_{\alpha}$ denotes the number of particles in state $\alpha$. For fermions, this number is either 0 or 1 because of the Pauli exclusion principle, whereas it can be any integer value for bosons. We recognize the states $\ket{ \{n_{\alpha}\}}$ as the \textbf{Fock states} described in the last paragraph. As for quantum optics, we introduce creation and annihilation operators $\hat{a}^{\dagger}_{\alpha}$ and $\hat{a}_{\alpha}$ respectively creating or destroying a particle in state $\alpha$. For bosons on which this thesis will be focused:
+\noindent where $n_{\alpha}$ denotes the number of particles in state $\alpha$. For fermions, this number is either 0 or 1 because of the Pauli exclusion principle, whereas it can be any integer value for bosons. We recognize the states $\ket{ \{n_{\alpha}\}}$ as the \textbf{Fock states} described in the last paragraph. As for Quantum Optics, we introduce creation and annihilation operators $\hat{a}^{\dagger}_{\alpha}$ and $\hat{a}_{\alpha}$ respectively creating or destroying a particle in state $\alpha$. For bosons on which this thesis will be focused:
 
 \begin{equation}
     \hat{a}_{\alpha}^{\dagger} \ket{n_{\alpha}}=\sqrt{n_{\alpha}+1}\left|n_{\alpha}+1\right\rangle
@@ -450,7 +458,7 @@ We now go back to the problem of the weakly-interacting Bose gas with contact in
 \noindent With these approximations, the simplified Hamiltonian writes:
 
 \begin{equation}
-    H_{\rm{bogo}}=\sum_{\bm{k}}\frac{\hbar^2 k^2}{2m} a^{\dagger}_{\bm{k}}  a_{\bm{k}} +  \frac{gn}{2} \sum_{\bm{k}} (a^{\dagger}_{\bm{k}} a^{\dagger}_{-\bm{k}} +a_{\bm{k}} a_{-\bm{k}})+\frac{gn\NBEC}{2}
+    H_{\rm{bogo}}=\sum_{\bm{k}}\frac{\hbar^2 k^2}{2m} \hat{a}^{\dagger}_{\bm{k}}  \hat{a}_{\bm{k}} +  \frac{gn}{2} \sum_{\bm{k}} (\hat{a}^{\dagger}_{\bm{k}} \hat{a}^{\dagger}_{-\bm{k}} +\hat{a}_{\bm{k}} \hat{a}_{-\bm{k}})+\frac{gn\NBEC}{2}
 \end{equation}
 
 \noindent with $n=\NBEC/V$. We now want to diagonalize the Hamiltonian. This is achieved through the linear Bogoliubov transformation where we introduce a new operator:
@@ -486,7 +494,7 @@ We now go back to the problem of the weakly-interacting Bose gas with contact in
 \noindent the famous Bogoliubov dispersion relation. The Hamiltonian has now been diagonalized and writes:
 
 \begin{equation}
-    \hat{H}_B = \sum_{\bm{k}}\varepsilon(k) b^{\dagger}_{\bm{k}}  b_{\bm{k}}+E_0
+    \hat{H}_B = \sum_{\bm{k}}\varepsilon(k) \hat{b}^{\dagger}_{\bm{k}}  \hat{b}_{\bm{k}}+E_0
 \end{equation}
 
 \noindent The system of interacting particles has thus been transformed into a system of non-interacting Bogoliubov quasi-particles associated to creation and annihilation operators $\hat{b}^{\dagger}_{\bm{k}}$ and $\hat{b}_{\bm{k}}$ with a dispersion relation $\varepsilon(k)$. The prediction of this excitation spectrum is one of the key results of Bogoliubov theory that we will now discuss in further details.
@@ -516,11 +524,11 @@ The transition between the two regimes occurs when $\frac{\hbar^2 k^2}{2m} \sime
     \xi = \sqrt{\frac{\hbar^2}{2mgn}}
 \end{equation}
 
-\noindent This length is called the \textbf{healing length}. This name comes from the fact the $\xi$ represent the length scale on which a local perturbation of the density is ``healed'' back to the bulk density.
+\noindent This length is called the \textbf{healing length}. Its name comes from the fact the $\xi$ represent the length scale on which a local perturbation of the density is ``healed'' back to the bulk density.
 
 %We will use it later when discussing our experimental results to characterize the region of the Bogoliubov spectrum we are probing.
 
-The Bogoliubov spectrum of excitation has been a very successful theoretical prediction observed experimentally in a large variety of systems \cite{miller1962, steinhauer2002excitation, ozeri2005, fontaine2018, stepanov2019}. However, the Bogoliubov theory also gives an additional prediction for the \textbf{ground-state} of the system.
+The Bogoliubov spectrum of excitations has been a very successful theoretical prediction observed experimentally in a large variety of systems \cite{fontaine2018,miller1962,ozeri2005,steinhauer2002excitation,stepanov2019}. This is not however all that is predicted by Bogoliubov theory. As we will now see, this theory can also be used to understand the \textbf{ground-state} of the system.
 
 \begin{figure}
     \centering
@@ -540,13 +548,13 @@ As we have just seen, the Bogoliubov approach describes the weakly-interacting B
     \label{eq:bose_qp}
 \end{equation}
 
-Naturally, at $T=0$, the population of quasi-particles is null: $\langle b^{\dagger}_{\bm{k}}  b_{\bm{k}} \rangle_{T=0}=0$. That being said, let us now write the population of real particles for a given momentum $k \neq 0$:
+\noindent Naturally, at $T=0$, the population of quasi-particles is null: $\langle \hat{b}^{\dagger}_{\bm{k}}  \hat{b}_{\bm{k}} \rangle_{T=0}=0$. That being said, let us now write the population of real particles for a given momentum $k \neq 0$:
 
 \begin{equation}
-    \langle a^{\dagger}_{\bm{k}}  a_{\bm{k}} \rangle=\textcolor{blue}{(|u_k|^2+|v_k|^2)\langle b^{\dagger}_{\bm{k}}  b_{\bm{k}} \rangle} + \textcolor{green}{|v_k|^2}
+    \langle \hat{a}^{\dagger}_{\bm{k}}  \hat{a}_{\bm{k}} \rangle=\textcolor{blue}{(|u_k|^2+|v_k|^2)\langle \hat{b}^{\dagger}_{\bm{k}}  \hat{b}_{\bm{k}} \rangle} + \textcolor{green}{|v_k|^2}
 \end{equation}
 
-\noindent The blue term corresponds to the Bogoliubov excitations populated by temperature. We will call the fraction of particles removed from the condensate this way the \textcolor{blue}{\textbf{thermal depletion}}. This fraction vanishes at $T=0$. Very interestingly, we see the apparition of an additional term \textcolor{green}{$|v_k|^2$} that results from the non commutation of the bosonic creation and annihilation operators, the signature of an essentially quantum phenomenon. This term tells us that $\langle a^{\dagger}_{\bm{k}}  a_{\bm{k}} \rangle_{T=0} \neq 0$, meaning that there are some atoms outside of the BEC with a non zero momentum in the ground state! Under the interplay between interactions and quantum fluctuations, some atoms are removed from the BEC and obtain a non zero momentum. The fraction of these atoms is called the \textcolor{green}{\textbf{quantum depletion}}. 
+\noindent The blue term corresponds to the Bogoliubov excitations populated by temperature. We will call the fraction of particles removed from the condensate this way the \textcolor{blue}{\textbf{thermal depletion}}. This fraction vanishes at $T=0$. Very interestingly, we see the apparition of an additional term \textcolor{green}{$|v_k|^2$} that results from the non commutation of the bosonic creation and annihilation operators, the signature of an essentially quantum phenomenon. This term tells us that $\langle \hat{a}^{\dagger}_{\bm{k}}  \hat{a}_{\bm{k}} \rangle_{T=0} \neq 0$, meaning that there are some atoms outside of the BEC with a non zero momentum in the ground state! Under the interplay between interactions and quantum fluctuations, some atoms are removed from the BEC and obtain a non zero momentum. The fraction of these atoms is called the \textcolor{green}{\textbf{quantum depletion}}. 
 
 We are thus looking at a system which seems to fall into our general area of interest described in the introduction of this thesis, namely many-body systems with interactions displaying quantum behaviors. The weakly-interacting Bose gas shows the advantage to be one of the conceptually simplest many-body systems for which a theory can be derived as we just have shown. As explained in the beginning of this chapter, many-body systems are often efficiently characterized by correlation functions. Let us now discuss what are the relevant correlation functions to study for the weakly-interacting Bose gas.
 
@@ -555,7 +563,7 @@ We are thus looking at a system which seems to fall into our general area of int
 
 \subsection{Pairing mechanism in the quantum depletion}
 
-Let us now come back to the ground-state of the weakly-interacting Bose gas and the quantum depletion. We will now try to build a microscopic, physically meaningful picture of how the quantum depletion emerges. We remind that a key ingredient of the Bogoliubov theory is that the only considered interaction processes are the ones involving two particles of the BEC or two particles outside of the BEC being brought into it. From this consideration, we understand that the atoms belonging to the quantum depletion were initially in the BEC and were removed from it after undergoing a two-body interaction process. The interaction process populating the quantum depletion thus involves two atoms in the BEC with a momentum $k \simeq 0$. To conserve the overall momentum, the two atoms leaving the BEC then have opposite momenta $\bm{k}$ and $-\bm{k}$ and form a momentum correlated pair. This falls exactly into the kind of signal we are interested in, namely correlations between several particles, here two, caused by a quantum, interaction-induced effect.
+We have seen in the last paragraph the mathematical approach that reveal the existence of the quantum depletion, but that seems hard to grasp in a physical manner. We therefore now look to build a microscopical, physically meaningful picture of how the quantum depletion emerges. We remind that a key ingredient of the Bogoliubov theory is that the only considered interaction processes are the ones involving two particles of the BEC or two particles outside of the BEC being brought into it. From this consideration, we understand that the atoms belonging to the quantum depletion were initially in the BEC and were removed from it after undergoing a two-body interaction process. The interaction process populating the quantum depletion thus involves two atoms in the BEC with a momentum $k \simeq 0$. To conserve the overall momentum, the two atoms leaving the BEC then have opposite momenta $\bm{k}$ and $-\bm{k}$ and form a momentum correlated pair. This falls exactly into the kind of signal we are interested in, namely correlations between several particles, here two, caused by a quantum, interaction-induced effect.
 
 \begin{figure}
     \centering
@@ -564,7 +572,7 @@ Let us now come back to the ground-state of the weakly-interacting Bose gas and 
     \label{fig:bec_pairs}
 \end{figure}
 
-The common factor with quantum effects is that they usually defy our intuition built on our observation of the everyday world, well described by classical physics. In this case, the ``quantum weirdness'' comes from the fact this process seems to violate the conservation of energy: the two at atoms initially \textbf{at rest} each have an extra kinetic energy $\frac{\hbar^2 k^2}{2m}$ after the interaction process giving them the $\bm{k}$ and $-\bm{k}$ momenta. Naturally, the conservation of energy is still well respected here. The apparent contradiction comes from the fact that it is conceptually wrong to isolate two atoms in the BEC. The ground-state must rather be understood as a single many-body wave-function describing indistinguishable atoms, with a non zero component for momentum values $k \neq 0$. The energy of the many-body ground state of the weakly-interacting Bose gas contains a small correction that corresponds to the presence of the \kmk pairs of the quantum depletion. This small correction is called the Lee-Huang-Yang correction, named after the authors of the seminal 1957 article \cite{lee1957} that first predicted the presence of the \kmk pairs.
+The common factor with quantum effects is that they usually defy our intuition built on our observation of the everyday world, well described by classical physics. In this case, the ``quantum weirdness'' comes from the fact this process seems to violate the conservation of energy: the two at atoms initially \textbf{at rest} each have an extra kinetic energy $\frac{\hbar^2 k^2}{2m}$ after the interaction process, giving them the $\bm{k}$ and $-\bm{k}$ momenta. Naturally, the conservation of energy is still well respected here. The apparent contradiction comes from the fact that it is conceptually wrong to isolate two atoms in the BEC. The ground-state must rather be understood as a single many-body wave-function describing indistinguishable atoms, with a non zero component for momentum values $k \neq 0$. The energy of the many-body ground state of the weakly-interacting Bose gas contains a small correction that corresponds to the presence of the \kmk pairs of the quantum depletion. This small correction is called the Lee-Huang-Yang correction, named after the authors of the seminal 1957 article \cite{lee1957} that first predicted the presence of the \kmk pairs. While they have already been experimental studies confirming the presence of quantum depleted atoms with large momentum \cite{sokol1995,xu2006} and the prediction of the quantum depleted fraction \cite{lopes2017}, the \kmk correlations in the ground-state have not yet been observed.
 
 The fascinating aspect of this \kmk pairing effect is that it occurs in an \textbf{at-equilibrium} system and therefore can only result from the effect of quantum fluctuations. Although we cannot draw a rigorous direct analogy, this kind of effect is reminiscent of other puzzling phenomenon such as Hawking radiation \cite{hawking1974} describing the evaporation of black holes where a pair of correlated photons is produced near the event horizon, or the creation of particle/anti-particle pairs from the vacuum. By studying this \kmk correlation signal, we can therefore study how quantum correlation and possibly entanglement emerges in at-equilibrium quantum many-body systems from the interplay between quantum fluctuations and interactions, which constitutes an exciting prospect that will be the principal motivation of this thesis.
 
@@ -586,6 +594,7 @@ As we have seen in the previous section, the Bogoliubov Hamiltonian is diagonal 
 
 \begin{equation}
     G(\bm{k},\bm{k}')=\langle \hat{a}^{\dagger}_{\bm k} \hat{a}^{\dagger}_{\bm {k}'} \rangle \mean{\hat{a}_{\bm k} \hat{a}_{\bm {k}'}} + \langle \hat{a}^{\dagger}_{\bm k} \hat{a}_{\bm k} \rangle \langle \hat{a}^{\dagger}_{\bm {k}'} \hat{a}_{\bm {k}'} \rangle + \langle \hat{a}^{\dagger}_{\bm k} \hat{a}_{\bm {k}'} \rangle \langle \hat{a}^{\dagger}_{\bm {k}'} \hat{a}_{\bm k} \rangle
+    \label{eq:wick_bogo}
 \end{equation}
 
 We end up with three different terms:
@@ -600,68 +609,113 @@ We end up with three different terms:
 
 We must now determine which atoms participate to which correlation signal. We have seen in \ref{sec:many_body_ground_state} that the depletion of the condensate is divided between the \textbf{quantum} and the \textbf{thermal} depletion. As we have shown in the last sub-section, we expect that the quantum depleted atoms contribute to the anomalous \kmk correlation signal due to the microscopic mechanism describing how the quantum depletion is populated. In fact, it is also possible for the thermal depletion to contribute to the anomalous correlation signal. Indeed, as discussed in \ref{sec:spectrum}, for low $k$ values such as $k \xi \ll 1$, the Bogoliubov quasi-particles have a strong phononic character $\hat{b}_{\bm{k}}=u_{\bm{k}} \hat{a}_{\bm{k}} + v_{-\bm{k}} \hat{a}^{\dagger}_{-\bm{k}}$ with $\abs{u_{\bm{k}}} \simeq \abs{v_{-\bm{k}}}$. This means that we have \kmk correlations in terms of real particles. This feature goes against our goal which is to study the quantum coherences of the many-body ground state, as we understand that if we were to observe \kmk correlations, we would not be able to unambiguously attribute them to the quantum depletion as they could come from phonons of the thermal depletion. However, we saw in \ref{sec:spectrum} that the phononic character of the excitations disappears for high $k$ values such as $k\xi \geq 1$. This gives us a nice workaround: if we restrict our measurement of \kmk correlations to high $k$, we could safely attribute them to the quantum depletion.
 
-Let us now take a look at normal correlations, \ie bosonic bunching. As we have seen in \ref{sec:spectrum} and \ref{sec:many_body_ground_state}, the Bogoliubov quasi-particles of the thermal depletion follow the Bose distribution and therefore have thermal chaotic statistics as discussed in Chapter 1. This qualifies the thermal depletion to show bosonic bunching. On the other hand, the \kmk pairs of the quantum depletion form a pure quantum state for which we would then not expect bosonic bunching. The situation is however a bit more subtle than that. Indeed, when we look for local \kk correlations, we do so between atoms belonging to two different pairs. To compute the density matrix describing these atoms, we therefore trace over the second atom of the pair that we ignore, retrieving a density matrix with a chaotic character (see \cite{yurke1987} for a detailed calculation). This means that we should observe bosonic bunching with the quantum depletion as well!
+Let us now take a look at normal correlations, \ie bosonic bunching. As we have seen in \ref{sec:spectrum} and \ref{sec:many_body_ground_state}, the Bogoliubov quasi-particles of the thermal depletion follow the Bose distribution and therefore have thermal chaotic statistics. This qualifies the thermal depletion to show bosonic bunching. On the other hand, the \kmk pairs of the quantum depletion form a pure quantum state for which we would then not expect bosonic bunching. The situation is however a bit more subtle than that. Indeed, when we look for local \kk correlations, we do so between atoms belonging to two different pairs. To compute the density matrix describing these atoms, we therefore trace over the second atom of the pair that we ignore, retrieving a density matrix with a chaotic character \cite{yurke1987} as we will illustrate in the next paragraph. This means that we should observe bosonic bunching with the quantum depletion as well!
 
 % Nonetheless, this low $k$ region corresponds more or less to the region that will need to be removed to exclude the BEC from the analysis (experimental numbers will be given in Chapter 4). We therefore do not have to care for the contribution of the thermal depletion to the \kmk correlation signal that will in our case only reflect the quantum depletion correlations.
 
-In a nutshell, we have two correlation functions of interest well separated in momentum space and containing very different types of information. On the one hand, the normal correlations correspond to close-by correlations and bosonic bunching revealing the chaotic statistics of the system, coming from either the thermal statistics of the thermal depletion, or the partial trace over the second atom of the pair destroying the quantum coherence for the quantum depletion. On the other hand, the anomalous correlations correspond to \kmk correlations and reveal the quantum coherences of the many-body ground state, provided that we probe them in the high $k$ region. While our main goal will be to measure the anomalous \kmk correlations for the reasons mentioned earlier, it will also be of great interest to measure the local normal correlations to contrast their behaviour with the anomalous correlation as a mean to illustrate the different physical origins of the two signals. 
+In a nutshell, we have two correlation functions of interest well separated in momentum space and containing very different types of information. On the one hand, the normal correlations correspond to close-by correlations and bosonic bunching revealing the chaotic statistics of the system, coming from either the thermal statistics of the thermal depletion, or the partial trace over the second atom of the pair destroying the quantum coherence for the quantum depletion. On the other hand, the anomalous correlations correspond to \kmk correlations and reveal the quantum coherences of the many-body ground state, provided that we probe them in the high $k$ region. While our main goal will be to measure the anomalous \kmk correlations for the reasons mentioned earlier, it will also be of great interest to measure the local normal correlations to contrast their behaviour with the anomalous correlations as a mean to illustrate the different physical origins of the two signals. 
 
 
-\subsection{Amplitude of the anomalous correlation peak}
+\subsection{Characterization of the anomalous correlation function : analogy with the non-degenerate parametric amplifier}
 
-We now look to further theoretically characterize the anomalous correlation function within the frame of the Bogoliubov theory. The idea is to identify some key features of the anomalous correlation signal to look for in the experiment. To do so, we will take a look at the expected amplitude of the anomalous correlation peak.
+\label{sec:amp_parametric}
 
-To begin, let us go back to the simplified Bogoliubov Hamiltonian before its diagonalisation.
+We now look to further theoretically characterize the anomalous correlation function within the frame of the Bogoliubov theory. The idea is to identify some key features of the anomalous correlation signal to look for in the experiment. To begin, let us go back to the simplified Bogoliubov Hamiltonian before its diagonalisation.
 
 \begin{equation}
-    H_{\rm{bogo}}=\sum_{\bm{k}}\frac{\hbar^2 k^2}{2m} a^{\dagger}_{\bm{k}}  a_{\bm{k}} +  \frac{gn}{2} \sum_{\bm{k}} (a^{\dagger}_{\bm{k}} a^{\dagger}_{-\bm{k}} +a_{\bm{k}} a_{-\bm{k}})+\frac{gn\NBEC}{2}
+    H_{\rm{bogo}}=\sum_{\bm{k}}\frac{\hbar^2 k^2}{2m} \hat{a}^{\dagger}_{\bm{k}}  \hat{a}_{\bm{k}} +  \frac{gn}{2} \sum_{\bm{k}} (\hat{a}^{\dagger}_{\bm{k}} \hat{a}^{\dagger}_{-\bm{k}} +\hat{a}_{\bm{k}} \hat{a}_{-\bm{k}})+\frac{gn\NBEC}{2}
 \end{equation}
 
 
 \noindent For simplicity sake, let's consider that there are only two modes, $\bm{k}$ and $-\bm{k}$  : 
 
 \begin{equation}
-        H_{\rm{bogo}}'=\frac{\hbar^2 k^2}{2m} (a^{\dagger}_{\bm{k}}  a_{\bm{k}} + a^{\dagger}_{-\bm{k}}  a_{-\bm{k}}) +  \frac{gn}{2}  (a^{\dagger}_{\bm{k}} a^{\dagger}_{-\bm{k}} +a_{\bm{k}} a_{-\bm{k}})+\frac{gn\NBEC}{2}
+        H_{\rm{bogo}}'=\frac{\hbar^2 k^2}{2m} (\hat{a}^{\dagger}_{\bm{k}}  \hat{a}_{\bm{k}} + \hat{a}^{\dagger}_{-\bm{k}}  \hat{a}_{-\bm{k}}) +  \frac{gn}{2}  (\hat{a}^{\dagger}_{\bm{k}} \hat{a}^{\dagger}_{-\bm{k}} +\hat{a}_{\bm{k}} \hat{a}_{-\bm{k}})+\frac{gn\NBEC}{2}
 \end{equation}
 
-\noindent As is now the custom, we look towards Optics for help as we recognize that the Hamiltonian is of the same form of the well-known problem of the non-degenerate parametric amplifier. This is a non-linear Optics effect where a pump photon at frequency $2 \omega$ interacts with a non-linear optical medium to produce photons in two modes at frequency $\omega_1$ and $\omega_2$, the signal and idler mode, with $2 \omega = \omega_1 + \omega_2$. The Hamiltonian of the system is:
+\noindent As is now the custom, we look towards Optics for help as we recognize that the Hamiltonian is of the same form of the well-known problem of the non-degenerate parametric amplifier. This is a non-linear Optics effect where a pump photon at frequency $2 \omega$ interacts with a non-linear optical medium to produce photons in two modes at frequency $\omega_1$ and $\omega_2$, the signal and idler mode, with $2 \omega = \omega_1 + \omega_2$. The Hamiltonian of the system is \cite{walls2008}:
 
 \begin{equation}
-    H=\hbar \omega_1 a_1^{\dagger} a_1+ \hbar \omega_2 a_2^{\dagger} a_2 + i \hbar \chi (a_1^{\dagger}  a_2^{\dagger} e^{-2i\omega t} - a_1 a_2 e^{2i\omega t})
+    H=\hbar \omega_1 \hat{a}_1^{\dagger} \hat{a}_1+ \hbar \omega_2 \hat{a}_2^{\dagger} \hat{a}_2 + i \hbar \chi (\hat{a}_1^{\dagger}  \hat{a}_2^{\dagger} e^{-2i\omega t} - \hat{a}_1 \hat{a}_2 e^{2i\omega t})
 \end{equation}
 
-\noindent where $\chi$ is a coupling constant. We thus have a direct analogy with the weakly-interacting Bose gas. Let us then present the theoretical treatment of the non-degenerate parametric amplifier and see what it tells us about our system of interest \cite{hodgman2017solving}. 
+\noindent where $\chi$ is a coupling constant. We thus have a direct analogy with the weakly-interacting Bose gas, the modes 1 and 2 being the analogues of the momentum modes $\bm{k}$ and $-\bm{k}$. This comparison does not come out of the blue as this system was used in landmark experiments \cite{burnham1970,heidmann1987observation} to demonstrate important results of quantum mechanics that were later reproduced with pairs of atoms instead of pairs of photons \cite{bucker2011,dall2009paired,perrin2007observation}. As we will now see, these observations also applies for the \kmk pairs of the quantum depletion that we wish to study. Let us then present the theoretical treatment of the non-degenerate parametric amplifier and see what it tells us about our system of interest \cite{hodgman2017solving}. 
 
 This time-dependent problem is best solved in the interaction picture, {\it i.e.} where the time dependence is carried by the operators and not the states. The interaction Hamiltonian then writes:
 
 \begin{equation}
-    H_I=i \hbar \chi (a_1^{\dagger}  a_2^{\dagger} - a_1 a_2)
+    H_I=i \hbar \chi (\hat{a}_1^{\dagger}  \hat{a}_2^{\dagger} - \hat{a}_1 \hat{a}_2)
 \end{equation}
 
 \noindent The counterpart to the Schrödinger equation in the interaction picture is the Heisenberg equation of motion:
 
 \begin{equation}
-    \frac{\mathrm{d}a_1}{\mathrm{d}t}= \frac{1}{i\hbar} [a_1,H_I]=\chi a_2^{\dagger}
+    \frac{\mathrm{d}\hat{a}_1}{\mathrm{d}t}= \frac{1}{i\hbar} [\hat{a}_1,H_I]=\chi \hat{a}_2^{\dagger}
 \end{equation}
 \begin{equation}
-    \frac{\mathrm{d}a_2^{\dagger}}{\mathrm{d}t}= \frac{1}{i\hbar} [a_2^{\dagger},H_I]=\chi a_1
+    \frac{\mathrm{d}\hat{a}_2^{\dagger}}{\mathrm{d}t}= \frac{1}{i\hbar} [\hat{a}_2^{\dagger},H_I]=\chi \hat{a}_1
 \end{equation}
 
 \noindent The solution of these coupled equations are:
 
 \begin{equation}
-    a_1(t)=a_1(0) \mathrm{cosh} \chi t + a_2^{\dagger}(0) \rm{sinh} \chi t
+    \hat{a}_1(t)=\hat{a}_1(0) \mathrm{cosh} \chi t + \hat{a}_2^{\dagger}(0) \rm{sinh} \chi t
+    \label{eq:a1}
 \end{equation}
 \begin{equation}
-    a_2(t)=a_2(0) \mathrm{cosh} \chi t + a_1^{\dagger}(0) \rm{sinh} \chi t
+    \hat{a}_2(t)=\hat{a}_2(0) \mathrm{cosh} \chi t + \hat{a}_1^{\dagger}(0) \rm{sinh} \chi t
+    \label{eq:a2}
 \end{equation}
 
-\noindent We can now use these expressions to compute the two-body correlator $\langle a_1^{\dagger}(t) a_2^{\dagger}(t) a_2(t) a_1(t) \rangle$. Here, the modes 1 and 2 are the analogues of the momentum modes $\bm{k}$ and $-\bm{k}$ in the weakly-interacting Bose gas problem. As explained in the last paragraph, we apply Wick's theorem to get:
+\noindent From this, we can derive a few interesting results. First, we write the quantum state $\ket{\Psi(t)}$ generated by the parametric amplification process. To do so, we write the interaction picture evolution operator:
+
+\begin{equation}
+    \hat{U}(t)=\exp \left[\chi t\left(\hat{a}_{1}^{\dagger} \hat{a}_{2}^{\dagger}+\hat{a}_{1} \hat{a}_{2}\right)\right]
+\end{equation}
+
+\noindent At the price of a few lines of calculations (see \cite{schumaker1985new}), this operator can be re-written in a factored form:
+
+\begin{equation}
+    \hat{U}(t)=\frac{1}{(\cosh \chi t)} e^{\hat{a}_{1}^{\dagger} \hat{a}_{2}^{\dagger} \tanh \chi t} e^{-\left(\hat{a}_{1}^{\dagger} \hat{a}_{1}+\hat{a}_{2}^{\dagger} \hat{a}_{2}+1\right) \ln (\cosh \chi t)} e^{-\hat{a}_{1} \hat{a}_{2} \tanh \chi t}
+\end{equation}
+
+\noindent While this expression is a bit daunting, it becomes way simpler if we consider the initial state to be the vacuum:
+
+\begin{equation}
+    \ket{\Psi(t)} = \frac{1}{(\cosh \chi t)} e^{\hat{a}_{1}^{\dagger} \hat{a}_{2}^{\dagger} \tanh \chi t} \ket{0}
+\end{equation}
+
+\noindent We obtain easily from this the expression of $\ket{\Psi(t)}$ in the number states basis:
+
+\begin{equation}
+    |\Psi(t)\rangle=\frac{1}{(\cosh \chi t)} \sum_{n=0}^{\infty}(\tanh \chi t)^{n} \ket{n}_1 \ket{n}_2
+\end{equation}
+
+\label{sec:correlated_pop}
+
+\noindent The state thus writes as a superposition of number states with the same number of photons in modes 1 and 2. The populations in modes 1 and 2 are therefore perfectly correlated, a feature that we will test experimentally in Chapter \ref{sec:chapter_4}. If we now look at the reduced state corresponding to mode 1 for instance, the reduced density matrix writes:
+
+\begin{equation}
+    \hat{\rho}_1 (t) = \mathrm{Tr}_2 \left[ \ket{\Psi(t)} \bra{\Psi(t)} \right] = \frac{1}{\cosh^2 \chi t} \sum_{n=0}^{\infty}\tanh^{2n} \chi t \ket{n}_1 \bra{n}_1
+\end{equation}
+
+\noindent Using the properties of hyperbolic functions, we get:
+
+\begin{equation}
+ \hat{\rho}_1 (t) = \frac{1}{1+ \sinh^2 \chi t} \sum_{n=0}^{\infty} \left( \frac{\sinh^2 \chi t}{1+\sinh^2 \chi t} \right)^n \ket{n}_1 \bra{n}_1
+\end{equation}
+
+\noindent where we recognize the form of the chaotic density matrix defined in equation \ref{eq:rho_chaotic} with $\mean{n} = \sinh^2 \chi t$, as stated in the last paragraph.
+
+
+\subsubsection{Amplitude of the correlation peak}
+
+\noindent From equations \ref{eq:a1} and \ref{eq:a2}, we compute the two-body correlator $\langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \hat{a}_1(t) \rangle$. As explained in the last paragraph, we apply Wick's theorem to get:
 
 \begin{equation}
 \begin{split}
-    \langle a_1^{\dagger}(t) a_2^{\dagger}(t) a_1(t) a_2(t) \rangle = \langle a_1^{\dagger}(t) a_2^{\dagger}(t) \rangle \langle a_1(t) a_2(t) \rangle +  \langle a_1^{\dagger}(t) a_1(t) \rangle \langle a_2^{\dagger}(t) a_2(t) \rangle \\
-    +  \langle a_1^{\dagger}(t) a_2(t) \rangle \langle a_2^{\dagger}(t) a_1(t) \rangle
+    \langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \hat{a}_1(t) \hat{a}_2(t) \rangle = \langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \rangle \langle \hat{a}_1(t) \hat{a}_2(t) \rangle +  \langle \hat{a}_1^{\dagger}(t) \hat{a}_1(t) \rangle \langle \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \rangle \\
+    +  \langle \hat{a}_1^{\dagger}(t) \hat{a}_2(t) \rangle \langle \hat{a}_2^{\dagger}(t) \hat{a}_1(t) \rangle
 \end{split}
 \end{equation}
 
@@ -669,43 +723,45 @@ This time-dependent problem is best solved in the interaction picture, {\it i.e.
 
 \begin{equation}
 \begin{split}
-   \langle a_1(t) a_2(t) \rangle = \mathrm{cosh} \chi t \mathrm{sinh} \chi t (\langle a_1(0) a_1^{\dagger}(0) \rangle+ \langle a_2(0)^{\dagger} a_2(0) \rangle) + \mathrm{cosh}^2 \chi t \langle a_1(0) a_2^{\dagger}(0) \rangle \\
-   + \mathrm{sinh}^2 \chi t \langle a_2^{\dagger}(0) a_1(0) \rangle 
+   \langle \hat{a}_1(t) \hat{a}_2(t) \rangle = \mathrm{cosh} \chi t \mathrm{sinh} \chi t (\langle \hat{a}_1(0) \hat{a}_1^{\dagger}(0) \rangle+ \langle \hat{a}_2(0)^{\dagger} \hat{a}_2(0) \rangle) + \mathrm{cosh}^2 \chi t \langle \hat{a}_1(0) \hat{a}_2^{\dagger}(0) \rangle \\
+   + \mathrm{sinh}^2 \chi t \langle \hat{a}_2^{\dagger}(0) \hat{a}_1(0) \rangle 
 \end{split}
 \end{equation}
 
 \noindent which gives:
 
 \begin{equation}
-    \langle a_1(t) a_2(t) \rangle = \langle a_1^{\dagger}(t) a_2^{\dagger}(t) \rangle = \rm{cosh} \chi t \rm{sinh} \chi t
+    \langle \hat{a}_1(t) \hat{a}_2(t) \rangle = \langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \rangle = \mathrm{cosh} \chi t \mathrm{sinh} \chi t
 \end{equation}
 
 \noindent Likewise,
 
 \begin{equation}
-     \langle a_1^{\dagger}(t) a_1(t) \rangle = \langle a_2^{\dagger}(t) a_2(t) \rangle = \rm{sinh}^2 \chi t
+     \langle \hat{a}_1^{\dagger}(t) \hat{a}_1(t) \rangle = \langle \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \rangle = \mathrm{sinh}^2 \chi t
 \end{equation}
 \begin{equation}
-    \langle a_1^{\dagger}(t) a_2(t) \rangle =  \langle a_2^{\dagger}(t) a_1(t) \rangle = 0
+    \langle \hat{a}_1^{\dagger}(t) \hat{a}_2(t) \rangle =  \langle \hat{a}_2^{\dagger}(t) \hat{a}_1(t) \rangle = 0
 \end{equation}
 
-Going back to the normalized two-body correlation function:
+\noindent Going back to the normalized two-body correlation function:
 
 \begin{equation}
 \begin{aligned}
-      g^{(2)}_A(1,2) & = \frac{\langle a_1^{\dagger}(t) a_2^{\dagger}(t) a_2(t) a_1(t) \rangle}{\langle a_1^{\dagger}(t) a_1(t) \rangle \langle a_2^{\dagger}(t) a_2(t) \rangle} \\
-      & = 1 + \frac{\rm{cosh}^2 \chi t \rm{sinh}^2 \chi t}{\rm{sinh}^4 \chi t} \\
-      & = 1+\frac{(1+\rm{sinh}^2 \chi t)\rm{sinh}^2 \chi t}{\rm{sinh}^4 \chi t} \\
+      g^{(2)}_A(1,2) & = \frac{\langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \hat{a}_1(t) \rangle}{\langle \hat{a}_1^{\dagger}(t) \hat{a}_1(t) \rangle \langle \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \rangle} \\
+      & = 1 + \frac{\mathrm{cosh}^2 \chi t \mathrm{sinh}^2 \chi t}{\mathrm{sinh}^4 \chi t} \\
+      & = 1+\frac{(1+\mathrm{sinh}^2 \chi t)\mathrm{sinh}^2 \chi t}{\mathrm{sinh}^4 \chi t} \\
       & = 2 + \frac{1}{\langle n_1(t) \rangle} 
       \label{eq:amp_g2_A}
 \end{aligned}
 \end{equation}
 
-We see that the amplitude of the anomalous correlation peak scales linearly with the inverse average mode occupation. Interestingly, we notice that the amplitude of the anomalous correlation peak is higher than for normal correlations (bosonic bunching) $g^{(2)}_N (0)=2$. In fact, this is quite an important result as we will now discuss.
+\noindent We see that the amplitude of the anomalous correlation peak scales linearly with the inverse average mode occupation. Interestingly, we notice that the amplitude of the anomalous correlation peak is higher than for normal correlations (bosonic bunching) $g^{(2)}_N (0)=2$. In fact, this is quite an important result as we will now discuss.
 
-\subsection{Violation of the Cauchy-Schwarz inequality}
+\subsection{Violation of the Cauchy-Schwarz inequality and Busch-Parentani criterion}
 
-The very famous Cauchy-Schwarz inequality has seen countless applications in mathematics and physics. What will most interest us here is its formulation in the framework in probability theory. In classical physics, with two fluctuating quantities $I_1$ and $I_2$, the Cauchy-Schwarz inequality writes:
+\label{sec:cs_inequality}
+
+The very famous Cauchy-Schwarz inequality has seen countless applications in mathematics and physics. What will most interest us here is its formulation in the framework of probability theory. In classical physics, with two fluctuating quantities $I_1$ and $I_2$, the Cauchy-Schwarz inequality writes:
 
 \begin{equation}
     \mean{I_1 I_2} \leq \sqrt{\mean{I_1^2} \mean{I_2^2}}
@@ -724,28 +780,54 @@ In the symmetrical case with $\mean{\hat{a}^{\dagger}_1 \hat{a}_1}=\mean{\hat{a}
 \end{equation}
 
 
-Therefore, the Cauchy-Schwarz inequality states that the cross-correlation amplitude cannot exceed the amplitude of the auto-correlation with a classical model. The result of equation \ref{eq:amp_g2_A} violates this inequality and is therefore the signature of a quantum phenomenon. As developed in \cite{kheruntsyan2012violation}, observing a violating the Cauchy-Schwarz inequality is one of the easiest way to prove the presence of non-classical correlations, and represents a first, necessary step towards obtaining more significant results such as proving the presence of entanglement.
+Therefore, the Cauchy-Schwarz inequality states that the cross-correlation amplitude cannot exceed the amplitude of the auto-correlation with a classical model. The result of equation \ref{eq:amp_g2_A} violates this inequality and is therefore the signature of a quantum phenomenon. As developed in \cite{kheruntsyan2012violation}, observing a violating the Cauchy-Schwarz inequality is one of the easiest way to prove the presence of non-classical correlations.
 
-%   
+In fact, violating the Cauchy-Schwarz inequality can be enough to demonstrate entanglement in some situations. The work \cite{busch2014quantum} devises the Busch-Parentani criterion for a state to be entangled that writes (switching back to the notations of Bogoliubov theory):
+
+\begin{equation}
+    \rho(\bm{k}) \rho(-\bm{k}) - | \langle \hat{a}^{\dagger}_{\bm k} \hat{a}^{\dagger}_{-\bm {k}} \rangle |^2 < 0
+    \label{eq:busch-parentani}
+\end{equation}
+
+\noindent From equation \ref{eq:wick_bogo}, we get
+
+\begin{equation}
+    \langle \hat{a}^{\dagger}_{\bm{k}} \hat{a}^{\dagger}_{-\bm k} \hat{a}_{\bm k} \hat{a}_{-\bm {k}} \rangle = | \langle \hat{a}^{\dagger}_{\bm k} \hat{a}^{\dagger}_{-\bm {k}} \rangle |^2 + \rho(\bm{k}) \rho(-\bm{k}) + \langle \hat{a}^{\dagger}_{\bm k} \hat{a}_{-\bm {k}} \rangle \langle \hat{a}^{\dagger}_{-\bm {k}} \hat{a}_{\bm k} \rangle
+\end{equation}
+
+\noindent where the last term is zero in Bogoliubov's theory. Injecting \ref{eq:busch-parentani}, we get:
+
+\begin{equation}
+    \langle \hat{a}^{\dagger}_{\bm{k}} \hat{a}^{\dagger}_{-\bm k} \hat{a}_{\bm k} \hat{a}_{-\bm {k}} \rangle > 2 \rho(\bm{k}) \rho(-\bm{k})
+\end{equation}
+
+\noindent Dividing by  $\rho(\bm{k}) \rho(-\bm{k})$, we obtain:
+
+\begin{equation}
+    \gtwo_A (\bm{k},-\bm{k}) > 2 \Longleftrightarrow \gtwo_A (\bm{k},-\bm{k}) > \gtwo_N (\bm{k},\bm{k})
+\end{equation}
+
+\noindent which is strictly equivalent to violating the Cauchy-Schwarz inequality. Note that this development holds only if \textit{(i)} the statistics of the system are chaotic so that we can apply Wick's theorem and have $\gtwo_N (\bm{k},\bm{k})=2$, \textit{(ii)} $\langle \hat{a}^{\dagger}_{\bm k} \hat{a}_{-\bm {k}} \rangle \langle \hat{a}^{\dagger}_{-\bm {k}} \hat{a}_{\bm k} \rangle=0$ which is true in Bogoliubov's theory but needs experimental proof if we wish to claim experimental observation of entanglement in momentum space.
+  
 
 \section{Towards the experimental detection of k/-k pairs}
 
-Now that we have formed a clear picture of the kind of correlation functions we want to measure, we need to identify the key experimental ingredients necessary to observe such signals. The principal one is to have an experiment capable of measuring the momentum of individual atoms in momentum space and not only the momentum density as in most cold atoms experiment. This will be the subject of Chapter 3. 
+Now that we have formed a clear picture of the kind of correlation functions we want to measure and understood their essential features, we need to identify the key experimental ingredients necessary to observe such signals. The principal one is to have an experiment capable of measuring the momentum of individual atoms in momentum space and not only the momentum density as in most cold atoms experiment. This will be the subject of Chapter \ref{sec:chapter_3}. 
 
-In addition, there are several key features of the \kmk correlation signal that we need to properly understand to design an experimental scheme where the \kmk correlation signal can be properly detected.
+In addition, there are several key features of the \kmk correlation signal that we need to understand to design an experimental scheme where the \kmk correlation signal can be properly detected.
 
 \subsection{Separating the BEC from its depletion}
 
 A crucial aspect of studying the correlations in the depletion is the ability to separate the depleted atoms from the condensed ones. As a matter of fact, the BEC is a fully coherent state with macroscopic occupation of a single mode. In analogy with laser light in Optics, the statistics of the BEC are not chaotic and no bosonic bunching can therefore be observed. In addition, no \kmk correlations are expected for atoms belonging to the condensate. Furthermore, the number of condensed atoms is very often way larger than the number of depleted atoms. This has a direct consequence for our measurement: if we are unable to remove condensed atoms from the analysis, they will entirely drown out the correlation signals of the depletion.
 
-Fortunately, the BEC and the depletion extent in momentum space are very different. Positions and momenta are related to one other by means of Fourier transform. This tells us that the typical momentum width of the condensate is $1/L_{\rm{BEC}}$ \cite{stenger1999} where $L_{\rm{BEC}}$ is the spatial size of the BEC. On the other hand, the typical momentum width of the quantum depletion is $1/\xi$. Since $\xi \ll L_{\rm{BEC}}$, $1/\xi \gg 1/L_{\rm{BEC}}$ meaning that the quantum depletion extends on a much larger momentum area than the BEC. Likewise, for the typical temperatures accessible in our experiment, the momentum width of the thermal depletion is significantly larger than for the BEC. This provides us with a natural way to separate the condensate from its depletion and defines one of the experimental ingredient: we need an experimental setup capable of resolving the different regions of momentum space so that the region around $\bm{k}=\bm{0}$ corresponding to the BEC can be removed from the analysis. Luckily, while removing the BEC region we also remove the low $k$ part of the momentum space in which the Bogoliubov quasi-particles have a strong phononic character (see Chapter 4 for experimental numbers) and thus \kmk correlations between real particles, fulfilling the requirement described in \ref{sec:2nd_order_bogo}.
+Fortunately, the BEC and the depletion extent in momentum space are very different. Position and momentum are related to one other by means of Fourier transform. This tells us that the typical momentum width of the condensate is $1/L_{\rm{BEC}}$ \cite{stenger1999} where $L_{\rm{BEC}}$ is the spatial size of the BEC. On the other hand, the typical momentum width of the quantum depletion is $1/\xi$. Since $\xi \ll L_{\rm{BEC}}$, $1/\xi \gg 1/L_{\rm{BEC}}$ meaning that the quantum depletion extends on a much larger momentum area than the BEC. Likewise, for the typical temperatures accessible in our experiment, the momentum width of the thermal depletion is significantly larger than for the BEC. This provides us with a natural way to separate the condensate from its depletion and defines one of the experimental ingredients: we need an experimental setup capable of resolving the different regions of momentum space so that the region around $\bm{k}=\bm{0}$ corresponding to the BEC can be removed from the analysis. Luckily, while removing the BEC region we also remove the low $k$ part of the momentum space in which the Bogoliubov quasi-particles have a strong phononic character (see Chapter \ref{sec:chapter_4} for experimental numbers) and thus \kmk correlations between real particles, fulfilling the requirement described in \ref{sec:2nd_order_bogo}.
 
 
 \subsection{Finite temperature effects}
 
 Another parameter that we must be very careful of is the temperature. In an ideal situation, we would conduct the experiment at zero temperature where the depletion is entirely quantum and all atoms consequently \kmk paired. Obviously this is impossible to do in practice and the experiment will always be done at finite temperature.
 
-Temperature is an absolutely crucial parameter when measuring \kmk correlations as it sets the population of the thermal depletion, {\it i.e.} the population of the Bogoliubov quasi-particles (see equation \ref{eq:bose_qp}). Indeed, as we have just seen, thermally depleted atoms show no \kmk correlations in the momentum range that we probe. If the temperature is too high, the thermally depleted atoms will significantly outnumber the quantum depleted ones and it will then be impossible to detect the \kmk correlations. In order to quantify the effect of temperature, we compare the typical thermal energy $k_B T$ to the chemical potential of the condensate $\mu$ quantifying the effect of interactions. We aim to be in an experimental regime where $k_B T \ll \mu$, {\it i.e.} where interactions effects dominate temperature effect. The first idea that comes to mind is then to reduce the temperature as much as possible. We however quickly hit a brick wall: the lowest temperature in ultracold experiments are obtained through evaporative cooling. This process will be detailed in Chapter 3 but we can quickly give here the main idea, which is to remove the hottest atoms of the gas to let the other thermalize at a colder temperature. We quickly see the problem here: if we further evaporatively cool the gas, we lose more atoms, reduce the density and thus the effect of interactions and make no progress. This method allows us to typically reach $k_B T \sim \mu$ which is not sufficient to ensure the proper detection of \kmk correlations.
+Temperature is an absolutely crucial parameter when measuring \kmk correlations as it sets the population of the thermal depletion, {\it i.e.} the population of the Bogoliubov quasi-particles (see equation \ref{eq:bose_qp}). Indeed, as we have just seen, thermally depleted atoms show no \kmk correlations in the momentum range that we probe. If the temperature is too high, the thermally depleted atoms will significantly outnumber the quantum depleted ones and it will then be impossible to detect the \kmk correlations. In order to quantify the effect of temperature, we compare the typical thermal energy $k_B T$ to the chemical potential of the condensate $\mu$ quantifying the effect of interactions. We aim to be in an experimental regime where $k_B T \ll \mu$, {\it i.e.} where interactions effects dominate temperature effect. The first idea that comes to mind is then to reduce the temperature as much as possible. We however quickly hit a brick wall: the lowest temperature in ultracold experiments are obtained through evaporative cooling. This process will be detailed in Chapter \ref{sec:chapter_3} but we can quickly give here the main idea, which is to remove the hottest atoms of the gas to let the other thermalize at a colder temperature. We quickly see the problem here: if we further evaporatively cool the gas, we lose more atoms, reduce the density and thus the effect of interactions and make no progress. This method allows us to typically reach $k_B T \sim \mu$ which is not sufficient to ensure the proper detection of \kmk correlations.
 
 We are thus left with one only possible solution which is to increase the interactions. To this end, we will use a \textbf{3D optical lattice}. As a brief overview, a 3D optical lattice is formed by interference of 3 pairs of countra-propagating beams, one for each direction of space. The interferences create a sinusoidal potential trapping the atoms at the maximum of the light intensity profile, {\it i.e.} in periodically arranged wells, mimicking a condensed matter crystal. Interestingly, the density increases inside of the individual wells as a result of higher local trapping frequencies, increasing the strength of interactions and thus the likelihood to observe \kmk correlations.
 
