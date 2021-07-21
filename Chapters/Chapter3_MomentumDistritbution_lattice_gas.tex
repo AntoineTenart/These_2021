@@ -109,9 +109,200 @@ The Optical Dipole Trap (ODT) is made with two crossing far detuned 1550nm laser
 
 \section{3D optical lattice}
 
-\section{Electronic detection: The Micro Channel Plate Detector}
+We will present in this section all the experimental details concerning the 3D optical lattice. Let us first present the main characteristics of our optical lattice.
 
-\section{Two-photon Raman transfer}
+\begin{itemize}
+    \item The 3D lattice is made from a single narrow linewidth laser capable of delivering up to $15 \ \mathrm{W}$. Its wavelength is $1550 \ \rm{nm}$, \ie far from any atomic resonance just as for the Optice dipole trap.
+    \item  The main beam is divided into 3 independent beams, one for each direction of space, that are sent on the science chamber to make the optical lattice as illustrated on Fig.-\ref{fig:scheme_odt_lattice}. One of the beam is horizontal (named H) and perpendicular to the axis defined by the Zeeman slower, will the other two form a $\pm 45^{\circ}$ angle with horizontal, hence their name, +45 and -45.
+    \item  Each beam is retro-reflected to create the interferences necessary to create the lattice pattern, but detuned by $20 \ \rm{MHz}$ from the other direction so they do not interfere with one another.
+    \item In this configuration, the lattice spacing $d$, \ie the distance between two lattice sites is $d=\lambda/2 = 775 \ \rm{nm}$. From this we define the recoil momentum and the associated recoil energy:
+    
+    \begin{equation}
+        k_d = \frac{2 \pi}{d}, \ E_r = \frac{\hbar^2 k_d^2}{2 m}
+    \end{equation}
+    
+    \noindent In the following, all momentum values will be expressed in units of $k_d$, and the amplitude of the lattice in units of $E_r$ with $V_0 =  s E_r$.
+    
+    \item A fraction of the power of each is sent on a photodiode whose signal is used for the feedback loop of a PID controller used to lock the power on the desired value.
+    
+    \item Because of the Gaussian shape of the beam, the atoms feel the same external trapping frequency $\omega_{\rm{trap}} = 2 \pi \times 140 \times \sqrt{s}$ in the three directions of space.  
+    
+\end{itemize}
+
+\subsection{Loading of the optical lattice}
+
+The optical lattice is loaded by transferring the atoms from the ODT. This is done by ramping down the power of the ODT while simultaneously ramping up the power of the lattice beams as illustrated on Fig-XX. This step is particularly crucial as we want to load all the atoms into the lowest energy state and not populate any higher energy bands. \NOTE{Voir avec partie adiabatique}
+
+ 
+\subsection{Calibration of the lattice depth}
+
+As we have seen in Chapter \ref{sec:chapter_2}, the depth of the lattice potential and hence the ratio $U/J$ is a crucial parameter that determines the phase of the lattice gas. It is then necessary to precisely calibrate this value prior to any experiment. The idea of the calibration is to associate a given value of the lattice depth $s$ to a command voltage for the PID controller. As the power of each of the three beams are independent, the calibration must be done for each of the three beams alike. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Fig/Chapter3/modulation.png}
+    \caption{}
+    \label{fig:my_label}
+\end{figure}
+
+To do so, we modulate the amplitude of one of the lattice beam at frequency $f_{\rm{mod}}$ for a duration $t_{\rm{mod} }= 20 \ \rm{ms}$, adding two sidebands in the lattice light spectrum $f \pm f_{\rm{mod}}$. When $2 f_{\rm{mod}}$ is close to the resonance frequency $f_{\text {res }}=\left(E_{2}(q=0)-E_{0}(q=0)\right)/\hbar$, it is possible to excite the atoms in the lowest energy band to the second excited band with a resonant two-photon process. As $f_{\text {res }}$ is dependent from the lattice depth, the idea is to scan the value of $f_{\rm{mod}}$ to find the resonance from which we deduce the value of the lattice depth. If the amplitude of the lattice at which we perform the calibration is not too high (we use $V= 10s$ in practice), atom in the second excited band are not trapped and therefore lost. When we are perfectly at resonance, most atoms should then be lost, an effect that we can observe via absorption imaging. To make things more convenient, we load back the atoms into the ODT (see Fig.-XX) before taking the absorption image to avoid the diffraction induced by the lattice beams and properly count the atoms. We therefore measure the number of remaining atoms in the BEC after this procedure as a function of $f_{\rm{mod}}$ and fit the data to find the minimum and so $f_{\rm{res}}$ as illustrated on Fig.-XX. By calculating the energy bands, we obtain the relation between the lattice depth and the value of $f_{\rm{res}}$ that allows us to finally obtain the value of the lattice depth. We repeat this procedure for each lattice beams, where the power of the two non-modulated beams are lowered so that the cloud is not excited in the other directions.
+
+\section{Electronic detection}
+
+Contrary to most cold atoms experiments that rely exclusively on optical detection techniques, our experiment revolves around a single-atom resolved \textbf{electronic} detection technique of which we will present the main features in this section. For a more thorough and technical description of the $\He$ detector, we refer the reader to the previous thesis \cite{cayla_these}.
+
+\subsection{Micro-Channel Plates}
+
+The first main element of the $\He$ detector is the \textbf{Micro-Channel Plate} (MCP). A Micro-Channel Plate is essentially a piece of metal in which an array of small holes, the micro channels, have been drilled. If a particle falls into one of the channels and hits its wall, it can extract one electron from the metal provided that the particle is energetic enough ($\sim$ a few eV). While MCPs cannot be used in most cold atoms experiment as the atoms are not energetic enough to extract this first electron, they are suited to detect $\He$ thanks to the high energy of the metastable state. An electric field is applied so that the electron is accelerated downwards and subsequently hits the walls of the channel to extract additional electrons, that will also extract more electrons and so on, just like an avalanche process. The MCP then works to amplify the initial discharge into a shower of a large number of electrons that can be properly detected. 
+
+Practically speaking, we use two MCPs in a z-stack configuration forming a herringbone pattern (see Fig.-\ref{fig:MCP}) to ensure the continuity of the electron shower, polarized with a voltage of $2.4 \ \rm{kV}$. Using two plates is necessary to obtain a the high enough amplification factor of $10^4$. The channels are drilled with a $20^{\circ}$ degree angle from the surface of the MCP in order to avoid that the atoms fall right through the channels without hitting the walls. Another important characteristics of the MCP is the \textbf{open-to-air ratio}, \ie the ratio between the holes surface and the total surface of the MCP. This must be as high as possible to avoid that atoms hit the MCP but not in a channel, thus losing the first electron. The new generation of MCPs we are using for the experiments conducted in this thesis (Hamamastu F9142-01 MOD6) implements a technology improving the open-to-air ratio to $90\%$ for the top plate and $70 \%$ for the bottom one.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Fig/Chapter3/MCP.png}[ht!]
+    \caption{$\He$ detector. The top left schematic illustrates how the MCP works, while the bottom left schematic shows the entirety of the $\He$ detector with the delay-lines located underneath the two stacked MCPs. The right image is a photograph of the apparatus. Taken from \cite{cayla_these}.}
+    \label{fig:MCP}
+\end{figure}
+
+The MCPs in themselves would be useless as we need something to detect the electron shower to now where a given atom has fallen. In high-energy particle physics experiments in which MCPs are the most widely used, this is done by putting behind the MCPs a phosphorus screen or photo-multipliers which are however not suited to our needs as they only record a 2D information. To measure the 3D momentum of the atom, we need to know the time of arrival of the atom in addition to the $x$ and $y$ coordinates at which it fell on the MCP. To this end, we use what we call \textbf{delay lines}.
+
+\subsection{Delay lines}
+
+The delay lines consists of two metallic wires of length $L_{x,y}=20 \ \rm{m}$ wrapped around a hundred times around a holding board located beneath the MCPs. The electronic shower created by the MCPs couples into the delay lines, creating an electronic pulse that propagates at speed $v_g=10^6 \ \rm{m/s}$ in the two directions of each delay lines as illustrated on Fig.-\ref{fig:delay_lines}. By recording the times of arrivals at each ends of the delay lines labelled $t_{x_1},t_{x_2},t_{y_1}$ and $t_{y_2}$, we reconstruct the coordinates and time of impact with:
+
+
+\begin{equation}
+    x_{\rm{det}}=\frac{1}{2} (t_{x_1}-t_{x_2})v_g
+\end{equation}
+\begin{equation}
+    y_{\rm{det}}=\frac{1}{2} (t_{y_1}-t_{y_2})v_g
+\end{equation}
+\begin{equation}
+    t_{\rm{det}}=t_{x_{1}}+t_{x_{2}}-\frac{L_{x}}{v_{g}}=t_{y_{1}}+t_{y_{2}}-\frac{L_{y}}{v_{g}}
+    \label{eq:tdet_MCP}
+\end{equation}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\textwidth]{Fig/Chapter3/delay_lines.png}
+    \caption{Schematic of the delay lines. The electronic discharge couples to the delay lines and propagates in the two directions of the delay lines. The times of arrival are recorded at each ends of the delay lines.}
+    \label{fig:delay_lines}
+\end{figure}
+
+When the lattice potential is turned off, the atoms experience a free fall under the sole effect of gravity. The vertical position $z$ of an atom with an initial speed $v_z$ after a time $t$ is, taking the origin of the reference-frame at the center of the MCP and $t=0$ when the trap is turned off:
+
+\begin{equation}
+    z(t)= \frac{1}{2} gt^2 + v_z t -  D_{\rm{MCP}}
+\end{equation}
+
+\noindent with $D_{\rm{MCP}}=43 \ \rm{cm}$ the vertical distance between the MCPs and the center of the trap. We define $t_{\rm{TOF}}$ the time necessary for atoms with $v_z=0$ to reach the detector. In the experiment, this time is $t_{\rm{TOF}}=297 \ \rm{ms}$. From this we write:
+
+\begin{equation}
+    D_{\rm{MCP}} = \frac{1}{2} g t_{\rm{TOF}}^2
+\end{equation}
+
+\noindent to obtain
+
+\begin{equation}
+     z(t)= \frac{1}{2} g(t^2-t_{\rm{TOF}}^2) + v_z t
+\end{equation}
+
+\noindent Finally, the time at which an atom is detected on the detector at $z=0$, which is the quantity we experimentally measure, verifies:
+
+\begin{equation}
+    \frac{1}{2} g(t_{\rm{TOF}}^2-t_{\rm{det}}^2) = v_z t_{\rm{det}}
+\end{equation}
+
+\noindent To use the convenient ballistic relation $\hbar \bm{k} = m \bm{r}/t_{\rm{det}}$ linking the spatial coordinates of detection to the initial momentum of the atoms, we define $z$ so that $z=\frac{1}{2} g(t_{\rm{TOF}}^2-t_{\rm{det}}^2)$.
+
+\subsection{Detection of the electronic pulses and resolution of the detector}
+
+As we have seen in the last paragraph, the precision with which we measure the momentum of the atoms depends directly on the precision with which we measure the arrival times $(t_{x_1},t_{x_2},t_{y_1},t_{y_2})$. It therefore crucial to devise a procedure to attribute to a pulse an arrival time as precisely and reliably as possible. The main difficulty comes from the fact that the amplitude of the pulses varies as the different electronic showers do not couple with the same efficiency in the delay lines. If we were to attribute the arrival time by identifying when the signal goes above a given threshold voltage, a high amplitude pulse would be detected sooner than a low amplitude one. To circumvent this issue, we use a \textbf{constant fraction discriminator} (CFD) that produces the following signal:
+
+\begin{equation}
+    V_{\rm{CFD}}(t)=V_{\text {pulse }}(t)-f_{c} \times V_{\text {pulse }}(t)\left(t-\tau\right)
+\end{equation}
+
+\noindent where $f_c \in [0,1]$ and $\tau$ a delay. The resulting signal is therefore a bimodal pulse that crosses zero, setting the reference to trigger a 0-1V with sharp raising edge signal that is then fed to a FPGA-based Time to Digital Converter (TDC) to convert it to a digital time. The TDC coding step is $t_0 = 120 \ \rm{ps}$ defining an in-plane pixel of size:
+
+\begin{equation}
+    x_0 = y_0 = \frac{1}{2} t_0 v_g = 60 \ \mu \rm{m}
+\end{equation}
+
+ \noindent This is the theoretical best resolution that we can obtain with these electronics corresponding to a momentum resolution $\sigma = 1.4 \times 10^{-3} k_d$. In practice, the resolution is not as good, whether it be because of the noise of the electronics are any experimental defect that we might overlook.
+ 
+ To experimentally measure the resolution of the detector, we can make use of the Hanbury Brown and Twiss effect. As explained in Chapter \ref{sec:chapter_1}, we expect to observe for a system with Gaussian statistics that the second-order correlation function goes to 2, $g^{(2)} (\bm{k},\bm{k})=2$, and decays on a typical scale $1/L$, $L$ being the spatial size of the system. If however the width of the correlation function is not much larger than the resolution of the detector, the second-order correlation function is broadened and the amplitude reduced. One can then create a large system so that the second-order correlation function is narrow enough so that the resolution of the detector affects it, and deduce the value of the resolution from the observed reduction of the amplitude.
+ 
+ This method was applied in Hugo Cayla's thesis \cite{cayla_these} with Mott insulator gas of $40 \times 10^3$ atoms to measure that the resolution of the detector is isotropic and equal to \fcolorbox{red}{white}{$\sigma_{\rm{MCP}} = 2.5(1) \times 10^{-3} \ k_d$}. However, in this case, the effect of the resolution is not very strong as the spatial size of the gas is not very larger. We then tried to complement these measurements by using thermal gases of $\sim 200 \times 10^3$ atoms produced in the ODT, taking advantage of the anistropy of the trap so that the gas is large in the direction where the trapping frequency is small. In this direction, the correlation function is then expected to be very narrow and thus heavily affected by the resolution of the detector. We were indeed able to observe that the amplitude of the second-order correlation function is reduced up to 1.33(1) from which we deduced \fcolorbox{red}{white}{$\sigma_{\rm{MCP}} = 2.9(3) \times 10^{-3} \ k_d$} which is in fact quite consistent with the previous measurement. We note at this point that the correlation function measurements that we shall present in the next chapter are conducted with relatively low atom numbers so that the correlation functions are large enough not to be affected by the resolution of the detector that we will then neglect.
+
+
+\subsection{Reconstruction algorithm and saturation effects}
+
+As we have just seen, the position of the atoms are obtained from the quadruplet set of times $(t_{x_1},t_{x_2},t_{y_1},t_{y_2})$ recorded at the end of the delay lines. The difficulty however is to correctly attribute each pulse to the correct atom. The pulse are then algorithmically sorted in quadruplets using the fact that if the arrival times of two pulses $t_1$ and $t_2$ are associated to the same atom, they verify:
+
+\begin{equation}
+    |t_1-t_2| \leq \frac{L_{x,y}}{v_g}
+    \label{eq:time_window}
+\end{equation}
+
+\noindent For a detected pulse $t_{x_1}$, we thus conserve only the pulses on channels $x_2$, $y_1$ and $y_2$ that fall within the time window time defined by equation \ref{eq:time_window}. If there are still several possible quadruplets, we compute for each quadruplet the quantity:
+
+\begin{equation}
+    D = t_{x_1}+t_{x_2} - (t_{y_1}+t_{y_2})
+\end{equation}
+
+\noindent that should be zero according to equation \label{eq:tdet_MCP} if the times of the quadruplet correspond to the detection of an atom. We therefore select the quadruplet for which the quantity $D$ is the closer to zero and remove the four times from the lists of arrival times and repeat the procedure. Note that we presented a simplified version of the algorithm for clarity sake, we refer the reader once again the the thesis of Hugo Cayla \cite{cayla_these} for a more thorough description accounting for the imperfections of the detector.
+
+\subsubsection{Saturation}
+
+One of the principal drawbacks of the $\He$ detector is its high sensitivity to saturation effects for high flux of particles. Indeed, if two particles fall in the same channel in a time smaller than the time required for the electronic charges to reload the channel depleted by the detection of the first particle, the amplification factor for the second particle is significantly reduced, meaning that the particle might no be properly detected. This is notably the case for the very dense Bose-Einstein condensates. We will not spend too much describing the effects of this ``physical'' saturation that have been well studied in previous works \cite{carcy_these,cayla_these,edgar1992spatial,nogrette2015characterization} and that will not be too much of a trouble for the experiments we wish to conduct of this thesis. Indeed, we want to look at the correlations in the depletion of a BEC for which the momentum density is quite low and thus not subject to saturation effects.
+
+Our measurements might however be affected by another kind of saturation effect related to the reconstruction algorithm. Let's consider two atoms $A$ and $B$ falling on the detector at times $t^A$ and $t^B$ for which we record 8 arrival times. We have 7 possible combinations of these arrival times:
+
+\begin{itemize}
+    \item $(t^A_{x_1},t^A_{x_2},t^A_{y_1},t^A_{y_2})$ and $(t^B_{x_1},t^B_{x_2},t^B_{y_1},t^B_{y_2})$, the proper one.
+    
+    \item $(t^A_{x_1},t^A_{x_2},t^B_{y_1},t^A_{y_2})$ and $(t^B_{x_1},t^B_{x_2},t^A_{y_1},t^B_{y_2})$
+    
+    \item $(t^A_{x_1},t^A_{x_2},t^A_{y_1},t^B_{y_2})$ and $(t^B_{x_1},t^B_{x_2},t^B_{y_1},t^A_{y_2})$
+    
+    \item $(t^B_{x_1},t^A_{x_2},t^A_{y_1},t^A_{y_2})$ and $(t^A_{x_1},t^B_{x_2},t^B_{y_1},t^B_{y_2})$
+    
+    \item $(t^A_{x_1},t^B_{x_2},t^A_{y_1},t^A_{y_2})$ and $(t^B_{x_1},t^A_{x_2},t^B_{y_1},t^B_{y_2})$
+    
+    \item $(t^A_{x_1},t^B_{x_2},t^B_{y_1},t^A_{y_2})$ and $(t^B_{x_1},t^A_{x_2},t^A_{y_1},t^B_{y_2})$
+    
+    \item $(t^A_{x_1},t^B_{x_2},t^A_{y_1},t^B_{y_2})$ and $(t^B_{x_1},t^A_{x_2},t^B_{y_1},t^A_{y_2})$
+\end{itemize}
+
+Let us now assume that the flux of particle is high so that $t^A$ and $t^B$ are very close so that equation \ref{eq:time_window} cannot be used to exclude any of the combinations. We are then only left with the calculation of $D$. The problem is that the two last combinations also give $D=0$ and cannot be discriminated from the proper one. The coordinates reconstructed from these wrong combinations write:
+
+\begin{equation}
+\begin{aligned}
+&X 1=\frac{t_{x 1}^{A}-t_{x 2}^{B}}{2}=X+\frac{t^{A}-t^{B}}{2 v_{x}} \quad Y 1=\frac{t_{y 1}^{B}-t_{y 2}^{A}}{2}=Y+\frac{t^{B}-t^{A}}{2 v_{x}} \quad T 1=\frac{t^{A}+t^{B}}{2}\\
+&\text { and }\\
+&X 2=\frac{t_{x 1}^{B}-t_{x 2}^{A}}{2}=X+\frac{t^{B}-t^{A}}{2 v_{x}} \quad Y 2=\frac{t_{y 1}^{A}-t_{y 2}^{B}}{2}=Y+\frac{t^{A}-t^{B}}{2 v_{x}} \quad T 2=\frac{t^{A}+t^{B}}{2}
+\end{aligned}
+\end{equation}
+
+\noindent or 
+
+\begin{equation}
+\begin{aligned}
+&X 1=\frac{t_{x 1}^{A}-t_{x 2}^{B}}{2}=X+\frac{t^{A}-t^{B}}{2 v_{x}} \quad Y 1=\frac{t_{y 1}^{A}-t_{y_{2}}^{B}}{2}=Y+\frac{t^{A}-t^{B}}{2 v_{x}} \quad T 1=\frac{t^{A}+t^{B}}{2}\\
+&\text { and }\\
+&X 2=\frac{t_{x 1}^{B}-t_{x 2}^{A}}{2}=X+\frac{t^{B}-t^{A}}{2 v_{x}} \quad Y 2=\frac{t_{y 1}^{B}-t_{y 2}^{A}}{2}=Y+\frac{t^{B}-t^{A}}{2 v_{x}} \quad T 2=\frac{t^{A}+t^{B}}{2}
+\end{aligned}
+\end{equation}
+
+There are therefore some wrongly reconstructed atoms that end up on $\pm 45^{\circ}$ lines as illustrated on Fig.-XX. Moreover, if we take $X \simeq 0$ and $Y \simeq 0$, $X1 \simeq -X2$ and $Y1 \simeq -Y2$. If the times $T1=T2$ correspond to $k_z=0$, the wrongly reconstructed pair of atoms looks exactly like a \kmk pair! Even worse, the saturation occurs mainly for BEC atoms because of the high density, and the BEC corresponds exactly to momentum values close to $k=0$, \ie  $X \simeq 0$ and $Y \simeq 0$. This is then a problem as we can artificially create \kmk pairs because of reconstruction issues. This is something that we will need to keep in mind for the analysis of the experimental data.
+
+
+\subsection{Two-photon Raman transfer}
+
+\label{sec:raman}
+
+\NOTE{soigner la transition quand chapitre 2 est écrit}
 
 As we have seen in the first sections of this chapter, the BEC is prepared in the magnetic-substate $m_j=1$. To make a proper measurement of the in-trap momentum of the atoms, it is absolutely crucial that their TOF trajectories are not perturbed, notably by interactions with magnetic fields. Indeed, it would be quite hard to shield the science chamber from every unwanted magnetic field on the large distance of $\sim 50 \ \rm{cm}$ on which we let the atoms fall. A solution to cancel these unwanted interactions is to transfer the atoms into the non-magnetic sub-state $m_j=0$. All non-transferred atoms are then removed by applying a strong magnetic gradient.
 
@@ -119,7 +310,7 @@ When I started my PhD, the preferred method was to use a magnetic field bias to 
 
 To do so, we will rather use an optical transfer scheme, the two-photon Raman transfer. While this was used on our experiment a few years back on the $2 \ ^3 S_1 \rightarrow 2 \ ^3 P_1$, it was abandoned as spontaneous emission effects were perturbing the measured momentum distribution to sufficiently high levels, harming the measurements conducted at the time. Our goal to detect \kmk pairs, as well as the recent addition of a third laser source allowing us to address the remaining transition $2 \ ^3 S_1 \rightarrow 2 \ ^3 P_0$ better suited for two-photon Raman transfer (\NOTE{WHY?}) motivated us to build the required setup. In this section, we will explain the theory behind the two-photon Raman transfer before presenting the experimental setup and the procedure to characterize it.
 
-\subsection{Principle of the two-photon Raman transfer}
+\subsubsection{Principle of the two-photon Raman transfer}
 
 % Raman scattering is an inelastic scattering process of a photon by an atom resulting in a modification of the internal state of the atom. 
 
@@ -143,7 +334,7 @@ Importantly, the detuning $\Delta=(\omega_{e}-\omega_{g_1})-\omega_1=(\omega_{e}
 
 \noindent where $\Omega_1$ and $\Omega_2$ are the Rabi frequencies associated to laser fields 1 and 2 and $\delta_{\rm{2p}}$ is the detuning to the two-photon resonance condition $\delta_{\rm{2p}}=(\omega_{g_2} - \omega_{g_1}) - (\omega_2-\omega_1)$. The maximum transfer efficiency is the ratio $\eta_{\rm{2p}}=\Omega_{\rm{2p}}^2 /\Omega^2_{\rm{eff}}$ where $\Omega_{\rm{2p}}=\frac{\Omega_1 \Omega_2}{2 \Delta}$ is the effective two-photon Rabi frequency. For $\delta_{\rm{2p}}=0$, we get $\eta_{\rm{2p}}=1$ meaning that it is possible to transfer the entire population of $\ket{g_1}$ to $\ket{g_2}$.
 
-\subsection{Experimental implementation}
+\subsubsection{Experimental implementation}
 
 To implement the two-photon Raman transfer, we use the transition $2 \ ^3 S_1 \rightarrow 2 \ ^3 P_0$ that effectively realize the lambda structure required for Raman transfer (see Fig.-\ref{fig:raman_He}). The pump beam is $\sigma_-$ polarized and the Stokes beam $\pi$ polarized. We opt for a configuration with co-propagating beams to keep the trajectory of the atoms the same.
 
@@ -175,7 +366,7 @@ The polarization at the exit of the fiber is set by a half-wave plate so that th
     \label{fig:raman_sc}
 \end{figure}
 
-\subsection{Measurement of the two-photon resonance}
+\subsubsection{Measurement of the two-photon resonance}
 
 As previously discussed, the transfer efficiency is highly dependent from the detuning to the two-photon resonance condition set by the frequency difference $\Delta \nu = \nu_{\rm{Stokes}} - \nu_{\rm{Pump}}$. It is therefore important to scan $\Delta \nu$ prior to any use of two-photon Raman transfer to set it perfectly on resonance. The procedure is the following:
 
@@ -187,25 +378,134 @@ As previously discussed, the transfer efficiency is highly dependent from the de
 
 \NOTE{ALLER CHERCHER LES DONNES D'UNE RESONANCE.}
 
-\subsection{Rabi oscillations}
+\subsubsection{Rabi oscillations}
 
 In order to check that the two-photon Raman transfer is working as intended, we measure Rabi oscillations for different power values and check that the Rabi frequency indeed scales linearly with power. Like when we measure the two-photon resonance, we perform the measurement on a Mott insulator to avoid saturation.
 
 \NOTE{DONNEES RABI FLOPING}
 
+Measuring Rabi oscillations is the second part of the procedure to properly set up the two-photon Raman transfer prior to data taking. We set the power of the beams so that the maximum of the first Rabi oscillation corresponds to a pulse duration $t_{\rm{Rabi}} \simeq 10 \ \mu \rm{s}$ and measure a few Rabi oscillations to check it experimentally. This time is chosen to be as short as possible within the resolution of our sequencer so that the transfer efficiency is not sensitive to the fluctuations of the magnetic field as well as its inhomogeneity. Indeed, the bias field that we produce is not perfect, resulting in the presence of a small gradient \NOTE{value}. If the transfer takes too much time to complete, the atoms have time to travel on a significant distance so that they might see different values of the magnetic field, hence changing the two-photon resonance condition and reducing the overall transfer efficiency.
+
+\subsection{Measurement of the detection efficiency}
+
+We will now look to determine the detection efficiency of the $\He$ detector. In a first naive approach, we could simply produce a BEC, measure its number of atoms $\NBEC$ through the well-calibrated absorption imaging, use the two-photon Raman transfer to transfer all the atoms to the $m_J=0$ state, perform the TOF and count the numbers of atoms detected on the MCP $N_{\rm{MCP}}$. The detection efficiency is then simply the ratio $\alpha_{\rm{MCP}}= N_{\rm{MCP}}/\NBEC$. This method would however considerably underestimate the detection efficiency because of the saturation effects occuring with the high densities of the BEC. One could then think of using gases with more dilute distributions to avoid saturation, such as thermal gases or Mott insulators. This method is not so easy as well as it is practically difficult to obtain a momentum distribution wide enough so that the maximum densities values does not saturate the detector, but not too wide as a significant fraction of the atoms fall beyond the limits of the MCP.
+
+To circumvent these issues, we will then work with a BEC but deliberately use the two-photon Raman transfer with a large detuning to the two-photon Raman transition to transfer only a very small fraction of the atoms and avoid saturation. Using the results of \ref{sec:raman}, the number of detected atoms on the MCP writes:
+
+\begin{equation}
+    N_{\rm{MCP}}=\NBEC \left(\frac{\Omega_{2 p}}{\Omega_{\rm{eff}}}\right)^{2} \sin ^{2}\left(\frac{\Omega_{\rm{eff}}  \Delta t}{2}\right) \alpha_{\rm{MCP}}
+\end{equation}
+
+\noindent with  $\Omega_{\rm{eff}}= \sqrt{\Omega_{2p}^2 + \delta_{\rm{2p}}^2}$ and $\Delta t$ the duration of the Rabi pulse. If we measure $N_{\rm{MCP}}$ and now $\NBEC$, $\Omega_{2p}$ and the value of the detuning  $\delta_{2p}$, it is in principle possible to obtain the value $\alpha_{\rm{MCP}}$. We then devise the procedure to measure the detection efficiency to be as follows
+
+\begin{enumerate}
+    \item We first need to pinpoint very precisely where the two-photon resonance is. To do so, we measure the frequency of Rabi oscillations $\Omega_{\rm{eff}}$ with a dilute gas for different values of the frequency difference $\delta \nu$ between the Stokes and the pump beam close to the two-photon resonance condition. At this point, we do not care about the amplitude of the Rabi oscillations but only their frequency. Using $\Omega_{\rm{eff}}= \sqrt{\Omega_{2p}^2 + \delta_{\rm{2p}}^2}$, we fit the experimental data to find the value of $\delta \nu$ where $\Omega_{\eff}$ is minimum which corresponds to the two-photon resonance as illustrated on Fig.-XX.
+    \item We prepare a BEC of $\NBEC = 2 \times 10^5$ that we calibrate with absorption imaging.
+    \item We set the power of the Raman beams to have $\Omega_{\rm{2p}}=20 \ \rm{kHz}$.
+    \item We measure Rabi oscillations for various values of $\delta_{\rm{2p}} \in [300,1000] \ \rm{kHz}$ and extract the amplitude of the square sine function $N^{\rm{max}}_{\rm{MCP}}$.
+    \item We plot $N^{\rm{max}}_{\rm{MCP}}$ versus $\NBEC \left(\frac{\Omega_{2 p}}{\Omega_{\rm{eff}}}\right)^{2} \alpha_{\rm{MCP}}$. We fit the data with a linear function and deduce the value of $\alpha_{\rm{MCP}}$ from the slope of the fit as illustrated on Fig.-XX.
+\end{enumerate}
+
+\noindent The final measured value is \fcolorbox{red}{white}{$\alpha_{\rm{MCP}}=0.53(2)$}. As mentioned earlier, the open-to-air ratio of the MCPs is around $\simeq 90 \%$, meaning that almost all atoms fall in a channel, thus not limiting the detection efficiency. However, the first extracted electron has roughly a 1/2 probability to be ejected upwards outside of the channel, rendering the amplification process impossible, explaining why we observe a detection efficiency of the order of $50 \%$.
+
 
 
 \section{Characterisation of two-body collisions in the time-of-flight dynamics}
 
+\NOTE{intro à faire avec chapitre 2}
+
+\subsection{Presentation of the problem}
+
+As we have seen in Chapter \ref{sec:chapter_2}, the momentum distribution of the lattice gas in the superfluid region of the phase diagram is made of copies of the BEC of momentum $j k_d \bm{e}_i$ with $j \in \Z$ and $i=x,y,z$. During the TOF, it is possible to observe s-wave collisions between the atoms of these different BEC copies. Let us then for instance consider the case of a collision between an atom in the copy $j=0$ with initial momentum $\bm{k}_{i1}=\bm{0}$ and one in the $x$ copy $j=1$ with initial momentum $\bm{k}_{i2}=k_d \ \bm{e}_x$. If we write these momenta in the center-of-mass reference frame, we rather get $\bm{k}_{i1}=-k_d/2 \ \bm{e}_x$ and $ \bm{k}_{i2}=k_d/2 \ \bm{e}_x$. As the collision is elastic, the momentum is conserved so that the final momenta writes:
+
+\begin{equation}
+    \bm{k}_{i1}+\bm{k}_{i2}=\bm{k}_{f1}+\bm{k}_{f2}=\bm{0}
+\end{equation}
+
+\begin{equation}
+    \frac{\hbar^2 k^2_{1f}}{2m} + \frac{\hbar^2 k^2_{2f}}{2m} =  \frac{\hbar^2 k_d^2}{2m}
+\end{equation}
+
+\noindent This means that $\bm{k}_{1f}$ and $\bm{k}_{2f}$ must have equal norms $k_d/2$ and be antiparallel. Their direction is a priori random. After the collision, the atoms then end up on a sphere of diameter $k_d$ in momentum space as illustrated on Fig.-XX. For a large number of collisions, all the atoms that underwent a collision form a spherical halo that we can observe experimentally.
+
+We understand that this effect is detrimental to our measurement, as the collision process changes the momentum distribution of the gas during the TOF, meaning that we do not measure the true in-trap momentum distribution. However, the collision halos are not visible for the low atom numbers we wish to work with for the observation of the \kmk pairs of the quantum depletion. While this is a good sign, we would like to know precisely how likely it is for a two-body collision to happen in these conditions so that we can safely apply the ballistic relation. We will then deliberately load a large number of atoms in the optical lattice to observe clear collision halos and count the number of atoms inside of them in order to validate a simple classical model that we will use to predict the number of collisions at the low atom numbers we wish to use.
+
 \subsection{Classical model}
 
-\subsection{Evolution with total atom number}
+We will start our study by devising a simple classical model to evaluate the number of collisions before checking its validity experimentally. To illustrate the idea behind it, let us compute the number of collisions between the condensate copies $j=0$ and $j=1$. The first step is to evaluate the collision rate of one atom a position $\bm{r}$ at time $t$ belonging to the BEC copy with all the atoms in the copy $j=1$. This rate writes \cite{chikkatur2000suppression,perrin:tel-00244641}:
 
-\subsection{Evolution with lattice depth}
+\begin{equation}
+    \Gamma_{\text {coll }}=n_{1}(\bm{r}, t) \times \sigma \times v_{0,1}
+\end{equation}
+
+\noindent where $n_1$ is density of the copy $j=0$, $v_{0,1}=v_d=\hbar k_d/m$ the relative velocity of the two copies and $\sigma= 8 \pi a_s^2$ the scattering cross-section, with $a_s$ the s-wave scattering length ($a_s = 142 a_0$ for $^4\He$ with $a_0$ the Bohr radius). To obtain the total number of collisions, we integrate over all particles of the copy $j=0$ and over the time interval during which the copies spatially overlap. If we wish to obtain the number of collisions for all first order copies, we can simply multiply this number by $6$ to finally obtain:
+
+\begin{equation}
+    N_{\text {coll }}=6 \int d t \int d \bm{r} \ \sigma v_{d} n_{0}(\bm{r}, t) n_{1}(\bm{r}, t)
+    \label{eq:coll_model_general}
+\end{equation}
+
+To evaluate this quantity, we need to determine the density profiles $n_{j}(\bm{r}, t)$. While a full description of the TOF dynamics would be way to complicated in the frame of this simple model, the densities can be evaluated by considering the different energies and time scales of the problem. The shortest time scale is set by the frequency of a lattice site $\omega_{\rm{site}}$ to which we associate the corresponding harmonic oscillator length $a_{\text {h.o. }}=\sqrt{\hbar / m \omega_{\text {site }}}$. From this, we compute the time scale $t_0 \simeq m d a_{\text {h.o. }} /h \simeq 1 \ \mu \rm{s}$ on which the wave-functions of the different sites overlap. After a few $t_0$, the overall density profile is smoothed with a total size hardly larger than the in-trap size $L$ and a lower density than that in the trap. In turn, the densities profile are then well described by the Thomas-Fermi parabolic profile of the BEC $n_{\rm{BEC}}(\bm{r})$.
+
+We now need to consider the other timescales, much larger than $t_0$ and associated with:
+
+\begin{itemize}
+    \item The spatial separation of two copies $t_{\rm{sep}} \sim 2L/v_d \sim 0.1 \ \rm{ms}$.
+    \item The expansion of the BEC driven by its kinetic energy $t_{\mathrm{kin}} \sim m L / \hbar \Delta k \sim 10 \mathrm{~ms}$ where $\Delta k$ is the momentum width of the BEC.
+    \item The expansion of the BEC under the effect of the mean-field potential (\NOTE{REF}) $t_{\rm{MF}}$.
+\end{itemize}
+
+\noindent We notice that when the size of the trapped gas is much larger than the lattice spacing $L \gg d$ which is typically the case in our experiment, we get $\Delta k \ll k_d$ explaining why we obtain $t_{\rm{sep}} \ll t_{\rm{kin}}$. Things are more complicated for $t_{\rm{MF}}$ as it depends on the number of atoms and can be of the order of $t_{\rm{sep}}$. From this, we consider two scenarios: one where the number of atoms is small enough so that mean-field effects can safely be neglected, and one where they must be accounted for.
+
+\subsubsection{Scenario 1: mean-field effects are negligible}
+
+In this scenario, the size of the BEC copies increases in the time only through the effect of kinetic energy. As we have seen that $t_{\rm{sep}} \ll t_{\rm{kin}}$, we understand that the size of the density profiles hardly changes during the interaction time, \ie before separation of the different BEC copies. We can therefore safely assume that the shape of the densities profile does not change during the interaction time, allowing us to evaluate analytically equation \ref{eq:coll_model_general} to obtain:
+
+\begin{equation}
+    N_{\text {coll }}=\frac{48 \alpha_{0} \alpha_{1}}{315}\left(\frac{15 N_{\text {BEC }} a_{s}}{L}\right)^{2}
+    \label{eq:analytical_model}
+\end{equation}
+
+\noindent The scaling $N_{\text {coll }} \propto a_{s}^{2} N_{\text {bec }}^{2} / L^{2}$ is identical to what was found in previous works describing the collisions between two BECs \cite{zin2005quantum,zin2006elastic}. 
+
+\subsubsection{Scenario 2: mean-fields effects are not negligible}
+
+In this scenario, it is not possible anymore to assume that the shape of the density profiles does not change during the interaction time, making the calculation of equation \ref{eq:coll_model_general} much more complicated and beyond the scope of this thesis. This is however not really important as the goal of this experiment is to determine the number of collisions at low atom number. If we are able to find atom numbers for which the collisions spheres are visible while the mean-field effects are negligible, we will be able to validate our simple model and use it to predict the number of collisions at low atom numbers. We must however keep in mind that the analytical model of equation \ref{eq:analytical_model} should fail at high atom numbers. The expansion of the BEC copies induced by the mean-field effects implies a decrease of the density compared to Scenario 1, meaning that we should observe less collisions that what is predicted from equation \ref{eq:analytical_model}.
+
+Actually, it is possible to discriminate between the two scenarios rather easily by looking at the width of the collision spheres. When the expansion is ballistic, \ie in Scenario 1, the width of the collision sphere that we will note $\delta k_s$ is equal to the in-trap momentum width $\Delta k \propto 1/L$ and should therefore decrease when the total number of atoms increases. On the contrary, $\delta k_s$ is increased in Scenario 2 because of the additional kinetic energy resulting from the mean-field interaction potential, meaning that $\delta k_s$ increase when the strength of mean-field effects increases, \ie when the atom number increases. We therefore expect the variations of $\delta k_s$ with the total atom number $N_{\rm{BEC}}$ to show a minimum that signals the crossover between Scenarios 1 and 2.
+
+\subsection{Data analysis}
+
+We show on Fig.-XX the typical detected momentum distribution on which we can see clear collision halos. We produce a variety of data sets to test the effect of the atom number and of the lattice amplitude. The procedure to count the number of collisions is as follows:
+
+\begin{enumerate}
+    \item For each collision halo, we restrict the analysis to a small slice so that we exclude the region where the halo intersects with the condensate peaks or other collision halos as illustrated on Fig.-XX. 
+    \item We calculate for each atom in the slice the momentum distance to the center of the sphere $k_r$ and compute the histogram $\mathcal{N}(k_r)$ of the number of atoms located at a distance $k_r$. The size of the bins is $0.01 \ k_d$.
+    \item We account for the efficiency of our detection process $\alpha_D$ by multiplying the value of each bin of the histogram by $1/\alpha_D$. Careful, as this experiment was done before the implementation of the Raman transfer, the efficiency was lower than measured in \NOTE{REF}. A full calibration as the one previously described was not possible as we could not observe clean Rabi oscillations because of the much smaller Rabi frequencies. We therefore measured $\alpha_D$ by recording diluted distributions of Mott insulators to avoid saturation effects and comparing them to absorption images for which we can precisely know the number of atoms. We obtained $1/\alpha_D=15.5(1.0)$.
+    \item We obtain histograms such as represented on Fig.-XX in which we observe a peak at $k_r=0.5 \ k_d$ signalling the presence of the collision halo. We remove the contribution of the background that corresponds to the quantum and thermal depletion and fit the peak with a Gaussian function to obtain the width of the halo $\delta k_s$ and the number of atoms in the slice of collision halo.
+    \item Assuming spherical symmetry, the total number of scattered atoms is obtained by integrated the value measured in the slice over the entire sphere. 
+    \item We finally obtain the number of detected collisions $N_{\rm{coll}}^{\rm{exp}}$ by summing the number of scattered atoms measured in the different halos. Note that we use only 5 of the 6 first order halos as one of them is partially falling out of the MCP.
+\end{enumerate}
+
+\subsubsection{Width of the collision halos}
+
+We show on Fig.-XX the measured RMS widths of the collision halos $\delta_s$ as a function of the atom number. The error bars are obtained from the error on the Gaussian fit. As expected, we observe a minimum around $N_0 \simeq 1.7 \times 10^5$ at which the mean-field effects start playing a role. 
+
+\subsubsection{Evolution with total atom number}
+
+We plot on Fig.-XX the evolution of the number of collisions with the total atom number at a fixed lattice amplitude $s=5$. The vertical error bars account for the standard error of the mean on $N_{\rm{coll}}^{\rm{exp}}$ and the uncertainty on the detection  efficiency. The horizontal error  bars depict the standard deviation on $N_{\rm{bec}}$. The dashed line represents the analytical model of equation \ref{eq:analytical_model} where the effect of the atom number is contained in the term $(\NBEC/L)^2$ giving in the Thomas-Fermi approximation $N_{\rm{coll}} \propto \NBEC^{8/5}$. While we find a good agreement with the experimental data at low atom number and without any adjustable parameters, we find that the analytical model overestimates the number of collisions for $\NBEC > N_0$ as expected.
+
+\subsubsection{Evolution with lattice depth}
+
+ We plot on Fig.-XX the evolution of the number of collisions with the lattice amplitude $s$ at a fixed total number of atoms $\NBEC = 3.9(4) \times 10^5$. The effect of the lattice amplitude in equation \ref{eq:analytical_model} is reflected in the coefficients $\alpha_0$ and $\alpha_1$. At very low lattice amplitudes, the population in the diffracted peaks is very small, $\alpha_0 \simeq 1$, $\alpha_1 \simeq 0$, meaning that the number of collisions is very low. As $s$ increases, the number of collisions increases as $\alpha_1$ increases. With $s > 5$, we start populating higher orders of diffraction, thus reducing the number of collisions between the copies $j=0$ and $j=1$. This explains the non-monotonic behavior of the analytical model that is well reproduced by the experimental data. Once again, the model overestimates the number of collisions as $\NBEC > N_0$.
 
 \subsection{Conclusion}
 
+Now that we have validated that our analytical model properly works for low atom number, we can look to compute the probability of collision per atom $\eta_1 = N_{\rm{coll}}/\NBEC$. We plot on Fig.-XX $\eta_1$ as a function of the total atom number $\NBEC$. For $\NBEC \sim 5 \times 10^3$, we find that the probability for an atom to collide during the TOF is $\eta_1 \sim 10^{-4}$ which is extremely low. Before reaching our final conclusion, we need to discuss the contribution of other possible scattering halos, such as the one involving higher order copies $j \geq 2$ or between two first order copies. These halos are more diluted because of a lower number of collisions and larger volume and are in turn not visible in the experiment, but might contribute significantly at high values of $s$. We can evaluate their contribution by setting the appropriate values of $\alpha_j$ in equation $\ref{eq:analytical_model}$. We obtain an upper bound by considering the extreme situation where the number of copies would be as large as the number of atoms and find that this increases $\eta_1$ by only a factor 3, meaning that the measured probability $\eta_1$ gives a good estimate of the total probability of collisions. We can therefore safely conclude that two-body collisions will be negligible in our \kmk pair experiment. This results completes the previous benchmarking experiments \cite{cayla2018single}, proving that the ballistic relation applies in our experiment.
+
 \section{Adiabatic preparation in the vicinity of the Mott transition}
+
+\NOTE{to do}
 
 \subsection{Thermometry method}
 
