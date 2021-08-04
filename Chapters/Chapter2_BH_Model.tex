@@ -196,6 +196,7 @@ In this case, the particles are non-interacting. In these conditions, the ground
 
 \begin{equation}
     \ket{\Psi_0}_{\mathrm{SF}} \approx |\Psi\rangle_{\mathrm{coh}}=\mathcal{N} e^{\sqrt{N} \hat{c}^{\dagger}(\bm{q}=0)} \ket{0} = \mathcal{N} \prod_{i} e^{\sqrt{\bar{n}} \hat{b}_{i}^{\dagger}} \ket{0} = \prod_{i} \mathcal{N}_{i} \sum_{n_{i}=0}^{\infty} \frac{\alpha_{i}^{n_{i}}}{\sqrt{n_{i} !}}\left|n_{i}\right\rangle_{i}
+    \label{eq:ground-state_superfluid}
 \end{equation}
 
 \noindent with $\alpha_i=\sqrt{\bar{n}} \ \forall i \in \Z$ and the normalization factor $\mathcal{N}_{i}=e^{-\left|\alpha_{i}\right|^{2} / 2}$. We thus find that the ground state can be described as a product of local coherent states associated to the different lattice sites.
@@ -227,6 +228,7 @@ Because of the strong repulsive interactions, the particle localize on the latti
 
 \begin{equation}
     \left|\Psi_{0}\right\rangle_{\mathrm{MI}}=\frac{1}{\sqrt{N !}} \prod_{j=1}^{M}\left(\hat{b}_{j}^{\dagger}\right)^{\bar{n}}|0\rangle
+    \label{eq:ground-state_MI}
 \end{equation}
 
 \noindent This state is called the \textbf{Mott insulator} state \cite{fisher1989boson}. The first-order correlation function now writes
@@ -276,6 +278,8 @@ To discuss the location of the critical point $(U/J)_c$, we slightly complexify 
 
 \subsection{Trapping effects}
 
+\label{sec:ch2_trapping_effects}
+
 In practice, the system is not homogeneous as we require an external harmonic potential $V_{\rm{ext}}(\bm{r})$ to trap the atoms for experiments. The properties of the trapped system can be linked to the properties of the homogeneous system by applying the Local Density Approximation\footnote{Valid as long as the trapping potential varies slowly from site to site and the system is at thermal equilibrium. This approximation may however fail at the quantum critical point \cite{pollet2012recent}.} \cite{bergkvist2004local} and replacing the chemical potential by an effective one:
 
 \begin{equation}
@@ -298,6 +302,48 @@ If we finally consider the effect of temperature, we obtain the complete phase d
 \end{figure}
 
 
+% The theoretical description of the Bose-Hubbard ground-state at an arbitrary value of $U/J$ is a very challenging task. It however exists a few approximate approaches from which we can obtain meaningful information as we will detail now.
+
+\subsection{The Gutzwiller method}
+
+The Gutzwiller method takes its name from its author who introduced it in \cite{gutzwiller1963effect} to study strongly correlated Fermi systems. It was later adapted to characterize the ground-state of the Bose-Hubbard Hamiltonian in \cite{rokhsar1991gutzwiller}. This method is particularly useful to evaluate the density profile and therefore the size of the lattice gas with good accuracy all across the Mott transition, apart from the region close to the critical point. Although this is a ground-state, $T=0$ method that does not faithfully represent the reality of experiments, its predictions will be quite valuable to understand the correlation signals that we will present in thesis.
+
+The method revolves around the Gutzwiller ansatz that consists in writing the many-body ground-state as a product of on-site wave-functions $\ket{\phi_i}$:
+
+\begin{equation}
+    \ket{\Psi_G} = \prod_i^{\text{sites}} \ket{\phi_i}
+\end{equation}
+
+\noindent The on-site wave-functions are then developed on the Fock-state basis:
+
+\begin{equation}
+    \ket{\phi_i}= \sum_{n_j=0}^{\infty} f(n_j) \ket{n_j}
+\end{equation}
+
+This ansatz is motivated by the fact that it matches the exact ground-state for the extreme cases:
+
+\begin{itemize}
+    \item For $U/J \to 0$, the ground-state is a coherent state (see equation \ref{eq:ground-state_superfluid}) so that $f(n_j) = \mathcal{N}_{j}  (\alpha_{j}^{n_{j}})(\sqrt{n_{j} !})$ with $\alpha_j=\sqrt{\bar{n}}$ and $\mathcal{N}_{i}=e^{-\left|\alpha_{i}\right|^{2} / 2}$.
+    \item For $U/J \to \infty$, the ground-state is already a Fock state (see equation \ref{eq:ground-state_MI}) so that $f(n_j) = \delta_{n_j,\bar{n}}$.
+\end{itemize}
+
+The Gutzwiller method is a \textbf{variational} approach, meaning that the ground-state is determined by finding the coefficients $f(n_j)$ that minimizes the free energy defined as:
+
+\begin{equation}
+    G = \mean{H_{\mathrm{BH}}}_{\ket{\Psi_G}} - \mu \mean{N}_{\ket{\Psi_G}} = -J \sum_{\langle i, j\rangle} \alpha_{i}^{*} \alpha_{j}+\sum_{j} \sum_{n_{j}=0}^{\infty}\left[\frac{U}{2} n_{j}\left(n_{j}-1\right)-\mu n_{j}\right]\left|f\left(n_{j}\right)\right|^{2}
+\end{equation}
+
+\noindent with the condition $\left\langle n_{j}\right\rangle=\sum_{n_{j}=0}^{\infty}\left|f_{j}\left(n_{j}\right)\right|^{2} n_{j}=\bar{n}$. The coefficients $f(n_j)$ can be found through numerical calculations. Interestingly, following the arguments of \ref{sec:ch2_trapping_effects}, $\mu$ can be replaced by the effective $\mu_{\rm{eff}}$ to account for the effect of the external trapping potential present in our experiment.
+
+\section{Extension of the Bogoliubov theory of the weakly-interacting homogeneous Bose gas}
+
+So far, we have focused on the description of the lattice Hamiltonian under the scope of Wannier functions, culminating in the Bose-Hubbard Hamiltonian describing the physics of the Mott transition. We now wish to go back to the central point developed in Chapter \ref{sec:chapter_1}, namely the \kmk correlations in the quantum depletion predicted by the Bogoliubov theory of the weakly-interacting, homogeneous Bose gas. We concluded by saying that using an optical lattice would be a fitting solution to efficiently increase the interactions to reach the low temperature regime dominated by the interactions $\mu \gg \kB T$ for which we expect the pair correlation signal to be experimentally detectable. This however requires that we extend the method of the Bogoliubov theory to the case of the lattice gas to identify the condition under which the \kmk pairs should be observable.
+
+\subsection{Setting $U/J$}
+
+\subsection{Effective mass and dispersion relation}
+
+\subsection{The rescaled interaction strength}
 
 \section{Accessing the in-trap momentum distribution}
 
@@ -437,5 +483,17 @@ Importantly, a characteristic of the Superfluid to Mott insulator transition is 
 
 \subsection{Mean-field interactions}
 
+The experimental technique described in the last paragraph holds if there are no interactions between the particles during the TOF. If it were otherwise, the interactions would affect the TOF dynamics of the gas, preventing us to use the ballistic relation and to map the TOF distribution $\rho_{\rm{TOF}}(\bm{r},t)$ to the in-trap momentum $\rho(\bm{k})$. As interactions cannot be effectively turned off by means of a Feshbach resonance, experimentally inaccessible for $^4 \He$, it is crucial to determine whether interactions during the TOF can be neglected and under which conditions.
+
+Describing the interactions between each of the individual particles would be impossible, even for numerical methods for which the calculation time would be prohibitive. To circumvent this issue, the problem can be simplified using the \textbf{mean-field approximation}. The idea is to approximate the effect of the interactions of every atoms on a single one as an \textbf{average} single effect. This considerably simplifies the many-body problem, reducing it to an effective one-body problem.
+
+To quantify the effect of the interactions treated at the mean-field level, we introduce the interaction energy $U_{\rm{int}} \sim gn$ with $g$ the strength of the interactions and $n$ the atomic density. To determine whether the interactions are affecting the expansion of the gas released from the lattice, $U_{\rm{int}}$ must be compared to the zero point energy of the ground-state of the approximate harmonic oscillator associated to a single lattice site, $\hbar \omega_L$. In typical experimental conditions, $U_{\rm{int}}/h \approx 10^3 \ \rm{Hz} \ll \omega_L/2 \pi \approx 10^5-10^6 \ \rm{Hz}$, meaning that the initial expansion is driven by the zero point energy of the lattice and not the released interaction energy. After a small expansion time, the Wannier functions of the different sites overlap as their width become of the order of the lattice spacing $d$ and might then interact. However, on this time scale, the atomic density is reduced by a factor $(x_0/d)^3 \approx 10^2$ (for $s=10$), meaning that this interaction effect should also negligible \cite{gerbier2008expansion}, provided that the initial density is not too high. This point will be discussed in further details in light of experimental data in Chapter \ref{sec:chapter_3}.
+
+As developed in \cite{kupferschmidt2010role}, the interactions can also induce a dephasing between the different sites. As a matter of fact, the time evolution of the phase of the wave-function associated to a lattice site depends on its initial energy, and therefore of $U_{\rm{int}}$. If the lattice sites have different lattice fillings, which typically is the case in the superfluid phase where the on-site atom number fluctuations are large, the different interfering wave-functions can be dephased from one another, reducing the visibility of the interference pattern. This effect is however also negligible \cite{gerbier2008expansion,kupferschmidt2010role} in the case of our 3D lattice where $a_s \ll x_0$, provided that the filling is not too high.
+
 \subsection{Beyond mean-field interactions}
+
+While the mean-field approximation is efficient to obtain a first understanding on how the interactions might affect the TOF, it is inherently limited as it does not consider interaction effects between several particles. One clearly identifiable beyond mean-field effect happening during the TOF is the presence of scattering halos between the diffraction peak \cite{greiner2001exploring}. These scattering halos signal the presence of $s$-wave collisions between the atoms of the different diffraction peaks, \ie with significantly different velocities, happening during the first moments of the TOF as they separate. This effect is analog to the scattering halos observed between two colliding condensates \cite{khakimov2016ghost,perrin2007observation,zin2006elastic}.
+
+We have conducted a thorough experimental study of the $s$-wave two-body collisions during the TOF to determine whether they would affect our measurement of the momentum distribution \cite{tenart2020two}. This study will be detailed in Chapter \ref{sec:chapter_3}.
 
