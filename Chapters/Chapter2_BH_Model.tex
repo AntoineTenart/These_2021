@@ -32,7 +32,7 @@ To begin, we will consider that the atoms are non-interacting and study the simp
 \noindent As the Hamiltonian is separable along the 3 directions of space and the gas of atoms is non-interacting, we can simply work with the one-dimensional, single particle Hamiltonian:
 
 \begin{equation}
-    \hat{H}_1 = \frac{p_x^2}{2m} + \sin^2 \Big(\frac{k_d}{2} x \Big)
+    \hat{H}_{\rm{1D}} = \frac{p_x^2}{2m} + \sin^2 \Big(\frac{k_d}{2} x \Big)
 \end{equation}
 
 \noindent To find the eigenstates of this Hamiltonian, we use the Bloch's theorem \cite{ashcroft1976solid}:
@@ -49,7 +49,7 @@ We therefore look for eigenstates of the form:
     \label{eq:bloch_wave}
 \end{equation}
 
-\noindent with $n \in \N$ and $q \in \R$ the \textbf{quasi-impulsion}. In order to determine the functions $u_{\bm{q}} (\bm{r})$ and the energy $E_n (q)$, we inject equation \ref{eq:bloch_wave} in the eigenvalue equation to find that they must verify:
+\noindent with $n \in \N$ and $q \in \R$ the \textbf{quasi-impulsion}. In order to determine the functions $u_{n,q} (x)$ and the energy $E_n (q)$, we inject equation \ref{eq:bloch_wave} in the eigenvalue equation to find that they must verify:
 
 \begin{equation}
     \left[\frac{\left(p_{x}+\hbar q\right)^{2}}{2 m}+V_{0} \sin ^{2}\left(\frac{k_{a}}{2} x\right)\right] u_{n, q}(x)=E_{n}(q) u_{n, q}(x)
@@ -92,12 +92,12 @@ The Bloch waves can then be re-written with the definition of the Wannier functi
     \label{fig:bloch_wannier}
 \end{figure}
 
-\noindent The Bloch waves are then then sum of the localized Wannier function $w_{n, j}$ that can be interpreted as the wave-function of a particle located in lattice site $j$. The Bloch and Wannier functions for various lattice depths are represented on Fig.-\ref{fig:bloch_wannier}.
+\noindent The Bloch waves are the sum of the localized Wannier function $w_{n, j}$ that can be interpreted as the wave-function of a particle located in lattice site $j$. The Bloch and Wannier functions for various lattice depths are represented on Fig.-\ref{fig:bloch_wannier}.
 
 We can now re-write the Hamiltonian of the system with the newly introduced Wannier functions. To do so, we start by writing it in the Bloch waves basis with the second quantification formalism, introducing the operator $\hat{c}_{n,q}$ that destroys a particle in the Bloch wave $\psi_{n,q}$.
 
 \begin{equation}
-    \hat{H}_{1}=\sum_{n} \int_{\mathrm{BZ}} E_{n}(q) \hat{c}_{n, q}^{\dagger} \hat{c}_{n, q} \mathrm{~d} q
+    \hat{H}_{\rm{1D}}=\sum_{n} \int_{\mathrm{BZ}} E_{n}(q) \hat{c}_{n, q}^{\dagger} \hat{c}_{n, q} \mathrm{~d} q
     \label{eq:H_bloch}
 \end{equation}
 
@@ -111,7 +111,7 @@ We can now re-write the Hamiltonian of the system with the newly introduced Wann
 \noindent Injecting equation \ref{eq:a_wannier} in equation \ref{eq:H_bloch}, we get:
 
 \begin{equation}
-    H_{1}=\sum_{n} \sum_{j, j^{\prime}} J_{n}\left(j-j^{\prime}\right) \hat{b}_{n, j^{\prime}}^{\dagger} \hat{b}_{n,j}
+    H_{\rm{1D}}=\sum_{n} \sum_{j, j^{\prime}} J_{n}\left(j-j^{\prime}\right) \hat{b}_{n, j^{\prime}}^{\dagger} \hat{b}_{n,j}
     \label{eq:H_Jn}
 \end{equation}
 
@@ -123,7 +123,7 @@ We can now re-write the Hamiltonian of the system with the newly introduced Wann
 
 \noindent This expression tells that the probability for a particle to tunnel from lattice site $j$ to $j'$ is reduced as the distance between the two sites $j$ and $j'$ increases and as the potential barrier, \ie the lattice depth, increases.
 
-We will focus ourselves on the ground-state properties of the system and therefore assume that the lowest energy band is the only one populated. This assumption is valid as long as $V_0 \geq 2.2 \ E_{\rm{r}}$ at which the gap is opening. In addition, for $V_0 \geq 3 \ E_{\rm{r}}$, we can use the tight-binding approximation for which only the tunneling events between adjacent sites are non-negligible. We thus simplify the Hamiltonian \ref{eq:H_Jn} by replacing  $J_{n}\left(j-j^{\prime}\right)$ by a constant $J$ denoting the probability to tunnel between adjacent lattice sites that we define as:
+As for the rest of this thesis, we will focus ourselves on the ground-state properties of the system and therefore assume that the lowest energy band is the only one populated. This assumption is valid as long as $V_0 \geq 2.2 \ E_{\rm{r}}$ at which the gap is opening. In addition, for $V_0 \geq 3 \ E_{\rm{r}}$, we can use the tight-binding approximation for which only the tunneling events between adjacent sites are non-negligible. We thus simplify the Hamiltonian \ref{eq:H_Jn} by replacing  $J_{n}\left(j-j^{\prime}\right)$ by a constant $J$ denoting the probability to tunnel between adjacent lattice sites that we define as:
 
 \begin{equation}
     J=-J_0(1)
@@ -132,11 +132,11 @@ We will focus ourselves on the ground-state properties of the system and therefo
 \noindent so that $J$ is positive. Finally, we obtain the first term of the Bose-Hubbard Hamiltonian:
 
 \begin{equation}
-    \hat{H}_1 = -J \sum_{\mean{i,j}} \hat{b}^{\dagger}_i \hat{b}_j
+    \hat{H}_{\rm{1D}} = -J \sum_{\mean{i,j}} \hat{b}^{\dagger}_i \hat{b}_j
     \label{eq:H_band}
 \end{equation}
 
-\noindent where $\mean{i,j}$ denotes the ensemble of all adjacent lattice sites $i$ and $j$.
+\noindent where $\mean{i,j}$ denotes the ensemble of all adjacent lattice sites $i$ and $j$. In the 3D case, the expression of the Hamiltonian remains the same.
 
 \subsubsection{Interaction term}
 We now turn to studying the interaction term that we had left out in the full Hamiltonian of equation \ref{eq:H_lattice_full}. In the formalism of second quantification, the short-range, $s$-wave, 3D interaction Hamiltonian writes:
@@ -179,7 +179,7 @@ Combining this Hamiltonian to the non-interacting Hamiltonian of equation \ref{e
     \hat{H}_{\mathrm{BH}}= -J \sum_{\mean{i,j}} \hat{b}^{\dagger}_i \hat{b}_j + \frac{U}{2} \sum_j \hat{n}_j (\hat{n}_j -1)
 \end{equation}
 
-\noindent Interestingly, the physics of the homogeneous ground-state depends only from the two parameters $J$ and $U$ as we will see in the next paragraph. In particular, the ratio $U/J$ depends from the lattice depth $V_0$ as illustrated on Fig-\ref{fig:U_J_vs_s}. This parameter is easily controllable in an experiment, for instance by changing the power of the laser beams used to produce the lattice potential.
+\noindent Interestingly, the physics of the homogeneous ground-state depends only from the two parameters $J$ and $U$ as we will see in the next paragraph. In particular, the ratio $U/J$ depends from the lattice depth $V_0$ as illustrated on Fig-\ref{fig:U_J_vs_s}. This parameter is easily controllable in an experiment, for instance by changing the power of the laser beams used to produce the lattice potential. 
 
 \begin{figure}
     \centering
@@ -191,13 +191,13 @@ Combining this Hamiltonian to the non-interacting Hamiltonian of equation \ref{e
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{Fig/Chapter2/U_J_vs_s.png}
-    \caption{Evolution of $U$, $J$ and the ratio $U/J$ as a function of the lattice depth.}
+    \caption{Evolution of $U$, $J$ and the ratio $U/J$ as a function of the lattice depth in log-scale.}
     \label{fig:U_J_vs_s}
 \end{figure}
 
 \section{The superfluid to Mott insulator transition}
 
-We discuss in this section the properties of the Bose-Hubbard Hamiltonian ground-state for $N$ particles spread over $M$ sites so that the filling is commensurate, \ie $\bar{n}_0=N/M$ is an integer. To begin, we describe the extreme cases $U/J \to 0$ and $U/J \to \infty$, which are the only cases for which the Hamiltonian can be analytically solved. 
+We discuss in this section the properties of the Bose-Hubbard Hamiltonian ground-state for $N$ particles spread over $M$ sites with filling $\bar{n}=N/M$. To begin, we describe the extreme cases $U/J \to 0$ and $U/J \to \infty$, which are the only cases for which the Hamiltonian can be analytically solved. 
 
 \subsection{Extreme cases}
 
@@ -209,7 +209,7 @@ In this case, the particles are non-interacting. In these conditions, the ground
     \ket{\Psi_0}_{\mathrm{SF}} = \frac{1}{\sqrt{N!}} (\hat{c}^{\dagger}(\bm{q}=0))^N \ket{0} = \frac{1}{\sqrt{N !}}\left(\frac{1}{\sqrt{M}} \sum_{j=1}^{M} \hat{b}_{j}^{\dagger}\right)^{N} \ket{0}
 \end{equation}
 
-\noindent The ground-state is then an ideal Bose-Einstein condensate with a condensed fraction equal to 1. In the thermodynamic limit with $N \to \infty$, $M \to \infty$ and the average filling defined as $\bar{n}=N/M$, it is possible to show at the price of a few lines of complex calculations \cite{gerbier_notes} that the probability to find $n_i$ atoms at a given site $i$ is:
+\noindent The ground-state is then an ideal Bose-Einstein condensate with a condensed fraction equal to 1. In the thermodynamic limit with $N \to \infty$, $M \to \infty$, it is possible to show at the price of a few lines of complex calculations \cite{gerbier_notes} that the probability to find $n_i$ atoms at a given site $i$ is:
 
 \begin{equation}
     p\left(n_{i}\right) \approx e^{-\bar{n}} \frac{\bar{n}^{n_{i}}}{n_{i} !}
@@ -247,7 +247,7 @@ In the opposite extreme limit, the tunneling probability goes to zero $J=0$ so t
     \hat{H}_{\mathrm{BH}} = \frac{U}{2} \sum_j \hat{n}_j (\hat{n}_j -1)
 \end{equation}
 
-Because of the strong repulsive interactions, the particle localize on the lattice sites and cannot hop from site to site as $J=0$. The ground-state is then reached by distributing the particles among the different sites of the lattice so that the number of particles per site is as low as possible to minimize the interaction energy. This corresponds to putting $\bar{n}=N/M$ particles in each of the $M$ available lattice sites. The ground-state then has the simple expression of a Fock state:
+Because of the strong repulsive interactions, the particle localize on the lattice sites and cannot hop from site to site as $J=0$. The ground-state is then reached by distributing the particles among the different sites of the lattice so that the number of particles per site is as low as possible to minimize the interaction energy. This corresponds to putting $\bar{n}=N/M$ particles in each of the $M$ available lattice sites. For simplicity sake, we assume here that the filling is commensurate, \ie $\bar{n}$ is an integer. The ground-state then has the simple expression of a Fock state:
 
 \begin{equation}
     \left|\Psi_{0}\right\rangle_{\mathrm{MI}}=\frac{1}{\sqrt{N !}} \prod_{j=1}^{M}\left(\hat{b}_{j}^{\dagger}\right)^{\bar{n}}|0\rangle
@@ -261,6 +261,8 @@ Because of the strong repulsive interactions, the particle localize on the latti
 \end{equation}
 
 \noindent and is zero when we consider any pair of different lattice sites with $i \neq j$. In the limit $J \to 0$, the system is therefore incoherent.
+
+
 
 \subsection{The zero-temperature Mott phase transition}
 
@@ -287,9 +289,16 @@ What can then be said from intermediates values of $U/J$? If we start from the c
     \end{itemize}
 \end{minipage}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{Fig/Chapter2/schema_superfluid_mott.png}
+    \caption{Schematic of the superfluid to Mott insulator transition. In the superfluid phase, the atoms are delocalized and the system shows long range coherence, contrary to the Mott insulator phase where the atoms are well localized on the lattice sites, making the system incoherent.}
+    \label{fig:my_label}
+\end{figure}
+
 \subsubsection{Phase diagram}
 
-\NOTE{Ameliorer la discussion transition} To discuss the location of the critical point $(U/J)_c$, we slightly complexify our model where we had only considered commensurate fillings, \ie when $\bar{n}=n_0$ with $n_0$ an integer, thus fixing the chemical potential that we now set to be a free parameter. We plot on Fig.-\ref{fig:mott_lobes} the full phase diagram function of $\mu/U$, set by the filling in the Mott insulator phase $\bar{n}$ and $J/U$. As the system is homogeneous, the filling $\bar{n}$ is independent of $U/J$. The grey dashed lines correspond to iso-filling lines for a given value of $\bar{n}$. For commensurate fillings, the iso-filling lines cross the Mott stability lobes at the critical ratio $(U/J)_c$ that increases ad the filling increases. If the filling is however incommensurate (line $n=1+\varepsilon$), we notice that the system remains in the superfluid phase as long as $J \neq 0$. This is due to the fact that a small fraction of the atoms can delocalize over the whole lattice without being blocked by the interactions $U$ as there will never be two of these particles in the same site as a consequence of the fact that the filling is incommensurate.
+In the homogeneous case, the properties of the system thus change dramatically when $U/J$ crosses the \textbf{Quantum Critical Point} (QCP) $(U/J)_c$. To discuss the value of $(U/J)_c$, we slightly complexify our model where we had only considered commensurate fillings, thus fixing the chemical potential that we now set to be a free parameter. We plot on Fig.-\ref{fig:mott_lobes} the full phase diagram function of $\mu/U$, set by the filling in the Mott insulator phase $\bar{n}$ and $J/U$. As the system is homogeneous, the filling $\bar{n}$ is independent of $U/J$. The grey dashed lines correspond to iso-filling lines for a given value of $\bar{n}$. For commensurate fillings, the iso-filling lines cross the Mott stability lobes at the critical ratio $(U/J)_c$ that increases ad the filling increases. If the filling is however incommensurate (line $n=1+\varepsilon$), we notice that the system remains in the superfluid phase as long as $J \neq 0$. This is due to the fact that a small fraction of the atoms can delocalize over the whole lattice without being blocked by the interactions $U$ as there will never be two of these particles in the same site as a consequence of the fact that the filling is incommensurate.
 
 \begin{figure}
     \centering
@@ -315,7 +324,8 @@ In practice, the system is not homogeneous as we require an external harmonic po
 
 \subsection{Finite temperature effects}
 
-If we finally consider the effect of temperature, we obtain the complete phase diagram of Fig.-\ref{fig:phase_diagram} function of $T/J$ and $U/J$ with the apparition of a additional phase, the normal (thermal) gas. For $U/J \leq (U/J)_c$, the superfluid phase undergoes a condensation transition with temperature similar to the well-known BEC transition. This transition is induced by the thermal fluctuations and is then called classical, in opposition to the Mott transition which is a quantum phase transition \NOTE{finir}. On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. The green area indicates the Quantum Critical Region for which we expect the critical quantum effects of the Mott transition to survive in spite of the temperature.
+If we finally consider the effect of temperature, we obtain the complete phase diagram of Fig.-\ref{fig:phase_diagram} function of $T/J$ and $U/J$ with the apparition of a additional phase, the normal (thermal) gas. For $U/J \leq (U/J)_c$, the superfluid phase undergoes a condensation transition with temperature similar to the well-known BEC transition. This transition is induced by the thermal fluctuations and is then called classical, in opposition to the Mott transition which is a quantum phase transition \NOTE{finir}. On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. The green area indicates the Quantum Critical Region for which we expect the critical quantum effects of the Mott transition to survive in spite of the temperature. For a detailled study of this transition and of the properties and location of the QCP, we refer the reader to the thesis of Cécile Carcy \cite{carcy_these}.
+
 
 \begin{figure}
     \centering
@@ -329,7 +339,7 @@ If we finally consider the effect of temperature, we obtain the complete phase d
 
 \subsection{The Gutzwiller method}
 
-The Gutzwiller method takes its name from its author who introduced it in \cite{gutzwiller1963effect} to study strongly correlated Fermi systems. It was later adapted to characterize the ground-state of the Bose-Hubbard Hamiltonian in \cite{rokhsar1991gutzwiller}. This method is particularly useful to evaluate the density profile and therefore the size of the lattice gas with good accuracy all across the Mott transition, apart from the region close to the critical point. Although this is a ground-state, $T=0$ method that does not faithfully represent the reality of experiments, its predictions will be quite valuable to understand the correlation signals that we will present in thesis.
+To conclude this section, we present an approximate theoretical approach to treat the Bose-Hubbard Hamiltonian, the Gutzwiller method. This method takes its name from its author who introduced it in \cite{gutzwiller1963effect} to study strongly correlated Fermi systems. It was later adapted to characterize the ground-state of the Bose-Hubbard Hamiltonian in \cite{rokhsar1991gutzwiller}. This method is particularly useful to evaluate the density profile and therefore the size of the lattice gas with good accuracy all across the Mott transition, apart from the region close to the critical point. Although this is a ground-state, $T=0$ method that does not faithfully represent the reality of experiments, its predictions will be quite valuable to understand the correlation signals that we will present in thesis.
 
 The method revolves around the Gutzwiller ansatz that consists in writing the many-body ground-state as a product of on-site wave-functions $\ket{\phi_i}$:
 
@@ -361,7 +371,7 @@ The Gutzwiller method is a \textbf{variational} approach, meaning that the groun
 
 \section{Accessing the in-trap momentum distribution in a Time-Of-Flight experiment}
 
-Now that we have laid down the main elements of lattice gases physics, we need to determine how to experimentally study them \NOTE{pas terrible}. As developed in Chapter \ref{sec:chapter_1}, our main focus will be on the \textbf{momentum space} correlations, requiring us to devise a technique to effectively measure the momentum distribution of a lattice gas. The most natural idea for momentum space measurements is to use the well-known and widely used \textbf{Time-Of-Flight} (TOF) technique. This technique consists in suddenly turning off the trapping potential to let the atoms fall under the effect of gravity and measure their positions $\bm{r}$ after a given TOF $t_{\rm{TOF}}$. In a very simple picture with classical and non-interacting particles, this position gives information about the in-trap momentum of the particle through the simple \textbf{ballistic relation}:
+Now that we have laid down the main elements of lattice gases physics, we need to determine the proper experimental tools to characterize the system. As developed in Chapter \ref{sec:chapter_1}, the main focus of this thesis will be on the \textbf{momentum space} correlations, requiring us to devise a technique to effectively measure the momentum distribution of a lattice gas. The most natural idea for momentum space measurements is to use the well-known and widely used \textbf{Time-Of-Flight} (TOF) technique. This technique consists in suddenly turning off the trapping potential to let the atoms fall under the effect of gravity and measure their positions $\bm{r}$ after a given TOF $t_{\rm{TOF}}$. In a very simple picture with classical and non-interacting particles, this position gives information about the in-trap momentum of the particle through the simple \textbf{ballistic relation}:
 
 \begin{equation}
     \hbar \bm{k} = \frac{m \bm{r}}{t_{\rm{TOF}}}
@@ -398,7 +408,7 @@ The expression of the Wannier functions is rather complex and very hard to handl
     w_0(x) \simeq \frac{1}{\pi^{1 / 4} \sqrt{x_{0}}} \exp \left(\frac{-x^{2}}{2 x_{0}^{2}}\right)
 \end{equation}
 
-\noindent with $x_{0}=\sqrt{\hbar / m \omega_{l}}$.
+\noindent with $x_{0}=\sqrt{\hbar / m \omega_{L}}$.
 
 When the lattice potential is turned off, each of the lattice sites wave-functions expand freely following the harmonic oscillator dynamics \cite{toth2008theory}:
 
@@ -425,7 +435,7 @@ Building up on the diffraction analogy, we would like to define an analog Fraunh
     t \gg t_{\rm{FF}} = \frac{mL^2}{2 \hbar}
 \end{equation}
 
-\noindent This condition defines the \textbf{Far-Field regime} after which the interference pattern is well resolved, in analogy to the Fraunhofer regime of diffraction. Combining the different approximations, we simplify \ref{eq:time_dependent_wannier} to:
+\noindent This condition defines the \textbf{Far-Field regime} after which the interference pattern is well developed, in analogy to the Fraunhofer regime of diffraction. Combining the different approximations, we simplify \ref{eq:time_dependent_wannier} to:
 
 \begin{equation}
     w\left(x-x_{j}, t\right)=\sqrt{\frac{m}{\hbar t}} \tilde{w_0}[Q(x,t)] \exp\left(-i \frac{\hbar Q(x,t)^{2}}{2 m} \right) \exp\left(i Q(x,t) x_{j}\right)
@@ -446,13 +456,13 @@ Now that we have the general expression of $w\left(x-x_{j}, t\right)$, we genera
     \label{eq:rho_tof}
 \end{equation}
 
-\noindent The density $\rho_{\rm{TOF}}(\bm{r},t)$ then consists of a smooth envelope $|w_0(\bm{Q}(\bm{r},t))|^2$ set by the Fourier transform of the Wannier function and an interference term $\sum_{i,j} e^{i \bm{Q}(\bm{r},t).(\bm{r}_j - \bm{r}_{i})} \mean{\hat{b}^{\dagger}_i \hat{b}_j }$ that characterizes the coherence properties of the system. 
+\noindent The density $\rho_{\rm{TOF}}(\bm{r},t)$ then consists of a smooth envelope $|w_0(\bm{Q}(\bm{r},t))|^2$ set by the Fourier transform of the Wannier function and an interference term $\sum_{i,j} e^{i \bm{Q}(\bm{r},t).(\bm{r}_j - \bm{r}_{i})} \mean{\hat{b}^{\dagger}_i \hat{b}_j }$ that characterizes the coherence properties of the system. A numerical simulation of $\rho_{\rm{TOF}}(\bm{r},t)$ is plotted on Fig.-\ref{fig:sim_expansion} at various expansion time for $s=5$ corresponding to the superfluid phase, illustrating how the interference pattern develops in time.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{Fig/Chapter2/TOF_expansion.png}
     \caption{Numerical simulation of the atomic density $\rho_{\rm{TOF}}(x,t)$ after various expansion times from a 1D lattice of 50 sites with $s=5$.}
-    \label{fig:my_label}
+    \label{fig:sim_expansion}
 \end{figure}
 
 \subsubsection{Relation to the momentum distribution}
@@ -504,7 +514,7 @@ Importantly, a characteristic of the Superfluid to Mott insulator transition is 
 
 \subsection{Mean-field interactions}
 
-The experimental technique described in the last paragraph holds if there are no interactions between the particles during the TOF. If it were otherwise, the interactions would affect the TOF dynamics of the gas, preventing us to use the ballistic relation and to map the TOF distribution $\rho_{\rm{TOF}}(\bm{r},t)$ to the in-trap momentum $\rho(\bm{k})$. As interactions cannot be effectively turned off by means of a Feshbach resonance, experimentally inaccessible for $^4 \He$, it is crucial to determine whether interactions during the TOF can be neglected and under which conditions.
+The experimental technique described in the last paragraph holds if there are no interactions between the particles during the TOF. If it were otherwise, the interactions would affect the TOF dynamics of the gas, preventing us to use the ballistic relation and to map the TOF distribution $\rho_{\rm{TOF}}(\bm{r},t)$ to the in-trap momentum $\rho(\bm{k})$. As interactions cannot be effectively turned off by means of a Feshbach resonance, experimentally inaccessible for $^4 \He$, it is crucial to determine whether interactions during the TOF can be neglected or not and under which conditions.
 
 Describing the interactions between each of the individual particles would be impossible, even for numerical methods for which the calculation time would be prohibitive. To circumvent this issue, the problem can be simplified using the \textbf{mean-field approximation}. The idea is to approximate the effect of the interactions of every atoms on a single one as an \textbf{average} single effect. This considerably simplifies the many-body problem, reducing it to an effective one-body problem.
 
@@ -537,7 +547,7 @@ For the remainder of this section, we will assume that we are in the shallow lat
     \hat{H}=\sum_{\bm{k}}\frac{\hbar^2 k^2}{2m} \hat{a}^{\dagger}_{\bm{k}}  \hat{a}_{\bm{k}} +  \frac{g}{2V} \sum_{\bm{k}_1,\bm{k}_2,\bm{k}_3} \hat{a}^{\dagger}_{\bm{k_1}+\bm{k_3}} \hat{a}^{\dagger}_{\bm{k_2}-\bm{k_3}} \hat{a}_{\bm{k_1}} \hat{a}_{\bm{k_2}} 
 \end{equation}
 
-We now add the lattice potential but still neglect the external harmonic trapping potential and write the new Hamiltonian in the Bloch wave basis, contrary to the Wannier function basis the we have used so far. In fact, we have already seen the expression of the non-interacting term in the Bloch wave basis in equation \ref{eq:H_bloch}. As we have done throughout this chapter, we consider that only the lowest energy band $n=0$ is populated. The full Hamiltonian writes \cite{dalibard2013cages}:
+We now add the lattice potential but still neglect the external harmonic trapping potential and write the new Hamiltonian in the Bloch wave basis. In fact, we have already seen the expression of the non-interacting term in the Bloch wave basis in equation \ref{eq:H_bloch}. As we have done throughout this chapter, we consider that only the lowest energy band $n=0$ is populated. The full Hamiltonian writes \cite{dalibard2013cages}:
 
 \begin{equation}
     \hat{H}=\sum_{\bm{q}} E_{0}(\bm{q}) \hat{c}_{\bm{q}}^{\dagger} \hat{c}_{\bm{q}}+\frac{g}{2} \sum_{\bm{q}_{1}, \bm{q}_{2}, \bm{q}_{1}^{\prime}, \bm{q}_{2}^{\prime}} C\left(\bm{q}_{1}, \bm{q}_{2}, \bm{q}_{1}^{\prime}, \bm{q}_{2}^{\prime}\right) c_{\bm{q}_{1}^{\prime}}^{\dagger} c_{\bm{q}_{2}^{\prime}}^{\dagger} c_{\bm{q}_{2}} c_{\bm{q}_{1}}
@@ -551,13 +561,20 @@ We now add the lattice potential but still neglect the external harmonic trappin
     C\left(\bm{q}_{1}, \bm{q}_{2}, \bm{q}_{1}^{\prime}, \bm{q}_{2}^{\prime}\right)=\int_{0}^{V} \psi_{0, \bm{q}_{1}^{\prime}}^{*}(\bm{r}) \psi_{0, \bm{q}_{2}^{\prime}}^{*}(\bm{r}) \psi_{0, \bm{q}_{1}}(\bm{r}) \psi_{0, \bm{\bm{q}}_{2}}(\bm{r}) \mathrm{d} \bm{r}
 \end{equation}
 
-The non-interacting term $\sum_{\bm{q}} E_{0}(\bm{q}) \hat{c}_{\bm{q}}^{\dagger} \hat{c}_{\bm{q}}$ is quite similar to its equivalent in the homogeneous case $\sum_{\bm{k}}\frac{\hbar^2 k^2}{2m} \hat{a}^{\dagger}_{\bm{k}}  \hat{a}_{\bm{k}}$. In fact, as we can see on Fig-\ref{fig:bloch_bands}, the function $E_{0}(\bm{q})$ can be well approximated by a parabolic function. We then rewrite $E_{0}(\bm{q})$ as:
+The non-interacting term $\sum_{\bm{q}} E_{0}(\bm{q}) \hat{c}_{\bm{q}}^{\dagger} \hat{c}_{\bm{q}}$ is quite similar to its equivalent in the homogeneous case $\sum_{\bm{k}}\frac{\hbar^2 k^2}{2m} \hat{a}^{\dagger}_{\bm{k}}  \hat{a}_{\bm{k}}$. In fact, as we can see on Fig-\ref{fig:dispersion_relation_harmonic}, the function $E_{0}(\bm{q})$ can be well approximated by a parabolic function at low values of $q$. We then rewrite $E_{0}(\bm{q})$ as:
 
 \begin{equation}
     E_{0}(\bm{q}) \approx \frac{\hbar^2 q^2}{2 m^*}, \ \text{with } \frac{1}{m^*} = \frac{1}{\hbar^2} \frac{\mathrm{d}^2 E_0 }{\mathrm{d}q^2}
 \end{equation}
 
 \noindent where we have introduced the notion of effective mass $m^*$ defined from the curvature of the Bloch energy band, actually very useful to study the dynamics of particles in a lattice potential \cite{kramer2002macroscopic,dalibard2013cages}. Under this form, the non-interacting term of the lattice Hamiltonian is then of the exact same form as for the homogeneous Hamiltonian, the effect of the lattice being contained in the new effective mass $m^*$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Fig/Chapter2/dispersion_relation_harmonic.png}
+    \caption{Harmonic approximation of the dispersion relation of the first energy band $E_0$ for $s=5$.}
+    \label{fig:dispersion_relation_harmonic}
+\end{figure}
 
 \subsection{The rescaled interaction strength}
 
@@ -588,4 +605,6 @@ In conclusion, we obtain an Hamiltonian of the same form than the homogeneous ca
     \item The interaction strength $g$ has been replaced by the rescaled and higher interaction strength $g'$.
 \end{itemize}
 
-We have then achieved the objective set at the beginning of this chapter, namely obtain a system with \kmk paired quantum depleted atoms as described by the Bogoliubov theory of the weakly-interacting Bose gas, but with increased interactions so that we should be able to reach the low temperature regime dominated by interactions $\kB T \ll \mu$ for which the \kmk correlation signal should be detectable.
+We have then achieved the objective set at the beginning of this chapter, namely obtain a system with \kmk paired quantum depleted atoms as described by the Bogoliubov theory of the weakly-interacting Bose gas, but with increased interactions so that we should be able to reach the low temperature regime dominated by interactions $\kB T \ll \mu$ for which the \kmk correlation signal should be detectable. 
+
+Importantly, the predictions of the Bogoliubov theory detailled in Chapter \ref{sec:chapter_1} should not be taken at face value for the much more complicated system of the inhomogeneous lattice gas. In fact, there have not been clear experimental studies testing the validity of the Bogoliubov approach for this kind of system. It will then be of great interest to compare the predictions of the simple homogeneous case to the experimental data as a means to detect whether the Bogoliubov approach fails or not and under which conditions.
