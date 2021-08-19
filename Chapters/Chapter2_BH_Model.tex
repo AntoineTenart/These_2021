@@ -1,8 +1,13 @@
 \chapter{Optical lattices and the Bose-Hubbard model}
 
-\NOTE{intro}
-
 \label{sec:chapter_2}
+
+Quantum gases loaded in optical lattices (lattice gases for short) are one of the paramount examples of Quantum Simulation systems. The periodical trapping potential indeed well reproduces the crystal structure of condensed matter system and allows to study relatively simple Hamiltonians such as the Bose-Hubbard Hamiltonian or the Ising model \cite{bloch2005ultracold} that however account for interactions and shows strong correlations effects. The main advantages of this experimental platform is that the different parameters of the Hamiltonians are easily set and controlled, while the information about the system is accessible through simple procedures like quantum microscopes \cite{bakr2009quantum} for the in-situ positions of the atoms or Time-Of-Flight experiments to access the momentum distribution as it is the case in this manuscript. The experimental observation of the Superfluid to Mott Insulator transition in 2002 \cite{greiner2002quantum} sparked interest in the community and lead to the development of the field from the early 2000s up until this day.
+
+In this chapter, we will detail the main elements of the Bose-Hubbard theory of lattice gases and briefly study the Superfluid to Mott insulator transition. We will then show how and under which conditions the in-trap momentum distribution of the gas can be accessed through Time-Of-Flight measurements, before drawing the connection with the Bogoliubov theory exposed in Chapter \ref{sec:chapter_1}. The goal of this chapter is to give all the essential points necessary to obtain a system in which the \kmk pairs of the quantum depletion can be experimentally observed, rather than providing a detailled description of Bose-Hubbard physics. For a more thorough study of the Superfluid to Mott Insulator transition with our experimental apparatus, we refer the reader to the manuscript of Cécile Carcy \cite{carcy_these}.
+
+
+
 
 \section{The Bose-Hubbard Model}
 
@@ -12,7 +17,7 @@ We consider a 3D lattice potential with cubic symmetry and spacing $d$:
     V(\bm{r})=V_{0}\left[\sin ^{2}\left(\frac{k_{d}}{2} x\right)+\sin ^{2}\left(\frac{k_{d}}{2} y\right)+\sin ^{2}\left(\frac{k_{d}}{2} z\right)\right] + V_{\mathrm{ext}} (x,y,z)
 \end{equation}
 
-\noindent where $k_d=\frac{2 \pi}{d}$ is the associated wavevector, $V_0$ the lattice depth. For convenience, $V_0$ is usually expressed in units of recoil energy $V_0 = s E_{\rm{r}}$ with $E_r=h^2/ 8 m d^2$. The term $V_{\mathrm{ext}} (x,y,z)$ denotes a harmonic potential related to the Gaussian shape of the lattice beams. For simplicity of calculations, we will only treat here \NOTE{rajouter un first?} the homogeneous case $V_{\mathrm{ext}} (x,y,z)=0$.
+\noindent where $k_d=\frac{2 \pi}{d}$ is the associated wavevector, $V_0$ the lattice depth. For convenience, $V_0$ is usually expressed in units of recoil energy $V_0 = s E_{\rm{r}}$ with $E_r=h^2/ 8 m d^2$. The term $V_{\mathrm{ext}} (x,y,z)$ denotes a harmonic potential related to the Gaussian shape of the lattice beams. For simplicity of calculations, we will first treat here the homogeneous case $V_{\mathrm{ext}} (x,y,z)=0$.
 
 We consider an ensemble of $N$ atoms that interact with one another with the potential $U_{\rm{int}} ( \bm{r}_1, \bm{r}_2)$ loaded in the lattice potential $V(\bm{r})$. The Hamiltonian of the system writes:
 
@@ -324,7 +329,7 @@ In practice, the system is not homogeneous as we require an external harmonic po
 
 \subsection{Finite temperature effects}
 
-If we finally consider the effect of temperature, we obtain the complete phase diagram of Fig.-\ref{fig:phase_diagram} function of $T/J$ and $U/J$ with the apparition of a additional phase, the normal (thermal) gas. For $U/J \leq (U/J)_c$, the superfluid phase undergoes a condensation transition with temperature similar to the well-known BEC transition. This transition is induced by the thermal fluctuations and is then called classical, in opposition to the Mott transition which is a quantum phase transition \NOTE{finir}. On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. The green area indicates the Quantum Critical Region for which we expect the critical quantum effects of the Mott transition to survive in spite of the temperature. For a detailled study of this transition and of the properties and location of the QCP, we refer the reader to the thesis of Cécile Carcy \cite{carcy_these}.
+If we finally consider the effect of temperature, we obtain the complete phase diagram of Fig.-\ref{fig:phase_diagram} function of $T/J$ and $U/J$ with the apparition of an additional phase, the normal (thermal) gas. For $U/J \leq (U/J)_c$, the superfluid phase undergoes a condensation transition with temperature similar to the well-known BEC transition. This transition is induced by the thermal fluctuations and is then called classical, in opposition to the Mott transition which is driven by a variations of physical parameters of the Hamiltonian and therefore is a quantum transition. On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. The green area indicates the Quantum Critical Region for which we expect the critical quantum effects of the Mott transition to survive in spite of the temperature. While the physics of the Quantum Critical Point are a very interesting and trending topic, they fall out of the scope of this thesis and we once again refer the reader to \cite{carcy_these} for more informations on this aspect.
 
 
 \begin{figure}
@@ -433,6 +438,7 @@ Building up on the diffraction analogy, we would like to define an analog Fraunh
 
 \begin{equation}
     t \gg t_{\rm{FF}} = \frac{mL^2}{2 \hbar}
+    \label{eq:far_field}
 \end{equation}
 
 \noindent This condition defines the \textbf{Far-Field regime} after which the interference pattern is well developed, in analogy to the Fraunhofer regime of diffraction. Combining the different approximations, we simplify \ref{eq:time_dependent_wannier} to:
@@ -577,6 +583,8 @@ The non-interacting term $\sum_{\bm{q}} E_{0}(\bm{q}) \hat{c}_{\bm{q}}^{\dagger}
 \end{figure}
 
 \subsection{The rescaled interaction strength}
+
+\label{sec:rescaled_interaction}
 
 We turn to calculating the interaction term in equation \ref{eq:lattice_bogo_hamiltonian}. First, like in the homogeneous case, the conservation of momentum gives the relation:
 
