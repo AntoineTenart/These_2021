@@ -2,7 +2,7 @@
 
 \label{sec:chapter_2}
 
-Quantum gases loaded in optical lattices (lattice gases for short) are one of the paramount examples of Quantum Simulation systems. The periodical trapping potential indeed well reproduces the crystal structure of condensed matter system and allows to study relatively simple Hamiltonians such as the Bose-Hubbard Hamiltonian or the Ising model \cite{bloch2005ultracold} that however account for interactions and shows strong correlations effects. The main advantages of this experimental platform is that the different parameters of the Hamiltonians are easily set and controlled, while the information about the system is accessible through simple procedures like quantum microscopes \cite{bakr2009quantum} for the in-situ positions of the atoms or Time-Of-Flight experiments to access the momentum distribution as it is the case in this manuscript. The experimental observation of the Superfluid to Mott Insulator transition in 2002 \cite{greiner2002quantum} sparked interest in the community and lead to the development of the field from the early 2000s up until this day.
+Quantum gases loaded in optical lattices (lattice gases for short) are one of the paramount examples of Quantum Simulation systems. The periodical trapping potential indeed well reproduces the crystal structure of condensed matter system and allows to study relatively simple Hamiltonians such as the Bose-Hubbard Hamiltonian or the Ising model \cite{bloch2005ultracold} that however account for interactions and show strong correlations effects. The main advantages of this experimental platform is that the different parameters of the Hamiltonians are easily set and controlled, while information about the system are relatively easy to access via quantum microscopes \cite{bakr2009quantum} for the in-situ positions of the atoms or Time-Of-Flight experiments to access the momentum distribution as it is the case in this manuscript. The experimental observation of the Superfluid to Mott Insulator transition in 2002 \cite{greiner2002quantum} sparked interest in the community and lead to the development of the field from the early 2000s up until this day.
 
 In this chapter, we will detail the main elements of the Bose-Hubbard theory of lattice gases and briefly study the Superfluid to Mott insulator transition. We will then show how and under which conditions the in-trap momentum distribution of the gas can be accessed through Time-Of-Flight measurements, before drawing the connection with the Bogoliubov theory exposed in Chapter \ref{sec:chapter_1}. The goal of this chapter is to give all the essential points necessary to obtain a system in which the \kmk pairs of the quantum depletion can be experimentally observed, rather than providing a detailled description of Bose-Hubbard physics. For a more thorough study of the Superfluid to Mott Insulator transition with our experimental apparatus, we refer the reader to the manuscript of Cécile Carcy \cite{carcy_these}.
 
@@ -72,7 +72,7 @@ We therefore look for eigenstates of the form:
 In addition to the Bloch waves, it is possible to define a new kind of functions called the\textbf{ Wannier functions} \cite{wannier1937structure} that are localized near the lattice sites. They are defined from the Bloch waves by:
 
 \begin{equation}
-    w_{n, j}(x)=\sqrt{\frac{d}{2 \pi}} \int_{\mathrm{BZ}} \psi_{n, q}(x) e^{-i j q d} \mathrm{~d} q \quad, j \in \mathbb{Z}
+    w_{n, j}(x)=\sqrt{\frac{d}{2 \pi}} \int_{\mathrm{BZ}} \psi_{n, q}(x) e^{-i j q d} \mathrm{~d} q, \quad j \in \mathbb{Z}
     \label{eq:wannier_functions}
 \end{equation}
 
@@ -163,7 +163,7 @@ We now turn to studying the interaction term that we had left out in the full Ha
     U_{\rm{int}}= g \delta (x_1 - x_2)
 \end{equation}
 
-\noindent with $g$ the strength of the interactions. The interaction Hamiltonian can then be re-written:
+\noindent with $g=\dfrac{4 \pi \hbar^2 a_s}{m}$ the strength of the interactions. The interaction Hamiltonian can then be re-written:
 
 \begin{equation}
     \hat{H}_{\mathrm{int}}=\frac{g}{2} \sum_{j_{1}} \sum_{j_{2}} \sum_{j_{3}} \sum_{j_{4}} \hat{b}_{j_{4}}^{\dagger} \hat{b}_{j_{3}}^{\dagger} \hat{b}_{j_{2}} \hat{b}_{j_{1}} \int w_{j_{4}}^{*}(x) w_{j_{3}}^{*}(x) w_{j_{2}}(x) w_{j_{1}}(x) \mathrm{~d} x
@@ -184,11 +184,11 @@ Combining this Hamiltonian to the non-interacting Hamiltonian of equation \ref{e
     \hat{H}_{\mathrm{BH}}= -J \sum_{\mean{i,j}} \hat{b}^{\dagger}_i \hat{b}_j + \frac{U}{2} \sum_j \hat{n}_j (\hat{n}_j -1)
 \end{equation}
 
-\noindent Interestingly, the physics of the homogeneous ground-state depends only from the two parameters $J$ and $U$ as we will see in the next paragraph. In particular, the ratio $U/J$ depends from the lattice depth $V_0$ as illustrated on Fig-\ref{fig:U_J_vs_s}. This parameter is easily controllable in an experiment, for instance by changing the power of the laser beams used to produce the lattice potential. 
+\noindent Interestingly, the physics of the homogeneous ground-state depends only from the two parameters $J$ and $U$ as we will see in the next paragraph. In particular, the ratio $u=U/J$ depends from the lattice depth $V_0$ as illustrated on Fig-\ref{fig:U_J_vs_s}. This parameter is easily controllable in an experiment, for instance by changing the power of the laser beams used to produce the lattice potential. 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{Fig/Chapter2/illu_bose_hubbard.png}
+    \includegraphics[width=0.5\textwidth]{Fig/Chapter2/illu_bose_hubbard.png}
     \caption{Representation of the Bose-Hubbard model. The physics of the system are set by the tunneling coefficient $J$ and the on-site interaction energy $U$.}
     \label{fig:my_label}
 \end{figure}
@@ -206,7 +206,7 @@ We discuss in this section the properties of the Bose-Hubbard Hamiltonian ground
 
 \subsection{Extreme cases}
 
-\subsubsection{Perfect superfluid (SF) phase $\bm{U/J \to 0}$}
+\subsubsection{Perfect superfluid (SF) phase $\bm{u \to 0}$}
 
 In this case, the particles are non-interacting. In these conditions, the ground-state $\ket{\Psi_0}$ of the N particles system is simply the product of the single particle ground state wave-functions, \ie the Bloch wave-functions for $q=0$ \cite{bloch2008many}:
 
@@ -244,7 +244,7 @@ As we did in Chapter \ref{sec:chapter_1}, we can write the first-order correlati
 \noindent We see that the result does not depend from the chosen lattice sites $i$ and $j$ and thus from the distance between them, indicating an infinite range coherence.
 
 
-\subsubsection{Perfect Mott Insulator (MI) phase $\bm{U/J \to \infty}$}
+\subsubsection{Perfect Mott Insulator (MI) phase $\bm{u \to \infty}$}
 
 In the opposite extreme limit, the tunneling probability goes to zero $J=0$ so that each of the lattice sites are independent from one another. The Hamiltonian reduces to:
 
@@ -296,14 +296,14 @@ What can then be said from intermediates values of $U/J$? If we start from the c
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.95\textwidth]{Fig/Chapter2/schema_superfluid_mott.png}
+    \includegraphics[width=0.9\textwidth]{Fig/Chapter2/schema_superfluid_mott.png}
     \caption{Schematic of the superfluid to Mott insulator transition. In the superfluid phase, the atoms are delocalized and the system shows long range coherence, contrary to the Mott insulator phase where the atoms are well localized on the lattice sites, making the system incoherent.}
     \label{fig:my_label}
 \end{figure}
 
 \subsubsection{Phase diagram}
 
-In the homogeneous case, the properties of the system thus change dramatically when $U/J$ crosses the \textbf{Quantum Critical Point} (QCP) $(U/J)_c$. To discuss the value of $(U/J)_c$, we slightly complexify our model where we had only considered commensurate fillings, thus fixing the chemical potential that we now set to be a free parameter. We plot on Fig.-\ref{fig:mott_lobes} the full phase diagram function of $\mu/U$, set by the filling in the Mott insulator phase $\bar{n}$ and $J/U$. As the system is homogeneous, the filling $\bar{n}$ is independent of $U/J$. The grey dashed lines correspond to iso-filling lines for a given value of $\bar{n}$. For commensurate fillings, the iso-filling lines cross the Mott stability lobes at the critical ratio $(U/J)_c$ that increases ad the filling increases. If the filling is however incommensurate (line $n=1+\varepsilon$), we notice that the system remains in the superfluid phase as long as $J \neq 0$. This is due to the fact that a small fraction of the atoms can delocalize over the whole lattice without being blocked by the interactions $U$ as there will never be two of these particles in the same site as a consequence of the fact that the filling is incommensurate.
+In the homogeneous case, the properties of the system thus change dramatically when $u$ crosses the \textbf{Quantum Critical Point} (QCP) $u_c$. To discuss the value of $u_c$, we slightly complexify our model where we had only considered commensurate fillings, thus fixing the chemical potential that we now set to be a free parameter. We plot on Fig.-\ref{fig:mott_lobes} the full phase diagram function of $\mu/U$, set by the filling in the Mott insulator phase $\bar{n}$ and $J/U$. As the system is homogeneous, the filling $\bar{n}$ is independent of $u$. The grey dashed lines correspond to iso-filling lines for a given value of $\bar{n}$. For commensurate fillings, the iso-filling lines cross the Mott stability lobes at the critical ratio $u_c$ that increases ad the filling increases. If the filling is however incommensurate (line $n=1+\varepsilon$), we notice that the system remains in the superfluid phase as long as $J \neq 0$. This is due to the fact that a small fraction of the atoms can delocalize over the whole lattice without being blocked by the interactions $U$ as there will never be two of these particles in the same site as a consequence of the fact that the filling is incommensurate.
 
 \begin{figure}
     \centering
@@ -323,13 +323,13 @@ In practice, the system is not homogeneous as we require an external harmonic po
     \mu_{\rm{eff}}= \mu - V_{\rm{ext}}(\bm{r})
 \end{equation}
 
-\noindent This means that the chemical potential, and thus the lattice filling, varies with the distance from the center of the trap. A typical situation is illustrated by the red arrow on the phase diagram of Fig.-\ref{fig:mott_lobes} where $J/U$ is small enough for Mott phases to exist and the center of the trap corresponds to a filling $\bar{n}=2$. As we get away from the center of the trap towards regions of low $\mu_{\rm{eff}}$ following the red arrow, we exit the first Mott region $\bar{n}=2$ to enter a superfluid region where the filling decreases continuously up to a second Mott region with filling $\bar{n}=1$ and finally reach a last superfluid region at the edge of the trap at vanishing values of $\mu_{\rm{eff}}$. The Mott phases are incompressible, meaning that the density remains constant even though the external trapping potential is rising, differentiating them from the superfluid region. This results in the famous ``wedding-cake'' density profile as illustrated on panel b) of Fig.-\ref{fig:mott_lobes}.
+\noindent This means that the effective chemical potential, and thus the lattice filling, varies with the distance from the center of the trap. A typical situation is illustrated by the red arrow on the phase diagram of Fig.-\ref{fig:mott_lobes} where $J/U$ is small enough for Mott phases to exist and the center of the trap corresponds to a filling $\bar{n}=2$. As we get away from the center of the trap towards regions of low $\mu_{\rm{eff}}$ following the red arrow, we exit the first Mott region $\bar{n}=2$ to enter a superfluid region where the filling decreases continuously up to a second Mott region with filling $\bar{n}=1$ and finally reach a last superfluid region at the edge of the trap at vanishing values of $\mu_{\rm{eff}}$. The Mott phases are incompressible, meaning that the density remains constant even though the external trapping potential is rising, differentiating them from the superfluid region. This results in the famous ``wedding-cake'' density profile as illustrated on panel b) of Fig.-\ref{fig:mott_lobes}.
 
-\noindent For clarity sake, the system will be said to be in the Mott Insulator phase as long as a Mott plateau exists, \ie when $U/J > (U/J)_c$ where $(U/J)_c$ is the critical point for the corresponding homogeneous sytem.
+\noindent For clarity sake, the system will be said to be in the Mott Insulator phase as long as a Mott plateau exists, \ie when $u > u_c$ where $u_c$ is the critical point for the corresponding homogeneous sytem.
 
 \subsection{Finite temperature effects}
 
-If we finally consider the effect of temperature, we obtain the complete phase diagram of Fig.-\ref{fig:phase_diagram} function of $T/J$ and $U/J$ with the apparition of an additional phase, the normal (thermal) gas. For $U/J \leq (U/J)_c$, the superfluid phase undergoes a condensation transition with temperature similar to the well-known BEC transition. This transition is induced by the thermal fluctuations and is then called classical, in opposition to the Mott transition which is driven by a variations of physical parameters of the Hamiltonian and therefore is a quantum transition. On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. The green area indicates the Quantum Critical Region for which we expect the critical quantum effects of the Mott transition to survive in spite of the temperature. While the physics of the Quantum Critical Point are a very interesting and trending topic, they fall out of the scope of this thesis and we once again refer the reader to \cite{carcy_these} for more informations on this aspect.
+If we finally consider the effect of temperature, we obtain the complete phase diagram of Fig.-\ref{fig:phase_diagram} function of $T/J$ and $u$ with the apparition of an additional phase, the normal (thermal) gas. For $u \leq u_c$, the superfluid phase undergoes a condensation transition with temperature similar to the well-known BEC transition. This transition is induced by the thermal fluctuations and is then called classical, in opposition to the Mott transition which is driven by a variations of physical parameters of the Hamiltonian and therefore is a quantum transition. On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. The green area indicates the Quantum Critical Region for which we expect the critical quantum effects of the Mott transition to survive in spite of the temperature. While the physics of the Quantum Critical Point are a very interesting and trending topic, they fall out of the scope of this thesis and we once again refer the reader to \cite{carcy_these} for more informations on this aspect.
 
 
 \begin{figure}
@@ -361,8 +361,8 @@ The method revolves around the Gutzwiller ansatz that consists in writing the ma
 This ansatz is motivated by the fact that it matches the exact ground-state for the extreme cases:
 
 \begin{itemize}
-    \item For $U/J \to 0$, the ground-state is a coherent state (see equation \ref{eq:ground-state_superfluid}) so that $f(n_j) = \mathcal{N}_{j}  (\alpha_{j}^{n_{j}})(\sqrt{n_{j} !})$ with $\alpha_j=\sqrt{\bar{n}}$ and $\mathcal{N}_{i}=e^{-\left|\alpha_{i}\right|^{2} / 2}$.
-    \item For $U/J \to \infty$, the ground-state is already a Fock state (see equation \ref{eq:ground-state_MI}) so that $f(n_j) = \delta_{n_j,\bar{n}}$.
+    \item For $u \to 0$, the ground-state is a coherent state (see equation \ref{eq:ground-state_superfluid}) so that $f(n_j) = \mathcal{N}_{j}  (\alpha_{j}^{n_{j}})(\sqrt{n_{j} !})$ with $\alpha_j=\sqrt{\bar{n}}$ and $\mathcal{N}_{i}=e^{-\left|\alpha_{i}\right|^{2} / 2}$.
+    \item For $u \to \infty$, the ground-state is already a Fock state (see equation \ref{eq:ground-state_MI}) so that $f(n_j) = \delta_{n_j,\bar{n}}$.
 \end{itemize}
 
 The Gutzwiller method is a \textbf{variational} approach, meaning that the ground-state is determined by finding the coefficients $f(n_j)$ that minimizes the free energy defined as:
@@ -452,17 +452,17 @@ Building up on the diffraction analogy, we would like to define an analog Fraunh
 Now that we have the general expression of $w\left(x-x_{j}, t\right)$, we generalize it to the 3D case and inject it in equation \ref{eq:field_operator} to obtain the sum of the contribution of each site:
 
 \begin{equation}
-    \hat{\Psi} (\bm{r},t) = \left(\sqrt{\frac{m}{\hbar t}} \right)^3 \tilde{w}[\bm{Q}(\bm{r},t)] \exp\left(-i \frac{\hbar \bm{Q}(\bm{r},t)^{2}}{2 m} \right) \sum_j e^{i \bm{Q}(\bm{r},t). \bm{r}_{j}} \hat{b}_j
+    \hat{\Psi} (\bm{r},t) = \left(\sqrt{\frac{m}{\hbar t}} \right)^3 \tilde{w_0}[\bm{Q}(\bm{r},t)] \exp\left(-i \frac{\hbar \bm{Q}(\bm{r},t)^{2}}{2 m} \right) \sum_j e^{i \bm{Q}(\bm{r},t). \bm{r}_{j}} \hat{b}_j
 \end{equation}
 
 \noindent From this expression, we finally obtain the atomic density $\rho_{\rm{TOF}}(\bm{r},t) = \mean{\hat{\Psi}^{\dagger} (\bm{r},t) \hat{\Psi} (\bm{r},t)}$ at position $\bm{r}$ and a long TOF $t$:
 
 \begin{equation}
-    \rho_{\rm{TOF}}(\bm{r},t) = \left(\frac{m}{\hbar t} \right)^3 |w_0(\bm{Q}(\bm{r},t))|^2 \sum_{i,j} e^{i \bm{Q}(\bm{r},t).(\bm{r}_j - \bm{r}_{i})} \mean{\hat{b}^{\dagger}_i \hat{b}_j }
+    \rho_{\rm{TOF}}(\bm{r},t) = \left(\frac{m}{\hbar t} \right)^3 |\tilde{w}_0(\bm{Q}(\bm{r},t))|^2 \sum_{i,j} e^{i \bm{Q}(\bm{r},t).(\bm{r}_j - \bm{r}_{i})} \mean{\hat{b}^{\dagger}_i \hat{b}_j }
     \label{eq:rho_tof}
 \end{equation}
 
-\noindent The density $\rho_{\rm{TOF}}(\bm{r},t)$ then consists of a smooth envelope $|w_0(\bm{Q}(\bm{r},t))|^2$ set by the Fourier transform of the Wannier function and an interference term $\sum_{i,j} e^{i \bm{Q}(\bm{r},t).(\bm{r}_j - \bm{r}_{i})} \mean{\hat{b}^{\dagger}_i \hat{b}_j }$ that characterizes the coherence properties of the system. A numerical simulation of $\rho_{\rm{TOF}}(\bm{r},t)$ is plotted on Fig.-\ref{fig:sim_expansion} at various expansion time for $s=5$ corresponding to the superfluid phase, illustrating how the interference pattern develops in time.
+\noindent The density $\rho_{\rm{TOF}}(\bm{r},t)$ then consists of a smooth envelope $|\tile{w}_0(\bm{Q}(\bm{r},t))|^2$ set by the Fourier transform of the Wannier function and an interference term $\sum_{i,j} e^{i \bm{Q}(\bm{r},t).(\bm{r}_j - \bm{r}_{i})} \mean{\hat{b}^{\dagger}_i \hat{b}_j }$ that characterizes the coherence properties of the system. A numerical simulation of $\rho_{\rm{TOF}}(\bm{r},t)$ is plotted on Fig.-\ref{fig:sim_expansion} at various expansion time for $s=5$ corresponding to the superfluid phase, illustrating how the interference pattern develops in time.
 
 \begin{figure}
     \centering
@@ -489,7 +489,7 @@ The main purpose of the TOF technique is to obtain information on the momentum d
 \noindent If the particle are non-interacting, the ballistic relation gives $\bm{k} = m \bm{r}/\hbar t_{\rm{TOF}}$. From equation \ref{eq:rho_tof}, we obtain:
 
 \begin{equation}
-    \rho(\bm{k}) = \frac{\rho_{\rm{TOF}}(\bm{r}=\hbar t\bm{k}/m,t)}{V  \left(\frac{m}{\hbar t} \right)^3 |w_0(\bm{k})|^2}
+    \rho(\bm{k}) = \frac{\rho_{\rm{TOF}}(\bm{r}=\hbar t\bm{k}/m,t)}{V  \left(\frac{m}{\hbar t} \right)^3 |\tilde{w}_0(\bm{k})|^2}
 \end{equation}
 
 In conclusion, under the conditions that there are no interactions during the TOF and $t_{\rm{TOF}} \gg t_{\rm{FF}}$ to be in the far-field regime, the TOF distribution maps the in-trap momentum distribution. 
@@ -499,11 +499,11 @@ In conclusion, under the conditions that there are no interactions during the TO
 As we have just seen, the momentum distribution is strongly dependent from the coherence properties of the system and in turn of the lattice depth.
 
 \begin{itemize}
-    \item In the superfluid phase $U/J \to 0$, the system is coherent $G^{(1)}(i,j) = \bar{n}$. From equation \ref{eq:momentum_distribution}, we get that the momentum distribution consists of sharp analog diffraction peaks located at $\bm{k} = j k_d \bm{e}_i$ with $j \in \Z$ and $\bm{e}_i$ the unitary vector in direction $i=x,y,z$. In terms of $\rho_{\rm{TOF}}(\bm{r},t)$, the amplitude of the different peaks is set by the Fourier transform of the Wannier function. 
+    \item In the superfluid phase $u \to 0$, the system is coherent $G^{(1)}(i,j) = \bar{n}$. From equation \ref{eq:momentum_distribution}, we get that the momentum distribution consists of sharp analog diffraction peaks located at $\bm{k} = j k_d \bm{e}_i$ with $j \in \Z$ and $\bm{e}_i$ the unitary vector in direction $i=x,y,z$. In terms of $\rho_{\rm{TOF}}(\bm{r},t)$, the amplitude of the different peaks is set by the Fourier transform of the Wannier function. 
     
-    \item In the Mott insulator phase $U/J \to \infty$ the system is totally incoherent $G^{(1)}(i,j) = \delta_{i,j}$. The momentum distribution is then constant, meaning that $\rho_{\rm{TOF}}(\bm{r},t)$ simply reflects the Fourier transform of the Wannier function, \ie a Gaussian-like function.
+    \item In the Mott insulator phase $u \to \infty$ the system is totally incoherent $G^{(1)}(i,j) = \delta_{i,j}$. The momentum distribution is then constant, meaning that $\rho_{\rm{TOF}}(\bm{r},t)$ simply reflects the Fourier transform of the Wannier function, \ie a Gaussian-like function.
     
-    \item For intermediate values of $U/J$, the visibility of the interference pattern progressively decreases as $U/J$ increases. In addition, as $V_0$ increases, the Wannier function is more and more localized so that the width of its Fourier transform increases. As a result, the population of the diffracted peaks increases with the lattice depth.
+    \item For intermediate values of $u$, the visibility of the interference pattern progressively decreases as $u$ increases. In addition, as $V_0$ increases, the Wannier function is more and more localized so that the width of its Fourier transform increases. As a result, the population of the diffracted peaks increases with the lattice depth.
 \end{itemize}
 
 The experimental quantity $\rho_{\rm{TOF}}(\bm{r},t)$ is therefore a powerful tool to characterize the phase of the system across the Mott transition. This is illustrated on Fig-\ref{fig:mott_greiner} of the first experimental observation of the Mott transition with cold atoms \cite{greiner2002quantum}, on which we can clearly see the visibility decreasing with $V_0$.
@@ -542,7 +542,7 @@ So far, we have focused on the description of the lattice Hamiltonian under the 
 
 As developed in \ref{sec:bogo_approx}, the central point of the Bogoliubov approximation for the weakly-interacting homogeneous Bose gas resides in the fact that the interactions are \textbf{weak}. This means that the system can be described as a BEC from which only a \textbf{small fraction} of the atoms, the depletion, are removed by the effect of interactions.
 
-For the lattice gas, the condensed atoms correspond to the sharp diffraction peaks of the momentum distribution, while the depleted atoms in high quasi-momentum states correspond to the diffuse background between the diffraction peaks that increases as $U/J$ and therefore the strength of interactions increases, as illustrated by Fig.-\ref{fig:mott_greiner}. We thus need to be in the shallow lattice regime to use the Bogoliubov approximation, \ie at low values of the lattice depth such as $U/J \ll (U/J)_c$. This corresponds to the superfluid phase where the condensed fraction is close to 1 and the fraction of depleted atoms is small.
+For the lattice gas, the condensed atoms correspond to the sharp diffraction peaks of the momentum distribution, while the depleted atoms in high quasi-momentum states correspond to the diffuse background between the diffraction peaks that increases as $u$ and therefore the strength of interactions increases, as illustrated by Fig.-\ref{fig:mott_greiner}. We thus need to be in the shallow lattice regime to use the Bogoliubov approximation, \ie at low values of the lattice depth such as $u \ll u_c$. This corresponds to the superfluid phase where the condensed fraction is close to 1 and the fraction of depleted atoms is small.
 
 
 \subsection{Dispersion relation and effective mass}
@@ -616,3 +616,6 @@ In conclusion, we obtain an Hamiltonian of the same form than the homogeneous ca
 We have then achieved the objective set at the beginning of this chapter, namely obtain a system with \kmk paired quantum depleted atoms as described by the Bogoliubov theory of the weakly-interacting Bose gas, but with increased interactions so that we should be able to reach the low temperature regime dominated by interactions $\kB T \ll \mu$ for which the \kmk correlation signal should be detectable. 
 
 Importantly, the predictions of the Bogoliubov theory detailled in Chapter \ref{sec:chapter_1} should not be taken at face value for the much more complicated system of the inhomogeneous lattice gas. In fact, there have not been clear experimental studies testing the validity of the Bogoliubov approach for this kind of system. It will then be of great interest to compare the predictions of the simple homogeneous case to the experimental data as a means to detect whether the Bogoliubov approach fails or not and under which conditions.
+
+
+

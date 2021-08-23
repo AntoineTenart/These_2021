@@ -2,7 +2,7 @@
 
 \label{sec:chapter_3}
 
-blah blah blah
+The first chapters of this thesis have laid out the motivations to study the momentum-space correlations between individual particles in ultracold gases \NOTE{todo}
 
 \section{Helium in optical lattices}
 
@@ -39,7 +39,7 @@ To begin the experimental sequence, we first need to excite Helium atoms in the 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{Fig/Chapter3/source.png}
-    \caption{Metastable helium source. a) Drawing of the source apparatus. Helium atoms (blue arrows) are sent into a glass tube glued into a pierced boron-nitride (BN) piece. A plasma forms between the high voltage needle and the grounded skimmer, exciting the atoms in the metastable state (red arrows). The boron nitride is cooled by thermal contact with a copper (Cu) piece in which liquid nitrogen flows, allowing to significantly reduce the speed of the atoms. b) Photograph of the source apparatus. The red square illustrates what is represented on the drawing.}
+    \caption{Metastable helium source. (a) Drawing of the source apparatus. Helium atoms (blue arrows) are sent into a glass tube glued into a pierced boron-nitride (BN) piece. A plasma forms between the high voltage needle and the grounded skimmer, exciting the atoms in the metastable state (red arrows). The boron nitride is cooled by thermal contact with a copper (Cu) piece in which liquid nitrogen flows, allowing to significantly reduce the speed of the atoms. (b) Photograph of the source apparatus. The red square illustrates what is represented on the drawing.}
     \label{fig:source}
 \end{figure}
 
@@ -58,7 +58,7 @@ We now move on the next experimental step, laser cooling.
 
 Our experimental cooling sequence uses two types of laser cooling: Doppler and sub-Doppler cooling. Doppler cooling revolves around the absorption of resonant, counter-propagating photons by a two-level atom, reducing its momentum. The absorbed photons are re-emitted spontaneously in a random direction of space, meaning that after a large number of absorption/emission cycles, the variation of momentum induced by spontaneous emission averages out. The only contribution is thus the one of absorption contributing to slow the atom down. This effect is called Doppler cooling as the frequency of the photons seen by the atoms changes with their speed because of the well-known Doppler effect. It is then necessary to account for the Doppler effect to ensure that the photons are resonant with the two-level transition of interest to ensure proper cooling. On the other hand, sub-Doppler cooling designs a variety of cooling techniques revolving around multi-level atomic structures. These techniques allow to reach lower temperatures than Doppler cooling, at the expense of small velocity captures, nevertheless attainable with prior Doppler cooling. 
 
-As shown on Fig.-\ref{fig:niveaux}, we use the $2 \ ^3 S_1 \rightarrow 2 \ ^3 P_2$ transition for Doppler cooling. The state $2 \ ^3 S_1$ has three sub-states $m_J=\{-1,0,+1\}$ whereas the state $2 \ ^3 P_2$ has 5 $m_J=\{-2,-1,0,+1,+2\}$. By using circularly polarised light allowing transitions that increase or decrease $m_J$ by $1$, the transition between these two-states can be assimilated as an effective two-level transition after a few cycles of absorption/emissions, making it well suited for Doppler cooling. For sub-Doppler cooling, we use the transition  $2 \ ^3 S_1 \rightarrow 2 \ ^3 P_1$ where the excited state also has three sub-states, implementing an effective 3-level lambda structure if the light is properly polarized. The natural line-width of the $2 \ ^3 P$ state is \fcolorbox{red}{white}{$\Gamma = 2 \pi \times 1.6 \ \rm{MHz}$}.
+As shown on Fig.-\ref{fig:niveaux}, we use the $2 \ ^3 S_1 \rightarrow 2 \ ^3 P_2$ transition for Doppler cooling. The state $2 \ ^3 S_1$ has three sub-states $m_J=\{-1,0,+1\}$ whereas the state $2 \ ^3 P_2$ has 5 $m_J=\{-2,-1,0,+1,+2\}$. By using circularly polarised light allowing transitions that increase or decrease $m_J$ by $1$, the transition between these two-states can be equated to an effective two-level transition after a few cycles of absorption/emissions, making it well suited for Doppler cooling. For sub-Doppler cooling, we use the transition  $2 \ ^3 S_1 \rightarrow 2 \ ^3 P_1$ where the excited state also has three sub-states, implementing an effective 3-level lambda structure if the light is properly polarized. The natural line-width of the $2 \ ^3 P$ state is \fcolorbox{red}{white}{$\Gamma = 2 \pi \times 1.6 \ \rm{MHz}$}.
 
 We will not explain here all the details of how laser cooling works, but rather briefly show the main cooling steps of the experimental sequence and give typical experimental numbers. For further details, we refer the reader to previous thesis \cite{hoend2014,bouton_these,cayla_these}.
 
@@ -72,7 +72,7 @@ As in most cold atoms experiment, the cooling sequence starts with a Zeeman slow
 
 While reducing the speed of the atoms is necessary to reach quantum degeneracy, it is also necessary to spatially trap the atoms. This is achieved by combining the radiative pressure force with the magnetic force whose role is to trap the atoms. This is the idea behind the \textbf{Magneto-Optical Trap} (MOT), the cornerstone of every cold atom experiment. A MOT is made of 3 pairs of counter-propagating red-detuned laser beams, one for each direction of space, on which we add a quadrupole magnetic field. In our case, the magnetic field is produced by two coils centered on the $x$-axis in anti-Helmoltz configuration. The current is $16 \ \rm{A}$, resulting in a gradient of $25 \ \mathrm{G/cm}$ at the center of trap.
 
-To load the MOT, we use an intensity of roughly $15 \ \Isat$ per beam and a strong detuning $\delta =-60 \Gamma$ . This serves two purposes: it ensures a large capture velocity, making the loading of the trap efficient, and also keeps the level of light-assisted Penning losses low. We load typically \fcolorbox{red}{white}{$N \simeq 2 \times 10^9$} atoms in $\sim 1.5 \ \mathrm{s}$. In a second time, we look to compress the gas to increase the atomic density by reducing the detuning to $\delta =-15 \Gamma$ . To avoid major Penning losses, we conjointly reduce the total intensity from $90 \ \Isat$ to $0.7 \ \Isat$. This increases the density by a factor 10.
+To load the MOT, we use an intensity of roughly $15 \ \Isat$ per beam and a strong detuning $\delta =-60 \Gamma$ . This serves two purposes: it ensures a large capture velocity, making the loading of the trap efficient, and also keeps the level of light-assisted Penning losses low. We load typically \fcolorbox{red}{white}{$N \simeq 2 \times 10^9$} atoms in $\sim 1.5 \ \mathrm{s}$. In a second time, we look to compress the gas to increase the atomic density by reducing the detuning to $\delta =-12 \Gamma$ . To avoid major Penning losses, we conjointly reduce the total intensity from $90 \ \Isat$ to $0.7 \ \Isat$. This increases the density by a factor 10.
 
 At the end of the MOT phase, we obtain a gas of $N \simeq 2 \times 10^9$ atoms at $T=1.2 \rm{mK}$ of density $n=2.5 \times 10^{10} \ \rm{cm}^{-3}$.
 
@@ -90,6 +90,13 @@ Grey molasses are a sub-Doppler cooling scheme that works with the so called lam
 
 The grey molasses stage is implemented with 3 pairs of countra-propagating, blue detuned $\delta =8 \Gamma$ beams with a total power of $28 \ \Isat$. The grey molasses stage lasts $5 \mathrm{ms}$ after which we obtain $N \simeq 1.7 \times 10^9$ atoms at $T \simeq 15 \ \mu K$. While this temperature is already quite low, the cooling steps we have described so far are not enough to reach the kinds of temperatures and densities required to reach quantum degeneracy. We thus need another non-optical cooling technique for the last steps of the experiment.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Fig/Chapter3/laser_cooling.png}
+    \caption{Laser cooling sequence. The time $t=0$ corresponds to the beginning of the compressed MOT step, preceded by the MOT step that lasts $1.5 \ \rm{s}$. The initials RM and GM corresponds to Red Molasses and Grey Molasses respectively. Current values are represented in red, light frequencies in blue and light intensities in orange.}
+    \label{fig:my_label}
+\end{figure}
+
 \subsection{Evaporative cooling}
 
 Evaporative cooling was derived from the simple idea that if one is able to selectively remove the hottest particles of an ensemble, the remaining ones will thermalize at a lower temperature. This is exactly what we do when we blow on a cup of coffee, removing the hottest coffee molecules vaporized above the surface to cool down the entire cup of coffee. Evaporative cooling therefore requires to find a way to remove only the hottest atoms while ensuring that the collision rate amongst the remaining atoms is high enough for a proper thermalization. 
@@ -102,11 +109,11 @@ For our experimental purpose, we need to devise what kind of trap to use. An opt
 
 \subsubsection{Magnetic trap}
 
-Before loading, the atomic gas is optically pumped into the trapped state $m_J=1$. We then create a magnetic quadrupole field with the same coils used for the MOT to produce an initial gradient of $\sim 5 \ \rm{G/cm}$ and load $N \simeq 1.7 \times 10^{9}$ atoms into the trap. Note that because of spin conservation laws, the Penning collision rate is highly reduced for a spin-polarized gas as mentioned in the beginning of this chapter. We therefore safely go to higher densities by compressing the trap, increasing the gradient to $\sim 35 \ \rm{G/cm}$. The evaporation cooling is performed in $3 \ \rm{s}$, reducing the number of atoms to a typical $N=100 \times 10^6$. The final temperature is $T \simeq 70 \mu K$. Note that while this is higher than what we had at the end of laser cooling as the gas is heated up when loaded in the magnetic trap, we have significantly increased the density and therefore got closer to quantum degeneracy.
+Before loading, the atomic gas is optically pumped into the trapped state $m_J=1$. To do so, we create a bias field oriented along the $z$-axis to set the quantification axis and shine $\sigma_{+}$ resonant polarized light unto the atoms for $700 \ \mu \rm{s}$. We then create a magnetic quadrupole field with the same coils used for the MOT to produce an initial gradient of $\sim 5 \ \rm{G/cm}$ and load $N \simeq 1.7 \times 10^{9}$ atoms into the trap. Note that because of spin conservation laws, the Penning collision rate is highly reduced for a spin-polarized gas as mentioned in the beginning of this chapter. We therefore safely go to higher densities by compressing the trap, increasing the gradient to $\sim 35 \ \rm{G/cm}$. The evaporation cooling is performed in $3 \ \rm{s}$, reducing the number of atoms to a typical $N=100 \times 10^6$. The final temperature is $T \simeq 70 \mu K$. Note that while this is higher than what we had at the end of laser cooling as the gas is heated up when loaded in the magnetic trap, we have significantly increased the density and therefore got closer to quantum degeneracy.
 
 \subsubsection{Crossed Optical Dipole trap}
 
-The Optical Dipole Trap (ODT) is made with two crossing far detuned 1550nm laser beams whose intensity is stabilized with PID locking. We label these two beams ODT1 and ODT2, the second beam being obtained from the first one in a butterfly-like shape (see Fig.-\ref{fig:scheme_odt_lattice}). Their respective waists are $133 \ \mu \rm{m}$ and $63 \ \mu \rm{m}$ and the maximum power for ODT1 is $18 \ \rm{W}$. The ODT is loaded by ramping up the laser power while ramping down the current in the quadrupole coils. As the ODT is very narrow, we typically only load $N \simeq 5 \times 10^6$ but reduce the temperature by a factor 2 while increasing the density by two orders of magnitude. The final evaporation stage is done by ramping down the laser power in $400 \ \rm{ms}$. We adapt the final laser power to chose the number of atoms in the BEC, from a few thousands to roughly $N \simeq 10^6$ at maximum. The trapping frequencies depend from the chosen final power with typical values $2\pi \times (\omega_x,\omega_y,\omega_z)= (81,352,320) \ \rm{Hz}$ for $\NBEC \simeq 6 \times 10^5$ and $2\pi \times (\omega_x,\omega_y,\omega_z)= (41,173,180) \ \rm{Hz}$ for $\NBEC \simeq 5 \times 10^3$ as we wish to use for the \kmk correlations measurements.
+The Optical Dipole Trap (ODT) is made with two crossing far detuned 1550nm laser beams whose intensity is stabilized with PID locking. We label these two beams ODT1 and ODT2, the second beam being obtained from the first one in a butterfly-like shape (see Fig.-\ref{fig:scheme_odt_lattice}). Their respective waists are $133 \ \mu \rm{m}$ and $63 \ \mu \rm{m}$ and the maximum power for ODT1 is $18 \ \rm{W}$. The ODT is loaded by ramping up the laser power while ramping down the current in the quadrupole coils. The overlap between the two traps is finely adjusted thanks to magnetic biases fields. As the ODT is very narrow, we typically only load $N \simeq 5 \times 10^6$ but reduce the temperature by a factor 2 while increasing the density by two orders of magnitude. The final evaporation stage is done by ramping down the laser power in $400 \ \rm{ms}$. We adapt the final laser power to chose the number of atoms in the BEC, from a few thousands to roughly $N \simeq 10^6$ at maximum. The trapping frequencies depend from the chosen final power with typical values $2\pi \times (\omega_x,\omega_y,\omega_z)= (81,352,320) \ \rm{Hz}$ for $\NBEC \simeq 6 \times 10^5$ and $2\pi \times (\omega_x,\omega_y,\omega_z)= (41,173,180) \ \rm{Hz}$ for $\NBEC \simeq 5 \times 10^3$ as we wish to use for the \kmk correlations measurements.
 
 
 \begin{figure}
@@ -114,6 +121,13 @@ The Optical Dipole Trap (ODT) is made with two crossing far detuned 1550nm laser
     \includegraphics[width=\textwidth]{Fig/Chapter3/scheme_odt_lattice.png}
     \caption{Orientation of the ODT and lattice beams in the experiment. Taken from \cite{cayla_these}.}
     \label{fig:scheme_odt_lattice}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Fig/Chapter3/condensation_sequence.png}
+    \caption{Condensation sequence. The red lines correspond to magnetic fields, \ie the quadrupole trap gradient and the $x$ and $z$ biases (no bias along $y$ is used), the green line to the frequency of the RF wave used to peform the evaporation and the orange line to the ODT power, here expressed in terms of photodiode voltage $V_{\rm{ODT}}$.}
+    \label{fig:my_label}
 \end{figure}
 
 \subsection{Optical imaging}
@@ -165,12 +179,19 @@ As we have seen in Chapter \ref{sec:chapter_2}, the depth of the lattice potenti
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{Fig/Chapter3/modulation.png}
+    \includegraphics[width=0.7\textwidth]{Fig/Chapter3/lattice_modulation.png}
     \caption{Calibration of the lattice amplitude. The atoms are loaded in the lattice by ramping down the ODT power (red) and ramping up the lattice power (blue). The beam to calibrate is then modulated while the two other beams are set to be $30 \%$ to avoid excitations in directions different from the one that is being calibrated. Finally, the atoms are loaded back in the ODT to measure the number of remaining atoms with absorption imaging.}
     \label{fig:calib_process}
 \end{figure}
 
-To do so, we modulate the amplitude of one of the lattice beam at frequency $f_{\rm{mod}}$ for a duration $t_{\rm{mod} }= 20 \ \rm{ms}$, adding two sidebands in the lattice light spectrum $f \pm f_{\rm{mod}}$. When $2 f_{\rm{mod}}$ is close to the resonance frequency $f_{\text {res }}=\left(E_{2}(q=0)-E_{0}(q=0)\right)/\hbar$, it is possible to excite the atoms in the lowest energy band to the second excited band with a resonant two-photon process. As $f_{\text {res }}$ is dependent from the lattice depth, the idea is to scan the value of $f_{\rm{mod}}$ to find the resonance from which we deduce the value of the lattice depth. If the amplitude of the lattice at which we perform the calibration is not too high (we use $s= 10$ in practice), atom in the second excited band are not trapped and therefore lost. When we are perfectly at resonance, most atoms should then be lost, an effect that we can observe via absorption imaging. To make things more convenient, we load back the atoms into the ODT (see Fig.-\ref{fig:calib_process}) before taking the absorption image to avoid the diffraction induced by the lattice beams and properly count the atoms. We therefore measure the number of remaining atoms in the BEC after this procedure as a function of $f_{\rm{mod}}$ and fit the data to find the minimum and so $f_{\rm{res}}$ as illustrated on Fig.-XX \NOTE{faire figure}. By calculating the energy bands, we obtain the relation between the lattice depth and the value of $f_{\rm{res}}$ that allows us to finally obtain the value of the lattice depth. We repeat this procedure for each lattice beams, where the power of the two non-modulated beams are lowered by $30 \%$ so that the cloud is not excited in the other directions.
+To do so, we modulate the amplitude of one of the lattice beam at frequency $f_{\rm{mod}}$ for a duration $t_{\rm{mod} }= 20 \ \rm{ms}$, adding two sidebands in the lattice light spectrum $f \pm f_{\rm{mod}}$. When $2 f_{\rm{mod}}$ is close to the resonance frequency $f_{\text {res }}=\left(E_{2}(q=0)-E_{0}(q=0)\right)/\hbar$, it is possible to excite the atoms in the lowest energy band to the second excited band with a resonant two-photon process. As $f_{\text {res }}$ is dependent from the lattice depth, the idea is to scan the value of $f_{\rm{mod}}$ to find the resonance from which we deduce the value of the lattice depth. If the amplitude of the lattice at which we perform the calibration is not too high (we use $s= 10$ in practice), atom in the second excited band are not trapped and therefore lost. When we are perfectly at resonance, most atoms should then be lost, an effect that we can observe via absorption imaging. To make things more convenient, we load back the atoms into the ODT (see Fig.-\ref{fig:calib_process}) before taking the absorption image to avoid the diffraction induced by the lattice beams and properly count the atoms. We therefore measure the number of remaining atoms in the BEC after this procedure as a function of $f_{\rm{mod}}$ and fit the data to find the minimum and so $f_{\rm{res}}$ as illustrated on Fig.-\ref{fig:lattice_calibration}. By calculating the energy bands, we obtain the relation between the lattice depth and the value of $f_{\rm{res}}$ that allows us to finally obtain the value of the lattice depth. We repeat this procedure for each lattice beams, where the power of the two non-modulated beams are lowered by $30 \%$ so that the cloud is not excited in the other directions.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Fig/Chapter3/lattice_calibration.png}
+    \caption{Calibration of the lattice depth. (a) Variation of the atom number after the calibration procedure as a function of the modulation frequency $f_{\rm{mod}}$. A clear resonance of frequency $f_{\rm{res}}=162.8 \ \rm{kHz}$ is observed. (b) Plot of the resonance frequency $f_{\rm{res}}$ as a function of the lattice depth $s$. The red dashed lines illustrates how the lattice depth is obtained from the measurement of $f_{\rm{res}}$ on the left panel.}
+    \label{fig:lattice_calibration}
+\end{figure}
 
 
 \section{Metastable Helium detection}
@@ -612,13 +633,30 @@ As developed in the first pages of this thesis, the general objective of our exp
 
 \subsection{Loading of the optical lattice}
 
-The optical lattice is loaded by progressively 
+The optical lattice is loaded by ramping down the power of the ODT beams while ramping up the power of the lattice beams. We use several parameters to fine tune the loading sequence as represented on Fig.-\ref{fig:loading}:
+
+\begin{itemize}
+    \item The slope of the lattice ramp.
+    \item $t_{\rm{down}}$ the time on which we ramp down the ODT power.
+    \item $t_{\rm{delay}}$ the time delay between the beginning of the ramp of the optical lattice and the ramp of the ODT.
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Fig/Chapter3/loading.png}
+    \caption{Loading sequence of the lattice.}
+    \label{fig:loading}
+\end{figure}
+
+In order to optimize these parameters, the atoms are loaded back in the ODT with a symmetrical sequence to look for atom losses and heating effects to be minimized as illustrated on Fig-\NOTE{to do}. We found that the shape of the ramp were not important and settled for simple linear ramps, corresponding to an almost exponential increase of $s$ (see Fig-\ref{fig:U_J_vs_s}). Their slope was set to $0.3 \ E_{\rm{r}}/\rm{ms}$ and remains constant no matter the final target value of $s$, only the ramp time changes. The optimal values of the other ramp parameters were found to be \fcolorbox{red}{white}{$t_{\rm{down}}=22 \ \rm{ms}$} and \fcolorbox{red}{white}{$t_{\rm{delay}}= 0 \ \rm{ms}$}. With these parameters, we observe a typical $20 \%$ losses that we attribute to the not perfect overlap between the ODT and the lattice, but no heating.
 
 \subsection{Thermometry and entropy across the Mott transition}
 
+Now that we have experimentally optimized the parameters of the loading sequence, we verify the adiabaticity of the loading sequence by extracting the temperature and the entropy from the momentum distribution.
+
 \subsubsection{Thermometry method}
 
-The temperature of the gas cannot be extracted directly from the density $\rho(\bm{k})$ as we do not have an analytical prediction for the trapped Bose-Hubbard model. The idea is then to use ab-initio Quantum Monte Carlo (QMC) calculations with the only adjustable parameter being the temperature. We run the QMC calculations for different temperature values and select the one that best reproduces the experimental data to get the temperature in the experiment as illustrated in Fig.-\ref{fig:comp_qmc}. Formally speaking, we compare a cut of the normalized experimental density $\tilde{\rho}_{\rm{exp}}(k)=\rho(k,0,0)/\rho(0)$ to the QMC ones $\tilde{\rho}_{\rm{exp}}(k,T)=\rho_{\rm{QMC}}(k,0,0,T)/\rho_{\rm{QMC}}(0)$. We look to find the temperature value that minimizes the reduced chi-square quantity that we define as:
+The temperature of the gas cannot be extracted directly from the density $\rho(\bm{k})$ as we do not have an analytical prediction for the trapped Bose-Hubbard model. The idea is then to use ab-initio Quantum Monte Carlo (QMC) calculations simulating the momentum distribution with the only adjustable parameter being the temperature. The QMC calculations were provided by Tommaso Roscilde from the Ecole Normale Supérieure de Lyon and were run for different temperature values. To get the temperature in the experiment, we select the QMC momentum distribution that best reproduces the experimental data  as illustrated in Fig.-\ref{fig:comp_qmc}. Formally speaking, we compare a cut of the normalized experimental density $\tilde{\rho}_{\rm{exp}}(k)=\rho(k,0,0)/\rho(0)$ to the QMC ones $\tilde{\rho}_{\rm{exp}}(k,T)=\rho_{\rm{QMC}}(k,0,0,T)/\rho_{\rm{QMC}}(0)$. We look to find the temperature value that minimizes the reduced chi-square quantity that we define as:
 
 \begin{equation}
     \chi_{\mathrm{r}}^{2}(T)=\frac{1}{N_{p}} \sum_{j=1}^{N_{p}} \frac{\left[\bar{\rho}_{\mathrm{exp}}\left(k_{j}\right)-\bar{\rho}_{\mathrm{QMC}}\left(k_{j}, T\right)\right]^{2}}{\sigma_{\exp }\left(k_{j}\right)^{2}}
@@ -634,6 +672,8 @@ The temperature of the gas cannot be extracted directly from the density $\rho(\
     \label{fig:comp_qmc}
 \end{figure}
 
+Importantly, these kind of measurements are possible thanks to the 3D single atom resolution of our experimental apparatus. This allows to measure the momentum distribution for low atoms numbers $N \simeq 3,000$ for which QMC calculations are possible down to low temperatures, while providing a great precision on the measurement of $\rho(\bm{k})$ without any line-of-sight integration contrary to optical imaging.
+
 We show on Fig.-\ref{fig:chi_vs_T} plots of $\chi_{\mathrm{r}}^{2}(T_J)$ as a function of the temperature of the QMC calculations at $u=30$, where $T_J$ is the reduced temperature $T_J = \kB T /J$. We observe a clear minimum that indicates the temperature in the experiment. Interestingly, the close to the minimum value $\chi_{\mathrm{r}}^{2}\left(T_{J}=2.4\right)=3.6 \pm 3.0$ is compatible with unity, meaning that the QMC calculations indeed reproduce the experimental data within the statistical uncertainty. We fit the data with a parabolic profile to identify the position of the minimum. The error on the fit gives us an estimate of the minimal error on the evaluation of the temperature with this technique that can be linked to the notion of Fisher information that we will see in the next paragraph. Note however that in order not to rely on a fit for every data sets, we will estimate the error bars by determining the temperature interval over which distinct values of $\chi_{\mathrm{r}}^{2}$ are observed.
 
 \begin{figure}
@@ -643,20 +683,21 @@ We show on Fig.-\ref{fig:chi_vs_T} plots of $\chi_{\mathrm{r}}^{2}(T_J)$ as a fu
     \label{fig:chi_vs_T}
 \end{figure}
 
-\subsubsection{Temperature as a function of $u$}
+\subsubsection{Temperature and entropy as a function of $u$}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{Fig/Chapter3/T_vs_s.pdf}
-    \caption{Caption}
+    \includegraphics[width=\textwidth]{Fig/Chapter3/temperature.png}
+    \caption{(a) Experimental reduced temperature $T_J=\kB T/J$ as a function of $u$. The underlying false color plot shows the theoretical map of the entropy per particle $S/N \kB$ of the trapped 3D Bose-Hubbard model with the experimental parameters. The white dashed line is the isoentropic line $S/N=0.8 \ \kB$. The black dashed line represents the line of critical temperatures for the uniform 3D Bose-Hubbard model at unit lattice filling \cite{capogrosso2007phase}. (b) Absolute temperature in recoil units $E_{\rm{r}}$ as a function of $u$. The green dashed line corresponds to an energy $2.2 J$ (in units of $J$) that best matches the experimental data in the range $u=5-20$.}
     \label{fig:T_vs_u}
 \end{figure}
 
-We plot on Fig-\ref{fig:T_vs_u} the extracted values of $T_J$ as a function $u$ spanning the phase diagram. The experimental data is plotted alongside to the theoretical map of entropy. The value of the entropy is obtained from the QMC calculations giving the average energy by particle $e(T)$ for various values of the temperature. The energy is then fitted with a high-order polynomial function to compute the specific heat $c(T)=\mathrm{d} e(T) / \mathrm{d} T$ and finally the entropy $S(T) / N=\int_{0}^{T} d \theta c(\theta) / \theta$. The values of the entropy are shown in Fig-\ref{fig:T_vs_u} in false colors. The light white lines represent isoentropic lines. 
+We plot on Fig-\ref{fig:T_vs_u} panel (a) the extracted values of $T_J$ as a function $u$ spanning the phase diagram. The experimental data is plotted alongside to the theoretical map of entropy. Note that we choose to plot the reduced temperature $T_J$ to normalize the adiabatic cooling effect occurring when $u$ increases as illustrated on Fig-\ref{fig:T_vs_u} panel (b). This effect comes from the fact that the isoentropic gas is contained in a Bloch band whose width is proportional to $J$ and decreases with $s$ (see Chapter \ref{sec:chapter_2}). For this reason, the density of states increases with $s$, explaining why $T$ goes down to keep the entropy constant.
 
-\NOTE{Faire explication de la ligne isentropique quand le chapitre 2 est fait}
+The value of the entropy is obtained from the QMC calculations giving the average energy by particle $e(T)$ for various values of the temperature. The energy is then fitted with a high-order polynomial function to compute the specific heat $c(T)=\mathrm{d} e(T) / \mathrm{d} T$ and finally the entropy $S(T) / N=\int_{0}^{T} d \theta c(\theta) / \theta$. The values of the entropy are shown in Fig-\ref{fig:T_vs_u} in false colors. The light white lines represent isoentropic lines. We see that all experimental points are compatible with the isentropic curves spanning the entropy range $S/N= 0.8(1) \ \kB$. These observations are consistent with our assumption that the lattice ramps create a series of thermal equilibrium states that we go through adiabatically conserving the entropy, thus certifying the experimental adiabatic preparation of equilibrium states of the 3D Bose-Hubbard model.
 
-\noindent We see that all experimental points are compatible with the isentropic curves spanning the entropy range $S/N= 0.8(1) \ \kB$. These observations are consistent with our assumption that the lattice ramps create a series of thermal equilibrium states that we go through adiabatically conserving the entropy, thus certifying the experimental adiabatic preparation of equilibrium states of the 3D Bose-Hubbard model.
+How can we understand the evolution of the isoentropic curve with $u$? For the moderate entropy values of the experiment, we observe to asymptotic regime, the superfluid regime ($u \leq 25$) in which the isoentropic curves grow slowly with $u$, and the Mott insulator regime in which the isoentropic curves grow more rapidly. At low values of $u$, the growth can be understood with Bogoliubov theory. As seen in Chapter \ref{sec:chapter_1}, the speed of sound depends on the strength of the interactions and therefore increases with $u$ $c \propto \sqrt{u}$, decreasing the density of states. The temperature dependence of the entropy is then $\sim T^3/u^2$ so that the isoentropic curves $S/\NBEC \kB =s_0$ should grow as $T \sim s_{0}^{1 / 3} u^{2 / 3}$ (this holds for the homogeneous case and low energies in which the dispersion relation is phononic). On the other hand, in the Mott insulator regime, the entropy writes $S/\NBEC \kB \sim \exp(-\Delta/T)$ where $\Delta \sim u$ is the Mott Insulator gap, giving $T \sim u$ along the isoentropic curves. In addition, we observe a third intermediate regime with a plateau \NOTE{finir ca}
+
 
 In addition, we measure the entropy per particle in the BEC before loading it into the lattice $S_0/\NBEC \kB$ to see if it matches the entropy measured in the lattice. To evaluate $S_0$, we use the relation for the approximation of a non-interacting, partially-condensed Bose gas in a harmonic trap \cite{pitaevskii2016bose}:
 
@@ -695,7 +736,7 @@ The Fisher information tells us what is the minimum uncertainty $\delta T$ with 
     \delta T_{J}=\frac{k_{B} \delta T}{J} \geq\left(\delta T_{J}\right)_{\min }=\frac{1}{\sqrt{I(T) N_{\rm{runs}}}}
 \end{equation}
 
-\noindent Translating the equations into words, the Fisher information tells us how sensitive the momentum density is to variations of the temperature and consequently how precisely we can hope to estimate the temperature by measuring  $\tilde{\rho}_{\mathrm{QMC}}(k, T)$ with finite statistics. We computed the Fisher information across the phase diagram as shown in Fig.-\ref{fig:fisher_info}. We see that the Fisher information varies quite a lot over 4 orders of magnitude. It takes its lower value in the deep Mott region, while it is at its maximum for temperatures where the gas undergoes its transition to a normal gas (\NOTE{voir avec chapitre 2}), consistently with our error bars that we can now compare to the Cramér-Rao bound. We estime that the typical uncertainty on the reduced temperature is $\delta T_J  \sim 0.3$ in the superfluid regime and $\delta T_J  \sim 1.5$ in the deep Mott regime. The former corresponds to $I(T) \sim 1$ and $(\delta T_J)_{\rm{min}} \sim 0.4$ and the latter to  $I(T) \sim 10^{-3}$ and $(\delta T_J)_{\rm{min}} \sim 1.3$. Close to the Mott transition, $I(T) \sim 7$ and $(\delta T_J)_{\rm{min}} \sim 0.02$. With the parabolic fit method of Fig.\ref{fig:chi_vs_T}, we evaluate $(\delta T_J)=0.03$ at $u=30$, thus nearly reaching the Cramér-Rao bound. We are thus always close to saturating the limit set by the Fisher information, meaning that we essentially extract all the possible information on the temperature from the measurement of the momentum density.
+\noindent Translating the equations into words, the Fisher information tells us how sensitive the momentum density is to variations of the temperature and consequently how precisely we can hope to estimate the temperature by measuring  $\tilde{\rho}_{\mathrm{QMC}}(k, T)$ with finite statistics. We computed the Fisher information across the phase diagram as shown in Fig.-\ref{fig:fisher_info}. We see that the Fisher information varies quite a lot over 4 orders of magnitude. It takes its lower value in the deep Mott region, while it is at its maximum for temperatures where the gas undergoes its transition to a normal gas, consistently with our error bars that we can now compare to the Cramér-Rao bound. We estime that the typical uncertainty on the reduced temperature is $\delta T_J  \sim 0.3$ in the superfluid regime and $\delta T_J  \sim 1.5$ in the deep Mott regime. The former corresponds to $I(T) \sim 1$ and $(\delta T_J)_{\rm{min}} \sim 0.4$ and the latter to  $I(T) \sim 10^{-3}$ and $(\delta T_J)_{\rm{min}} \sim 1.3$. Close to the Mott transition, $I(T) \sim 7$ and $(\delta T_J)_{\rm{min}} \sim 0.02$. With the parabolic fit method of Fig.\ref{fig:chi_vs_T}, we evaluate $(\delta T_J)=0.03$ at $u=30$, thus nearly reaching the Cramér-Rao bound. We are thus always close to saturating the limit set by the Fisher information, meaning that we essentially extract all the possible information on the temperature from the measurement of the momentum density.
 
 \begin{figure}
     \centering
