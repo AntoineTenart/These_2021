@@ -87,7 +87,46 @@ To test that our method does not induce any distortion of the momentum distribut
 
 \section{Experimental study}
 
+\subsection{Analysis of the transverse shape}
+
+The first thing that we need to check is the transverse shape of the 3D distribution to know whether we can fully decouple what is happening in the 1D direction from what is happening in the other two transverse directions. The transverse momentum distribution is supposed to be a Gaussian distribution whose width depends on the transverse trapping frequency. If the atoms are in the harmonic oscillator ground state of the transverse direction, the RMS width of the distribution in momentum space is $\Delta k_{\rm{theo}}=\sqrt{\frac{m \omega_{\perp}}{2 \hbar}}$. \NOTE{factor 2?}
+\paragraph{} On Fig.-\ref{fig:1D_transverse}, we plot the transverse distribution along gravity at different positions along the 1D direction and normalize it to 1. We observe that we get the same RMS size for every $k_{\rm{1D}}$ at which the cut is done meaning that the 1D direction is fully decoupled from what is happening in the transverse direction. We extract its RMS width \fcolorbox{red}{white}{$\Delta k_{\rm{exp}}=5.96(2) \mu \rm{m}^{-1}$}. This data set was taken with $s=26$, meaning that $\omega_{\rm{site}}=1.33 \times 10^6$ Hz \NOTE{errorbar?}, giving \fcolorbox{red}{white}{$\Delta k_{\rm{theo}}=6.4 \mu \rm{m}^{-1}$} so a reasonable agreement between the two values. \NOTE{notations}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Fig/Chapter5/1D_transverse_effect.png}
+    \caption{Caption}
+    \label{fig:1D_transverse}
+\end{figure}
+
+\subsection{Calculation of the momentum density}
+
+In order to compare the experimental values of the Tan's contact to theory, it is crucial to obtain the absolute value of the 1D density $n_{\rm{1D}}(k)$ from the experimental data. To do so, we exploit the fact that the transverse distribution shape is the same along the 1D direction as we have just seen. Under the effect of the fast transverse expansion, some atoms fall beyond the MCP and are therefore not detected. However, knowing the transverse profile, we can do as if everything was only happening in one direction and integrate over the transverse profile. The procedure is the following:
+
+\begin{itemize}
+    \item We plot the transverse distribution (in the vertical direction where it is not cut out by the finite size of the $\He$ detector) and extract its RMS width $\sigma$. \NOTE{notations}
+    \item For one pixel of size $\delta k_{1D} \times \delta k_{\perp}^2$, we have (keeping in mind normalization condition with the factor $2\pi$) \NOTE{vérifier ça}:
+    
+
+    \begin{align}
+        n_{1D}(k) &= 2\pi \times \frac{N_{\rm{pix}}(k)}{\eta \delta k_{1D} \delta k_{\perp}^2} \left(\int n_{\perp}(k) dk \right)^2 \\
+        % &=2\pi \times \frac{N_{\rm{pix}}(k)}{\eta \delta k_{1D} \delta k_{\perp}^2} 2 \pi \sigma 
+    \end{align}
+    
+    \noindent $\eta$ being the detection efficiency and $N_{\rm{pix}}$ the number of atoms in the pixel at a given $k$. From this, we obtain the expression of $n_{\rm{1D}}(k)$ that depends only on known experimental values:
+    
+    \begin{equation}
+        n_{1D}(k) = 4\pi^2 \times \frac{N_{\rm{pix}}(k)}{\eta \delta k_{1D} \delta k_{\perp}^2} \sigma 
+    \end{equation}
+
+    
+
+\end{itemize}
+
+
 \subsection{Measurement of the temperature}
+
+As we want to study the dependency of the Tan's contact with temperature as well make comparison with QMC calculations, we first need to extract the temperature from the experimental data. This is easier than for 3D Bose-Hubbard gases as the width of the momentum distribution gives information about the temperature of the gas. At low values of $k$, the shape of the 1D momentum density is Lorentzian. \NOTE{refs} The temperature of the gas can be extracted from the width of the Lorenztian shape (see Fig-\ref{fig:temperature}) using $n(k)=\frac{2n/\Delta k }{1+(k/\Delta k)^2}$ with $n$ the maximum density ({\color{blue}[CHECK]}) and $\Delta k=\frac{m k_b T}{\hbar^2 \rho_{1D}(0)} \alpha_{\rm{fit}}$ with $\rho_{1D}(0)$ the spatial density at the center of the tube and $\alpha_{\rm{fit}}$ a coefficient to take into account the effect of the trapping potential. This coefficient varies slightly with the interaction parameter $\gamma$ and has been calibrated through QMC calculations. We use a $\rho_{1D}(0)$ which correspond to the weighted averaged $\rho_{1D}(0)$ over the tube distribution. {\color{blue}(good choice of $\rho_{1D}(0)$)?}. 
 
 \subsection{First extracted values of the Tan's contact}
 
