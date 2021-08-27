@@ -101,19 +101,22 @@ The first thing that we need to check is the transverse shape of the 3D distribu
 
 \subsection{Calculation of the momentum density}
 
+
+\label{sec:1D_calculation_momentum_density}
+
 In order to compare the experimental values of the Tan's contact to theory, it is crucial to obtain the absolute value of the 1D density $n_{\rm{1D}}(k)$ from the experimental data. To do so, we exploit the fact that the transverse distribution shape is the same along the 1D direction as we have just seen. Under the effect of the fast transverse expansion, some atoms fall beyond the MCP and are therefore not detected. However, knowing the transverse profile, we can do as if everything was only happening in one direction and integrate over the transverse profile. The procedure is the following:
 
 \begin{itemize}
     \item We plot the transverse distribution (in the vertical direction where it is not cut out by the finite size of the $\He$ detector) and extract its RMS width $\sigma$. \NOTE{notations}
-    \item For one pixel of size $\delta k_{1D} \times \delta k_{\perp}^2$, we have (keeping in mind normalization condition with the factor $2\pi$) \NOTE{vérifier ça}:
+    \item For one pixel of size $\Delta k_{1D} \times \Delta k_{\perp}^2$, we have (keeping in mind normalization condition with the factor $2\pi$) \NOTE{vérifier ça}:
     
 
     \begin{align}
-        n_{1D}(k) &= 2\pi \times \frac{N_{\rm{pix}}(k)}{\eta \delta k_{1D} \delta k_{\perp}^2} \left(\int n_{\perp}(k) dk \right)^2 \\
+        n_{1D}(k) &= 2\pi \times \frac{N_{\rm{vox}}(k)}{\eta \Delta k_{1D} \Delta k_{\perp}^2} \left(\int n_{\perp}(k) dk \right)^2 \\
         % &=2\pi \times \frac{N_{\rm{pix}}(k)}{\eta \delta k_{1D} \delta k_{\perp}^2} 2 \pi \sigma 
     \end{align}
     
-    \noindent $\eta$ being the detection efficiency and $N_{\rm{pix}}$ the number of atoms in the pixel at a given $k$. From this, we obtain the expression of $n_{\rm{1D}}(k)$ that depends only on known experimental values:
+    \noindent $\eta$ being the detection efficiency and $N_{\rm{pix}}$ the number of atoms in the voxel at a given $k$. From this, we obtain the expression of $n_{\rm{1D}}(k)$ that depends only on known experimental values:
     
     \begin{equation}
         n_{1D}(k) = 4\pi^2 \times \frac{N_{\rm{pix}}(k)}{\eta \delta k_{1D} \delta k_{\perp}^2} \sigma 
@@ -123,12 +126,126 @@ In order to compare the experimental values of the Tan's contact to theory, it i
 
 \end{itemize}
 
+\subsection{Transverse integration effects}
+
+As in \ref{sec:transverse_integration}, the transverse size of the voxels defines a transverse integration $\Delta k_{\perp}$ that needs to be sufficiently large \NOTE{number} to ensure a proper signal to noise ratio. As illustrated on Fig.\ref{fig:1D_integration}, the transverse integration however effectively reduces the momentum range in the 1D direction because of the circular shape of the detector that cuts out a part of the integration volume. The transverse integration must then be kept as low as possible and the distorted edges of the distribution ignored in the analysis. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Fig/Chapter5/1D_transverse_integration.png}
+    \caption{Gravity integrated 2D image of the distribution of the 1D lattice gas illustrating the effect of the transverse integration. The red shaded area indicated the region where the geometry of the detector affects the measurement of $n_{\rm{1D}} (k)$.}
+    \label{fig:1D_integration}
+\end{figure}
 
 \subsection{Measurement of the temperature}
 
-As we want to study the dependency of the Tan's contact with temperature as well make comparison with QMC calculations, we first need to extract the temperature from the experimental data. This is easier than for 3D Bose-Hubbard gases as the width of the momentum distribution gives information about the temperature of the gas. At low values of $k$, the shape of the 1D momentum density is Lorentzian. \NOTE{refs} The temperature of the gas can be extracted from the width of the Lorenztian shape (see Fig-\ref{fig:temperature}) using $n(k)=\frac{2n/\Delta k }{1+(k/\Delta k)^2}$ with $n$ the maximum density ({\color{blue}[CHECK]}) and $\Delta k=\frac{m k_b T}{\hbar^2 \rho_{1D}(0)} \alpha_{\rm{fit}}$ with $\rho_{1D}(0)$ the spatial density at the center of the tube and $\alpha_{\rm{fit}}$ a coefficient to take into account the effect of the trapping potential. This coefficient varies slightly with the interaction parameter $\gamma$ and has been calibrated through QMC calculations. We use a $\rho_{1D}(0)$ which correspond to the weighted averaged $\rho_{1D}(0)$ over the tube distribution. {\color{blue}(good choice of $\rho_{1D}(0)$)?}. 
+\label{sec:1D_temperature}
 
-\subsection{First extracted values of the Tan's contact}
+As we want to study the dependency of the Tan's contact with temperature as well make comparison with QMC calculations, we first need to extract the temperature from the experimental data. This is easier than for 3D Bose-Hubbard gases as the width of the momentum distribution gives information about the temperature of the gas. At low values of $k$, the shape of the 1D momentum density is Lorentzian as illustrated on Fig.\ref{fig:1D_temperature}. \NOTE{refs} The temperature of the gas can be extracted from the width of the Lorenztian shape using 
+
+\begin{equation}
+    n(k)=\frac{2n/\Delta k }{1+(k/\Delta k)^2}
+\end{equation}
+
+\noindent with $n$ the maximum density ({\color{blue}[CHECK]}) and:
+
+\begin{equation}
+    \Delta k=\frac{m k_b T}{\hbar^2 \rho_{1D}(0)} \alpha_{\rm{fit}}
+\end{equation}
+
+\noindent with $\rho_{1D}(0)$ the spatial density at the center of the tube and $\alpha_{\rm{fit}}$ a coefficient to take into account the effect of the trapping potential. This coefficient varies slightly with the interaction parameter $\gamma$ and has been calibrated through QMC calculations. We use a $\rho_{1D}(0)$ which correspond to the weighted averaged $\rho_{1D}(0)$ over the tube distribution. {\color{blue}(good choice of $\rho_{1D}(0)$)?}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Fig/Chapter5/1D_temperature_lorentz.png}
+    \caption{Normalized 1D momentum distribution $n_{\rm{1D}} (k)$ for lattice holding times $t_{\rm{hold}}=5 \ \rm{ms}$ and $t_{\rm{hold}}=500 \ \rm{ms}$. The Lorentzian fit well matches the data at low $k$. The increase in the width of the distribution signals the increase in temperature induced by the increased holding time in the lattice.}
+    \label{fig:1D_temperature}
+\end{figure}
+
+\NOTE{a détailler}
+
+\subsection{Interaction parameter}
+
+The other relevant parameter affecting the value of Tan's contact besides temperature is the interaction parameter $\gamma$. It writes:
+
+\begin{equation}
+    \gamma = \frac{m g_{1D}}{\hbar^2 \rho_{1D}(0)}
+    \label{eq:gamma}
+\end{equation}
+
+\noindent and can be calculated from the number of atoms in a tube, itself deduced from the total atom number with the algorithm presented in \NOTE{ref}. Table \ref{tab:gamma_vs_N} shows its mininmum, maximum, and weighted average value over the ensemble of 1D gases for data sets with different atom numbers.
+
+
+\begin{table}[h!]
+\centering
+{\rowcolors{2}{white}{MainColor!12}
+    \begin{tabular}{c|c|c|c}
+        {\color{MainColor} N} &  {\color{MainColor}$\gamma_{\rm{min}}$} & {\color{MainColor}$\gamma_{\rm{max}}$} & {\color{MainColor}$\mean{\gamma}$}  \\
+        \hline
+        3.10 $\times 10^4$  & 0.259 & 2.17 & 0.416 \\
+        1.10 $\times 10^5$ & 0.156 & 1.63 & 0.252 \\
+        2.26 $\times 10^5$ & 0.117 & 1.44 & 0.190 \\
+    \end{tabular}}
+\caption{Variations of the interaction parameter $\gamma$ among the 1D tubes for different total atom numbers.}
+\label{tab:gamma_vs_N}
+\end{table}
+
+\subsection{Experimental procedure and first extracted values of the Tan's contact}
+
+The procedure to measure Tan's contact for a given data set is as follows:
+
+\begin{itemize}
+    \item We prepare the parameters of the experiment to reach the desired values of temperature and atom number. The latter is calibrated via absorption imaging while the former is set roughly by changing the holding time in the lattice and checking that the width of the 1D distribution increases. 
+    \item We start by taking $\sim 100$ experimental shots with no gradient to measure the low $k$ distribution from which we can extract the temperature as explained in \ref{sec:1D_temperature}. We do not need to take a large number of shots as the signal is quite high and we do not require a very high signal to noise ratio to obtain the temperature.
+    \item We set the gradient to shift the momentum distribution to access the momentum region where the the $\kmf$ tails are supposed to be present as explained in \NOTE{ref}. Usually, the displacement is not too high so that the momentum range overlaps the natural momentum range of the $\He$ detector where no gradient is used, allowing to check that the displaced data matches nicely the non displaced data in the region of the overlap. 
+    \item After computing the 1D distribution $n_{\rm{1D}} (k)$ with the method detailed in \ref{sec:1D_calculation_momentum_density}, we plot the quantity $n_{\rm{1D}} (k) \times k^4$. The presence of $\kmf$ tails is signaled by a flat zone that we can fit with a constant function to extract the bare value of the contact $C$ as illustrated on Fig.-\ref{fig:1D_plots}.
+
+    
+\end{itemize}  
+    
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{Fig/Chapter5/1D_plots.png}
+    \caption{Plots of $n_{\rm{1D}}$ for $s=26$, $N=3.1(3) \times 10^4$ and $t_{\rm{hold}}=5 \ \rm{ms}$. (a) Linear scale plot of the normalized $n_{\rm{1D}}$ for two momentum ranges. (b) Same data in log scale. The red line indicates a $k^{-4}$ fit. (c) $k^4 n_{\rm{1D}} (k)$ at high momentum. The red shaded area indicates the flat zone of the $\kmf$ tail.}
+    \label{fig:1D_plots}
+\end{figure}
+
+In order to compare conveniently the experimental data to the theoretical work of \cite{yao2018tan}, we introduce two dimensionless quantities. The first one is the reduced temperature:
+
+\begin{equation}
+    \xi_T=-a_{\rm{1D}}/\lambda_T
+\end{equation}
+
+\noindent with $a_{\rm{1D}}$ the 1D scattering length and $\lambda_T=\sqrt{2\pi \hbar^2/m k_b T}$. The second one is the reduced the interaction strength:
+
+\begin{equation}
+    \xi_{\gamma}=-a_{\rm{ho}}/a_{\rm{1D}}\sqrt{N}
+\end{equation}
+
+\noindent with $a_{\rm{ho}}=\sqrt{\hbar/m \omega}$ the harmonic oscillator length. The calculations presented in \cite{yao2018tan} show that 
+
+\begin{equation}
+    C= \frac{N^{5/2}}{a_{\rm{ho}}^3} f(\xi_{\gamma},\xi_{T})
+\end{equation}
+
+\noindent We can then define a rescaled contact
+
+\begin{equation}
+    \tilde{C}=C \frac{a_{\rm{ho}}^3}{N^{5/2}}
+\end{equation}
+
+\noindent which depends only on $f(\xi_{\gamma},\xi_{T})$, $\xi_{\gamma}$ and $\xi_{T}$ then being the good parameters to characterize the contact. The ultimate goal of the experiment would then be to characterize the evolution of $f(\xi_{\gamma},\xi_{T})$ and compare it to the predictions of \cite{yao2018tan}. Our quantity of interest will then be the rescaled contact $\tilde{C}$.
+
+
+
+We plot on Fig.-\ref{fig:C_tilde_vs_T} the experimental rescaled contact $\tilde{C}$ as a function of $\xi_T$ for a fixed atom number $N=1.1 \times 10^5$ corresponding to $\xi_{\gamma}=0.113$. The error bars corresponds to the standard deviation over the data points averaged to obtain the value of the contact. Within the errorbars
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{Fig/Chapter5/C_tilde_vs_T.png}
+    \caption{Resca}
+    \label{fig:C_tilde_vs_T}
+\end{figure}
 
 \subsection{Comparison with QMC calculations}
 
