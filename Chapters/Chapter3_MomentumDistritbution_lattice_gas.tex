@@ -494,14 +494,21 @@ To circumvent these issues, we will then work with a BEC but deliberately use th
 \noindent with  $\Omega_{\rm{eff}}= \sqrt{\Omega_{2p}^2 + \delta_{\rm{2p}}^2}$ and $\Delta t$ the duration of the Rabi pulse. If we measure $N_{\rm{MCP}}$, $\NBEC$, $\Omega_{2p}$ and the value of the detuning  $\delta_{2p}$, it is in principle possible to obtain the value $\alpha_{\rm{MCP}}$. We then devise the procedure to measure the detection efficiency to be as follows
 
 \begin{enumerate}
-    \item We first need to pinpoint very precisely where the two-photon resonance is. To do so, we measure the frequency of Rabi oscillations $\Omega_{\rm{eff}}$ with a dilute gas for different values of the frequency difference $\Delta \nu$ between the Stokes and the pump beam close to the two-photon resonance condition. At this point, we do not care about the amplitude of the Rabi oscillations but only their frequency. Using $\Omega_{\rm{eff}}= \sqrt{\Omega_{2p}^2 + \delta_{\rm{2p}}^2}$, we fit the experimental data to find the value of $\Delta \nu$ where $\Omega_{\eff}$ is minimum which corresponds to the two-photon resonance as illustrated on Fig.-XX.
+    \item We first need to pinpoint very precisely where the two-photon resonance is. To do so, we measure the frequency of Rabi oscillations $\Omega_{\rm{eff}}$ with a dilute gas for different values of the frequency difference $\Delta \nu$ between the Stokes and the pump beam close to the two-photon resonance condition. At this point, we do not care about the amplitude of the Rabi oscillations but only their frequency. Using $\Omega_{\rm{eff}}= \sqrt{\Omega_{2p}^2 + \delta_{\rm{2p}}^2}$, we fit the experimental data to find the value of $\Delta \nu$ where $\Omega_{\rm{eff}}$ is minimum which corresponds to the two-photon resonance as illustrated on Fig.-\ref{fig:eff_MCP} panel (a).
     \item We prepare a BEC of $\NBEC = 2 \times 10^5$ atoms that we calibrate with absorption imaging.
     \item We set the power of the Raman beams to have $\Omega_{\rm{2p}}=20 \ \rm{kHz}$.
     \item We measure Rabi oscillations for various values of $\delta_{\rm{2p}} \in [300,1000] \ \rm{kHz}$ and extract the amplitude of the square sine function $N^{\rm{max}}_{\rm{MCP}}$.
-    \item We plot $N^{\rm{max}}_{\rm{MCP}}$ versus $\NBEC \left(\frac{\Omega_{2 p}}{\Omega_{\rm{eff}}}\right)^{2} \alpha_{\rm{MCP}}$. We fit the data with a linear function and deduce the value of $\alpha_{\rm{MCP}}$ from the slope of the fit as illustrated on Fig.-XX \NOTE{to do}.
+    \item We plot $N^{\rm{max}}_{\rm{MCP}}$ versus $\NBEC \left(\frac{\Omega_{2 p}}{\Omega_{\rm{eff}}}\right)^{2}$. We fit the data with a linear function and deduce the value of $\alpha_{\rm{MCP}}$ from the slope of the fit as illustrated on Fig.-\ref{fig:eff_MCP} panel (b).
 \end{enumerate}
 
 \noindent The final measured value is \fcolorbox{red}{white}{$\alpha_{\rm{MCP}}=0.53(2)$}. As mentioned earlier, the open-to-air ratio of the MCPs is around $\simeq 90 \%$, meaning that almost all atoms fall in a channel, thus not limiting the detection efficiency. However, the first extracted electron has roughly a 1/2 probability to be ejected upwards outside of the channel, rendering the amplification process impossible, explaining why we observe a detection efficiency of the order of $50 \%$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Fig/Chapter3/eff_MCP.png}
+    \caption{Measurement of the MCP detection efficiency. (a) Precise measurement of the two-photon resonance condition. The frequency difference between the Stokes and the pump beam is scanned to find where $\Omega_{\rm{eff}}$ is minimum. The full line is a fit using $\Omega_{\rm{eff}}= \sqrt{\Omega_{2p}^2 + \delta_{\rm{2p}}^2}$. (b) Maximum detected number on the MCP for a given value of $\delta_{\rm{2p}}$ as a function of the expected atom number $\NBEC \left(\frac{\Omega_{2 p}}{\Omega_{\rm{eff}}}\right)^{2}$. The full line is the linear fit whose slope gives $\alpha_{\rm{MCP}}$.}
+    \label{fig:eff_MCP}
+\end{figure}
 
 \section{Adiabatic preparation in the vicinity of the Mott transition}
 
