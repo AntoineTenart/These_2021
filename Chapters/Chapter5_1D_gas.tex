@@ -1,18 +1,184 @@
 \chapter{Towards measuring Tan's contact in 1D gases}
 
-\section{Tan's contact for 1D gases}
+\section{Tan's contact}
 
-To understand what Tan's contact is, we consider two atoms with contact interactions in 1D. 
+\subsection{Definition from the large momentum tails}
+
+To understand what Tan's contact is, we consider two atoms with contact interactions in the ultracold regime in 1D. The two-body wave-function then only depends from the inter-particle distance $r$ and the scattering length $a_s$ \cite{viverit2004momentum}:
+
+\begin{equation}
+    \psi(r) = - \frac{r}{a_s} \, e^{-r/a_s}
+\end{equation}
+
+\noindent The Fourier transform of this expression is rather easy to compute and writes:
+
+\begin{equation}
+    \tilde{\psi}(k) = \int_0^\infty \psi(r) \, e^{2 \pi i k r} \, dr \propto \frac{1}{(i 2 \pi k - 1/a_s)^2}
+\end{equation}
+
+\noindent from which we obtain the momentum distribution:
+
+\begin{equation}
+     n(k) = |\tilde{\psi}(k) |^2 \propto \frac{1}{2(2 \pi k a_s)^4 - 2(2 \pi k a_s)^2 +1}
+\end{equation}
+
+\noindent Interestingly, if we look at the asymptotic behavior at high $k$ we find that:
+
+\begin{equation}
+    n(k) \underrel{k \to \infty} \to \frac{1}{k^4}
+    \label{eq:kmf_scaling}
+\end{equation}
+
+\noindent Importantly, this signature of contact interactions in the momentum distribution holds for higher dimensions, independently of temperature, interaction strength or quantum statistics making it a \textbf{universal relation}. From equation \ref{eq:kmf_scaling}, we define the Tan's Contact $C$ as:
+
+\begin{equation}
+    C = \lim_{k \to \infty} k^4 n(k)
+\end{equation}
+
+\subsection{Connection to thermodynamic quantities}
+
+While the $\kmf$ scaling is universal, the value of $C$ depends on the physical characteristics of the system such as the number of particles, temperature, dimension etc. and thus contain meaningful information that would otherwise be hard to measure with standard experimental techniques. This was first theorized by Shina Tan in 2008 \cite{tan2008large} who showed that $C$ is a thermodynamic quantity revealing how the total energy of a two component Fermi gas changes when adiabatically tuning the inverse scattering length $a_s$:
+
+\begin{equation}
+    -\frac{d E}{d(1 / a_s)}=\frac{h^{2} C}{2 \pi m}
+\end{equation}
+
+\noindent This result is known as Tan's adiabatic sweep theorem and can be adapted to the 1D bosonic case \cite{barth2011tan} to obtain:
+
+\begin{equation}
+    C=\left.\frac{4 m}{\hbar^{2}} \frac{\partial \Omega}{\partial a_{1 D}}\right|_{T, \mu}
+\end{equation}
+
+\noindent with $\Omega$ the grand potential. This result can also be rewritten to include the interaction energy of the system $\mean{H_{\rm{int}}}$ that we have encountered quite a lot throughout this thesis and is usually hard to measure separately from the total energy:
+
+\begin{equation}
+    C=\frac{2 g m^{2}}{\hbar^{4}}\left\langle H_{\text {int }}\right\rangle
+    \label{eq:C_with_int}
+\end{equation}
+
+\subsection{Characterization of 1D Lieb-Liniger regimes}
+
+Another significant motivation to measure Tan's contact is to characterize the different regimes of Lieb-Liniger 1D systems of interacting bosons as a function of temperature and the strength of the interactions. Tan's contact is indeed particularly suited to study The Lieb-Liniger model as it revolves around the approximation that the interactions between the atoms are repulsive, contact interactions:
+
+\begin{equation}
+    H = \sum_j \left[ - \frac{ \hbar^2}{2m} \frac{\partial^2}{\partial^2 {x_j}^2} + V(x_j) \right] + g \sum_{j<l} \delta(x_j - x_l) 
+\end{equation}
+
+\noindent with $g$ the strength of the interactions as we have seen on a few occasions in this thesis and $V$ an external trapping potential. 
+
+
+These different regimes have been widely investigated \cite{petrov2000regimes} and are illustrated on the state diagram of Fig.\ref{fig:1D_diagram}. The lower right part of the diagram corresponds to the strongly interacting or Tonks-Girardeau regime where the repulsive interactions are so strong that they mimic the Pauli exclusion principle for fermions, the gas is then said to fermionize. As the strength of the interactions decreases, the gas progressively goes to a weakly-interacting quasi-condensate phase characterized by suppressed density fluctuations but fluctuating phase, contrary to the true condensate. The nearly ideal gas region refers to the region where the effect of interactions are negligible compared to temperature. \NOTE{voir definitions gamma et t}.
+
+The main difficulty to experimentally characterize those regimes resides in the fact that most quantities show a smooth and monotonic behavior when crossing the transition points between the different regimes. This motivated theoretical studies of the dependency of the Tan's contact with the strength of interactions and temperature to determine whether $C$ constitutes a good probe or not. Previous works have conducted such studies for homogeneous bosons at finite temperature \cite{kheruntsyan2003pair,kormos2009expectation}, trapped bosons at zero temperature \cite{minguzzi2002high,olshanii2003short} or for the trapped finite temperature Tonks-Girardeau regime \cite{vignolo2013universal}. These works were recently completed by \cite{yao2018tan}, characterizing trapped Lieb-Liniger bosons for arbitrary values of the temperature and the interaction parameter.
+
+One of the main experimental difficulties for measuring Tan's contact comes from the fact that the high momentum $\kmf$ tails correspond to very low density values that are hard to detect with classic optical imaging techniques. This problem is however solved with the $\He$ detector thanks to his large dynamic momentum range. Interestingly, our experimental apparatus can be adapted to study 1D physics by transforming our 3D optical lattice into a 2D one as we will see in \ref{sec:1D_exp}, making it the perfect candidate to verify the predictions of \cite{yao2018tan}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Fig/Chapter5/quant_degeneracy_1D_trapped.PNG}
+    \caption{State diagram of trapped 1D Bose gases with repulsive interactions as a function of the reduced temperature $t$ and the interaction parameter $\gamma$. The dashed diagonal line separates the classical and quantum degenerate regimes, while the solid lines indicate smooth crossovers between the different regimes.}
+    \label{fig:1D_diagram}
+\end{figure}
+
 
 \section{Theoretical study}
 
-\subsection{Effect of temperature}
+\label{sec:1D_theory}
 
-\subsection{Effect of the interaction parameter}
+Before going into the experimental details, we start our study by summarizing the main results of \cite{yao2018tan}.
+
+\subsection{Two-parameter scaling}
+
+At first glance, Tan's contact should depend from 4 parameters:
+
+\begin{itemize}
+    \item The total number of particles $N$.
+    \item The temperature $T$.
+    \item The trapping frequency $\omega_{\rm{1D}}$.
+    \item The coupling constant $g$.
+\end{itemize}
+
+\noindent The first result of \cite{yao2018tan} is to show that $C$ actually depends from only two parameters, the first one being the reduced interaction strength:
+
+\begin{equation}
+    \xi_{\gamma}=-a_{\rm{ho}}/a_{\rm{1D}}\sqrt{N}
+\end{equation}
+
+\noindent with $a_{\rm{ho}}=\sqrt{\hbar/m \omega_{\rm{1D}}}$ the harmonic oscillator length and $a_{\rm{1D}}=a_{\rm{oh}}^2/a_s$ the 1D scattering length. The second one is the reduced temperature
+
+\begin{equation}
+    \xi_T=-a_{\rm{1D}}/\lambda_T
+\end{equation}
+
+\noindent with $\lambda_T=\sqrt{2\pi \hbar^2/m k_b T}$. The contact can then be written as a function of $\xi_{\gamma}$ and $\xi_{T}$:
+
+\begin{equation}
+    C= \frac{N^{5/2}}{a_{\rm{ho}}^3} f(\xi_{\gamma},\xi_{T})
+\end{equation}
+
+The goal is then to determine the variations of $f(\xi_{\gamma},\xi_{T})$. To do so, the authors of \cite{yao2018tan} follow two complementary approach. The first one consists in using the Bethe Ansatz which is the exact solution of the Yang-Yang equations \cite{yang1969thermodynamics} of the 1D homogeneous gas. The results are adapted to the trapped case by using the Local Density Approximation (LDA) as we did in \ref{sec:ch2_trapping_effects}. The validity of this approach is checked by comparing its prediction to {\it ab-initio} QCM calculations as shown on Fig-\ref{fig:C_theo}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Fig/Chapter5/BS_LDA_vs_Bethe.PNG}
+    \caption{Reduced contact $a_{ho}^3 C_3 / N^{5/2}$ as a function of $\xi_T$ and $\xi_{\gamma}$ as predicted from the LDA approach (solid lines) and QMC calculations (points). The different symbols correspond to various parameters for the QMC calculations (see \cite{yao2018tan} for further details). (a) Reduced contact versus $\xi_{\gamma}$ at fixed temperatures corresponding to $\xi_T = 0.0085$ (blue), 0.28 (green), and 18.8 (red). (b) (b) Reduced contact versus $\xi_T$  at fixed interaction strengths corresponding to $\xi_\gamma = 10^{-2}$ (blue), $1.58 \times 10^{-1}$ (green), and 4.47 (red). The black dashed, red dotted, and red dash-dotted lines correspond to \NOTE{todo} respectively. }
+    \label{fig:C_theo}
+\end{figure}
+
+\subsection{Maximum contact versus temperature}
+
+A striking and unexpected feature of Fig.-\ref{fig:C_theo} panel (b) is that the contact shows a non-monotonous dependency with $\xi_T$ with a maximum, contrary to the monotonous increase in the Tonks-Girardeau regime predicted by \cite{vignolo2013universal}. While the maximum exists for any value of $\xi_{\gamma}$, the effect is more pronounced in the strongly-interacting regime. 
+
+\subsubsection{Strongly-interacting regime}
+
+In this regime, the contact can be determined analytically via a virial expansion \cite{vignolo2013universal} and writes:
+
+\begin{equation}
+    C = \frac{2 N^{5/2}}{\pi a_{ho}^3} \frac{\xi_\gamma}{\xi_T} \left( \sqrt{2} - \frac{e^{1/2 \pi \xi_T^2}}{\xi_T} \textrm{Erfc}(1/\sqrt{2 \pi} \xi_T) \right)
+    \label{eq:C_strong_int}
+\end{equation}
+
+In the asymptotic regime of low-temperature limit $\xi_\gamma^{-1} \leq \xi_T \leq 1$, this expression simplifies to:
+
+\begin{equation}
+    C = 2 \sqrt{2} \, \frac{N^{5/2}}{a_{ho}^3} \, \xi_\gamma \, \xi_T 
+    \label{eq:strong_int_lowT}
+\end{equation}
+
+\noindent In the opposite regime of high-temperature $\xi_\gamma^{-1}, \, 1 \leq \sqrt{\xi_T}$, we rather get:
+
+\begin{equation}
+    C \simeq 2 \sqrt{2} \, \frac{N^{5/2}}{ \pi a_{ho}^3} \, \frac{\xi_\gamma}{\xi_T} 
+    \label{eq:BS_strong_int_highT}
+\end{equation}
+
+\noindent We thus clearly see the non-monotonic behavior of the contact. These 3 expressions are plotted in dashed line on Fig-\ref{fig:C_theo}. We see that the full analytical expression of \ref{eq:C_strong_int} (black dashed line) well matches the LDA predictions, except for low-temperatures for which the virial expansion is not suited.
+
+The existence of a maximum value of the contact can be understood by the competition between the effect of temperature and interactions. While interaction dominates, the gas is fermionized and the contact increases with temperature \cite{vignolo2013universal}, whereas it decreases as thermal fluctuations take over and fermionization disappears. The location of the maximum of the contact thus provides a way to characterize the crossover to fermionization. 
+
+\subsubsection{Weakly-interacting regime}
+
+In the weakly-interacting regime, the interactions are not strong enough to fermionize the gas. In the low-temperature regime $1, \, \xi_T \leq \xi_\gamma^{-1}$, the gas forms a quasi-condensate and the contact is obtained from equation \ref{eq:C_with_int} with the mean-field expression of $H_{\text {int }}$ and writes:
+
+\begin{equation}
+    C = \eta \frac{N^{5/2}}{a_{ho}^3} \xi_\gamma^{5/3} 
+    \label{eq:weak_int_lowT}
+\end{equation}
+
+\noindent with $\eta = 4 \times 3^{2/3}/5$. We see that $C$ does not depend from temperature here. At high temperatures $\xi_\gamma^{-1} \leq \xi_T \leq \xi_\gamma^{-2}$, interactions become negligible so that the gas is nearly ideal and the contact writes:
+
+\begin{equation}
+    C = \left( 16 \sqrt{\pi} \, \frac{N^{5/2}}{a_{ho}^3} \, \xi_\gamma^5 \, \xi_T^3 \right) G(\alpha) \, ,
+    \label{eq:weak_int_highT}
+\end{equation}
+
+\noindent with $G(\alpha)$ decreasing at least in $\lambda_T^4$ (see \cite{yao2018tan} for the explicit expression), making $C$ decrease with temperature. Once again, identifying the temperature at which $C$ starts to decay allows to characterize the crossover between the quasi-condensate regime and the nearly ideal Bose gas regime.
 
 \section{Experimental realisation of 1D gases with the optical lattice}
 
-The main idea to experimentally study 1D physics is to ``freeze'' the degrees of freedom of the atoms in two directions of space. To do so, the easiest solution is to use a harmonic trapping potential with trapping frequencies $\omega_{\perp}$ high enough so that the energy difference $\Delta E =\hbar \omega_{\perp}$ between the ground-state and the first excited state is much larger than the typical energy of the atoms $\Delta E \gg \kB T, \mu$. Such high trapping frequencies are accessible in our experiment thanks to the optical lattice. Instead of using the 3 pairs of countra-propagating beam as we did so far, we use only 2 to produce a 2D lattice. Interestingly, the total laser power is divided amongst 2 pair of beams instead of 3, meaning that we can reach much higher values of the lattice depth, typically up to $s=30$. In the direction where there is no lattice, the trapping potential results from the Gaussian shape of the beams and has a trapping frequency $\omega_{\rm{1D}} =2 \pi \times 140 \sqrt{s} = 2 \pi  \times 713 \ \rm{Hz}$ for $s=26$. In the other 2 directions, the trapping frequency is however very large as a result of the lattice interference pattern $\omega_{\perp} \simeq 200 \ \rm{kHz}$, which is much larger than the energy of the atoms $\kB T, \mu \simeq 25 \ \rm{kHz}$ with typical experimental parameters.
+\label{sec:1D_exp}
+
+Now that we have seen what Tan's contact is and how it could be used to characterize the regimes of Lieb-Liniger 1D gases, we will show how our experimental apparatus can be adapted to study 1D physics with the objective of testing experimentally the predictions of \cite{yao2018tan}. The main idea to obtain an  experimental 1D system is to ``freeze'' the degrees of freedom of the atoms in two directions of space. To do so, the easiest solution is to use a harmonic trapping potential with trapping frequencies $\omega_{\perp}$ high enough so that the energy difference $\Delta E =\hbar \omega_{\perp}$ between the ground-state and the first excited state is much larger than the typical energy of the atoms $\Delta E \gg \kB T, \mu$. Such high trapping frequencies are accessible in our experiment thanks to the optical lattice. Instead of using the 3 pairs of countra-propagating beam as we did so far, we use only 2 to produce a 2D lattice. Interestingly, the total laser power is divided amongst 2 pair of beams instead of 3, meaning that we can reach much higher values of the lattice depth, typically up to $s=30$. In the direction where there is no lattice, the trapping potential results from the Gaussian shape of the beams and has a trapping frequency $\omega_{\rm{1D}} =2 \pi \times 140 \sqrt{s} = 2 \pi  \times 713 \ \rm{Hz}$ for $s=26$. In the other 2 directions, the trapping frequency is however very large as a result of the lattice interference pattern $\omega_{\perp} \simeq 200 \ \rm{kHz}$, which is much larger than the energy of the atoms $\kB T, \mu \simeq 25 \ \rm{kHz}$ with typical experimental parameters.
 
 \begin{figure}
     \centering
@@ -24,11 +190,10 @@ The main idea to experimentally study 1D physics is to ``freeze'' the degrees of
 
 Using the optical lattice in this configuration then allows us to emulated 1D physics. The main drawback of this method is that we end up with an array of 1D gases rather than a single one, complicating the comparison with theory.
 
-\subsection{Independence of the tubes}
 
-In order to properly observe 1D physics, it is crucial that all the 1D tubes are independent from one another, \ie no coherence subsists in the transverse directions. This is true when the typical timescale \NOTE{faire cette section}
+\subsection{Characterization of the 1D tubes}
 
-\subsection{Number of atoms in the 1D tubes}
+\subsubsection{Number of atoms}
 
 The major difficulty comes from the fact the atom number varies from one 1D tube to another. To determine the atom number distribution, we first need to determine the density profile of the cloud in the 2D lattice.
 
@@ -44,7 +209,7 @@ To do so, we first remind that under the Thomas-Fermi approximation (\NOTE{ref})
      \mu = \frac{\hbar \bar{\omega}}{2} \left(  15 N_{\rm{tot}} \frac{a_s}{a_{\rm{ho}}}\right)^{2/5}
 \end{equation}
 
-with $\bar{\omega}=\omega_x \omega_y \omega_z/3$ the average trapping frequency, $a_s$ the scattering length and $a_{\rm{ho}}=\sqrt{\hbar/m \bar{\omega}}$ as previously seen on different occasions in this manuscript.
+\noindent with $\bar{\omega}=\omega_x \omega_y \omega_z/3$ the average trapping frequency.
 
 Similarly to the method developed in \ref{sec:rescaled_interaction}, we rescale $\mu$ to account for the presence of the 2D lattice with:
 
@@ -52,9 +217,79 @@ Similarly to the method developed in \ref{sec:rescaled_interaction}, we rescale 
     \tilde{\mu} = \frac{\hbar \bar{\omega}}{2} \left(  15 N_{\rm{tot}} \frac{\tilde{a}_s}{a_{\rm{ho}}}\right)^{2/5}
 \end{equation}
 
-\noindent where $\tilde{a}_s= a_s \left(d \int_0^d |u_{0,0} (x)|^4 \mathrm{d}x \right)^2$ is the rescaled interaction strength, with the notable difference that we are using here a power 2 instead of power 3 in \ref{sec:rescaled_interaction} as we use here a 3D lattice. \NOTE{vérifier}
+\noindent where $\tilde{a}_s= a_s \left(d \int_0^d |u_{0,0} (x)|^4 \mathrm{d}x \right)^2$ is the rescaled interaction strength, with the notable difference that we are using here a power 2 instead of power 3 in \ref{sec:rescaled_interaction} as we use here a 2D lattice. \NOTE{vérifier} We finally obtain the new Thomas-Fermi radius in the transverse directions
 
-\NOTE{expliquer algo nombre d'atomes par tubes}
+\begin{equation}
+    R_{\rm{TF}} = \frac{1}{d} \sqrt{\frac{2 \tilde{\mu}}{m \omega_{\perp}^2}}
+\end{equation}
+
+\noindent that we express in units of lattice spacing $d$ for convenience. The number of atoms in the tube indexed $j,l$ then writes:
+
+\begin{equation}\label{eq:N_per_tube}
+    N_{j,l} = N_{00} \left( 1 - \frac{j^2 + l^2}{R_{\rm{TF}}^2} \right) .
+\end{equation}
+
+\noindent where $N_{00}$ is the number of atoms in the central tube. We deduce $N_{00}$ from the total atom number $\NBEC$ with the normalization condition $\NBEC = \sum_{j,l} N_{j,l}$ giving:
+
+\begin{equation}
+    N_{00} = \frac{5}{2 \pi} \frac{\NBEC}{R_{\rm{TF}^2}}
+\end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{Fig/Chapter5/atomic_distrib_2Dlatt.PNG}
+    \caption{Atom number distribution in a 2D lattice of amplitude $s=26$ for $\NBEC=30 \times 10^3$.}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{Fig/Chapter5/tubes_occupes.png}
+    \caption{Schematic of the array of 1D tubes. The large blue circle denotes the parabolic density profile of the BEC that determines which of the lattice sites contain atoms (blue dots).}
+    \label{fig:my_label}
+\end{figure}
+
+\subsubsection{Density and interaction parameter}
+
+Knowing the number of atom in each tube, we now look to determine the density and interaction parameter $\gamma$ in each of the tubes. To do so, we first introduce the effective 1D interaction strength $g_{\rm{1D}} \simeq 2 \hbar \omega_{\perp} a_s$ \cite{olshanii1998atomic} that depends from the transverse trapping frequency and the 3D scattering length. With this definition, we can write the 1D chemical potential and 1D density for the different tubes, both functions of the number of atoms in the tube:
+
+\begin{equation}
+    \mu_{1D}^{j,l} = \left( \frac{3}{4 \sqrt{2}} \, N_{j,l}\,  g_{1D} \, \omega_{1D}\,  \sqrt{m} \right)^{2/3}
+\end{equation}
+
+\begin{equation}\label{eq:n_1D}
+    \rho_{1D}^{j,l}(x) = \frac{\mu_{1D}}{g_{1D}} - \frac{1}{2} \, m \, \omega_{1D}^2 \, x^2
+\end{equation}
+
+\noindent In practice, the second term of equation \ref{eq:n_1D} can be neglected because of the small size of the 1D gases $\sim \mu \rm{m}$ and the weak confinement $\omega_{1D} \approx 2 \pi \times 700 \rm{kHz}$ so that $\rho_{1D}^{j,l}(x)$ is constant and well approximated by its value at the center of the trap $\rho_{1D}^{j,l}(0)$. We then simply write $\rho_{1D}^{j,l}$.
+
+Finally, we can write the interaction parameter $\gamma$ corresponding to the ratio between the interaction and the kinetic energy:
+
+\begin{equation}
+    \gamma_{j,l} = \frac{m \, g_{1D}}{\hbar n^{j,l}_{1D}} 
+\end{equation}
+
+\subsubsection{Weighted average}
+
+\noindent The values of $\gamma_{j,l}$ \NOTE{à voir} for each of the 1D tubes are however not very meaningful in practice as the distribution that we measure results from the contribution of every lattice tubes. It is therefore more convenient to define a single averaged value of $\bar{\gamma}$ to approximately describe the entire ensemble of 1D gases. One could first simply think of using a simple average:
+
+\begin{equation}
+    \bar{\gamma} = \frac{1}{N_{\rm{tubes}}} \sum_{j,l} \gamma_{j,l}
+\end{equation}
+
+\noindent This kind of averaging is however too strong of an approximation as it assumes that each of the tubes contribute equally to the total measured distribution which is wrong as the contribution of the tubes with more atoms will be more significant. We then chose to weight the contribution of each of the tubes in the average by its fraction of the total atom number:
+
+\begin{equation}
+    \bar{\gamma} = \sum_{j,l} \frac{N_{j,l}}{\NBEC} \gamma_{j,l}
+\end{equation}
+
+\noindent Note that this kind of averaging can be done for all relevant quantities that vary from one 1D tube to another.
+
+
+
+\subsection{Independence of the tubes}
+
+In order to properly observe 1D physics, it is crucial that all the 1D tubes are independent from one another, \ie no coherence subsists in the transverse directions. This is true when the typical timescale \NOTE{faire cette section}
 
 \section{Detection of large momentum components}
 
