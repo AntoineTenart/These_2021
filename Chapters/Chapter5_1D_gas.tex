@@ -178,6 +178,8 @@ In the weakly-interacting regime, the interactions are not strong enough to ferm
 
 \label{sec:1D_exp}
 
+\subsection{2D Lattice}
+
 Now that we have seen what Tan's contact is and how it could be used to characterize the regimes of Lieb-Liniger 1D gases, we will show how our experimental apparatus can be adapted to study 1D physics with the objective of testing experimentally the predictions of \cite{yao2018tan}. The main idea to obtain an  experimental 1D system is to ``freeze'' the degrees of freedom of the atoms in two directions of space. To do so, the easiest solution is to use a harmonic trapping potential with trapping frequencies $\omega_{\perp}$ high enough so that the energy difference $\Delta E =\hbar \omega_{\perp}$ between the ground-state and the first excited state is much larger than the typical energy of the atoms $\Delta E \gg \kB T, \mu$. Such high trapping frequencies are accessible in our experiment thanks to the optical lattice. Instead of using the 3 pairs of countra-propagating beam as we did so far, we use only 2 to produce a 2D lattice. Interestingly, the total laser power is divided amongst 2 pair of beams instead of 3, meaning that we can reach much higher values of the lattice depth, typically up to $s=30$. In the direction where there is no lattice, the trapping potential results from the Gaussian shape of the beams and has a trapping frequency $\omega_{\rm{1D}} =2 \pi \times 140 \sqrt{s} = 2 \pi  \times 713 \ \rm{Hz}$ for $s=26$. In the other 2 directions, the trapping frequency is however very large as a result of the lattice interference pattern $\omega_{\perp} \simeq 200 \ \rm{kHz}$, which is much larger than the energy of the atoms $\kB T, \mu \simeq 25 \ \rm{kHz}$ with typical experimental parameters.
 
 \begin{figure}
@@ -285,36 +287,60 @@ Finally, we can write the interaction parameter $\gamma$ corresponding to the ra
 
 \noindent Note that this kind of averaging can be done for all relevant quantities that vary from one 1D tube to another.
 
+\subsubsection{Temperature}
 
+We have proven in \ref{sec:adiabatic_prep} that the loading of the 3D lattice is adiabatic up to lattice depths of $s=18$. As we keep the same loading sequence for the 2D lattice preparing the 1D tubes, it is rather reasonable to assume that the loading is here adiabatic as well even though we go to higher amplitudes and the geometry of the lattice is different. Unnder this assumption, we then expect the temperature to be the same amongst all the 1D tubes. We will see later how it can be obtained from the measured momentum dsitribution.
 
-\subsection{Independence of the tubes}
+\subsubsection{Independence of the tubes}
 
-In order to properly observe 1D physics, it is crucial that all the 1D tubes are independent from one another, \ie no coherence subsists in the transverse directions. This is true when the typical timescale \NOTE{faire cette section}
+\NOTE{raffiner}
+
+In order to properly observe 1D physics, it is crucial that all the 1D tubes are independent from one another, \ie no coherence subsists in the transverse directions. This is in principle ensured by the fact that the typical loading time of the lattice is longer that the decoherence time of the cloud. Practically speaking, we can determine whether the 1D tubes are indeed incoherent or not by looking for diffraction peaks in the transverse directions, as their presence reveals coherent interferences between the different tubes. While we indeed observed no diffraction peaks in most data sets, there were a few occasions where they could be seen, especially for the coldest data sets and lower lattice amplitudes $s \simeq 22$. This calls for a proper study of the decoherence mechanisms happening during the loading of the lattice that has not yet been conducted at the moment where this manuscript is being written. 
 
 \section{Detection of large momentum components}
 
-While the great sensitivity of the $\He$ detector is perfectly suited to detect the very low density $\kmf$ momentum tails, the size of the MCPs limits the range of detector. From the work \cite{xu2015universal}, we obtain that the $\kmf$ decay should start around $k_0 \sim 1.6 \times \rho_{\rm{1D}}(0)$ \NOTE{blah blah chiffres}.
+While the great sensitivity of the $\He$ detector is perfectly suited to detect the very low density $\kmf$ momentum tails, its range is inherently limited by the size of the MCPs. This is a major drawback as the $\kmf$ decay only happens for large values of $k$ that might fall out of the range of the $\He$ detector. One solution could be to have the 1D direction vertical as the $\He$ detector range is not limited in this direction, but this is not possible due to the layout of the lattice beams (see \ref{fig:scheme_odt_lattice}). The most advantageous solution is then to remove the $+45^{\circ}$ beam to have the 1D direction aligned with it, increasing the effective range of the detector by a factor $\sqrt{2}$. The maximum detectable momentum is then $k_{\rm{max}} \simeq 14 \mu \rm{m}^{-1}$.
+
+Actually, we can use the results of \cite{xu2015universal} that show that the $\kmf$ decay should start around $k_0 \sim 1.6 \times \rho_{\rm{1D}}(0)$ to determine whether the tails should be detectable or not. For $\NBEC \simeq 100 \times 10^3$, we find that $k_0 \simeq 10 \ \mu \rm{m}^{-1}$, meaning that even though we could see the beginning of the $\kmf$ decay, the range is too small to observe it on a sufficiently large momentum range. We therefore need a solution to effectively increase the range of the $\He$ detector.
 
 \subsection{Magnetic gradient and displacement procedure}
 
-One solution to this issue is to give the entire cloud a momentum kick in the first instants of the TOF to artificially change the momentum range of the $\He$ detector. With our experimental setup, the easiest way to do so is to create a magnetic gradient to apply a magnetic force on the atoms during a time $t_{\rm{grad}}$ before transferring them to the $m_j=0$ sub-state. 
+One solution to this issue is to give the entire cloud a momentum kick in the first instants of the TOF to artificially shift the momentum range of the $\He$ detector towards high momenta. With our experimental setup, the easiest way to do so is to create a magnetic gradient to apply a magnetic force on the atoms during a time $t_{\rm{grad}}$ before transferring them to the $m_j=0$ sub-state. 
+
+\subsubsection{New population transfer technique}
 
 This technique however brings some experimental complications as the population transfer cannot be done immediately after turning off the trap. As a matter of fact, the atoms starts moving during the time $t_{\rm{grad}}$ and will therefore be at different positions when the transfer is performed. The problem comes from the fact that there is a slight inhomogeneity in the bias field along direction $x$ used to set the energy difference between the sub-states $m_j=0$ and $m_j=1$. This means that the resonance condition for a Raman or RF transfer depends on the initial momentum of the atoms, with the consequence that we cannot properly transfer the whole cloud to $m_j=0$ with a simple single frequency Rabi pulse.
 
-To solve this issue, \NOTE{expliquer rapidement sweep}. We understand however that it is increasingly difficult to fulfill the adiabatic condition for all momentum classes if the spread in resonance frequencies is too high. We therefore need to devise a displacement sequence as short as possible to minimize the distance travelled by the atoms before the transfer, as well as to make sure that the magnetic gradient is properly turned off not to further increase the field inhomogeneity.
+To solve this issue, we make use of the Landau-Zener effect that describes the probability for a transition between two levels to occur when the coupling frequency varies linearly in time. As the experiments described in this chapter were performed before the implementation of the two-photon Raman transfer described in Chapter \ref{sec:chapter_3}, this was done by linearly sweeping the frequency $\nu_{\rm{RF}}$ of a RF wave with a span $\Delta \nu_{\rm{RF}}$ around the central resonance frequency $\nu_{\rm{res}} \simeq 12.93 \ \rm{MHz}$ (see \ref{sec:raman}) in a time $\Delta t_{\rm{sweep}}$. The values of $\Delta \nu_{\rm{RF}}$ and $\Delta t_{\rm{sweep}}$ is set according to three constraints.
 
-The procedure is represented on Fig.-\ref{fig:displacement_sequence}. Right after the lattice is turned off, we increase the current in the MOT coils to produce the magnetic gradient. The MOT coils are indeed the coils with which we can produce the stronger gradient, reducing the time during which we need to apply it to reach the proper momentum shift. However, the current in the MOT coils typically needs around $10 \ \rm{ms}$ to reach the highest possible values, which is already too long. We then set the command voltage $V_{\rm{command}}$ to be close to the highest possible value, let the current increase for $t_1 = 1 \ \rm{ms}$ and then set the command to $0$ and let the current decay for $t_2-t_1=13 \ \rm{ms}$ \NOTE{check numbers} until it is fully turned off. After that, we finally perform the population transfer and let the atoms fall unto the MCP. The momentum displacement of the cloud can be set by changing the command voltage $V_{\rm{command}}$.
+\begin{itemize}
+    \item The initial and final detunings must be much larger than the RF Rabi frequency $\Omega_{\rm{RF}}$ so that $\Delta \nu_{\rm{RF}} \gg 2 \Omega_{\rm{RF}} \simeq 20 \rm{kHz}$
+    \item The fraction of transferred atom depends from the rate $\alpha = \Delta \nu_{\rm{RF}}/ \Delta t_{\rm{sweep}}$ at which $\nu_{\rm{RF}}(t)$ changes. The transfer is more efficient as $\alpha$ is low. In practice, for a two-level atom, a $70 \%$ transfer rate is achieved when $\alpha \leq \Omega_{RF}^2$.
+    \item $\Delta \nu_{\rm{RF}}$ must be large enough to encapsulate all resonance frequencies shifted because of the residual magnetic gradient to properly transfer all relevant momentum classes. For an initial momentum $k=-k_d=-8.1 \ \mu \rm{m}^{-1}$, this shift is around $75 \ \rm{kHz}$.
+\end{itemize}
+
+We then decide to set $\Delta \nu_{\rm{RF}}=2 \rm{MHz}$ to make sure that no momentum class is excluded, and set $t_{\rm{sweep}}=3 \ \rm{ms}$ so that $\alpha/\Omega^2_{\rm{RF}}=6.7$. \NOTE{chiffre efficacite detection}
+
+\subsubsection{Generation of the magnetic gradient}
+
+The procedure to create the magnetic gradient was mainly designed to fit the constraints set by the design of our experimental apparatus. As a matter of fact, the geometry of the science chamber makes it quite hard to install coils capable of producing a strong enough gradient along the direction of the $+45^{\circ}$ which is the best choice for the 1D direction in terms of momentum range of the detector. On the other hand, there is a gradient coil quite close to the atoms capable of producing a strong enough gradient along the $H$ beam direction that we will denote as the $x$ direction, as well as the MOT coils capable of producing a strong gradient 4 times stronger along $x$. We then decided to set the 1D direction along $x$. While this reduces the momentum range by a factor $\sqrt{2}$, this is not a big issue as we will use the gradient to compensate for it. 
+
+After quite a bit of testing, we decided to use the the MOT coils instead of the $x$ gradient coils as the former is capable a producing a stronger gradient, effectively reducing the time during which the gradient must be applied. This has the advantage of reducing the spatial spread of the atoms before the transfer to $m_j=0$ and thus the inhomogeneity in resonance frequencies because of the residual gradient.  
+
+\subsubsection{Displacement procedure}
+
+The procedure is represented on Fig.-\ref{fig:displacement_sequence}. Right after the lattice is turned off, we increase the current in the MOT coils to produce the magnetic gradient. However, the current in the MOT coils typically needs around $10 \ \rm{ms}$ to reach the highest possible values, which is already quite long. We then set the command voltage $V_{\rm{command}}$ to be close to the highest possible value, let the current increase for $t_1 = 1 \ \rm{ms}$ and then set the command to $0$ and let the current decay for $t_2-t_1=13 \ \rm{ms}$ until it is fully turned off. After that, we finally perform the population transfer and let the atoms fall unto the MCP. The momentum displacement of the cloud can be set by changing the command voltage $V_{\rm{command}}$.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{Fig/Chapter5/displacement_sequence.png}
-    \caption{Experimental sequence to shift the entire momentum distribution so that the $\kmf$ tails fall unto the $\He$ detector.}
+    \caption{Experimental sequence to shift the entire momentum distribution so that the $\kmf$ tails fall unto the $\He$ detector. The lattice power is represented in orange, the MOT coils current in red and the RF wave power and frequency in green and light green respectively.}
     \label{fig:displacement_sequence}
 \end{figure}
 
 \subsection{Benchmarking with 3D lattice gases momentum distribution}
 
-To test that our method does not induce any distortion of the momentum distribution, we benchmark it with 3D lattice gas momentum distribution slightly above the Mott critical point so that the momentum distribution has a wide background but still sharp diffraction peaks. This allows to check for distortion at high momentum values, while making more precise measurements with the narrow diffraction peaks \NOTE{vraiment pas ouf}.
+To test that our method does not induce any distortion of the momentum distribution, we benchmark it with 3D lattice gas momentum distribution for different displacements. The lattice amplitude is set to $s=15$, \ie slightly above the Mott critical point so that the momentum distribution has a wide background but still sharp diffraction peaks. We can check the overlap of the data sets for different displacements with the wide background while precisely characterizing distortion effects by looking at the location of the diffraction peaks.
 
 
 
@@ -478,12 +504,27 @@ We plot on Fig.-\ref{fig:C_tilde_vs_T} the experimental rescaled contact $\tilde
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{Fig/Chapter5/C_tilde_vs_T.png}
-    \caption{Rescaled contact $\tilde{C}$ as a function $\xi_T$. \NOTE{finir la caption avec partie théorique}}
+    \caption{Rescaled contact $\tilde{C}$ as a function $\xi_T$. The qualitative behavior is consistent with the predictions of \cite{yao2018tan} as $\tilde{C}$ decreases with $\lambda_T$. The second point could hint toward the presence of a maximum, but the error bars are too large tell.}
     \label{fig:C_tilde_vs_T}
 \end{figure}
 
 \subsubsection{Effect of the total atom number}
 
-\subsection{Comparison with QMC calculations}
+
 
 \section{Discussion of the preliminary results}
+
+\subsection{Qualitative evolution with temperature}
+
+\subsection{Qualitative evolution with the interaction strength}
+
+\subsection{Comparison with QMC calculations}
+
+So far, we have only discussed the qualitative evolution of $\tilde{C}$ with $\xi_T$ and $\xi_{\gamma}$. We can now look to push our study one step further by comparing the experimental data to {\it ab-initio} QMC calculations simulating our experiment. The calculations were performed by Hepeng Yao from Centre de Physique Théorique at Ecole Polytechnique and simulate the entire tube distribution to match the experiment as precisely as possible. The results are plotted on Fig.-\ref{fig:1D_QMC_comparison} for two interaction parameters $\xi_{\gamma}=0.113$ and $\xi_{\gamma}=0.167$ corresponding to $\NBEC=110 \times 10^3$ and $\NBEC=31 \times 10^3$. The agreement for the low $k$ part is slightly off for the $\NBEC=110 \times 10^3$ data set, possibly due to a slight misevaluation of the temperature, but very good for the $\NBEC=31 \times 10^3$ data set, meaning that the method we use to determine the temperature is rather accurate, at least for low atom numbers. There is however a very clear disagreement by two orders of magnitude in the high $k$ part where the $\kmf$ tails are supposed to be.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Fig/Chapter5/QMC_comparison.png}
+    \caption{Comparison between the normalized experimental data and QMC calculations for two different total atom numbers $\NBEC=110 \times 10^3$ (left) and $\NBEC=31 \times 10^3$ (right).}
+    \label{fig:1D_QMC_comparison}
+\end{figure}
