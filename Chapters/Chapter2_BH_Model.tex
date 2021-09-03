@@ -616,6 +616,12 @@ We turn to calculating the interaction term in equation \ref{eq:lattice_bogo_ham
     g' = g \left(d \int_0^d |u_{0,0} (x)|^4 \mathrm{d}x \right)^3
 \end{equation}
 
+\noindent that rewrites as:
+
+\begin{equation}
+    g' = g \frac{\pi}{2} \sqrt{s} \left( \frac{\textrm{Erf} [ \pi s^{1/4} / \sqrt{2}]}{(\textrm{Erf} [ \pi s^{1/4} 2])^2} \right)^3
+\end{equation} \NOTE{check}
+
 \noindent As long as $V_0 > 0,$ we have $g' > g$ signaling that the lattice indeed increases the strength of the interactions. Importantly, $g'$ increases with $V_0$ as the atoms become increasingly localized in smaller region of spaces, increasing the strength of the interactions.
 
 In conclusion, we obtain an Hamiltonian of the same form than the homogeneous case, with two notable differences:
