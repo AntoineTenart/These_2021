@@ -2,3 +2,42 @@
 
 \label{chap:intro}
 \addcontentsline{toc}{chapter}{\nameref{chap:intro}}
+
+In our quest to describe and understand the world with physics, our intuition tells us to start with the small and the simple before working our way up to larger scales and more complex problems. This is exactly what we do when first taught about Newtonian mechanics. If I wish to know how the Earth moves around the sun, I can simply ignore the fact that there are other celestial objects apart from the Earth and the sun to obtain a simple problem that I am able to solve with my modest skills in mathematics. While this would give me fairly accurate prediction, I can not help but feel dissatisfied knowing the trick I have used. I then look to include the other planets in my problem to get a more precise description of reality, only to be quickly overcome by a feeling of helplessness at the sight of the equations I would have to solve.
+
+This kind of problems is obviously not restricted to astrophysics and is actually found in many areas of physics. Would I want to study electrons in a copper wire, molecules in a gas, atoms in a solid or even how a crowd behaves, a thorough description of these systems would require that I account for the motions and interactions of all the individual bodies, leaving me with an absurd amounts of degrees of freedom and equations to solve. This is even more so true as the number of particles is usually very high in these problems: a good order of magnitude is the Avogadro number $\mathcal{N}_A = 6.02 \times 10^{23}$, giving the number of carbon 12 atoms in only $12\rm{g}$ of carbon! These problems are regrouped under the denomination \textbf{many-body} problems. 
+
+In fact, many-body problems are not entirely impossible to approach theoretically. The idea is to forget about all the different bodies and consider the \textbf{collective} behavior of the system. This idea is for instance at the core of the field of Thermodynamics, with the great success that we know of today. 
+
+
+\section*{Quantum many-body physics}
+
+When we study many-body problems where the individual constituents are the (almost) smallest brick of matter, namely electrons and atoms, we enter the realm of \textbf{quantum mechanics}. The key concept to understand blah blah blah is the De Broglie wavelength. In 1924, the french physicist Louis de Broglie took the hypothesis of M. Planck and A. Einstein that light could have a corpuscular aspect and turned it around by postulating that matter could behave as a wave with a wavelength $\lambda_{\rm{DB}}$ equal to:
+
+\begin{equation}
+    \lambda_{\rm{DB}} = \frac{h}{mv}
+\end{equation}
+
+\noindent where $mv$ is the momentum of the particle. Translating this concept to many-body physics, when taking an ensemble of particles at temperature $T$, we can define the average De Broglie wavelength, also known as thermal De Broglie wavelength as:
+
+\begin{equation}
+    \lambda_{\rm{DB}} = \frac{h}{\sqrt{2 \pi m \kB T}}
+\end{equation}
+
+If the typical inter-particle density in the many-body ensemble is much larger than the thermal De Broglie wavelength, \ie $\lambda_{\rm{DB}}^3 n \ll 1$, the wave character of the particles plays no role as the different matter waves do not overlap and the system can be properly described using classical physics. On the other hand, when $\lambda_{\rm{DB}}^3 n \sim 1$, the system starts showing quantum behavior. This regime is known as the \textbf{quantum degeneracy} regime. Importantly, this condition is most often met when considering the physics of electrons in condensed matter systems even at room temperature, due to their very small mass and the high densities of particles.
+
+\section*{Interactions in quantum systems}
+
+The key and most essential point of quantum many-body physics is the presence of interactions between the particles. Without interactions, the system is essentially a collection of single particles that we know how to describe and the name ``many-body'' then does not make much sense. Actually, one way of studying the many-body problem is to reduce it to an effective single body problem by using the \textbf{mean-field approximation}. The idea is to approximate the action on a given particle of every other particle of the system as an averaged single effect. Once again, this approach does not really belong to the field of many-body physics as it precisely aims to remove the many-body aspect of the problem.
+
+As a result, the term ``many-body physics" nowadays refers to problems for which the description of the phenomena of interest requires that we go beyond the mean-field approximation to account for the presence of \textbf{correlations} between the individual components of the system. The characterization of these correlations that emerge from the interplay between the inter-particle interactions and the quantum fluctuations is the principal goal of many-body physics and will also be the main point of focus of this thesis. This field of physics indeed remains to this day a largely open field with a lot of unresolved questions concerning systems ranging from solid state physics to neutron stars. One significant success of a many-body physics theory was the Bardeen-Cooper-Schrieffer \cite{bardeen1957theory} (BCS) of \textbf{superconductivity} at low temperature in 1957 that described the superconducting current as a superfluid of Cooper pairs \cite{cooper1956bound}, where the Cooper pair describes a pair of electrons created by the presence of an interaction effect, in this case the exchange of phonons. The existence of high temperature superconductors remains however unexplained to this day and constitutes a particularly interesting question of many-body physics.
+
+\section*{Cold atoms and quantum simulation}
+
+Even though we have understood that analytical approaches are almost always impossible to study quantum many-body systems, we could however think of using numerical techniques and the calculation power of modern-day super computers. Nevertheless, if we wish to consider all kinds of correlations between the particles, the size of the associated Hilbert space grows exponentially with the number of particles considerably limiting the number of particles that can be simulated to roughly a dozen. In a famous paper of 1982 \cite{Feynman1982Simulating}, R. Feynman introduced the concept of \textbf{quantum simulation} by suggesting that quantum phenomena could be simulated using actual quantum components instead of classical computers. The idea is to simulate the system or Hamiltonian of interest with a quantum platform on which we can (1) precisely control all the relevant parameters and (2) easily measure the observable of interest. The technological developments of the past years have made Feynman's idea come to life with increasingly more precise and efficient simulators implemented on a variety of platforms such as ions, superconducting qbits or ultracold gases on which we will focus in this manuscript. 
+
+Contrary to condensed matter systems, ultracold gases are a dilute state of matter in the sense that they typically contain $10^5-10^7$ atoms which is way less than solids, resulting in much lower densities. As a result, at room temperature, these gases are far from the quantum degeneracy condition. The idea is then to cool the gas down to very low temperature $\sim \mu \rm{K}$ to increase $\lambda_{\rm{DB}}$ until the system reaches the quantum degenerate regime. 
+
+
+
+This platform is actually perfectly suited to study condensed matter as the atoms can be lo
