@@ -69,8 +69,27 @@ Abstract anglais
 
 \input{Chapters/Conclusion}
 
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+
+
+\fancyhead[LO]{\sffamily\bfseries List of Figures} % Print the nearest section name on the left side of odd pages
+\fancyhead[RE]{\sffamily\bfseries List of Figures} % Print the current chapter name on the right side of even pages
+\listoffigures
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+
+
 \setlength{\parskip}{\parskipinitial}
 %\usechapterimagefalse
+
+
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \fancyhead[LO,RE]{\sffamily\normalsize\bfseries Bibliography}
