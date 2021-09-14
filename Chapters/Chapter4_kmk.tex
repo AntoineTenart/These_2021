@@ -4,35 +4,40 @@
 
 \label{sec:chapter_4}
 
-The Bogoliubov interacting Bose-gas has been the subject of a large variety of experimental studies (\cite{fontaine2018,miller1962,ozeri2005,stepanov2019}). However, these experiments have mainly focused on measuring the Bogoliubov spectrum of excitations. More than 60 years after the seminal Lee, Huang and Yang paper \cite{lee1957}, an experimental study of the correlations in the many-body ground-state is yet to be done. As we have seen through the different chapters of this thesis, our experimental setup is perfectly suited for such an investigation. 
+The Bogoliubov interacting Bose gas has been the subject of a large variety of experimental studies, both aiming at measuring Bogoliubov spectrum of excitations \cite{fontaine2018,miller1962,ozeri2005,stepanov2019} as well as the quantum depletion \cite{chang2016,lopes2017,xu2006observation}. However, even though there have been some experimental work measuring the Lee, Huang and Yang beyond-mean field correction to the ground-state energy \cite{navon2010equation,skov2021observation}, an experimental study of the correlations in the many-body ground-state, and more precisely the observation of the predicted \kmk pairs, is yet to be done more than 60 years after Lee, Huang and Yang paper \cite{lee1957}. As we have seen through the different chapters of this thesis, our experimental setup is perfectly suited for such an investigation. 
 
-We will present in this chapter the main result of this thesis, namely the observation of the \kmk pairs of the quantum depletion. We will detail the numerical procedure and the analysis method used to extract the correlation signals and present the experimental results. With the theoretical developments of Chapter \ref{sec:chapter_1}, we will show how we can link the measured anomalous correlation signal to the \kmk pairs of the quantum depletion by studying the effect of temperature, the widths and amplitudes of the correlation peak, as well as the fluctuations of the atom number difference between modes $\bm{k}$ and $-\bm{k}$. In addition, we will show how our measurement constitutes a first step towards showing the presence of momentum-space entanglement in many-body ground states.
+We will present in this chapter the main result of this thesis, namely the observation of the \kmk pairs of the quantum depletion. We will detail the numerical procedure and the analysis method used to extract the correlation signals and present the experimental results. With the theoretical developments of Chapter \ref{sec:chapter_1}, we will show how we can link the measured anomalous correlation signal to the \kmk pairs of the quantum depletion by studying the effect of temperature, the widths and amplitudes of the correlation peak, as well as the fluctuations of the atom number difference between modes $\bm{k}$ and $-\bm{k}$. In addition, we will show how our measurement constitutes a first step towards showing the presence of momentum-space entanglement in many-body equilibrium states.
 
 \section{Numerical procedure to measure two-body correlations}
 
 \label{sec:numerical_calculation}
 
-As we have seen in the previous chapter, we are capable for each experimental run of reconstructing the 3D momentum coordinates of every atom detected by the MCP. We must now devise a numerical procedure to extract the two-body correlation signals from this raw data. Our goal is then to compute the general normalized second-order correlation function:
+As we have seen in the previous chapter, we are capable for each experimental run of reconstructing the 3D momentum coordinates of every atom detected by the $\He$ detector. We must now devise a numerical procedure to extract the two-body correlation signals from this raw data. Our goal is then to compute the general normalized second-order correlation function:
 
 \begin{equation}
-    g^{(2)} (\bm{k},\bm{k'}) = \frac{\mean{\hat{a}^{\dagger}(\bm{k}) \hat{a}^{\dagger}(\bm{k'}) \hat{a}(\bm{k}) \hat{a}(\bm{k'})}}{\mean{\hat{a}^{\dagger}(\bm{k}) \hat{a}(\bm{k}) } \mean{\hat{a}^{\dagger}(\bm{k'}) \hat{a}(\bm{k'}) }}
+    g^{(2)} (\bm{k},\bm{k'}) = \frac{\mean{\hat{a}^{\dagger}_{\bm{k}} \hat{a}^{\dagger}_{\bm{k'}} \hat{a}_{\bm{k}} \hat{a}_{\bm{k'}}}}{\mean{\hat{a}^{\dagger}_{\bm{k}} \hat{a}_{\bm{k}}} \mean{\hat{a}^{\dagger}_{\bm{k'}} \hat{a}_{\bm{k'}} }}
 \end{equation}
 
-\noindent We recognize that $\mean{\hat{a}^{\dagger}(\bm{k}) \hat{a}(\bm{k})}$ is the momentum density in mode $\bm{k}$ that we will write $\rho(\bm{k})$ in the following. We remind to begin the result of Chapter \ref{sec:chapter_1} which is that the $\gtwo$ function will take values different from 1 in two cases:
+\noindent We recognize that $\mean{\hat{a}^{\dagger}_{\bm{k}} \hat{a}_{\bm{k}}}$ is the momentum density in mode $\bm{k}$ that we will write $\rho(\bm{k})$ in the following. We remind the result of Chapter \ref{sec:chapter_1} for weakly-interacting bosons that the $\gtwo$ function will take values different from 1 in two cases:
 
 \begin{itemize}
     \item For $\bm{k'} \simeq \bm{k}$, the \textbf{normal} correlations corresponding to the Hanbury Brown and Twiss effect also known as bosonic bunching.
-    \item For $\bm{k'} \simeq -\bm{k}$, the \textbf{anomalous} correlations corresponding to the \kmk pairs in the quantum depletion.
+    \item For $\bm{k'} \simeq -\bm{k}$, the \textbf{anomalous} correlations signalling \kmk pairs in the quantum depletion.
 \end{itemize}
 
-In practice, plotting the $\gtwo$ function defined as such does not make much sense. On the one hand, the function here is 6D and thus hard to plot in an intelligible way. On the other hand, obtaining a sufficient signal to noise ratio to make correlation measurements for single values of $\bm{k}$ and $\bm{k'}$ is impossible. The idea is then to integrate the $\gtwo$ function over all momenta $\bm{k}$ and introduce a new parameter $\delta \bm{k}$ to write:
+In practice, plotting the $\gtwo$ function is not straightforward. On the one hand, the function here is 6D and thus hard to plot in an intelligible way. On the other hand, obtaining a sufficient signal to noise ratio for correlation measurements between single modes \NOTE{voir definition mode} $\bm{k}$ and $\bm{k'}$ is hardly possible. The idea is then to average the $\gtwo$ function over a large volume $\Omega_k$ of the momentum space and introduce a new parameter $\delta \bm{k}$ to write:
 
 \begin{equation}
-    g_{N,A}^{(2)} (\delta {\bm k})=\frac{\int_{\Omega_{k}} \langle \hat{a}^{\dagger}({\bm k}) \hat{a}^{\dagger}(\delta {\bm k} \pm {\bm k}) \hat{a}({\bm k}) \hat{a}(\delta {\bm k} \pm {\bm k}) \rangle \mathrm{d}{\bm k}}{\int_{\Omega_{k}} \rho({\bm k}) \rho(\delta {\bm k} \pm {\bm k}) \mathrm{d}\bm{k}}
-    \label{Eq:g2}
+    g_{A}^{(2)} (\delta {\bm k})=\frac{\int_{\Omega_{k}} \langle \hat{a}^{\dagger}_{\bm k} \hat{a}^{\dagger}_{\delta {\bm k} - {\bm k}} \hat{a}_{\bm k} \hat{a}_{\delta {\bm k} - {\bm k}} \rangle \mathrm{d}{\bm k}}{\int_{\Omega_{k}} \rho(\bm k) \rho(\delta {\bm k} - {\bm k}) \mathrm{d}\bm{k}}
+    \label{Eq:g2_anomalous}
 \end{equation}
 
-\noindent With this definition, we see that for $\delta \bm{k}=\bm{0}$, we are either looking at \textbf{normal} \kk correlations (subscript N) when chosing the plus sign, or \textbf{anomalous} \kmk correlations (subscript A) with the minus sign. Note that the absence of a subscript $(N,A)$ in the following denotes a general calculation valid for both normal and anomalous correlation functions. We reduced the 6D function to a 3D function of the parameter $\delta \bm{k}$ which equals $\bm{0}$ when the correlation condition $\bm{k'} = \pm \bm{k}$ is fulfilled. This gives us a natural way to evaluate $\gtwo (\delta \bm{k})$ with the experimental data: we compute the values of the parameter $\delta \bm{k}$ for every detected atom pairs in an experimental run by calculating their momentum difference or sum for normal and anomalous correlations respectively. By computing the histogram of these values and averaging over many experimental runs, we evaluate the numerator of equation \ref{Eq:g2}.
+\begin{equation}
+    g_{N}^{(2)} (\delta {\bm k})=\frac{\int_{\Omega_{k}} \langle \hat{a}^{\dagger}_{\bm k} \hat{a}^{\dagger}_{\delta {\bm k} + {\bm k}} \hat{a}_{\bm k} \hat{a}_{\delta {\bm k} + {\bm k}} \rangle \mathrm{d}{\bm k}}{\int_{\Omega_{k}} \rho(\bm k) \rho(\delta {\bm k} + {\bm k}) \mathrm{d}\bm{k}}
+    \label{Eq:g2_normal}
+\end{equation}
+
+\noindent With this definition, we see that for $\delta \bm{k}=\bm{0}$, we are either looking at \textbf{anomalous} \kmk correlations (equation \ref{Eq:g2_anomalous}) or \textbf{normal} \kk correlations (equation \ref{Eq:g2_normal}). Note that the absence of a subscript $(N,A)$ in the following denotes a general calculation valid for both normal and anomalous correlation functions. We reduced the 6D function to a 3D function of the parameter $\delta \bm{k}$ which equals $\bm{0}$ when the correlation condition $\bm{k'} = \pm \bm{k}$ is fulfilled. This gives us a natural way to evaluate $\gtwo (\delta \bm{k})$ with the experimental data: we compute the values of the parameter $\delta \bm{k}$ for every detected atom pairs in an experimental run by calculating their momentum sum or difference for anomalous and normal correlations respectively. By computing the histogram of these values and averaging over many experimental runs, we evaluate the numerator of equation \ref{Eq:g2_anomalous} or \ref{Eq:g2_normal} respectively.
 
 \subsection{Description of the algorithm}
 
@@ -40,7 +45,7 @@ The algorithm described here is similar to the one used in our previous works \c
 
 \subsubsection{Numerator calculation}
 
-The first step is to compute the numerator of equation \ref{Eq:g2} that we denote $G^{(2)}(\delta \bm{k})$. We note $N_{\rm{runs}}$ the number of experimental runs and $N_{i}$ the number of atoms in the $i$-th shot. The procedure is as follows:
+The first step is to compute the numerator of equations \ref{Eq:g2_anomalous} or \ref{Eq:g2_normal} that we denote $G^{(2)}(\delta \bm{k})$. We note $N_{\rm{runs}}$ the number of experimental runs and $N_{i}$ the number of atoms in the $i$-th shot. The procedure is as follows:
 
 % \begin{algorithm}
 % \caption{$G^{(2)}$ calculation}
@@ -54,7 +59,6 @@ The first step is to compute the numerator of equation \ref{Eq:g2} that we denot
 %     \end{algorithmic}{}
 % \end{algorithm}
 
-\newpage
 
 \begin{algorithm}[h!]
  \caption{$G^{(2)}$ calculation}
@@ -63,7 +67,7 @@ The first step is to compute the numerator of equation \ref{Eq:g2} that we denot
             \For{$j=1:N_{i}$}
                \For{$p=1:N_{i}$}
                     \State Compute $\delta \bm{k} = \bm{k}_j \pm \bm{k}_p$
-                    \State Increment 3D histogram $G^{(2)}$ corresponding voxel
+                    \State Increment the corresponding voxel in 3D histogram $G^{(2)}$ 
                 \EndFor
             \EndFor
         \EndFor
@@ -71,9 +75,9 @@ The first step is to compute the numerator of equation \ref{Eq:g2} that we denot
 
 \end{algorithm}
 
-\noindent We end up with a 3D histogram where each voxel is associated to a value of $\delta \bm{k} = (\delta k_x,\delta k_y, \delta k_z)$ and records how many atom pairs have this specific momentum sum or difference, depending on the kind of the correlations we want to probe. The size of the voxel is adapted so that we can properly resolve the correlation peaks while ensuring a proper signal to noise ratio.
+\noindent We end up with a 3D histogram where each voxel is associated to a value of $\delta \bm{k} = (\delta k_x,\delta k_y, \delta k_z)$ and records how many atom pairs have this specific momentum sum or difference, depending on the kind of the correlations probe. The voxels are set to be cubic of dimension $\Delta k_{\parallel}$. The value of $\Delta k_{\parallel}$ is adapted so that we can properly resolve the correlation peaks while ensuring a proper signal to noise ratio. In practice, we use $\Delta k_{\parallel}= 1.2 \times 10^{-2} \ k_d$ for \kmk correlations and $\Delta k_{\parallel}= 6 \times 10^{-3} \ k_d$ for \kk correlations as normal the correlation peak is narrower than the anomalous one (see \ref{sec:width_correlation_theo}).
 
-The major difference with the previous version of the algorithm is that we record here the full 3D histogram of calculated $\delta \bm{k}$ on every pair of atoms. The procedure was originally made simpler by calculating three one-dimensional histograms, one for each direction of space. Each of these histograms represents a one-dimensional cut of general 3D correlation function $G^{(2)}(\delta \bm{k})$. For instance, to obtain the $x$ direction histogram, for the atom $j$ in run $i$, we calculate $\delta k_x$ only for atoms $p$ close enough in momentum space to find a \kk correlations, \ie with $|k_y^{(j)}-k_y^{(p)}| \leq \Delta k_{\perp}$ and $|k_z^{(j)}-k_z^{(p)}| \leq \Delta k_{\perp}$, where $\Delta k_{\perp}$ defines a transverse integration (see later). This method obviously saves computing time and RAM space, but is not suited to look for \kmk correlations.
+The major difference with the previous version of the algorithm (see Appendix of \cite{carcy2019momentum}) is that we record here the full 3D histogram of calculated $\delta \bm{k}$ on every pair of atoms. The procedure was originally made simpler by calculating three one-dimensional histograms, one for each direction of space. Each of these histograms represents a one-dimensional cut of general 3D correlation function $G^{(2)}(\delta \bm{k})$. For instance, to obtain the $x$ direction histogram, for the atom $j$ in run $i$, we calculate $\delta k_x$ only for atoms $p$ close enough in momentum space to find a \kk correlations, \ie with $|k_y^{(j)}-k_y^{(p)}| \leq \Delta k_{\perp}$ and $|k_z^{(j)}-k_z^{(p)}| \leq \Delta k_{\perp}$, where $\Delta k_{\perp}$ defines a transverse integration (see later). This method obviously saves computing time and RAM space, but is not suited to look for \kmk correlations.
 
 At this point, we record in the central voxels associated to $\delta \bm{k} \simeq \bm{0}$ what we call \textbf{true coincidences}, namely two atoms detected conjointly as a result of \kmk pairing or bosonic bunching. However, we also record \textbf{accidental coincidences} that do not represent correlations but result from the momentum distribution of the atoms. We then need a normalization process to get rid of the contribution of accidental coincidences, \ie a method to compute the denominator of equation \ref{Eq:g2}.
 
@@ -81,7 +85,7 @@ At this point, we record in the central voxels associated to $\delta \bm{k} \sim
 
 \label{sec:algo}
 
-We now want to compute the denominator of equation \ref{Eq:g2}, representing the effect of accidental coincidences. To perform this calculation, we would like to have a sample of atoms with the same momentum density than our experimental data but uncorrelated. This can be done by merging all experimental shots, not correlated with one another. We then apply the procedure we have just described to this data set. However, some of the correlations happening in single shots will remain in this large file. In the end, the total number of correlations in the numerator is $\sum_i N_i^2$ whereas the number of coincidences in the merged file is $(\sum_i N_i)^2$. With $\bar{N}$ the mean number of atoms per shot, we see that:
+We now compute the denominator of equation \ref{Eq:g2}, representing the effect of accidental coincidences. To perform this calculation, we would like to use a sample of uncorrelayted atoms with the same momentum density than our experimental data. This can be done by merging all experimental shots together, each shot being uncorrelated with one another. We then apply the procedure we have just described to this data set. However, the correlations present within single shots remain in this large file. In the end, the total number of correlations in the numerator is $\sum_i N_i^2$ whereas the number of coincidences in the merged file is $(\sum_i N_i)^2$. With $\bar{N}$ the mean number of atoms per shot, we see that:
 
 \begin{equation}
       \frac{\sum_i N_i^2}{(\sum_i N_i)^2}=\frac{N_{\rm{runs}} \bar{N}^2}{N_{\rm{runs}}^2 \bar{N}^2}=\frac{1}{N_{\rm{runs}}}
@@ -89,53 +93,28 @@ We now want to compute the denominator of equation \ref{Eq:g2}, representing the
 
 \noindent Therefore, with enough shots, the contribution of residual coincidences is negligible and the normalization procedure valid. 
 
-In the end, the integrated $g^{(2)}$ function can obtained by dividing the numerator histogram by the denominator and multiplying by the normalization factor $\frac{(\sum_i N_i)^2}{\sum_i N_i^2}$ taking into account the number of coincidences of the numerator and denominator. It is possible to take a fraction of all atoms for the denominator calculation to avoid large computation time. This is particularly handy to have quick first results before launching longer calculations for a nicer signal-to-noise ratio.
+In the end, the integrated $g^{(2)}$ function is obtained by dividing the numerator histogram by the denominator and multiplying by the normalization factor $\frac{(\sum_i N_i)^2}{\sum_i N_i^2}$ that takes into account the number of coincidences of the numerator and denominator. It is possible to take a fraction of all atoms for the denominator calculation to avoid large computation time. This is particularly handy to have quick first results before launching longer calculations for a nicer signal-to-noise ratio.
 
-\subsection{Accessing the BEC depletion}
-\label{sec:accessing_depletion}
 
-In order to detect \kmk pairs in the depletion, it is absolutely crucial to remove from the analysis all atoms belonging to the BEC and its diffracted copies as explained in Chapter \ref{sec:chapter_1}. For each recorded data set and before running the algorithm, we remove all atoms outside the volume $\Omega_k$ that we design to exclude momentum regions with condensed atoms as illustrated on Fig-\ref{fig:omega_k}. We set $\Omega_k$ to have a cubic symmetry that matches the symmetry of the momentum distribution in a cubic lattice. We remove all atoms with $|k_i| < k_{\rm{min}}$ and $|k_i| > k_{\rm{max}}$ where $k_i$ is the momentum projection along an axis $i=x,y,z$. We use $k_{\rm{min}}=0.15 \, k_d$, corresponding to $\sim 6$ times the RMS width of the BEC peaks, in order to ensure that all condensed atoms have been removed. The high limit is set to $k_{\rm{max}}=0.85 \, k_d$ to exclude higher order peaks and is slightly smaller than the momentum range probed by the MCP. In terms of healing length, this corresponds to $0.85 \leq | k | \xi \leq 1.15$, \ie the region where the phononic character of the Bogoliubov quasi-particles is negligible.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Fig/Chapter4/densite.png}
-    \caption[1D cut of the momentum density illustrating the integration volume $\Omega_k$]{1D cut of the momentum density illustrating the integration volume $\Omega_k$. The central peak corresponds to the BEC and the lateral peaks at $\pm \ k_d$ to diffraction peaks induced by the presence of the optical lattice. The green area shows the volume $\Omega_k$ containing the depleted atoms selected for the correlation measurement. While barely visible in linear scale, they can be seen in the log scale plot shown in inset.}
-    \label{fig:omega_k}
-\end{figure}
 
 \subsection{Saturation of the detector and reconstruction errors}
 
-As we have seen in Chapter \ref{sec:chapter_3} (\NOTE{mettre référence précises}), the algorithm reconstructing the positions at which the atoms fall on the MCP can give wrong results when the atomic flux is too high, which is typically the case with the very dense BEC. We saw that if we consider two atoms falling in the same pixel at times $t^A$ and  $t^B$ so that those two times are very close, the 8 times $(t_{x 1}^{A}, t_{x 2}^{A}, t_{y 1}^{A}, t_{y 2}^{A}, t_{x 1}^{B}, t_{x 2}^{B}, t_{y 1}^{B}, t_{y 2}^{B})$ can get mixed up and result in a mistake in the reconstruction process \cite{cayla_these}. The wrong reconstructed positions can then either be:
+As we have seen in \ref{sec:saturation_effect}, the algorithm reconstructing the positions at which the atoms fall on the MCP can give wrong results when the atomic flux is too high, which is typically the case with the very dense condensed diffraction peaks. This effect is particularly detrimental to the measurement described in this chapter as it artificially creates \kmk pairs. To circumvent this issue, we remove from the analysis the momentum region where $|k_z| < 0.05 \ k_d$ which corresponds to the region where the wrongly reconstructed BEC atoms are, at the expense of losing some possible ``true'' pairs located in this region. We check that the wrongly reconstructed atoms have been correctly removed from the analysis by watching the saturation cross disappear as illustrated on Fig.-\ref{fig:saturation_correction}.
 
-\begin{equation}
-\begin{aligned}
-&X 1=\frac{t_{x 1}^{A}-t_{x 2}^{B}}{2}=X+\frac{t^{A}-t^{B}}{2 v_{x}} \quad Y 1=\frac{t_{y 1}^{B}-t_{y 2}^{A}}{2}=Y+\frac{t^{B}-t^{A}}{2 v_{x}} \quad T 1=\frac{t^{A}+t^{B}}{2}\\
-&\text { and }\\
-&X 2=\frac{t_{x 1}^{B}-t_{x 2}^{A}}{2}=X+\frac{t^{B}-t^{A}}{2 v_{x}} \quad Y 2=\frac{t_{y 1}^{A}-t_{y 2}^{B}}{2}=Y+\frac{t^{A}-t^{B}}{2 v_{x}} \quad T 2=\frac{t^{A}+t^{B}}{2}
-\end{aligned}
-\end{equation}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Fig/Chapter4/correction_saturation.png}
+    \caption[Correction of software saturation]{Correction of software saturation. (a) Time integrated 2D MCP image, uncorrected, with the saturation cross. (b) Same image where the region $|k_z| < 0.05 \ k_d$ has been removed. The saturation cross has disappeared.}
+    \label{fig:saturation_correction}
+\end{figure}
 
-\noindent or 
 
-\begin{equation}
-\begin{aligned}
-&X 1=\frac{t_{x 1}^{A}-t_{x 2}^{B}}{2}=X+\frac{t^{A}-t^{B}}{2 v_{x}} \quad Y 1=\frac{t_{y 1}^{A}-t_{y_{2}}^{B}}{2}=Y+\frac{t^{A}-t^{B}}{2 v_{x}} \quad T 1=\frac{t^{A}+t^{B}}{2}\\
-&\text { and }\\
-&X 2=\frac{t_{x 1}^{B}-t_{x 2}^{A}}{2}=X+\frac{t^{B}-t^{A}}{2 v_{x}} \quad Y 2=\frac{t_{y 1}^{B}-t_{y 2}^{A}}{2}=Y+\frac{t^{B}-t^{A}}{2 v_{x}} \quad T 2=\frac{t^{A}+t^{B}}{2}
-\end{aligned}
-\end{equation}
-
-\noindent We see from these equations that if we take $X \simeq 0$ and $Y \simeq 0$, $X1 \simeq -X2$ and $Y1 \simeq -Y2$. If the times $T1=T2$ correspond to $k_z=0$, the wrongly reconstructed pair of atoms looks exactly like a \kmk pair! Importantly, the saturation occurs mainly for BEC atoms because of the high density, and the BEC corresponds exactly to momentum values close to $k=0$, \ie  $X \simeq 0$ and $Y \simeq 0$. This is then a problem as we can artificially create \kmk pairs because of reconstruction issues.
-
-To circumvent this issue, we remove from the analysis the momentum region where $|k_z| < 0.05 \ k_d$ which corresponds to the region where the wrongly reconstructed BEC atoms are, at the expense of losing some possible ``true'' pairs located in this region.
-
-\NOTE{voir comment équilibrer cette partie avec le chapitre 3 a posteriori}
 
 \subsection{Transverse integration}
 
 \label{sec:transverse_integration}
 
-Now that we know how to numerically obtain the 3D histogram of the $\gtwo$ function, we must discuss how to represent the data. One of the most natural and intelligible way to do so is to plot 1D cuts of the $\gtwo$ function along the three direction of space to properly visualize the 3D correlation peak located in $\delta \bm{k} = \bm{0}$. We note the dimension of the histogram cubic voxels $\Delta k_{\parallel}$. To extract a 1D cut along the $x$ direction for instance, we could simply take the line of voxels verifying $\delta k_y=\delta k_z =0$. However, this is often not sufficient to have a proper signal-to-noise ratio. We therefore rather average the values of several voxels lines associated to $\delta \bm{k}$ values verifying $\abs{\delta k_y, \delta k_z} \leq \Delta k_{\perp}$ as illustrated on Fig-\ref{fig:cube_integration}, where $\Delta k_{\perp}$ defines the transverse integration. Note that this procedure applies for both normal and anomalous correlation functions.
+Now that we know how to numerically obtain the 3D histogram of the $\gtwo$ function, we must discuss how to represent the data. One of the most natural and intelligible way to do so is to plot 1D cuts of the $\gtwo$ function along the three direction of space to properly visualize the 3D correlation peak located in $\delta \bm{k} = \bm{0}$. To extract a 1D cut along the $x$ direction for instance, we could simply take the line of voxels verifying $\delta k_y=\delta k_z =0$. However, this is often not sufficient to have a proper signal-to-noise ratio. We therefore rather average the values of several voxels lines associated to $\delta \bm{k}$ values verifying $\abs{\delta k_y, \delta k_z} \leq \Delta k_{\perp}$ as illustrated on Fig-\ref{fig:cube_integration}, where $\Delta k_{\perp}$ defines the transverse integration. Note that this procedure applies for both normal and anomalous correlation functions.
 
 \begin{figure}
     \centering
@@ -144,14 +123,14 @@ Now that we know how to numerically obtain the 3D histogram of the $\gtwo$ funct
     \label{fig:cube_integration}
 \end{figure}
 
-Let us now write what is the actual signal that is plotted when this process is applied. The ``true'' theoretical, normalized and integrated two-body correlation function is well modelled in first approximation by a 3D Gaussian function:
+We now write what is the signal that is plotted when this process is applied. The theoretical, normalized and integrated two-body correlation function is well modelled in first approximation by a 3D Gaussian function:
 
 \begin{equation}
     \gtwo (\delta \bm{k}) = 1 + \eta_0 \prod_{i=x,y,z} \exp \left(\frac{-\delta k_i^2}{2 \sigma_i}\right)
     \label{eq:g2_theo}
 \end{equation}
 
-\noindent where we introduce $\eta_0$ the amplitude of the correlation peak and $\sigma_i$ the RMS width of the correlation peak in direction $i=x,y,z$. We re-write this equation to account for the transverse integration process, with the example of a cut along the $x$ direction:
+\noindent where we introduce $\eta_0$ the amplitude of the correlation peak and $\sigma_i$ the RMS width of the correlation peak in direction $i=x,y,z$. Importantly, we have assumee that the different correlation axis are separable. We re-write this equation to account for the transverse integration process, with the example of a cut along the $x$ direction:
 
 \begin{equation}
     g^{(2)} \left(\delta k_{x}\right)=\frac{1}{\left(2 \Delta k_{\perp}\right)^{2}} \iint_{-\Delta k_{\perp}}^{\Delta k_{\perp}} \left( 1+ \eta_0 \prod_{i=x, y, z} \exp \left(\frac{-\delta k_{i}^{2}}{2 \sigma_i^{2}}\right) \mathrm{d} \delta k_y \mathrm{d} \delta k_z \right)
@@ -163,7 +142,7 @@ Let us now write what is the actual signal that is plotted when this process is 
     g^{(2)} \left(\delta k_{x}\right)=1+\eta_0 \frac{2 \pi \sigma_y \sigma_z}{\left(2 \Delta k_{\perp}\right)^{2}} \exp \left(\frac{-\delta k_{x}^{2}}{2 \sigma_{z}^{2}}\right) \operatorname{erf}\left(\frac{\Delta k_{\perp}}{\sqrt{2} \sigma_{y}}\right) \operatorname{erf}\left(\frac{\Delta k_{\perp}}{\sqrt{2} \sigma_{z}}\right)
 \end{equation}
 
-Note that we have here neglected the small longitudinal integration induced by the size of the voxel, which is 3 times smaller than the RMS width of the correlation peaks. In addition, we assume that the correlation peaks are isotropic as the lattice potential and then the spatial size of the gas are isotropic, giving $\sigma_x=\sigma_y=\sigma_z=\sigma$. We thus see that when measuring any correlation peak amplitude with a Gaussian fit on a 1D cut of the $\gtwo$ function, we get a reduced amplitude $\eta$ that writes:
+Note that we have here neglected the small longitudinal integration induced by the size of the voxel, which is typically 3 times smaller than the RMS width of the correlation peaks in our experimental data. In addition, we assume that the correlation peaks are isotropic as the lattice potential and then the spatial size of the gas are isotropic, giving $\sigma_x=\sigma_y=\sigma_z=\sigma$. We thus see that when measuring any correlation peak amplitude with a Gaussian fit on a 1D cut of the $\gtwo$ function, we get a reduced amplitude $\eta$ that writes:
 
 \begin{equation}
     \eta (\Delta k_{\perp})= \eta_{0} \times \frac{2 \pi \sigma^2}{(2\Delta k_{\perp})^2}\left[\rm{erf} \left(\frac{\Delta k_{\perp}}{\sqrt{2}\sigma} \right)\right]^2
@@ -174,12 +153,33 @@ The idea is then to measure $\eta$ for several values of $\Delta k_{\perp}$ and 
 
 In addition, we have checked that the transverse integration process does not significantly change the width of the correlation peak (see Fig.-\ref{fig:eta_vs_int_kmk} in \ref{sec:amp_anomalous}). The extracted width is therefore the fitted width at the lowest transverse integration for which we get a satisfactory signal to noise ratio.
 
+\NOTE{bouger les courbes eta vs delta k}
+
+
+
+
+
+\section{Observation of the pair correlation signal}
+
+\NOTE{refaire pour les transitions}
+
+\subsection{Accessing the BEC depletion}
+\label{sec:accessing_depletion}
+
+In order to detect \kmk pairs in the depletion, it is absolutely crucial to remove from the analysis all atoms belonging to the BEC and its diffracted copies as explained in Chapter \ref{sec:chapter_1}. For each recorded data set and before running the algorithm, we remove all atoms outside the volume $\Omega_k$ that we design to exclude momentum regions with condensed atoms as illustrated on Fig-\ref{fig:omega_k}. We set $\Omega_k$ to have a cubic symmetry that matches the symmetry of the momentum distribution in a cubic lattice. We remove all atoms with $|k_i| < k_{\rm{min}}$ and $|k_i| > k_{\rm{max}}$ where $k_i$ is the momentum projection along an axis $i=x,y,z$. We use $k_{\rm{min}}=0.15 \, k_d$, corresponding to $\sim 6$ times the RMS width of the BEC peaks, in order to ensure that all condensed atoms have been removed. The high limit is set to $k_{\rm{max}}=0.85 \, k_d$ to exclude higher order peaks and is slightly smaller than the momentum range probed by the MCP. In terms of healing length, this corresponds to $0.85 \leq | k | \xi \leq 1.15$, \ie the region where the phononic character of the Bogoliubov quasi-particles is negligible and thus where finite temperature excitations do not contribute to the anomalous correlations. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Fig/Chapter4/densite.png}
+    \caption[1D cut of the momentum density illustrating the integration volume $\Omega_k$]{1D cut of the momentum density illustrating the integration volume $\Omega_k$. The central peak corresponds to the BEC and the lateral peaks at $\pm \ k_d$ to diffraction peaks induced by the presence of the optical lattice. The green area shows the volume $\Omega_k$ containing the depleted atoms selected for the correlation measurement. While barely visible in linear scale, they can be seen in the log scale plot shown in inset.}
+    \label{fig:omega_k}
+\end{figure}
 
 \subsection{Benchmarking of the algorithm with two-body collision spheres}
 
 \label{sec:benchmark_algo}
 
-Before using the algorithm to look for a supposedly small \kmk pairing signal in the depletion of a weakly-interacting Bose gas, it was crucial to test it on a data set with a large number of \kmk pairs to certify that it was working properly. Luckily, we could re-use the data taken for measuring two-body collisions during the time-of flight described in Chapter \ref{sec:chapter_3}. In addition to the 3D diffraction data that we already presented, we also took data with a single lattice beam to induce 1D diffraction and obtain only two collision spheres (see Fig.-\ref{fig:1D_spheres}). The advantage is that we have a large number of atoms in the collision spheres, making the analysis easier. 
+Before using the algorithm to look for \kmk pairing signal in the depletion of a weakly-interacting Bose gas, it was crucial to test it on a data set with a large number of \kmk pairs to certify that it was working properly. Luckily, we could re-use the data taken for measuring two-body collisions during the time-of flight described in Chapter \ref{sec:chapter_3}. Indeed, because of the elastic character of the collision, every atom on a collision sphere is correlated with a partner on the other side of the sphere, yielding \kmk correlations in the reference frame of the center of mass of the colliding BECs \cite{perrin2007observation,hodgman2017solving}. In addition to the 3D diffraction data that we already presented, we also took data with a single lattice beam to induce 1D diffraction and obtain only two collision spheres (see Fig.-\ref{fig:1D_spheres}). The advantage is that we have a large number of atoms in the collision spheres, making the analysis easier. 
 
 \begin{figure}
     \centering
@@ -188,19 +188,19 @@ Before using the algorithm to look for a supposedly small \kmk pairing signal in
     \label{fig:1D_spheres}
 \end{figure}
 
-As shown in Chapter \ref{sec:chapter_3}, the collision spheres are populated by atoms pairs undergoing an elastic collision. After the collision, the two atoms of the pair are \kmk correlated. Contrary to the \kmk correlations of the quantum depletion, we de not expect a correlation peak at $\delta \bm{k}=\bm{0}$. If we consider for instance collisions between the 0th and 1st orders of diffraction along $z$, the overall momentum before and after the collision is $k_d \bm{z}$ ($\bm{z}$ is the unitary vector of the $z$ axis), so that the sum of the momenta of the two correlated atoms after the collision must be $k_d \bm{z}$. We thus expect a correlation peak for each sphere, one at $\delta k = (0,0,+1 \ k_d)$  and one at $\delta k = (0,0,-1 \ k_d)$.
+Contrary to the \kmk correlations of the quantum depletion, we de not expect a correlation peak at $\delta \bm{k}=\bm{0}$. If we consider for instance collisions between the 0th and 1st orders of diffraction along $z$, the overall momentum before and after the collision is $k_d \bm{z}$ ($\bm{z}$ is the unitary vector of the $z$ axis), so that the sum of the momenta of the two correlated atoms after the collision must be $k_d \bm{z}$. We thus expect a correlation peak for each sphere, one at $\delta k = (0,0,+1 \ k_d)$  and one at $\delta k = (0,0,-1 \ k_d)$.
 
-We run the algorithm on the experimental data and obtain the results shown in Fig.-\ref{fig:kmk_kapitza}. We observe two correlations peaks at the expected locations! We can now extract the width and amplitude of the peaks with a Gaussian fit and see if they match our expectations. We find RMS widths of $\sigma_A^{(-1)}=2.3(9) \times 10^{-2} \ k_d$ and $\sigma_A^{(+1)}=2.7(8) \times 10^{-2} \ k_d$, the error bars being given by the uncertainty on the fit coefficients. This is consistent with the measured widths of the scattering halos presented in \NOTE{METTRE SECTION} for a few hundreds of thousands loaded atoms. 
-The analysis of the amplitude is rather easy in this configuration as we know that every atom on the sphere has a momentum correlated partner. We can then now how much correlated pairs we are suppose to detect and compare it to the experiment. To count the number of detected pairs, we use the following procedure:
+We run the algorithm on the experimental data and obtain the results shown in Fig.-\ref{fig:kmk_kapitza}. We observe two correlations peaks at the expected locations! We can now extract the width and amplitude of the peaks with a Gaussian fit and see if they match with the results of \cite{tenart2020two} detailled in Chapter \ref{sec:chapter_3}. We find RMS widths of $\sigma_A^{(-1)}=2.3(9) \times 10^{-2} \ k_d$ and $\sigma_A^{(+1)}=2.7(8) \times 10^{-2} \ k_d$, the error bars being given by the uncertainty on the fit coefficients. This is consistent with the measured widths of the scattering halos presented in $\delta k_s = 2.1(9) \times 10^{-2}$ for $\NBEC=1.25 \times 10^5$ close to the total number of atoms used here. 
+The prediction of the amplitude is rather easy in this configuration as we know that every atom on the sphere has a momentum correlated partner, allowing us to compare it to the experiment. To count the experimental number of detected pairs, we use the following procedure:
 
 
 \begin{enumerate}
-    \item The voxel size is increased to $\Delta k_{\parallel} = 0.25 \ k_d$ so that a single voxel contains the entirety of a correlation peak to count every true correlations.
+    \item The voxel size is increased to $\Delta k_{\parallel} = 0.25 \ k_d$ so that a single voxel contains the correlation peak entirely to count all true correlations.
     
-    \item We count the number of coincidences $N_{\rm{numerator}}$ in the central voxel of the numerator histogram of equation \ref{Eq:g2}. 
+    \item We count the number of coincidences $N_{\rm{numerator}}$ in the central voxel of the numerator histogram of equation \ref{Eq:g2_anomalous}. 
  
    
-    \item  We count the number of coincidences $N_{\rm{denominator}}$ in the central voxel of the denominator of equation \ref{Eq:g2} to evaluate the number of accidental coincidences. 
+    \item  We count the number of coincidences $N_{\rm{denominator}}$ in the central voxel of the denominator of equation \ref{Eq:g2_anomalous} to evaluate the number of accidental coincidences. 
     
     
     \item As the numerator contains both true and accidental coincidences, we evalute the number of true coincidences by subtracting the number of accidental coincidences and taking into account the normalization factor:
@@ -211,54 +211,35 @@ The analysis of the amplitude is rather easy in this configuration as we know th
   
 \end{enumerate}
 
-We find that the average number of detected pairs per run is $N_{\rm{pairs}}/N_{\rm{runs}}=6.25$. To evaluate the expected number of pairs for comparison, we must account for the detection efficiency $\alpha_{\rm{MCP}}$. The probability to detect both atoms in a pair is $\alpha_{\rm{MCP}}^2$, we then detect $\alpha_{\rm{MCP}}^2 N_{\rm{tot}}$ atoms that have a matching correlated atom, $N_{\rm{tot}}$ being the total number of atoms in the considered portion of sphere. Since the number of detected atoms $N_{\rm{detected}}$ that we easily access is $\alpha_{\rm{MCP}} N_{\rm{tot}}$, we can simply multiply $N_{\rm{detected}}$ by $\alpha_{\rm{MCP}}$ to get the number of expected pairs. We find that we expect to detect $8.5(5)$ pairs per run which is rather consistent with the experimental value. The uncertainty is given by the uncertainty on the detection efficiency. Note that as this experiment was done before the implemention the two-photon Raman transfer scheme, the detection efficiency was lower than what was calibrated in Chapter \ref{sec:chapter_3} and was equal to $\alpha_{\rm{MCP}}=6.5(4) \%$.
+We find that the average number of detected pairs per run is $N_{\rm{pairs}}/N_{\rm{runs}}=6.25$. This number must be compared to the number of pairs that we expect from the number of atoms in the spheres that we evaluate using the following procedure:
 
-% \begin{itemize}
-%     \item We first evaluate the number of accidental coincidences. To do so, We select the voxel corresponding to the maximum value of a correlation peak. We record the number of counts in the \textbf{normalization} histogram (denominator of equation \ref{Eq:g2}) in this voxel $N^{\rm{center}}_{\rm{ac-norm}}$. We re-scale it by the proper factor to compare it to the numerator values:
-    
-%     \begin{equation}
-%         N_{\rm{ac}}^{\rm{center}}=N^{\rm{center}}_{\rm{ac-norm}} \frac{\sum N_i^2}{N_{\rm{atoms-norm}}^2}
-%     \end{equation}
-    
-%     where $N_{\rm{atoms-norm}}$ is the number of atoms chosen for the calculation of the denominator.
-    
-%     \item We then evaluate the total number of true coincidences $N_{\rm{true}}$. To do so, we must account for the detection efficiency $\alpha_{\rm{MCP}}$. The probability to detect both atoms in a pair is $\alpha_{\rm{MCP}}^2$, we then detect $\alpha_{\rm{MCP}}^2 N_{\rm{tot}}$ atoms that have a matching correlated atom, $N_{\rm{tot}}$ being the total number of atoms in the considered portion of sphere. Since the number of detected atoms $N_{\rm{detected}}$ that we easily access is $\alpha_{\rm{MCP}} N_{\rm{tot}}$, we can simply multiply $N_{\rm{detected}}$ by $\alpha_{\rm{MCP}}$ to get the number of detected correlated atoms, giving us the number of true coincidences.
-    
-%     \item As the size of the voxel is smaller than the correlation peak, we only record a fraction of the coincidences in the central pixel of the peak. In Fig-\ref{fig:kmk_kapitza}, we deliberately chose the transverse size of the voxels to be larger than the correlation peak. In these conditions, the number of true coincidences in the central pixel writes:
-    
-%     \begin{equation}
-%          N_{\rm{true}}^{\rm{center}}=N_{\rm{true}} \times \rm{erf} (\frac{\Delta k_{\parallel}}{2 \sqrt{2} \sigma_{A}})
-%     \end{equation}
-  
-%   where $\Delta k_{\parallel}$ is the longitudinal size of the voxel. 
-   
-%   \item We measure $N^{\rm{center}}_{\rm{ac}}=1.44 \times 10^5$ and $N^{\rm{center}}_{\rm{true}}=5.89 \times 10^3$. As the numerator contains both true and accidental coincidences counts, the amplitude of the correlation peak writes:
-   
-%   \begin{equation}
-%       \rm{Amplitude} = \frac{N^{\rm{center}}_{\rm{ac}} + N^{\rm{center}}_{\rm{true}}}{N^{\rm{center}}_{\rm{ac}}} = 1 + 0.04
-%   \end{equation}
-   
-%   which is in very good adequation with the results of the algorithm.
-    
-% \end{itemize}
+\begin{itemize}
+    \item Writing $N_{\rm{tot}}$ the total atom number in a given sphere, we know that we should detect $N_{\rm{tot}} \alpha_{\rm{MCP}}^2$ correlated atoms, where $\alpha_{\rm{MCP}}$ is the detection efficiency of the $\He$ detector. 
+    \item The number of detected atoms in the considered sphere is simply $N_{\rm{tot}} \alpha_{\rm{MCP}}$ and accessible experimentally. Multiplying this number by $\alpha_{\rm{MCP}}$, we thus obtain the expected number of correlated atoms.
+\end{itemize}
+
+We find that we expect to detect $8.5(5)$ pairs per run which is rather consistent with the experimental value. The uncertainty is given by the uncertainty on the detection efficiency. Note that as this experiment was done before the implemention the two-photon Raman transfer scheme, the detection efficiency was lower than what was calibrated in Chapter \ref{sec:chapter_3} and was equal to $\alpha_{\rm{MCP}}=6.5(4) \%$.
+
 
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{Fig/Chapter4/kmk_kapitza.png}
-    \caption[1D cut of the anomalous correlation function $\gtwo_A$ along the $z$ axis]{1D cut of the anomalous correlation function $\gtwo_A$ along the $z$ axis. We observe two correlation peaks, one for each correlation sphere. The peaks are not exactly at $-1 \ k_d$ and $+1 \ k_d$ due to a slight mis-recentering of the data. The longitudinal size of the voxels is $\Delta k_{\parallel}= 2 \times 10^{-2}$ and the transverse integration $\Delta k_{\perp}= 9 \times 10^{-2}$.}
+    \caption[1D cut of the anomalous correlation function $\gtwo_A$ along the $z$ axis]{\NOTE{corriger décalage} 1D cut of the anomalous correlation function $\gtwo_A$ along the $z$ axis. We observe two correlation peaks, one for each correlation sphere. The peaks are not exactly at $-1 \ k_d$ and $+1 \ k_d$ due to a slight mis-recentering of the data. The longitudinal size of the voxels is $\Delta k_{\parallel}= 2 \times 10^{-2}$ and the transverse integration $\Delta k_{\perp}= 9 \times 10^{-2}$.}
     \label{fig:kmk_kapitza}
 \end{figure}
 
 
-
-
-\section{Observation of the pair correlation signal}
+\subsection{First characterization of the pair correlation signal}
 
 \label{sec:post_selec}
 
+
+
 As we have the algorithm necessary to extract the correlation signal and checked that it is working properly, we now look to observe the \kmk pairs of the quantum depletion.
+
+
 
 \begin{figure}[]
     \centering
@@ -267,7 +248,7 @@ As we have the algorithm necessary to extract the correlation signal and checked
     \label{fig:n_fluctuations}
 \end{figure}
 
-We prepare a BEC with a target number of $\NBEC=5 \times 10^3$ atoms in an optical lattice of amplitude $V=7.75 \ E_r$. With this lattice amplitude, we are in the superfluid domain of the phase diagram in which we expect the \kmk correlations. In order to have sufficient statistics, we repeat the experiment $\sim 4,000$ times. In practice, we cannot prepare BECs with the exact same number of atoms at each shot. We then need to post-select the data and remove runs with a detected atom number falling too far from the target number. We allow for $30 \%$ fluctuations around the target number (see Fig.-\ref{fig:n_fluctuations}) and end up conserving around $\sim 2,000$ runs on which we run the algorithm.
+We prepare a BEC with a target number of $\NBEC=5 \times 10^3$ atoms in an optical lattice of amplitude $V=7.75 \ E_r$. With this lattice amplitude, we are in the superfluid domain of the phase diagram in which we expect the \kmk correlations \NOTE{à préciser}. In order to have sufficient statistics, we repeat the experiment $\sim 4,000$ times. In practice, we cannot prepare BECs with the exact same number of atoms at each shot. We then need to post-select the data and remove runs with a detected atom number falling too far from the target number. This is one of the strengths of our experiment: as each atom has the same probability of being detected, we can select shots with the good total atom number a posteriori with a precision unattainable with optical imaging measuring densities. This must however be mitigated by the fact saturation effects reduces the number of detected atoms in a way that can be hard to predict precisely. We allow for $30 \%$ fluctuations around the target number (see Fig.-\ref{fig:n_fluctuations}) and end up conserving around $\sim 2,000$ runs on which we run the algorithm.
 
 \begin{figure}[ht!]
     \centering
@@ -276,7 +257,7 @@ We prepare a BEC with a target number of $\NBEC=5 \times 10^3$ atoms in an optic
     \label{fig:kmk_signal}
 \end{figure}
 
-We have plotted on Fig-\ref{fig:kmk_signal} 1D cuts through the calculated $g_{A}^{(2)}$ function on which we can see clear correlation peaks standing out from the noise! This is the kind of signal we were aiming to obtain and constitutes the central result of this thesis. Before analyzing the features of this correlation signal in more details, we conduct a first series of experimental checks. First, we extend the range of $\delta \bm{k}$ on which we plot the $g_{A}^{(2)}$ function to find correlation peaks at $\delta k = \pm k_d$ as shown on Fig.-\ref{fig:periodicity}. This is something that we expected from Bloch theorem (see \NOTE{reference section}) as the lattice is a periodic potential.
+We have plotted on Fig-\ref{fig:kmk_signal} 1D cuts through the calculated $g_{A}^{(2)}$ function on which we see clear correlation peaks standing out from the noise! This is the kind of signal we were aiming to obtain and constitutes the central result of this thesis. Before analyzing the features of this correlation signal in more details, we conduct a first series of experimental checks. First, we extend the range of $\delta \bm{k}$ on which we plot the $g_{A}^{(2)}$ function to find correlation peaks at $\delta k = \pm k_d$ as shown on Fig.-\ref{fig:periodicity}. This is something that we expected from Bloch theorem (see \ref{sec:BH_model}) as the lattice is a periodic potential.
 
 \begin{figure}[ht!]
     \centering
@@ -285,7 +266,7 @@ We have plotted on Fig-\ref{fig:kmk_signal} 1D cuts through the calculated $g_{A
     \label{fig:periodicity}
 \end{figure}
 
-In a second time, we also check that there are no correlations in the coherent BEC state. We do so by selecting atoms with $|k_i|<0.04 \ k_d$ with $i=x,y,z$. We show on Fig.-\ref{fig:BEC_correlations} the calculated normal and anomalous correlation functions. As expected, both correlation functions are flat, expect for a small modulation of the order of $1 \%$ that is an artifact of the normalization procedure caused by shot-to-shot fluctuations of the width of the BEC (see \cite{cayla_these}).
+Furthermore, we check that there are no correlations in the coherent BEC state. We do so by selecting atoms with $|k_i|<0.04 \ k_d$ with $i=x,y,z$. We show on Fig.-\ref{fig:BEC_correlations} the calculated normal and anomalous correlation functions for the mode of the BEC. As expected, both correlation functions are flat, expect for a small modulation of the order of $1 \%$ that is an artifact of the normalization procedure caused by shot-to-shot fluctuations of the width of the BEC (see \cite{cayla_these}).
 
 \begin{figure}[ht!]
     \centering
@@ -304,15 +285,19 @@ Now that we have observed an anomalous correlation signal, we must ask whether i
 
 The main difference with the \kmk correlation signal obtained in the collision spheres is that we observe here a peak located at $\delta \bm{k} = \bm{0}$. This signals that the total momentum of the atom pair is $\bm{0}$ and as our system consists of only an at-rest BEC, the pairing process could not have resulted from an out-of-equilibrium effect. This is the novelty of our experimental observation.
 
-While these first observations seems to point towards the fact that we are indeed seeing the \kmk pairing of the quantum depletion, we can look to further characterize the correlation signal and determine whether our observations match what is expected from Bogoliubov theory to prove this point. In a first time, we will take a look at the effect of temperature that is supposed to destroy the \kmk correlation signal supposedly linked to $T=0$ quantum coherences as explained in Chapter \ref{sec:chapter_1}.
+While these first observations seems to point towards the fact that we are indeed seeing the \kmk pairing of the quantum depletion, we look to further characterize the correlation signal and determine whether our observations match what is expected from Bogoliubov theory to prove this point. We will first study the effect of temperature that is supposed to destroy the \kmk correlation signal linked to $T=0$ quantum coherences, as explained in Chapter \ref{sec:chapter_1}.
 
-\section{Effect of temperature}
+
+
+
+
+\subsection{Effect of temperature}
 
 \label{sec:kmk_temperature}
 
-The temperature can be increased in a rather simple manner by holding the atoms at the final amplitude of the lattice for a longer duration, the gas being continuously heated over time (attributed to imperfections such as spontaneous emission or mechanical vibrations). We repeat the experiment with a holding time of $500 \ \rm{ms}$ corresponding to hundreds of tunneling times $225 \times h/J$. The increase in temperature can be seen by looking at the momentum density profile as shown in the panel b of Fig-\ref{fig:kmk_temperature}. As expected, the thermal depletion has increased, increasing the momentum density in the depletion region by a factor $\sim 4$. Note however that we did not increase the temperature too much to keep a significant condensed fraction of the order of $f_c = 29 \%$ not to entirely remove the quantum depletion. This increase of the thermal depletion implies a decrease of $\gtwo_A (\bm{0})$ of at least a factor $4^2$, bringing it under the experimental noise, as we see on Fig-\ref{fig:kmk_temperature} panel \textbf{a}.
+The temperature can be increased in a rather simple manner by holding the atoms at the final amplitude of the lattice for a longer duration, the gas being continuously heated over time (attributed to imperfections such as spontaneous emission or mechanical vibrations). We repeat the experiment with a holding time of $500 \ \rm{ms}$ corresponding to hundreds of tunneling times $225 \times h/J$. The increase in temperature can be seen by looking at the momentum density profile as shown in the panel b of Fig-\ref{fig:kmk_temperature}: the thermal depletion has increased, increasing the momentum density in the depletion region by a factor $\sim 4$. Note however that we did not increase the temperature too much to keep a significant condensed fraction of the order of $f_c = 29 \%$ (in the absence of BEC there is no quantum depletion). As the thermally depleted atoms show no \kmk correlations, only the denominator of equation \ref{Eq:g2_anomalous} increases as both $\rho(\bm{k})$ and $\rho(-\bm{k})$ increases each by a factor 4, thus reducing the amplitude of the anomalous correlation function by at least a factor 16, bringing it under the experimental noise as we see on Fig-\ref{fig:kmk_temperature} panel \textbf{a}.. Note that this reduction factor could in fact be even larger as the condensed fraction is small, meaning that the Bogoliubov approximation should not hold anymore. 
 
-We also repeated the experiment for an intermediate temperature obtained with a holding time of $200 \ \rm{ms}$ corresponding to $90 \times h/J$ tunneling time. The condensed fraction is then $f_c=55 \%$ and we observe, as expected, a peak of intermediate amplitude as shown on Fig-\ref{fig:kmk_3_temp}.
+We also repeated the experiment for an intermediate temperature obtained with a holding time of $200 \ \rm{ms}$ corresponding to $90 \times h/J$ tunneling time. The condensed fraction is then $f_c=55 \%$ and we observe a peak of intermediate amplitude as shown on Fig-\ref{fig:kmk_3_temp}.
 
 \begin{figure}
     \centering
@@ -324,7 +309,7 @@ We also repeated the experiment for an intermediate temperature obtained with a 
     \label{fig:kmk_temperature}
 \end{figure}
 
-We thus see that the \kmk correlation signal is extremely sensitive to temperature as predicted, hinting to the fact that it is indeed related to a $T=0$ ground-state effect. It is also quite illuminating to compare the \kmk correlations to the bosonic bunching \kk correlations. As explained in Chapter \ref{sec:chapter_1}, the bosonic bunching effect is the consequence of chaotic statistics, a property shared by the thermal and quantum depletion. Therefore, changing the temperature and thus the balance between thermal and quantum depletion has no effect on bosonic bunching. This is what we observe experimentally as shown on Fig-\ref{fig:kmk_temperature} panel \textbf{c}.
+We thus see observe that the \kmk correlation signal is extremely sensitive to temperature, hinting to the fact that it is related to a $T=0$ ground-state effect. It is also quite illuminating to compare the \kmk correlations to the bosonic bunching \kk correlations. As explained in Chapter \ref{sec:chapter_1}, the bosonic bunching effect is the consequence of chaotic statistics, a property shared by the thermal and quantum depletion. Therefore, changing the temperature and thus the balance between thermal and quantum depletion should have no effect on bosonic bunching. This is what we observe experimentally as shown on Fig-\ref{fig:kmk_temperature} panel \textbf{c}.
 
 In conclusion, we have on the same experimental data two very different behaviours with temperature that illustrate nicely the natures of the correlation signals. On the one hand, \kk correlations unaffected by temperature reveal the chaotic statistics of the system, on the other hand, \kmk correlations reveal the many-body ground state quantum coherences. These observations constitutes a rather convincing argument that we are indeed observing a \kmk correlation signal caused by the quantum depletion and not some other effect that we could have overlooked.
 
@@ -335,18 +320,18 @@ In conclusion, we have on the same experimental data two very different behaviou
     \label{fig:kmk_3_temp}
 \end{figure}
 
-We are then at this point rather convinced that we observe the \kmk correlations of the quantum depletion, as well as the expected bosonic bunching. We can now look to study in quantitative details these correlation signals. 
+In the following, we study in quantitative details these correlation signals. 
 
 
 % To start on this topic, the attentive reader would have noticed than even though we expect perfect bosonic bunching $\gtwo_N (\bm{0})=2$, we rather observe $\gtwo_N (\bm{0}) \simeq 1.8$. This is due to transverse integration effects of the 3D $\gtwo$ function that need to be accounted for to extract the proper information from the amplitude of the correlation peaks.
 
 \section{Study of the width of the correlation peaks}
 
-To begin, let us study the width of the correlation peak, a quantity that actually contains meaningful information about the many-body ground state. The key aspect is the same used by Hanbury Brown and Twiss in their seminal paper to measure the size of Sirius through the measurement of the second order correlation function, namely the width of the correlation peak is inversely proportional to the spatial size of the source. 
+To begin, we study the width of the correlation peak, a quantity that actually contains meaningful information about the many-body equilibrium state. The key aspect is the same used by Hanbury Brown and Twiss in their seminal paper to measure the size of Sirius through the measurement of the second order correlation function in far-field, namely the width of the correlation peak is inversely proportional to the spatial size of the source. 
 
 %This argument validates our previous assumption that the correlation peak is isotropic, as the lattice trapping potential is isotropic so that the spatial size of the BEC is the same in the three directions of space.
 
-To properly understand the situation, we will compare the predictions for both anomalous and normal correlations. We then need to determine what are the sizes of the components responsible for both correlation signals. On the one hand, the anomalous correlations are exclusively caused by quantum depleted atoms. The quantum depletion is non-existent outside of the BEC so its spatial is the one of the BEC. Therefore, we expect the width of the anomalous correlation peak $\sigma_A$ to be inversely proportional to the size of the BEC $L_{\rm{BEC}}$. On the other hand, the normal correlations are caused by quantum depleted atoms but also and importantly thermally depleted atoms whose spatial size extends beyond the BEC because of the increased kinetic energy. This tells us that the width of the normal correlations peak $\sigma_N$ should be smaller than for anomalous correlations.
+This subject has been discussed in \ref{sec:width_correlation_theo} in light of the results of the theoretical work \cite{butera2020}. We remind that as the anomalous correlations are exclusively caused by quantum depleted atoms whose spatial extent is the one of the BEC, the width of the anomalous correlation peak $\sigma_A$ to be inversely proportional to the size of the BEC $L_{\rm{BEC}}$. On the other hand, the normal correlations are caused by quantum depleted atoms but also and by thermally depleted atoms whose spatial size extends beyond the BEC because of the increased kinetic energy. This tells us that the width of the normal correlations peak $\sigma_N$ should be smaller than that for anomalous correlations.
 
 \begin{figure}
     \centering
@@ -355,13 +340,13 @@ To properly understand the situation, we will compare the predictions for both a
     \label{fig:width}
 \end{figure}
 
-We plot on Fig.-\ref{fig:width} the experimental correlation peaks widths for different total atom numbers. The horizontal error bars correspond to the standard deviation of the total atom number, while the vertical error bars correspond to the standard deviation of the mean over the three directions of the momentum space. As expected, we observe that for all atom numbers, $\sigma_A > \sigma_N$. In addition, one would expect to see both widths decrease with the total atom number as the size of the system grows. This is more or less what the experimental data suggests but the error bar are not small enough to make a proper conclusion on this point. Note that in the Thomas-Fermi regime, the size of the BEC changes slowly with the total atom number $L_{\rm{BEC}} \propto \NBEC^{1/5}$, translating in a change of $\sim 30\%$ of the width of the correlation peaks from the data with $N=2.5 \times 10^3$ to $N=10 \times 10^3$ that is hard to resolve within our error bars.
+We plot on Fig.-\ref{fig:width} the experimental correlation peaks widths for different total atom numbers. The horizontal error bars correspond to the standard deviation of the total atom number, while the vertical error bars correspond to the standard deviation of the mean over the three directions of the momentum space. As expected, we observe that for all atom numbers, $\sigma_A > \sigma_N$. In addition, one would expect to see both widths decrease with the total atom number as the size of the system grows with $\NBEC$. This is more or less what the experimental data suggests but the error bar are not too large to make a definite statement on this point. Note that in the Thomas-Fermi regime, the size of the BEC changes slowly with the total atom number $L_{\rm{BEC}} \propto \NBEC^{1/5}$, translating in a change of $\sim 30\%$ of the width of the correlation peaks from the data with $N=2.5 \times 10^3$ to $N=10 \times 10^3$ that is hard to resolve within our error bars.
 
-We now look at the quantitative value of $\sigma_A$ that can be numerically evaluated. The calculations have been performed by S. Butera and I. Carusotto from the BEC center in Trento, Italy, with the Bogoliubov theory for a trapped 1D system \cite{butera2020}. They evaluate $\sigma_{A,\rm{theo}} = 0.94 \sigma_{\rm{BEC}}$, with $\sigma_{\rm{BEC}}$ the RMS width in momentum space of the condensate. This relation is not modified in presence of a lattice as the size $L_{\rm{BEC}}$ does not change when the ratio $\mu/\hbar \omega$ is fixed. This is explained by the equality $m \omega^2 = m^* \omega^* ^2$ with $m^*$ the effective mass in the lattice and $\omega^*$ the corresponding effective frequency as defined in Chapter \ref{sec:chapter_2} \NOTE{référence}.
+We now look at the quantitative value of $\sigma_A$ that can be numerically evaluated. The calculations have been performed by S. Butera and I. Carusotto from the BEC center in Trento, Italy, with the Bogoliubov theory for a trapped 1D system \cite{butera2020}. They evaluate $\sigma_{A,\rm{theo}} = 0.94 \sigma_{\rm{BEC}}$, with $\sigma_{\rm{BEC}}$ the RMS width in momentum space of the condensate. This relation is not modified in presence of a lattice as the size $L_{\rm{BEC}}$ does not change when the ratio $\mu/\hbar \omega$ is fixed. This is explained by the equality $m \omega^2 = m^* \omega^* ^2$ with $m^*$ the effective mass in the lattice and $\omega^*$ the corresponding effective frequency as defined in \ref{sec:rescaled_interaction}.
 
-We therefore need to measure $\sigma_{\rm{BEC}}$ to exploit this result. To do so, we need to be careful of the saturation of the detector. Indeed, the BEC is very dense resulting in a high flux of atoms saturating the detector. If we plot 1D cuts of the momentum density, the BEC momentum profile is then flattened at the top and fitting with a Gaussian function over-evaluates the momentum width of the condensate. To circumvent this issue, we adapt the parameters of the Raman transfer (\NOTE{RAJOUTER SECTION}) to reduce drastically the detection efficiency and thus the flux of atoms to avoid saturation of the detector and ensure proper fitting.
+We can therefore measure $\sigma_{\rm{BEC}}$ to exploit this result. To do so, we need to account for deviations induced by the saturation of the detector. Indeed, the BEC is very dense resulting in a high flux of atoms saturating the detector. If we plot 1D cuts of the momentum density, the BEC momentum profile is then flattened at the top and fitting with a Gaussian function over-evaluates the momentum width of the condensate. To circumvent this issue, we adapt the parameters of the Raman transfer (see \ref{sec:raman}) to reduce drastically the flux of detected atoms and avoid saturating the detector to ensure proper fitting.
 
-During our first analysis, we noticed that the anomalous correlation peak was larger than the BEC, contrary to what we would have expected. We also noticed that the momentum width of the BEC was larger than what we obtained applying the Gutzwiller ansatz with our calibrated atom numbers. We attribute this to an imperfection in our experiment, the shot-to-shot fluctuations of the center-of-mass of the atomic distribution. When averaging over many experimental runs, these fluctuations enlarges artificially the measured width of the BEC, as well as the width of the anomalous correlation peak. These fluctuations are nevertheless easy to characterize by comparing the experimental momentum width of the BEC to the one predicted by the Gutzwiller variational approach.
+During our first analysis, we noticed that the anomalous correlation peak was larger than that of the BEC, contrary to what we would have expected. We also noticed that the momentum width of the BEC was larger than what we obtained applying the Gutzwiller ansatz with our calibrated atom numbers. We attribute this to an imperfection in our experiment, the shot-to-shot fluctuations of the center-of-mass of the atomic distribution. When averaging over many experimental runs, these fluctuations enlarges artificially the measured width of the BEC, as well as the width of the anomalous correlation peak. These fluctuations can nevertheless be characterize by comparing the experimental momentum width of the BEC to the one predicted by the Gutzwiller variational approach.
 
 When accounting for center-of-mass fluctuations, the measured momentum density results from the convolution with the distribution of center-of-mass displacements and has a RMS width:
 
@@ -369,17 +354,19 @@ When accounting for center-of-mass fluctuations, the measured momentum density r
     \sigma_{\rm{BEC}}=\sqrt{\sigma_{\rm{BEC},0}^2+\Delta k_{\rm{com}}^2}
 \end{equation}
 
-\noindent where $\sigma_{\rm{BEC},0}$ is the ``true'' BEC momentum width. For instance, the Gutzwiller variational approach gives  $\sigma_{\rm{BEC},0} \simeq 1.7 \times 10^{-2} \ k_d$ for a total atom number $\NBEC = 5 \times 10^5$ and we measure $$\sigma_{\rm BEC} = 2.00(4) \times 10^{-2} \ k_d$$. From this we deduce $\Delta k_{\rm{com}}=1.05(2) \times 10^{-2} \ k_d$. We repeat the procedure to evaluate $\Delta k_{\rm{com}}$ for all of the data sets of Fig.-\ref{fig:width}.
+\noindent where $\sigma_{\rm{BEC},0}$ is the ``true'' BEC momentum width with $\sigma_{\rm{BEC},0} \propto 1/L_{\rm{BEC}}$. For instance, the Gutzwiller variational approach gives  $\sigma_{\rm{BEC},0} \simeq 1.7 \times 10^{-2} \ k_d$ for a total atom number $\NBEC = 5 \times 10^5$ and we measure $\sigma_{\rm BEC} = 2.00(4) \times 10^{-2} \ k_d$. From this we deduce $\Delta k_{\rm{com}}=1.05(2) \times 10^{-2} \ k_d$. We repeat the procedure to evaluate $\Delta k_{\rm{com}}$ for all of the data sets of Fig.-\ref{fig:width}.
 
-For a \kmk pair of atoms, a center-of-mass displacement ${\rm{d}} \bm{k}$ induces a momentum difference $\delta \bm{k}=2 {\rm{d}} \bm{k}$. The effect of the fluctuations are thus twice larger for anomalous correlations peak width than for the BEC momentum width:
+For a \kmk pair of atoms, a center-of-mass displacement ${\rm{d}} \bm{k}$ induces a momentum difference $\delta \bm{k}=2 {\rm{d}} \bm{k}$. The effect of the fluctuations are thus twice larger for the width of the anomalous correlations peak than for the BEC momentum width:
 
 \begin{equation}
     \sigma_A = \sqrt{\sigma_{A,0}^2+4\Delta k_{\rm{com}}^2}
 \end{equation}
 
-\noindent Combining this with the numerical evaluation and the measured values of $\Delta k_{\rm{com}}$, we obtain a corrected estimate of $\sigma_A$ that is represented as the green area in Fig.-\ref{fig:width}. The width of the area represent the uncertainty given by the uncertainty on the measurement of $\sigma_{\rm{BEC}}$ and the uncertainty on the determination of $L_{\rm BEC}$ caused by fluctuations of the total atom number. We find that our experimental data matches nicely the numerical calculations of \cite{butera2020}.
+\noindent Combining this with the numerical evaluation and the measured values of $\Delta k_{\rm{com}}$, we obtain a corrected estimate of $\sigma_A$ that is represented as the green area in Fig.-\ref{fig:width}. The width of the area represent the uncertainty given by the uncertainty on the measurement of $\sigma_{\rm{BEC}}$ and the uncertainty on the determination of $L_{\rm BEC}$ caused by fluctuations of the total atom number. We find that our experimental data matches the numerical calculations of \cite{butera2020}, even our experimental configuration is different (3D with an optical lattice contrary to 1D with a regular harmonic trap \cite{butera2020}).
 
 We note that the fluctuations of the center-of-mass have however no effect on the normal correlation signal. Within a given shot, the center-of-mass fluctuations simply manifest as a global displacement of all the atoms of this shot by a quantity that we note $\bm{k}_{\mathrm{COM}}$. As a result, the momentum difference $\delta \bm{k} = \bm{k}_1 - \bm{k}_2$ between two atoms of this shot is not affected by the COM fluctuations, $(\bm{k}_1+\bm{k}_{\mathrm{COM}}) - (\bm{k}_2+\bm{k}_{\mathrm{COM}})=\bm{k}_1 - \bm{k}_2$. In turn, the normal correlation function $g^{(2)}_{N}(\delta \bm{k})$ remains unchanged. When accounting for the effect of center-of-mass fluctuations, we then rather observe $\sigma_A \geq \sigma_N$ as not all anomalous widths of Fig-\ref{fig:width} are distinguishable from the normal widths at the same total atom number within error bars.
+
+\NOTE{faire graph corrigé}
 
 
 \section{Study of the amplitude of the correlation peaks}
@@ -406,7 +393,12 @@ Coming back to the normal correlations plot of Fig-\ref{fig:kmk_temperature}, we
 
 \label{sec:amp_anomalous}
 
-We now turn to analyzing the amplitude of the anomalous correlation peaks. As we have seen with the calculations developed in section \ref{sec:amp_parametric}, we can draw a clear analogy between the Bogoliubov weakly-interacting Bose gas and the non-degenerate parametric amplifier in Quantum Optics. We showed that the amplitude of the anomalous correlation peak is expected to scale linearly with the inverse of what is called the average mode occupancy, {\it i.e.} the average number of photons per mode. In atomic physics, the analog to the average mode occupancy is the momentum density, {\it i.e.} the average number of atoms in a certain mode $\bm{k}$.
+We now turn to analyzing the amplitude of the anomalous correlation peaks. As we have seen with the calculations developed in section \ref{sec:amp_parametric}, we can draw an analogy between the Bogoliubov weakly-interacting Bose gas and the non-degenerate parametric amplifier in Quantum Optics. While this analogy is direct if we were to consider correlation between two modes $\bm{k}$ and $-\bm{k}$, our approach is here slightly different as we average the anomalous correlation function over many-modes.
+
+\NOTE{voir avec calculs giulio}
+
+
+We showed that the amplitude of the anomalous correlation peak is expected to scale linearly with the inverse of what is called the average mode occupancy, {\it i.e.} the average number of photons per mode. In atomic physics, the analog to the average mode occupancy is the momentum density, {\it i.e.} the average number of atoms in a certain mode $\bm{k}$.
 
 As explained in \ref{sec:accessing_depletion}, we measure integrated correlation functions over the momentum volume $\Omega_k$. The parameter setting the amplitude we observe is then the average momentum density $\bar{\rho}_{\Omega_k}$ defined as:
 
@@ -418,13 +410,13 @@ We have several possibilities to change the value of $\bar{\rho}_{\Omega_k}$:
 
 \begin{itemize}
     \item Change the experimental parameters to load a different target total atom number $\NBEC$ in the optical lattice.
-    \item ``Artificially'' change the total atom number $\NBEC$ by changing the target atom number when doing the data post-selection (see \ref{sec:post_selec}).
+    \item Change the total atom number $\NBEC$ in the post-selection (see \ref{sec:post_selec}).
     \item Change the bounds of the integration volume $\Omega_k$.
 \end{itemize}
 
 We prepare 4 data sets using a combination of these 3 possibilities. We perform the experiment with a target loaded atom number $\NBEC=[2.5,5,10] \times 10^3$, and extract an additional set with $\NBEC=3.5 \times 10^3$ from the data intended for $\NBEC = 5 \times 10^3$ by changing the post-selection criterion. We also reduce $\Omega_k$ to momenta between $k_{\rm{min}} = 0.3 \ k_d$ and $k_{\rm{max}} = 0.7 \ k_d$, {\it i.e.} to a region where the depletion is lower. We thus reduce $\bar{\rho}_{\Omega_k}$ to observe higher amplitude values in hope of observing a clear violation of the Cauchy-Schwarz inequality (see \ref{sec:cs_inequality}).
 
-The results are plotted on Fig.-\ref{fig:amplitude_vs_rhob} alongside the normal correlations amplitude for comparison. The horizontal error bars are the same as for Fig.-\ref{fig:width} while the vertical error bars are obtained from the fit error. As expected, we observe a nice linear scaling of the anomalous amplitude with the inverse average density. On the other side, changing $1/\rhob$ does not change the chaotic nature of the system statistics, we thus observe $\gtwo_N (\bm{0})=2$ independently of the value of $\rhob$. Once again, the amplitudes were corrected of transverse integration effects as shown on Fig.-\ref{fig:eta_vs_int_kmk}. Note that the normal correlations amplitude is not shown for the point at the lowest average density as the amplitude does not increase at lower densities, resulting in a decrease of the signal-to-noise ratio.
+The results are plotted on Fig.-\ref{fig:amplitude_vs_rhob} alongside the normal correlations amplitude for comparison. The horizontal error bars are the same as for Fig.-\ref{fig:width} while the vertical error bars are obtained from the fit error. We observe a linear scaling of the anomalous amplitude with the inverse average density. On the other side, changing $1/\rhob$ does not change the chaotic nature of the system statistics, we thus observe $\gtwo_N (\bm{0})=2$ independently of the value of $\rhob$. Once again, the amplitudes were corrected of transverse integration effects as shown on Fig.-\ref{fig:eta_vs_int_kmk}. Note that the normal correlations amplitude is not shown for the point at the lowest average density as the amplitude does not increase at lower densities, resulting in a decrease of the signal-to-noise ratio.
 
 \begin{figure}
     \centering
@@ -460,10 +452,10 @@ For the data set $\NBEC=5 \times 10^3$, $f_c=84 \%$, we find that we detect on a
 
 \noindent This equation can be understood as follows. We initially have a given number of depleted atoms in $\Omega_k$ that we detect only a fraction of because of the MCP detection efficiency. This number is $N_{\Omega_k}$. In all these atoms, only the fraction of quantum depleted ones $\alpha_Q$ will be \kmk paired. In addition, we miss some pairs when detecting only one atom of the pair because of the detection efficiency, hence the addition of $\alpha_{\rm{MCP}}$ in the formula.
 
-We use equation \ref{eq:Npairs} to evaluate $\alpha_Q$ and find $\alpha_Q \simeq 1.6 \%$. Using a $T=0$ Gutzwiller approach (see Chapter \ref{sec:chapter_2} (\NOTE{verifier quand le chapitre 2 est fait})), we estimate the quantum depletion to be $5\%$ and infer that the thermal depletion must then be $\simeq 10\%$ as the overall condensed fraction is $f_c=84 \%$. This would mean that we should rather have $\alpha_Q \simeq 33 \%$, so more than an order of magnitude larger than our experimental measurement. We perform the same measurements for data sets with different total atom numbers with the results shown in Table-\ref{tab:nb_pairs}, and observe that the value of $\alpha_Q$ does not significantly change. Finding a clear explanation for this discrepancy remains an open question and would require an extensive theoretical work far beyond the scope of this thesis. We can however suggests a few possible explanations:
+We use equation \ref{eq:Npairs} to evaluate $\alpha_Q$ and find $\alpha_Q \simeq 1.6 \%$. Using a $T=0$ Gutzwiller approach (see \ref{sec:gutzwiller}), we estimate the quantum depletion to be $5\%$ and infer that the thermal depletion must then be $\simeq 10\%$ as the overall condensed fraction is $f_c=84 \%$. This would mean that we should rather have $\alpha_Q \simeq 33 \%$, so more than an order of magnitude larger than our experimental measurement. We perform the same measurements for data sets with different total atom numbers with the results shown in Table-\ref{tab:nb_pairs}, and observe that the value of $\alpha_Q$ does not significantly change. Finding a clear explanation for this discrepancy remains an open question and would require an extensive theoretical work far beyond the scope of this thesis. We can however suggests a few possible explanations:
 
 \begin{itemize}
-    \item While we estimate the total quantum depletion, we cannot count all the pairs as some of them are located in the region of the BEC removed from the analysis. At the moment, we do not have the theoretical tools necessary to determine how much pairs are removed that way.
+    \item While we estimate the total quantum depletion, we cannot count all the pairs as some of them are located in the region of the BEC removed from the analysis. At the moment, we do not have the theoretical tools necessary to determine how many pairs are removed that way.
     \item Some of the pairs that we detect are located close to the edge of the first Brillouin where the relation dispersion becomes flat. It is then not so clear whether Bogoliubov's theory predictions for an homogeneous gas should hold, as the Bogoliubov dispersion relation is an increasing function of the momentum.
     % \item The balance between thermal and quantum depletion depends from the momentum $k$. It is then not so clear of what this number should be averaged over $\Omega_k$. In addition, a significant amount of \kmk pairs can be located in the low $k$ region that we remove from the analysis, thus reducing the number of detected pairs.
     % \item Dispersion relation of the lattice \NOTE{COMPLETER}
@@ -485,7 +477,7 @@ We use equation \ref{eq:Npairs} to evaluate $\alpha_Q$ and find $\alpha_Q \simeq
 
 
 
-In conclusion, the observed linear scaling is consistent with what is predicted by Bogoliubov theory and gives us another argument showing that the observed anomalous correlation signal is linked to the quantum depletion. The absolute value of the amplitude cannot however be understood in the framework of the Bogoliubov theory that does not account for all the specificities of our experiment, such as the presence of the lattice. In fact, evaluating this number is currently beyond what is possible to calculate, making our experiment an example of quantum simulation.
+In conclusion, the observed linear scaling is consistent with what is predicted by Bogoliubov theory and gives us another argument showing that the observed anomalous correlation signal is linked to the quantum depletion. The absolute value of the amplitude cannot however be understood in the framework of the Bogoliubov theory \cite{butera2020} that does not account for all the specificities of our experiment, such as the presence of the lattice. In fact, evaluating this number is currently beyond what is possible to calculate, making our experiment an example of quantum simulation.
 
 
 \section{Towards measuring entanglement}
@@ -519,7 +511,7 @@ As detailled in paragraph \ref{sec:correlated_pop} of Chapter \ref{sec:chapter_1
 What can we tell of the statistics of the number difference in two modes $\bm{k}$ and $\bm{k}'$, $N(\bm{k}) - N(\bm{k}')$? If the populations in the two modes are totally uncorrelated, the difference of two independent Poissonian random variables is Poissonian as well and we then get:
 
 \begin{equation}
-    \sigma_{N(\bm{k})-N(\bm{k}')} = \sqrt{\mean{N(\bm{k})-N(\bm{k}')}}
+    \sigma_{N(\bm{k})-N(\bm{k}')}^2 = \mean{N(\bm{k})-N(\bm{k}')}
 \end{equation}
 
 If we now chose $\bm{k}'=-\bm{k}$, we expect the \kmk correlations present in the depletion to reduce the fluctuations of the number difference, yielding what is called a \textbf{sub-Poissonian} law. Just like the \kmk correlation signal is lost with temperature, we expect that the reduction of the number difference fluctuations becomes smaller and smaller as temperature increases, increasing the fraction of thermally, uncorrelated, depleted atoms. 
@@ -532,7 +524,7 @@ Our goal is then to measure $\sigma_{N(\bm{k})-N(-\bm{k})}$ and see whether it i
 
 This squeezing parameter to the square is simply the standard deviation of the number difference normalized by the expected standard deviation for uncorrelated variables. Therefore, we expect $\xi^2_{\bm{k},\bm{k}'}=1$ if there are no correlations between modes $\bm{k}$ and $\bm{k'}$, and $\xi^2_{\bm{k},\bm{k}'} < 1$ if the modes populations are correlated.
 
-To evaluate $\xi^2$, we record for each experimental shots the number of detected atoms in cubic boxes paving the entire integration volume $\Omega_k$. The boxes need to be quite large in order to have enough atoms in each boxes. We chose a size of $(0.3 \ k_d)^3$. The average numbers of detected atoms per shot are $\sim 100$, $\sim 240$ and $\sim 360$ for the data sets with $f_c=84\%$, $f_c=55\%$ and $f_c=29\%$ respectively. Having access to the atom number for each of the $\sim 2000$ runs at various values of $\bm{k}$, we compute the squeezing parameter between different pairs of boxes as illustrated on Fig.-\ref{fig:squeezing}, either correlated or uncorrelated for reference. The measured values of $\xi^2$ are averaged over all possible pairs of boxes for a given configuration. The uncertainty on $\xi^2$ is evaluated statistically on all the $\xi^2$ values obtained on the 62 different boxes pairs and defined as the standard error.
+To evaluate $\xi^2$, we record for each experimental shots the number of detected atoms in cubic boxes paving the entire integration volume $\Omega_k$. Intuitively, we could set the size of the boxes to match that of a mode. If we define \NOTE{definir avant?} the volume of a mode as the volume of a sphere whose radius is the two particle correlation length $l_c$ \NOTE{ref} defined as $l_c = \sqrt{2} \sigma_N$, we obtain that there are $N_{\rm{mode}} = 1.5 \times 10^4$ modes in $\Omega_k$, \ie on average $\sim 0.01 \ \text{atoms/mode/run}$ (for $\NBEC=5 \times 10^3$) which is way to small to have proper statistics to evaluate $\xi^2$. We then chose a size of $(0.3 \ k_d)^3$. The average numbers of detected atoms per shot are $\sim 100$, $\sim 240$ and $\sim 360$ for the data sets with $f_c=84\%$, $f_c=55\%$ and $f_c=29\%$ respectively, meaning that the average number of atom per box are $0.8$, $1.92$ and $2.88$ respectively. Having access to the atom number for each of the $\sim 2000$ runs at various values of $\bm{k}$, we compute the squeezing parameter between different pairs of boxes as illustrated on Fig.-\ref{fig:squeezing}, either correlated or uncorrelated for reference. The measured values of $\xi^2$ are averaged over all possible pairs of boxes for a given configuration. The uncertainty on $\xi^2$ is evaluated statistically on all the $\xi^2$ values obtained on the 62 different boxes pairs and defined as the standard error.
 
 \begin{figure}
     \centering
@@ -541,7 +533,7 @@ To evaluate $\xi^2$, we record for each experimental shots the number of detecte
     \label{fig:squeezing}
 \end{figure}
 
-The results are summarized in Table \ref{tab:squeezing}. For the low-temperature, high condensed fraction data, we are indeed able to observe a small relative number squeezing within the errorbars. Note that this number squeezing is small compared to that found in discrete (spin) variables experiments \cite{bucker2011,esteve2008squeezing, pezze2018} as it is inherently limited by the uncorrelated thermally depleted atoms and the detection efficiency. For uncorrelated modes, the squeezing parameter is very slightly above 1, highlighting that the correlations indeed reduce the fluctuations of the number difference. For higher temperatures (lower condensed fraction), no relative number squeezing is observed as the correlations are drowned out. In addition, we see that the squeezing parameter increases as we increase the temperature. This is due to global atom number fluctuations of the order of $15\%$ in our experiment. At low temperature, there are few detected atoms and the shot noise is thus large and dominating the total atom number fluctuations. On the opposite, at higher temperatures, the number of depleted atoms increases, reducing the shot noise. The contribution of total atom number fluctuations is then not negligible anymore and increase the fluctuations of the number difference, higher than what is expected for a Poisson law, explaining why we observe $\xi^2 > 1$.
+The results are summarized in Table \ref{tab:squeezing}. For the low-temperature, high condensed fraction data, we are indeed able to observe a small relative number squeezing within the errorbars. Note that this number squeezing is small compared to that found in discrete (spin) variables experiments \cite{bucker2011,esteve2008squeezing, pezze2018} as it is inherently limited by the uncorrelated thermally depleted atoms and the detection efficiency. For uncorrelated modes, the squeezing parameter is very slightly above 1, highlighting that the correlations indeed reduce the fluctuations of the number difference. For higher temperatures (lower condensed fraction), no relative number squeezing is observed as the correlations are drowned out. In addition, we see that the squeezing parameter increases as we increase the temperature. This is due to global atom number fluctuations of the order of $15\%$ in our experiment. At low temperature, there are few detected atoms er box and the shot noise is thus large and dominating the total atom number fluctuations. On the opposite, at higher temperatures, the number of depleted atoms increases, reducing the shot noise. The contribution of total atom number fluctuations is then not negligible anymore and increase the fluctuations of the number difference, higher than what is expected for a Poisson law, explaining why we observe $\xi^2 > 1$.
 
 \begin{table}[ht!]
     \centering
@@ -584,9 +576,9 @@ We have previously shown in \ref{sec:cs_inequality} how the Cauchy-Schwarz inequ
     \gtwo_A (\bm{k},-\bm{k}) \leq \gtwo_N (\bm{k},\bm{k})
 \end{equation}
 
-We thus have a clear violation of the Cauchy-Schwarz inequality with our experimental data on 3 different data points, with a maximum violation of $4.27(8) > 2$ (Fig.-\ref{fig:amplitude_vs_rhob}). This adds up to the list of quantum behaviour signatures in the anomalous correlation signal.
+We thus have a clear violation of the Cauchy-Schwarz inequality with our experimental data on 3 different data points, with a maximum violation of $5.27(8) > 2$ (Fig.-\ref{fig:amplitude_vs_rhob}). This adds up to the list of quantum signatures in the anomalous correlation signal.
 
-As discussed in \ref{sec:cs_inequality}, violating the Cauchy-Schwarz inequality equals fulfilling the Busch-Parentani criterion to prove entanglement, provided that certain conditions are fulfilled. The first one is that the statistics of the system must be chaotic. This is something that we have experimentally verified by measuring $\gtwo_N (\bm{0}) = 2$. The second condition is to have $\langle a^{\dagger}({\bm k}) a({-\bm k}) \rangle=0$. While this is true in Bogoliubov theory and would be reasonable to assume in our experiment, this is not something that we have experimentally measured and that therefore forbids us to claim that we observe entanglement in momentum space. While we do not have at the moment the experimental tools necessary to measure $\langle a^{\dagger}({\bm k}) a({-\bm k}) \rangle$, proving the presence of entanglement in momentum space in many-body ground states would be a significant result that motivates the improvement of our experimental setup in the near future.
+As discussed in \ref{sec:cs_inequality}, violating the Cauchy-Schwarz inequality equals fulfilling the Busch-Parentani criterion to prove entanglement, provided that certain conditions are fulfilled. The first one is that the statistics of the system must be thermal chaotic. This is something that we have experimentally verified by measuring $\gtwo_N (\bm{0}) = 2$. The second condition is to have $\langle a^{\dagger}({\bm k}) a({-\bm k}) \rangle=0$. While this is true in Bogoliubov theory and would be reasonable to assume in our experiment, this is not something that we have experimentally measured and that therefore forbids us to claim that we observe entanglement in momentum space. While we do not have at the moment the experimental tools necessary to measure $\langle a^{\dagger}({\bm k}) a({-\bm k}) \rangle$, proving the presence of entanglement in momentum space in many-body ground states would be a significant result that motivates the improvement of our experimental setup in the near future.
 
 
 
@@ -617,8 +609,8 @@ As discussed in \ref{sec:cs_inequality}, violating the Cauchy-Schwarz inequality
 We have reached the end of our investigation of two-body correlation in the depletion of weakly interacting Bose gases. To sum things up, let us remind the main steps of the work conducted during this thesis and its main results.
 
 \begin{itemize}
-    \item We decided to try to detect experimentally the \kmk pairs of the quantum depletion predicted by the Bogoliubov theory of the weakly-interacting Bose gas, as this phenomenon is one of the conceptually simplest non-trivial, many-body, quantum correlation effect. By conducting this study, we hope to better understand the physics of many-body ground states and how correlations and entanglement emerge through the combined effects of interactions and quantum fluctuations.
-    \item We based our experimental procedure on an experimental setup producing $\He$ BECs  implementing a 3D single-atom resolved electronic detection technique. We decided to use an optical lattice to be in the low-temperature regime dominated by interactions to ensure a sufficient level of quantum depletion so that the \kmk pairs can be properly detected.
+    \item We decided to try to detect experimentally the \kmk pairs of the quantum depletion predicted by the Bogoliubov theory of the weakly-interacting Bose gas, as this phenomenon is one of the conceptually simplest non-trivial, many-body, quantum correlation effect. By conducting this study, we hope to better understand the physics of many-body equilibrium states and how correlations and entanglement emerge through the combined effects of interactions and quantum fluctuations.
+    \item We based our experimental procedure on an experimental setup producing $\He$ BECs  implementing a 3D single-atom resolved electronic detection technique. We decided to use an optical lattice to enter the low-temperature regime dominated by interactions to ensure a sufficient level of quantum depletion so that the \kmk pairs can be properly detected.
     \item We completed previous benchmarking measurements \cite{cayla2018single} by measuring two-body time-of-flight collisions with large number of atoms in the lattice. From this, we were able to conclude that two-body collisions are negligible for the typical number of atoms used in our correlation measurement experiments. This validates the ballistic relation linking the momentum of the in-trap to their detected position after the TOF.
     \item We measured the temperature of the gas at different amplitudes of the lattice potential to certify the adiabatic preparation of the system.
     \item We implemented a two-photon Raman transfer scheme to replace the previous RF transfer, improving the detection efficiency by a factor 2.
@@ -629,12 +621,12 @@ We have reached the end of our investigation of two-body correlation in the depl
         \item The signal is lost with temperature, contrary to the normal correlation signal that reveal the chaotic statistics of the system, unaffected by temperature.
         \item The width of the anomalous correlation peak is larger than for normal correlations $\sigma_A > \sigma_N$ and matches the numerical calculations of \cite{butera2020} when accounting for center-of-mass fluctuations.
         \item $\gtwo_A(\bm{0})$ scales linearly with the inverse average momentum density $\bar{\rho}_{\Omega_k}$, while $\gtwo_N(\bm{0})$ remains constant.
-        \item We get relative number squeezing between correlated modes.
-        \item We violate Cauchy-Schwarz inequality by observing $\gtwo_A(\bm{0}) > \gtwo_N(\bm{0})$ by more than a factor 2.
+        \item We get relative number squeezing between correlated boxes at opposite momenta.
+        \item We violate Cauchy-Schwarz inequality by observing $\gtwo_A(\bm{0}) \geq \gtwo_N(\bm{0})$.
         
     \end{itemize}
 \end{itemize}
 
-This experimental observation is an encouraging first step towards more ambitious correlation measurements. One of our short term objective would be to study the Quantum Critical Point of the Mott transition and look for complex correlation patterns involving several particles not predicted by simple theoretical treatment such as Bogoliubov theory. As there is currently no theory describing this kind of physics, this represents quite a fascinating prospect that would really put our experiment in the field of quantum simulation. In addition, a more long term prospect would be to improve our experimental setup to bring the fermionic isotope $^3 \mathrm{He}^*$ to quantum degeneracy to perform momentum correlations measurements with fermions and study BEC-BCS crossover physics. A notably important result would be to observe the \kmk pairing of a Cooper pair \cite{cooper1956bound}. Observing the \kmk pairing of the quantum depletion shows us that we are indeed capable of seeing \kmk pairing with our experiment and constitutes a small step towards this result.
+This experimental observation is an encouraging first step towards more ambitious correlation measurements. One of our short term objective is to study the Mott transition and look for complex correlation patterns involving several particles not predicted by simple theoretical treatment such as Bogoliubov theory. As there is currently no theory describing this kind of physics, this represents quite a fascinating prospect that would really put our experiment in the field of quantum simulation. In addition, a more long term prospect would be to improve our experimental setup to bring the fermionic isotope $^3 \mathrm{He}^*$ to quantum degeneracy to perform momentum correlations measurements with fermions and study BEC-BCS crossover physics. A notably important result would be to observe the \kmk pairing of a Cooper pair \cite{cooper1956bound}. Observing the \kmk pairing of the quantum depletion shows us that we are indeed capable of seeing \kmk pairing with our experiment and constitutes a small step towards this result.
 
 
