@@ -19,11 +19,11 @@
 
 The main challenge of quantum many-body physics is to understand how ensembles of interacting individual particles behave. In particular, many meaningful information can be obtained by studying how the interactions between the different particles induce \textbf{correlations} in the degrees of freedom of the particles, {\it e.g.} their position, their momentum or their spin. To understand and quantify these correlations, physicists have used the mathematical formalism of \textbf{correlation functions} that we will present in this chapter. 
 
-Historically, the first field of physics that developed and made an extensive use of correlation functions was the field of Optics, and more specifically Quantum Optics in the 50s-60s. The interest for correlation functions was sparked by the Hanbury Brown and Twiss experiment of 1954 measuring detection correlations between two separate photo-detectors. Trying to provide a quantum explanation of the results of this experiment in terms of the detection of individual photons led R. J. Glauber to develop its theory of photodetection \cite{glauber1963quantum} using correlation functions in his seminal paper of 1963. This theory was then later adapted to study more complex systems where the particles, for instance atoms, are interacting. 
+Historically, the first field of physics that developed and made an extensive use of correlation functions was the field of Optics, and more specifically Quantum Optics in the 50s-60s. The interest for correlation functions was sparked by the Hanbury Brown and Twiss experiment of 1954 measuring intensity correlations in the light emitted by a star between two separate photo-detectors. Trying to provide a quantum explanation of the results of this experiment in terms of the detection of individual photons led R. J. Glauber to develop its theory of photodetection \cite{glauber1963quantum} using correlation functions in his seminal paper of 1963. This theory was then later adapted to study more complex systems where the particles, for instance atoms, are interacting. 
 
-One of the conceptually simplest example of such an interacting many-body system is the weakly-interacting homogeneous Bose gas, which describes an ensemble of bosons with weak contact and repulsive interactions trapped in a box potential. This system shows the great advantage that it can be theoretically described with a fairly great accuracy at the price of a few approximations that were suggested by N. Bogoliubov in 1947 \cite{bogoliubov1947}. One of the great success of this theory was to predict the existence of the quantum depletion that was later showed to be made of \kmk correlated pair of atoms by Lee Huang and Yang \cite{lee1957} in 1957.
+One of the conceptually simplest example of such an interacting many-body system is the weakly-interacting homogeneous Bose gas, which describes an ensemble of bosons with weak contact and repulsive interactions in an homogeneous box potential. This system shows the great advantage that it can be theoretically described with a fairly great accuracy at the price of a few approximations that were suggested by N. Bogoliubov in 1947 \cite{bogoliubov1947}. One of the great success of this theory was to predict the existence of the quantum depletion that was later showed to be made of \kmk correlated pair of atoms by Lee Huang and Yang \cite{lee1957} in 1957.
 
-However, an experimental realisation of such a system proves to be rather difficult because of the \textbf{homogeneous} aspect of the theory that is hard to reproduce. As a matter of fact, experiments often require an harmonic potential to trap the atoms in one place, therefore breaking the homogeneity of the system and making theoretical approaches more complicated. However, recent works \cite{butera2020,mathey2009noise,toth2008theory} have aimed at characterizing correlation functions within the frame of Bogoliubov theory for inhomogeneous trapped systems to provide theoretical ground for comparison with experiments. 
+However, an experimental realisation of such a system proves to be rather difficult because of the \textbf{homogeneous} aspect of the theory that is hard to reproduce experimentally. As a matter of fact, experiments often require an harmonic potential to trap the atoms in one place, therefore breaking the homogeneity of the system and making theoretical approaches more complicated. However, recent works \cite{butera2020,mathey2009noise,toth2008theory} have aimed at characterizing correlation functions within the frame of Bogoliubov theory for inhomogeneous trapped systems to provide theoretical ground for comparison with experiments. 
 
 In this chapter, we will then first introduce the concept of correlation functions by studying the historical and founding experiments of Optics and Quantum Optics. In a second time, we will show how this formalism can be extended to atomic physics and apply it to the Bogoliubov theory of the homogeneous weakly-interacting Bose gas of which we will present the main lines. Finally, we will present some of the principal results of the work \cite{butera2020} extending the Bogoliubov theory to inhomogeneous systems like we can produce with our experiment and discuss the experimental criteria that should be fulfilled to experimentally observe the \kmk correlations of the quantum depletion. 
 
@@ -32,7 +32,7 @@ In this chapter, we will then first introduce the concept of correlation functio
 
 \section{Correlation functions in Classical and Quantum Optics}
 
-Correlation functions are a mathematical object characterizing the the statistical correlations between random variables. They are defined from the concept of statistical average or expected value of random variable in mathematics which is intuitively understood as the value that we will get on average if we measure the random variable a large number of times. In the following, the statistical average of a random variable $X$ will be written $\mean{X}$.
+In the most general sense, correlation functions are a mathematical object characterizing the the statistical correlations between random variables. They are defined from the concept of statistical average or expected value of a random variable in mathematics which is intuitively understood as the value that we will get on average if we measure the random variable a large number of times. In the following, the statistical average of a random variable $X$ will be written $\mean{X}$.
 
 The simplest correlation function correlating two random variables $X_1$ and $X_2$ simply writes:
 
@@ -121,13 +121,13 @@ I(x)= 2 I_0 \Big(1+\cos(\omega_0 \frac{2x}{c}) \Big)
 
 \noindent with $\tau_c$ a time constant called the \textbf{coherence time}.
 
-The first-order correlation function now writes:
+The first-order correlation function is then now:
 
 \begin{equation}
     g^{(1)} (\tau) = \mean{e^{i(\phi(t)-\phi(t-\tau))}} e^{i \omega_0 \tau}
 \end{equation}
 
-\noindent We then need to evaluate $\langle e^{i(\phi(t)-\phi(t-\tau))} \rangle$. If the phase has not changed between $t-\tau$ and $t$, we simply have $\langle e^{i(\phi(t)-\phi(t-\tau))} \rangle=1$. On the contrary, if the phase has changed in this time interval, $\langle e^{i(\phi(t)-\phi(t-\tau))} \rangle=0$ as the phase jumps are independent. We therefore need to determine the probability $P_0(t)$ that no phase jump occurs between $t=0$ and a time $t$. The probability for the phase to stay constant up to a time $t+ \mathrm{d}t$ writes:
+\noindent We therefore need to evaluate $\langle e^{i(\phi(t)-\phi(t-\tau))} \rangle$. If the phase has not changed between $t-\tau$ and $t$, we simply have $\langle e^{i(\phi(t)-\phi(t-\tau))} \rangle=1$. On the contrary, if the phase has changed in this time interval, $\langle e^{i(\phi(t)-\phi(t-\tau))} \rangle=0$ as the phase jumps are independent. We therefore need to determine the probability $P_0(t)$ that no phase jump occurs between $t=0$ and a time $t$. The probability for the phase to stay constant up to a time $t+ \mathrm{d}t$ writes:
 
 
 \begin{equation}
@@ -153,7 +153,7 @@ The first-order correlation function now writes:
     g^{(1)} (\tau) = (1 \times e^{-t/\tau_c} + 0 \times (1-e^{-t/\tau_c})) e^{i \omega_0 \tau} = e^{-t/\tau_c}  e^{i \omega_0 \tau}
 \end{equation}
 
-The visibility of the interference pattern therefore decays exponentially on the scale set by $\tau_c$. We can keep complexifying the problem and consider a source with two monochromatic components $\omega_1$ and $\omega_2$. The new light field writes:
+The visibility of the interference pattern therefore decays exponentially on the scale set by $\tau_c$. We can keep complexifying the problem and consider a source with two monochromatic components $\omega_1$ and $\omega_2$. The new light field is now:
 
 \begin{equation}
     E(t)= E_1 e^{i (\omega_1 t + \phi_1(t))} + E_2 e^{i (\omega_2 t+ \phi_2(t))} 
@@ -296,7 +296,7 @@ In a nutshell, the second-order normalized correlation function takes the simple
 
 \noindent The size of the source can thus be measured by progressively increasing the distance between the two detectors and measuring the length scale on which the second order correlation function decreases. This was done successfully by Hanbury Brown and Twiss \cite{brown1956test} to measure the size of Sirius in 1956.
 
-While the calculations are rather straightforward in a classical where light is described as a wave, the interpretation of the Hanbury Brown and Twiss experiment in terms of individual particles, \ie from a Quantum Optics point of view, sparked many debates that lead to a deeper understanding of the phenomena involved. If we take a look at what happens for $\bm{r}_1=\bm{r}_2$, we see that a peculiar phenomenon occurs. The normalized second-order correlation function can be interpreted as the probability to detect simultaneously two photons on the detector located at $\bm{r}_1$ and $\bm{r}_2$, normalized by the probability to detect them independently. Therefore, since $\gtwo (\bm{r}_1,\bm{r}_2)=2$ for $\bm{r}_1=\bm{r}_2$, the probability to detect two photons at the same position is twice as high as it is to detect them independently! It was only after a few years that an explanation was suggested by Fano in 1961 \cite{fano1961quantum}. Considering a pair of source points A and B and two detectors 1 and 2, Fig-.\ref{fig:HBT_scheme} illustrates the two possibilities for a joint detection of two photons on the couple of detectors. For indistinguishable photons, the paths amplitudes interfere constructively resulting in a joint detection probability higher than that for independent events. While the interference effect is averaged out considering all the possible pairs of elementary emitters in the source, it can be observed when the distance between the two detectors is very close to zero, as observed by Hanbury Brown and Twiss. Interestingly, the interferences are destructive for fermions, resulting in a reduced probability of joint detection, also referred as \textbf{anti-bunching}, an effect than cannot be explained classically contrary to the Hanbury Brown and Twiss effect. 
+While the calculations are rather straightforward in a classical model where light is described as a wave, the interpretation of the Hanbury Brown and Twiss experiment in terms of individual particles, \ie from a Quantum Optics point of view, sparked many debates that lead to a deeper understanding of the phenomena involved. If we take a look at what happens for $\bm{r}_1=\bm{r}_2$, we see that a peculiar phenomenon occurs. The normalized second-order correlation function can be interpreted as the probability to detect simultaneously two photons on the detector located at $\bm{r}_1$ and $\bm{r}_2$, normalized by the probability to detect them independently. Therefore, since $\gtwo (\bm{r}_1,\bm{r}_2)=2$ for $\bm{r}_1=\bm{r}_2$, the probability to detect two photons at the same position is twice as high as it is to detect them independently! It was only after a few years that an explanation was suggested by Fano in 1961 \cite{fano1961quantum}. Considering a pair of source points A and B and two detectors 1 and 2, Fig-.\ref{fig:HBT_scheme} illustrates the two possibilities for a joint detection of two photons on the couple of detectors. For indistinguishable photons, the paths amplitudes interfere constructively resulting in a joint detection probability higher than that for independent events. While the interference effect is averaged out considering all the possible pairs of elementary emitters in the source, it can be observed when the distance between the two detectors is very close to zero, as observed by Hanbury Brown and Twiss. Interestingly, the interferences are destructive for fermions, resulting in a reduced probability of joint detection, also referred as \textbf{anti-bunching}, an effect than cannot be explained classically contrary to the Hanbury Brown and Twiss effect. 
 
 \begin{figure}
     \centering
@@ -353,11 +353,11 @@ To show the effect of $\hat{a}_{l}$ and $\hat{a}_{l}^{\dagger}$, we introduce th
 
 \noindent with $\hbar \omega_l$ being the energy of a photon in mode $l$.
 
-\subsubsection{Correlation functions}
+\subsubsection{n-th order correlation functions}
 
-As we have seen in the last paragraphs, there is a strong connection between correlation functions and the notion of coherence. Motivated by the measurement of cross-correlations between two photodetectors by Hanbury Brown and Twiss, Roy J. Glauber introduced in a famous paper of 1963 \cite{glauber1963quantum} the notion of $n$-th order coherence in the formalism of Quantum Optics and linked it to $n$-th order correlation functions, as we will see now.
+As we have seen in the last paragraphs, there is a strong connection between correlation functions and the notion of coherence. Motivated by the measurements of Hanbury Brown and Twiss, Roy J. Glauber introduced in a famous paper of 1963 \cite{glauber1963quantum} the notion of $n$-th order coherence in the formalism of Quantum Optics and linked it to $n$-th order correlation functions, as we will see now.
 
-We have discussed so far correlation functions of up to the second order. The concept of correlation functions can be extended to any order $n$ to describe the probability of joint detection of $n$ photons at a set of positions and times $\{(\bm{r}_1,t_1),(\bm{r}_2,t_2),...,(\bm{r}_n,t_n)\}$: 
+We have discussed so far correlation functions up to the second order. We now study correlation functions can be extended of higher order $n$ describing the probability of joint detection of $n$ photons at a set of positions and times $\{(\bm{r}_1,t_1),(\bm{r}_2,t_2),...,(\bm{r}_n,t_n)\}$: 
 
 \begin{equation}
     G^{(n)}\left(\bm{r}_{1}, t_{1}, ... , \bm{r}_{n}, t_{n}\right)=\left\langle \hat{\bm{E}}^{(-)}\left(\bm{r}_{1}, t_{1}\right) ... \hat{\bm{E}}^{(-)}\left(\bm{r}_{n}, t_{n}\right) \hat{\bm{E}}^{(+)}\left(\bm{r}_{n}, t_{n}\right) ... \hat{\bm{E}}^{(+)}\left(\bm{r}_{1}, t_{1}\right)\right\rangle
@@ -433,14 +433,14 @@ To understand how the Hanbury Brown and Twiss effect arises, we need to introduc
     \label{fig:light_statistics}
 \end{figure}
 
-This is formalism is particularly useful to describe light sources made of a large number of independent individual emitters. Let us say that the first emitter brings the field in state $\ket{\alpha_1}$, the second emitter in state $\ket{\alpha_2}$ etc.. It can be shown (\cite{glauber1963coherent}) that for a large number of individual emitters $j$, the probability distribution for the complex amplitude $\alpha=\alpha_1 + \alpha_2 + ... + \alpha_j$ follows a Gaussian law:
+This formalism is particularly useful to describe light sources made of a large number of independent individual emitters. Let us say that the first emitter brings the field in state $\ket{\alpha_1}$, the second emitter in state $\ket{\alpha_2}$ etc.. It can be shown (\cite{glauber1963coherent}) that for a large number of individual emitters $j$, the probability distribution for the complex amplitude $\alpha=\alpha_1 + \alpha_2 + ... + \alpha_j$ follows a Gaussian law:
 
 \begin{equation}
     P(\alpha)= \frac{1}{\pi \mean{n}} e^{-\frac{|\alpha|^2}{\mean{n}}}
     \label{eq:p_alpha}
 \end{equation}
 
-\noindent where $\mean{n}$ is the mean value of $|\alpha|^2$ and represents the number of number of energy quanta in the mode. From this, we use equation \ref{eq:coherent_state} to write the density matrix of the system in the basis of the number states:
+\noindent where $\mean{n}$ is the mean value of $|\alpha|^2$ and represents the number of energy quanta in the mode. From this, we use equation \ref{eq:coherent_state} to write the density matrix of the system in the basis of the number states:
 
 \begin{equation}
     \hat{\rho}=\frac{1}{1+\langle n\rangle} \sum_{m=0}^{\infty}\left(\frac{\langle n\rangle}{1+\langle n\rangle}\right)^{m}|m\rangle\langle m|
@@ -528,7 +528,7 @@ We will now increase the complexity by adding non-linearity in the systems we st
 This time-dependent problem is best solved in the interaction picture, {\it i.e.} where the time dependence is carried by both operators and states. The interaction Hamiltonian then writes:
 
 \begin{equation}
-    H_I=i \hbar \chi (\hat{a}_1^{\dagger}  \hat{a}_2^{\dagger} - \hat{a}_1 \hat{a}_2)
+    \hat{H}_I(t)=i \hbar \chi (\hat{a}_1^{\dagger}(t)  \hat{a}_2^{\dagger}(t) - \hat{a}_1(t) \hat{a}_2(t))
 \end{equation}
 
 \noindent The counterpart to the Schrödinger equation in the interaction picture is the Heisenberg equation of motion:
@@ -601,6 +601,7 @@ We have seen that the pairing process induces the presence of cross-correlations
     \langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \hat{a}_1(t) \hat{a}_2(t) \rangle = \langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \rangle \langle \hat{a}_1(t) \hat{a}_2(t) \rangle +  \langle \hat{a}_1^{\dagger}(t) \hat{a}_1(t) \rangle \langle \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \rangle \\
     +  \langle \hat{a}_1^{\dagger}(t) \hat{a}_2(t) \rangle \langle \hat{a}_2^{\dagger}(t) \hat{a}_1(t) \rangle
 \end{split}
+\label{eq:wick_NDPA}
 \end{equation}
 
 \noindent Working with initial vacuum conditions, we compute the different correlators:
@@ -677,7 +678,7 @@ In fact, violating the Cauchy-Schwarz inequality can be enough to demonstrate en
     \label{eq:busch-parentani}
 \end{equation}
 
-\noindent From equation \ref{eq:wick_bogo}, we get
+\noindent From equation \ref{eq:wick_NDPA}, we get
 
 \begin{equation}
     \langle \hat{a}^{\dagger}_{1} \hat{a}^{\dagger}_{2} \hat{a}_{1} \hat{a}_{2} \rangle = | \langle \hat{a}^{\dagger}_{1} \hat{a}^{\dagger}_{2} \rangle |^2 + \hat{n}_1 \hat{n}_2 + \langle \hat{a}^{\dagger}_{1} \hat{a}_{2} \rangle \langle \hat{a}^{\dagger}_{2} \hat{a}_{1} \rangle
@@ -747,7 +748,7 @@ We now go back to the problem of the weakly-interacting Bose gas of $N$ atoms wi
     \label{eq:bogo_general}
 \end{equation}
 
-\noindent with $\delta\left(\textbf{r}-\textbf{r}^{\prime}\right)$ the contact interaction potential and $g=\dfrac{4 \pi \hbar^2 a_s}{m}$ is the strength of the interactions with $a_s$ the s-wave scattering length \cite{landau2013quantum}. The approximation of contact interactions is reasonable in the case where the scattering length is much smaller than the distance between atoms, $|a| n^{1/3} \ll 1$, as it is the case in our experiment. If the gas is homogeneous and contained within a box of volume $V$, the field operator $\hat{\psi}$ can be written in the plane wave basis:
+\noindent with $\delta\left(\textbf{r}-\textbf{r}^{\prime}\right)$ the contact interaction potential and $g=\dfrac{4 \pi \hbar^2 a_s}{m}$ is the strength of the interactions with $a_s$ the s-wave scattering length \cite{landau2013quantum}. The approximation of contact interactions is reasonable in the case where the scattering length is much smaller than the distance between atoms, $|a| n^{1/3} \ll 1$, as it is the case in our experiment. For a homogeneous gas contained within a box of volume $V$, the field operator $\hat{\psi}$ can be written in the plane wave basis:
 
 \begin{equation}
     \hat{\psi}(\bm{r})=\frac{1}{\sqrt{V}} \sum_{\bm{k}} \hat{a}_{\bm{k}} e^{i \bm{k} \cdot \bm{r}}
@@ -901,14 +902,16 @@ The common factor with quantum effects is that they usually defy our intuition b
 
 \noindent which is of the same form of the ground-state of the Bardeen-Cooper-Schrieffer theory of supraconductivity \cite{BCS1957}. 
 
-The energy of the many-body ground state of the weakly-interacting Bose gas contains a small correction that corresponds to the presence of the \kmk pairs of the quantum depletion. This small correction is called the Lee-Huang-Yang correction, named after the authors of the seminal 1957 article \cite{lee1957} that first predicted the presence of the \kmk pairs. While there have already been experimental studies confirming the presence of quantum depleted atoms with large momentum \cite{sokol1995,xu2006} and the prediction of the quantum depleted fraction \cite{lopes2017}, the \kmk correlations in the ground-state have not yet been observed.
+The energy of the many-body ground state of the weakly-interacting Bose gas thus contains a small correction that corresponds to the presence of the \kmk pairs of the quantum depletion. This small correction is called the Lee-Huang-Yang correction, named after the authors of the seminal 1957 article \cite{lee1957} that first predicted the presence of the \kmk pairs. 
+
+%While there have already been experimental studies confirming the presence of quantum depleted atoms with large momentum \cite{sokol1995,xu2006} and the prediction of the quantum depleted fraction \cite{lopes2017}, the \kmk correlations in the ground-state have not yet been observed.
 
 This pairing effect is quite reminiscent of the spontaneous parametric down conversion photon pairing effect that we saw in \ref{sec:amp_parametric}. The analogy between the non-degenerate parametric amplifier and the Bogoliubov Hamiltonian, replacing modes 1 and 2 by modes $\bm{k}$ and $-\bm{k}$ will in fact allow us to re-use the majority of the results derived in \ref{sec:amp_parametric} for the \kmk pairs. There is however one crucial difference, which is that the non-degenerate parametric amplifier is an \textbf{out-of-equilibrium}, \textbf{time-dependent} problem contrary to the \textbf{at-rest} weakly-interacting Bose gas. This is in fact the fascinating aspect of the \kmk pairs of the quantum depletion whose existence can only be explained by the effect of quantum fluctuations.
 
 
 % Although we cannot draw a rigorous direct analogy, this kind of effect is reminiscent of other puzzling phenomenon such as Hawking radiation \cite{hawking1974} describing the evaporation of black holes where a pair of correlated photons is produced near the event horizon, or the creation of particle/anti-particle pairs from the vacuum. By studying this \kmk correlation signal, we can therefore study how quantum correlations and possibly entanglement emerges in at-equilibrium quantum many-body systems from the interplay between quantum fluctuations and interactions, which constitutes an exciting prospect that will be the principal motivation of this thesis.
 
-We are thus looking at a system which falls into our general area of interest described in the introduction of this thesis, namely many-body systems with interactions displaying quantum behaviors. The weakly-interacting Bose gas shows the advantage to be one of the conceptually simplest many-body systems for which a theory can be derived as we just have shown. As explained in the beginning of this chapter, many-body systems are often efficiently characterized by correlation functions. Let us now discuss what are the relevant correlation functions to study for the weakly-interacting Bose gas.
+We are thus looking at a system which falls into our general area of interest described in the introduction of this thesis, namely many-body systems with interactions displaying quantum behaviors. The weakly-interacting Bose gas shows the advantage to be one of the conceptually simplest many-body systems for which a theory can be derived as we just have shown. We will now build a bridge with the first part of this chapter by discussing what are the relevant correlation functions to study the weakly-interacting Bose gas.
 
 
 \section{Two-body correlations in the homogeneous weakly-interacting Bose gas}
@@ -1033,7 +1036,7 @@ The central point to understand the effects of the trap is the \textbf{finite-si
 
 As discussed in the last paragraph for the homogeneous case, we expect a perfect bosonic bunching $g^{(2)}(\bm{k},\bm{k})=2$ for both the thermal and the quantum depletion. This feature is actually the same in the trapped case as shown in \cite{butera2020} where the numerical calculations also give a perfect bosonic bunching, independently of the temperature and thus of the balance between the thermally and quantum depleted atoms. The width of the correlation peak shows however quite interesting dependencies on the momentum value $k$ and the temperature.
 
-At $T=0$ or very low temperatures, the RMS width $\sigma_k$ of the normal correlations is dominated by the contribution of the quantum depletion. As the quantum depletion is non-existent outside of the BEC, its spatial size is the one of the BEC, meaning that the width of the normal correlations at $T=0$ should be $\sim 1/L_{\rm{BEC}}$, and thus independently of $k$. This is what we observe on Fig.-\ref{fig:butera_kk} from \cite{butera2020}, with however a small increase of the width with $k$ that the authors attribute to a stronger localisation of the highly-excited Bogoliubov modes associated to the quantum depletion.
+At $T=0$ or very low temperatures, the RMS width $\sigma_k$ of the normal correlations is dominated by the contribution of the quantum depletion. As the quantum depletion is non-existent outside of the BEC, its spatial size is the one of the BEC, meaning that the width of the normal correlations at $T=0$ should be $\sim 1/L_{\rm{BEC}}$, and so independently of $k$. This is what we observe on Fig.-\ref{fig:butera_kk} from \cite{butera2020}, with however a small increase of the width with $k$ that the authors attribute to a stronger localisation of the highly-excited Bogoliubov modes associated to the quantum depletion.
 For $T \neq 0$ however, the dependency of the normal correlations width with $k$ is non-monotonic. At large $k$, we retrieve the same width than for $T=0$. Indeed, the thermal energy is not sufficient to populate such high $k$ values. The depletion is thus fully quantum and the width $\sim 1/L_{\rm{BEC}}$. As $k$ decreases, we progressively reach a momentum region where the depletion is mainly thermal. As the spatial size of the thermal excitations is larger than that of the BEC because of the increased kinetic energy, $\sigma_k$ is reduced. We then enter a plateau region that starts for higher values of $k$ and stabilizes around lower values of $\sigma_k$ as $T$ increases as shown on Fig.-\ref{fig:butera_kk}. The plateau region ends for very low values of $k$ as $\sigma_k$ slightly increases with decreasing $k$ that the authors of \cite{butera2020} attribute to the phononic character of the thermal excitations in this $k$ region.
 
 
@@ -1070,12 +1073,14 @@ In addition, there are several key features of the \kmk correlation signal that 
 
 A crucial aspect of studying the correlations in the depletion is the ability to separate the depleted atoms from the condensed ones. As a matter of fact, the BEC is a fully coherent state with macroscopic occupation of a single mode. In analogy with laser light in Optics, the statistics of the BEC are not chaotic and no bosonic bunching can therefore be observed. In addition, no \kmk correlations are expected for atoms belonging to the condensate. Furthermore, in the weakly-interacting BEC, the number of condensed atoms is much larger than the number of depleted atoms. This has a direct consequence for our measurement: if we are unable to remove condensed atoms from the analysis, they will entirely drown out the correlation signals of the depletion.
 
-Fortunately, the BEC and the depletion extents in momentum space are very different. Position and momentum are related to one other by means of Fourier transform. This tells us that the typical momentum width of the condensate is $1/L_{\rm{BEC}}$ \cite{stenger1999} where $L_{\rm{BEC}}$ is the spatial size of the BEC. On the other hand, the typical momentum width of the quantum depletion is $1/\xi$. Since $\xi \ll L_{\rm{BEC}}$, $1/\xi \gg 1/L_{\rm{BEC}}$ meaning that the quantum depletion extends on a much larger momentum area than the BEC. Likewise, for the typical temperatures accessible in our experiment, the momentum width of the thermal depletion is significantly larger than for the BEC. This provides us with a natural way to separate the condensate from its depletion and defines one of the experimental ingredients: we need an experimental setup capable of resolving the different regions of momentum space so that the region around $\bm{k}=\bm{0}$ corresponding to the BEC can be removed from the analysis. Luckily, while removing the BEC region we also remove the low $k$ part of the momentum space in which the Bogoliubov quasi-particles have a strong phononic character (see Chapter \ref{sec:chapter_4} for experimental numbers) and thus \kmk correlations between real particles, fulfilling the requirement described in \ref{sec:2nd_order_bogo}.
+Fortunately, the BEC and the depletion extents in momentum space are very different. Position and momentum are related to one other by means of Fourier transform. This tells us that the typical size of the momentum mode of the BEC is $1/L_{\rm{BEC}}$ \cite{stenger1999} where $L_{\rm{BEC}}$ is the spatial size of the BEC. On the other hand, the typical momentum width of the quantum depletion is $1/\xi$. Since $\xi \ll L_{\rm{BEC}}$, $1/\xi \gg 1/L_{\rm{BEC}}$ meaning that the quantum depletion extends on a much larger momentum area than the BEC. Likewise, for the typical temperatures accessible in our experiment, the momentum width of the thermal depletion is significantly larger than for the BEC. This provides us with a natural way to separate the condensate from its depletion and defines one of the experimental ingredients: we need an experimental setup capable of resolving the different regions of momentum space so that the region around $\bm{k}=\bm{0}$ corresponding to the BEC can be removed from the analysis. Luckily, while removing the BEC region we also remove the low $k$ part of the momentum space in which the Bogoliubov quasi-particles have a strong phononic character (see Chapter \ref{sec:chapter_4} for experimental numbers) and thus \kmk correlations between real particles, fulfilling the requirement described in \ref{sec:2nd_order_bogo}.
+
+\NOTE{gérer ça}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{Fig/Chapter1/cayla_2018.png}
-    \caption{Caption}
+    \caption[Mo]{Caption}
     \label{fig:my_label}
 \end{figure}
 
