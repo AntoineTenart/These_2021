@@ -2,16 +2,16 @@
 
 \chapter{Towards measuring Tan's contact in 1D gases}
 
-For the last chapter of this thesis, we will depart from the main line set by the \kmk correlations of the quantum depletion and shift our attention to a different topic that exploits another feature of the single atom resolution of our experiment. While we have used it so far to look for correlations between individual particles, a strong advantage that we have overlooked is the possibility to detect very low densities signals inaccessible with optical measurements. An example of such a signal is the $k^{-4}$ tails in the momentum density of 1D gases, also known as Tan's contact \cite{tan2008large}. 
+For the last chapter of this thesis, we will depart from the main line set by the \kmk correlations of the quantum depletion and shift our attention to a different topic that exploits another feature of the single atom resolution of our experiment. While we have used it so far to look for correlations between individual particles, another strong advantage of our apparatus is the possibility to detect very low densities signals inaccessible with optical measurements. An example of such a signal is the $k^{-4}$ tails in the momentum density of 1D gases, also known as Tan's contact \cite{tan2008large}. 
 
-As we will see in the first section of this chapter, Tan's contact is a fascinating and promising universal quantity that can be used the characterize many different systems, especially 1D gases, in level of details inaccessible with more common experimental techniques. We will then quickly summarize the main points of the theoretical work \cite{yao2018tan} on which we will rely to interpret our experimental data. We will then explain how 1D physics can be effectively implemented with our experimental apparatus and detail the procedure to measure Tan's contact, before discussing the first preliminary results.
+As we will see in the first section of this chapter, Tan's contact is a fascinating and promising universal quantity that can be used the characterize many different systems, especially 1D gases, in level of details inaccessible with more common experimental techniques. We will then quickly summarize the main points of the theoretical work \cite{yao2018tan} on which we will rely to interpret our experimental data. We will next explain how 1D physics can be effectively implemented with our experimental apparatus and detail the procedure used to measure Tan's contact, before discussing the first preliminary results.
 
 
 \section{Tan's contact}
 
 \subsection{Definition from the large momentum tails}
 
-To understand what Tan's contact is, we consider two atoms with contact interactions in the ultracold regime in 1D. The two-body wave-function then only depends from the inter-particle distance $r$ and the scattering length $a_s$ \cite{viverit2004momentum}:
+To understand what Tan's contact is, we consider two atoms with contact interactions in the ultracold regime in 1D. The two-body wave-function then only depends from the inter-particle distance $r$ and the $s$-wave scattering length $a_s$ \cite{viverit2004momentum}:
 
 \begin{equation}
     \psi(r) = - \frac{r}{a_s} \, e^{-r/a_s}
@@ -23,7 +23,7 @@ To understand what Tan's contact is, we consider two atoms with contact interact
     \tilde{\psi}(k) = \int_0^\infty \psi(r) \, e^{2 \pi i k r} \, dr \propto \frac{1}{(i 2 \pi k - 1/a_s)^2}
 \end{equation}
 
-\noindent from which we obtain the momentum distribution:
+\noindent from which we obtain the momentum density:
 
 \begin{equation}
      \rho(k) = |\tilde{\psi}(k) |^2 \propto \frac{1}{2(2 \pi k a_s)^4 - 2(2 \pi k a_s)^2 +1}
@@ -64,7 +64,7 @@ While the $\kmf$ scaling is universal, the value of $C$ depends on the physical 
     C=\left.\frac{4 m}{\hbar^{2}} \frac{\partial \Omega}{\partial a_{1 D}}\right|_{T, \mu}
 \end{equation}
 
-\noindent with $\Omega$ the grand potential. This result can also be rewritten to include the interaction energy of the system $\mean{H_{\rm{int}}}$ that we have encountered quite a lot throughout this thesis and that is usually hard to measure separately from the total energy:
+\noindent with $\Omega$ the grand potential and $a_{\rm{1D}}$ the 1D scattering length. This result can also be rewritten to include the interaction energy of the system $\mean{H_{\rm{int}}}$ that we have often encountered throughout this thesis and that is usually hard to measure separately from the total energy:
 
 \begin{equation}
     C=\frac{2 g m^{2}}{\hbar^{4}}\left\langle H_{\text {int }}\right\rangle
@@ -121,7 +121,7 @@ At first glance, Tan's contact should depend from 4 parameters:
     \label{eq:xi_gamma}
 \end{equation}
 
-\noindent with $a_{\rm{ho}}=\sqrt{\hbar/m \omega_{\rm{1D}}}$ the harmonic oscillator length and $a_{\rm{1D}}=\hbar/m \omega_{\perp} a_s$ the 1D scattering length. The second one is the reduced temperature:
+\noindent with $a_{\rm{ho}}=\sqrt{\hbar/m \omega_{\rm{1D}}}$ the harmonic oscillator length. The second one is the reduced temperature:
 
 \begin{equation}
     \xi_T=-a_{\rm{1D}}/\lambda_T
