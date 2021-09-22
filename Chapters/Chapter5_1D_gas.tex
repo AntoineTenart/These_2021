@@ -197,7 +197,7 @@ In the weakly-interacting regime, the interactions are not strong enough to ferm
 
 \subsection{2D Lattice}
 
-Now that we have seen what Tan's contact is and how it could be used to characterize the regimes of Lieb-Liniger 1D gases, we will show how our experimental apparatus can be adapted to study 1D physics with the objective of testing experimentally the predictions of \cite{yao2018tan}. The main idea to obtain an  experimental 1D system is to ``freeze'' the degrees of freedom of the atoms in two directions of space. To do so, the easiest solution is to use a harmonic trapping potential with trapping frequencies $\omega_{\perp}$ high enough so that the energy difference $\Delta E =\hbar \omega_{\perp}$ between the ground-state and the first excited state is much larger than the typical energy of the atoms $\Delta E \gg \kB T, \mu$ as illustrated on Fig-\ref{fig:1D_config}. Such high trapping frequencies are accessible in our experiment thanks to the optical lattice. Instead of using the 3 pairs of countra-propagating beam as we did so far, we use only 2 to produce a 2D lattice. Interestingly, the total laser power is divided amongst 2 pair of beams instead of 3, meaning that we can reach much higher values of the lattice depth, typically up to $s=30$. In the direction where there is no lattice, the trapping potential results from the Gaussian shape of the beams and has a trapping frequency $\omega_{\rm{1D}} =2 \pi \times 140 \sqrt{s} = 2 \pi  \times 713 \ \rm{Hz}$ for $s=26$. In the other 2 directions, the trapping frequency is on the contrary very large as a result of the lattice interference pattern $\omega_{\perp} \simeq 200 \ \rm{kHz}$, which is much larger than the energy of the atoms $\kB T, \mu \simeq 25 \ \rm{kHz}$ with typical experimental parameters.
+Now that we have seen what Tan's contact is and how it could be used to characterize the regimes of Lieb-Liniger 1D gases, we show how our experimental apparatus can be adapted to study 1D physics with the objective of testing experimentally the predictions of \cite{yao2018tan}. The main idea to obtain an  experimental 1D system is to ``freeze'' the degrees of freedom of the atoms in two directions of space. To do so, the easiest solution is to use a harmonic trapping potential with trapping frequencies $\omega_{\perp}$ high enough so that the energy difference $\Delta E =\hbar \omega_{\perp}$ between the ground-state and the first excited state is much larger than the typical energy of the atoms $\Delta E \gg \kB T, \mu$ as illustrated on Fig-\ref{fig:1D_config}. Such high trapping frequencies are accessible in our experiment thanks to the optical lattice. Instead of using the 3 pairs of countra-propagating beam as we did so far, we use only 2 to produce a 2D lattice. Interestingly, the total laser power is divided amongst 2 pair of beams instead of 3, meaning that we can reach much higher values of the lattice depth, typically up to $s=30$. In the direction where there is no lattice, the trapping potential results from the Gaussian shape of the beams and has a trapping frequency $\omega_{\rm{1D}} =2 \pi \times 140 \sqrt{s} = 2 \pi  \times 713 \ \rm{Hz}$ for $s=26$. In the other 2 directions, the trapping frequency is on the contrary very large as a result of the lattice interference pattern $\omega_{\perp} \simeq 200 \ \rm{kHz}$, which is much larger than the energy of the atoms $\kB T, \mu \simeq 25 \ \rm{kHz}$ with typical experimental parameters.
 
 \begin{figure}
     \centering
@@ -233,13 +233,13 @@ To do so, we first remind that under the Thomas-Fermi approximation \cite{pethic
 Similarly to the method developed in \ref{sec:rescaled_interaction}, we rescale the coupling constant $g$ to account for the presence of the 2D lattice with as we did in \ref{sec:rescaled_interaction}:
 
 \begin{equation}
-   \tilde{g} = g \frac{\pi}{2} \sqrt{s} \left( \frac{\textrm{Erf} [ \pi s^{1/4} / \sqrt{2}]}{(\textrm{Erf} [ \pi s^{1/4} 2])^2} \right)^2
-\end{equation}
+    g'=g\left(\frac{\sqrt{\pi / 2} s^{1 / 4}}{\operatorname{Erf}\left[\pi s^{1 / 4} / 2\right]}\right)^{3}
+\end{equation} 
 
 \noindent with the notable difference that we are using here a power 2 instead of power 3 in \ref{sec:rescaled_interaction} as we use here a 2D lattice. We then obtain the rescaled chemical potential:
 
 \begin{equation}
-    \mu' = \frac{\hbar \omega_{1D}}{2} \left( 15 N_{tot} \frac{a_s}{a_{\rm{ho}}} \tilde{g}^2 \right)^{2/5}
+    \mu' = \frac{\hbar \omega_{1D}}{2} \left( 15 N_{tot} \frac{a_s}{a_{\rm{ho}}} g'^2 \right)^{2/5}
 \end{equation}
 
 \noindent from which we finally obtain the new Thomas-Fermi radius in the transverse directions:
@@ -301,6 +301,8 @@ The reduced interaction strength $\xi_{\gamma}$ is rather straightforward to obt
     \xi_{\gamma}^{j,l}=-a_{\rm{ho}}/a_{\rm{1D}}\sqrt{N_{j,l}}
 \end{equation}
 
+\noindent with $a_{\rm{1D}}$ that can be written from the 3D scattering length $a_s$ with $a_{\rm{1D}}=\hbar/m \omega_{\perp} a_s$.
+
 \subsubsection{Weighted average}
 
 \noindent The values of $\xi_{\gamma}^{j,l}$ for each of the 1D tubes are however not very meaningful in practice as the distribution that we measure results from the contribution of every lattice tubes. It is therefore more convenient to define a single averaged value of $\bar{\xi}_{\gamma}$ to approximately describe the entire ensemble of 1D gases. One could first simply think of using a simple average:
@@ -319,7 +321,7 @@ The reduced interaction strength $\xi_{\gamma}$ is rather straightforward to obt
 
 \subsubsection{Temperature}
 
-We have proven in \ref{sec:adiabatic_prep} that the loading of the 3D lattice is adiabatic up to lattice depths of $s=18$. As we keep the same loading sequence for the 2D lattice preparing the 1D tubes, it is rather reasonable to assume that the loading is here adiabatic as well even though we go to higher amplitudes and the geometry of the lattice is different. Unnder this assumption, we then expect the temperature to be the same amongst all the 1D tubes. We will see later how it can be obtained from the measured momentum distribution.
+We have proven in \ref{sec:adiabatic_prep} that the loading of the 3D lattice is adiabatic up to lattice depths of $s=18$. As we keep the same loading sequence for the 2D lattice preparing the 1D tubes, it is rather reasonable to assume that the loading is here adiabatic as well even though we go to higher amplitudes and the geometry of the lattice is different. Under this assumption, we then expect the temperature to be the same amongst all the 1D tubes. We will see later how it can be obtained from the measured momentum distribution.
 
 \subsubsection{Independence of the tubes}
 

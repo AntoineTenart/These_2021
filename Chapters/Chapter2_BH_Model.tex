@@ -132,7 +132,7 @@ We can now re-write the Hamiltonian of the system with the newly introduced Wann
 
 \noindent This expression tells that the probability for a particle to tunnel from lattice site $j$ to $j'$ is reduced as the distance between the two sites $j$ and $j'$ increases and as the potential barrier, \ie the lattice depth, increases.
 
-As for the rest of this thesis, we will focus ourselves on the ground-state properties of the system and therefore assume that the lowest energy band is the only one populated. This assumption is valid as long as $V_0 \geq 2.2 \ E_{\rm{r}}$ at which the gap is opening and the typical excitation energy $\Delta E$ is small than the gap $\Delta=E_1-E_0$. In addition, for $V_0 \geq 5 \ E_{\rm{r}}$ \cite{gerbier_notes}, we can use the tight-binding approximation for which only the tunneling events between adjacent sites are non-negligible. We thus simplify the Hamiltonian \ref{eq:H_Jn} by replacing  $J_{n}\left(j-j^{\prime}\right)$ by a constant $J$ denoting the probability to tunnel between adjacent lattice sites that we define as:
+As for the rest of this thesis, we will focus ourselves on the ground-state properties of the system and therefore assume that the lowest energy band is the only one populated. This assumption is valid as long as $V_0 \geq 2.2 \ E_{\rm{r}}$ at which the gap is opening and the typical excitation energy $\Delta E$ is smaller than the gap $\Delta=E_1-E_0$. In addition, for $V_0 \geq 5 \ E_{\rm{r}}$ \cite{gerbier_notes}, we can use the tight-binding approximation for which only the tunneling events between adjacent sites are non-negligible. We thus simplify the Hamiltonian \ref{eq:H_Jn} by replacing  $J_{n}\left(j-j^{\prime}\right)$ by a constant $J$ denoting the probability to tunnel between adjacent lattice sites that we define as:
 
 \begin{equation}
     J=-J_0(1)
@@ -174,7 +174,7 @@ We now turn to studying the interaction term that we had left out in the full Ha
     \label{eq:h_int_intermediate}
 \end{equation}
 
-\noindent which is still a fairly complicated expression. We can however greatly simplify it by considering that the Wannier functions become narrower as the lattice depth increases. The overlap between the Wannier functions of the different lattice sites then becomes increasingly negligible. This means that the integral of equation \ref{eq:h_int_intermediate} is non zero only if $j_1=j_2=j_3=j_4$, \ie if we only consider on-site interactions. This is called the tight-binding approximation. In the end, the interaction Hamiltonian writes:
+\noindent which is still a fairly complicated expression. We can however greatly simplify it by considering that the Wannier functions become narrower as the lattice depth increases. The overlap between the Wannier functions of the different lattice sites then becomes increasingly negligible. This means that the integral of equation \ref{eq:h_int_intermediate} is non zero only if $j_1=j_2=j_3=j_4$, \ie if we only consider on-site interactions. This is another expression of the tight-binding approximation. In the end, the interaction Hamiltonian writes:
 
 \begin{equation}
     \hat{H}_{\rm{int}}=\frac{U_{\mathrm{1D}}}{2} \sum_j \hat{n}_j (\hat{n}_j -1)
@@ -332,9 +332,9 @@ In practice, the system is often not homogeneous because of the external harmoni
 
 \noindent This means that the effective chemical potential, and thus the lattice filling, varies with the distance from the center of the trap. A typical situation is illustrated by the red arrow on the phase diagram of Fig.-\ref{fig:mott_lobes} where $J/U$ is small enough for Mott phases to exist and the center of the trap corresponds to a filling $\bar{n}=2$. As we get away from the center of the trap towards regions of low $\mu_{\rm{eff}}$ following the red arrow, we exit the first Mott region $\bar{n}=2$ to enter a superfluid region where the filling decreases continuously up to a second Mott region with filling $\bar{n}=1$ and finally reach a last superfluid region at the edge of the trap at vanishing values of $\mu_{\rm{eff}}$. The Mott phases are incompressible, meaning that the density remains constant even though the external trapping potential is rising, differentiating them from the superfluid region. This results in the famous ``wedding-cake'' density profile as illustrated on panel (b) of Fig.-\ref{fig:mott_lobes} and Fig.-\ref{fig:sherson}.
 
-Actually, the external harmonic potential is quite important for experiment. If the system is homogeneous and the entropy constant, when the lattice depth is increased thus going deeper in the Mott phase, the increase of the energy gap makes it increasingly difficult for excitations to be created meaning that the temperature must increase to keep the entropy constant. In the presence of a trap however, the entropy is concentrated in the superfluid shells that can also turn to a normal gas phase, preventing the temperature of the system from increasing too much.
+Actually, the external harmonic potential is quite important for experiments. If the system is homogeneous and the entropy constant, when the lattice depth is increased thus going deeper in the Mott phase, the increase of the energy gap makes it increasingly difficult for excitations to be created meaning that the temperature must increase to keep the entropy constant. In the presence of a trap however, the entropy is concentrated in the superfluid shells that can also turn to a normal gas phase, preventing the temperature of the system from increasing too much.
 
-\noindent For clarity sake, the system will be said to be in the Mott Insulator phase as long as a Mott plateau exists, \ie when $u > u_c$ where $u_c$ is the critical point for the corresponding homogeneous system.
+In the remainder of this manuscript for clarity sake, the system will be said to be in the Mott Insulator phase as long as a Mott plateau exists, \ie when $u > u_c$ where $u_c$ is the critical point for the corresponding homogeneous system.
 
 \begin{figure}
     \centering
@@ -347,9 +347,9 @@ Actually, the external harmonic potential is quite important for experiment. If 
 
 If we finally consider the effect of temperature, we obtain the complete phase diagram of Fig.-\ref{fig:phase_diagram} function of $T/J$ and $u$ with the apparition of an additional phase, the normal (thermal) gas. For $u \leq u_c$, the transition between the normal gas phase and the superfluid phase driven by the temperature is similar to the well-known BEC transition. This transition is induced by the thermal fluctuations and is then called classical, in opposition to the $T=0$ Mott transition which is driven by a variations of physical parameters of the Hamiltonian and therefore is a quantum transition.
 
-On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. When $T$ increases, excitations are created preferably near the edges of the Mott plateaus, progressively smoothing out the sharp density profile of the Mott insulator phase. A Mott-like region survives until $T* \sim 0.2 \ U/k_B$ \cite{gerbier2007boson} also called the ``melting temperature'' of the Mott phase.
+On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. When $T$ increases, excitations are created preferably near the edges of the Mott plateaus, progressively smoothing out the sharp density profile of the Mott insulator phase. A Mott-like region survives until $T^* \sim 0.2 \ U/k_B$ \cite{gerbier2007boson} also called the ``melting temperature'' of the Mott phase.
 
-Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. At $T=0$ and at the quantum critical point (QCP) of the transition, the ground-state undergoes a macroscopic rearrangement characterized by the apparition of critical quantum fluctuations and complex correlation patterns. Importantly, the physics of the QCP affect a signficant part of the finite temperature phase diagram as signaled by the green area on Fig.\ref{fig:phase_diagram}. In this region, some observables such as the momentum density indeed show critical behavior, \ie a power law scaling with temperature with an exponent set by the critical exponents of the QCP. While the physics of the Quantum Critical Point are a very interesting and trending topic, they fall out of the scope of this thesis and we refer the reader to the works \cite{carcy_these,frerot2019reconstructing,sachdev2011quantum} for more informations on this aspect.
+Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. At $T=0$ and at the QCP of the transition, the ground-state undergoes a macroscopic rearrangement characterized by the apparition of critical quantum fluctuations and complex correlation patterns. Importantly, the physics of the QCP affect a signficant part of the finite temperature phase diagram as signaled by the green area on Fig.\ref{fig:phase_diagram}. In this region, some observables such as the momentum density indeed show critical behavior, \ie a power law scaling with temperature with an exponent set by the critical exponents of the QCP. While the physics of the Quantum Critical Point are a very interesting and trending topic, they fall out of the scope of this thesis and we refer the reader to the works \cite{carcy_these,frerot2019reconstructing,sachdev2011quantum} for more informations on this aspect.
 
 
 \begin{figure}
@@ -393,12 +393,12 @@ The Gutzwiller method is a \textbf{variational} approach, meaning that the groun
     G = \mean{H_{\mathrm{BH}}}_{\ket{\Psi_G}} - \mu \mean{N}_{\ket{\Psi_G}} = -J \sum_{\langle i, j\rangle} \alpha_{i}^{*} \alpha_{j}+\sum_{j} \sum_{n_{j}=0}^{\infty}\left[\frac{U}{2} n_{j}\left(n_{j}-1\right)-\mu n_{j}\right]\left|f\left(n_{j}\right)\right|^{2}
 \end{equation}
 
-\noindent with the condition $\left\langle n_{j}\right\rangle=\sum_{n_{j}=0}^{\infty}\left|f_{j}\left(n_{j}\right)\right|^{2} n_{j}=\bar{n}$. The coefficients $f(n_j)$ can be found through numerical calculations. Interestingly, following the arguments of \ref{sec:ch2_trapping_effects}, $\mu$ can be replaced by the effective $\mu_{\rm{eff}}$ to account for the effect of the external trapping potential present in our experiment. We shown on Fig.-\ref{fig:wedding_cake_gutzwiller} wedding cake density profiles for various atom numbers at $s=18$ with our experimental parameters computed with the Gutzwiller method.
+\noindent with the condition $\left\langle n_{j}\right\rangle=\sum_{n_{j}=0}^{\infty}\left|f_{j}\left(n_{j}\right)\right|^{2} n_{j}=\bar{n}$. The coefficients $f(n_j)$ can be found through numerical calculations. Interestingly, following the arguments of \ref{sec:ch2_trapping_effects}, $\mu$ can be replaced by the effective $\mu_{\rm{eff}}$ to account for the effect of the external trapping potential present in our experiment. We show on Fig.-\ref{fig:wedding_cake_gutzwiller} wedding cake density profiles for various atom numbers at $s=18$ with our experimental parameters computed with the Gutzwiller method.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{Fig/Chapter2/wedding_cake_gutzwiller.png}
-    \caption[Gutzwiller density profiles for various atom numbers at $s=18$]{Gutzwiller density profiles for various atom numbers at $s=18$.}
+    \caption[2D Gutzwiller density profiles for various atom numbers at $s=18$]{Gutzwiller density profiles for various atom numbers at $s=18$.}
     \label{fig:wedding_cake_gutzwiller}
 \end{figure}
 
@@ -438,7 +438,7 @@ At time $t=0$, right before the lattice potential is turned off, the atomic fiel
 
 
 
-\noindent The expression of the Wannier functions is rather complex and very hard to handle in calculations. However, we can approximate the lattice potential near a minimum to its second-order Taylor expansion, \ie approximate it to a harmonic potential of frequency $\omega_L=2 \sqrt{s} (E_{\rm{r}}/\hbar)$ \cite{toth2008theory}. As illustrated in Fig.-\ref{fig:wannier_oh}, the Wannier function is be well approximated by the Gaussian wave-function of the harmonic oscillator ground state for amplitudes $V_0 \gtrsim 10 \ \rm{E_r}$ (note however that this does not approximate tunelling well as a Gaussian does not show the same small oscillations as the Wannier function):
+\noindent The expression of the Wannier functions is rather complex and very hard to handle in calculations. However, we can approximate the lattice potential near a minimum to its second-order Taylor expansion, \ie approximate it to a harmonic potential of frequency $\omega_L=2 \sqrt{s} (E_{\rm{r}}/\hbar)$ \cite{toth2008theory}. As illustrated in Fig.-\ref{fig:wannier_oh}, the Wannier function is well approximated by the Gaussian wave-function of the harmonic oscillator ground state for amplitudes $V_0 \gtrsim 10 \ \rm{E_r}$ (note however that this does not approximate tunelling well as a Gaussian function does not show the same small oscillations as the Wannier function):
 
 \begin{figure}
     \centering
@@ -563,7 +563,7 @@ Importantly, a characteristic of the Superfluid to Mott insulator transition is 
 
 The experimental technique described in the last paragraph holds if there are no interactions between the particles during the TOF. If it were otherwise, the interactions would affect the TOF dynamics of the gas, preventing us to use the ballistic relation and to map the TOF distribution $\rho_{\rm{TOF}}(\bm{r},t)$ to the in-trap momentum $\rho(\bm{k})$. As interactions cannot be effectively turned off by means of a Feshbach resonance, experimentally inaccessible for $^4 \He$, it is crucial to determine whether interactions during the TOF can be neglected or not and under which conditions.
 
-Describing the interactions between each of the individual particles would be impossible, even for numerical methods for which the calculation time would be prohibitive. To circumvent this issue, the problem can be simplified using the \textbf{mean-field approximation}. The idea is to approximate the effect of the interactions of every atoms on a single one as an \textbf{average} single effect. This considerably simplifies the many-body problem, reducing it to an effective one-body problem.
+As mentioned in the introduction to this manuscript, describing the interactions between each of the individual particles would be impossible, even for numerical methods for which the calculation time would be prohibitive. To circumvent this issue, the problem can be simplified using the \textbf{mean-field approximation}. The idea is to approximate the effect of the interactions of every atoms on a single one as an \textbf{average} single effect. This considerably simplifies the many-body problem, reducing it to an effective one-body problem.
 
 To quantify the effect of the interactions treated at the mean-field level, we introduce the interaction energy $U_{\rm{int}} \sim gn$ with $g$ the strength of the interactions and $n$ the atomic density. To determine whether the interactions are affecting the expansion of the gas released from the lattice, $U_{\rm{int}}$ must be compared to the zero point energy of the ground-state of the approximate harmonic oscillator associated to a single lattice site, $\hbar \omega_L$. In typical experimental conditions, $U_{\rm{int}}/h \approx 10^3 \ \rm{Hz} \ll \omega_L/2 \pi \approx 10^5-10^6 \ \rm{Hz}$, meaning that the initial expansion is driven by the zero point energy of the lattice site and not the released interaction energy. In addition, after a small expansion time, the Wannier functions of the different sites overlap as their width become of the order of the lattice spacing $d$ and might then interact. However, on this time scale, the atomic density is reduced by a factor $(x_0/d)^3 \approx 10^2$ (for $s=10$), meaning that this interaction effect should also negligible \cite{gerbier2008expansion}, provided that the initial density is not too high. This point will be discussed in further details in light of experimental data in Chapter \ref{sec:chapter_3}.
 
@@ -614,7 +614,7 @@ The non-interacting term $\sum_{\bm{q}} E_{0}(\bm{q}) \hat{c}_{\bm{q}}^{\dagger}
     E_{0}(\bm{q}) \approx \frac{\hbar^2 q^2}{2 m^*}, \ \text{with } \frac{1}{m^*} = \frac{1}{\hbar^2} \frac{\mathrm{d}^2 E_0 }{\mathrm{d}q^2}
 \end{equation}
 
-\noindent where we have introduced the notion of effective mass $m^*$ defined from the curvature of the Bloch energy band, actually very useful to study the dynamics of particles in a lattice potential \cite{kramer2002macroscopic,dalibard2013cages}. Under this form, the non-interacting term of the lattice Hamiltonian is then of the exact same form as for the homogeneous Hamiltonian, the effect of the lattice being contained in the new effective mass $m^*$.
+\noindent where we have introduced the notion of effective mass $m^*$ defined from the curvature of the Bloch energy band, actually very useful to study the dynamics of particles in a lattice potential \cite{dalibard2013cages,kramer2002macroscopic}. Under this form, the non-interacting term of the lattice Hamiltonian is then of the exact same form as for the homogeneous Hamiltonian, the effect of the lattice being contained in the new effective mass $m^*$.
 
 \begin{figure}
     \centering
@@ -622,6 +622,12 @@ The non-interacting term $\sum_{\bm{q}} E_{0}(\bm{q}) \hat{c}_{\bm{q}}^{\dagger}
     \caption{Harmonic approximation of the dispersion relation of the first energy band $E_0$ for $s=5$.}
     \label{fig:dispersion_relation_harmonic}
 \end{figure}
+
+In the case of non-homogeneous harmonically trapped system, the trapping frequency $\omega$ is replaced by the effective trapping frequency $\omega^*$ as well to account for the effect of the lattice. The effective frequency is defined from the effective mass by \cite{kramer2002macroscopic}:
+
+\begin{equation}
+    \omega^* = \sqrt{\frac{m}{m^*}} \omega
+\end{equation}
 
 \subsection{The rescaled interaction strength}
 
@@ -648,8 +654,8 @@ We turn to calculating the interaction term in equation \ref{eq:lattice_bogo_ham
 \noindent that rewrites as:
 
 \begin{equation}
-    g' = g \frac{\pi}{2} \sqrt{s} \left( \frac{\textrm{Erf} [ \pi s^{1/4} / \sqrt{2}]}{(\textrm{Erf} [ \pi s^{1/4} 2])^2} \right)^3
-\end{equation} \NOTE{check}
+    g'=g\left(\frac{\sqrt{\pi / 2} s^{1 / 4}}{\operatorname{Erf}\left[\pi s^{1 / 4} / 2\right]}\right)^{3}
+\end{equation} 
 
 \noindent As long as $V_0 > 0,$ we have $g' > g$ signaling that the lattice indeed increases the strength of the interactions. Importantly, $g'$ increases with $V_0$ as the atoms become increasingly localized in smaller region of spaces, increasing the strength of the interactions.
 
