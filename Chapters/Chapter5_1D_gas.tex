@@ -64,35 +64,41 @@ While the $\kmf$ scaling is universal, the value of $C$ depends on the physical 
     C=\left.\frac{4 m}{\hbar^{2}} \frac{\partial \Omega}{\partial a_{1 D}}\right|_{T, \mu}
 \end{equation}
 
-\noindent with $\Omega$ the grand potential and $a_{\rm{1D}}$ the 1D scattering length. This result can also be rewritten to include the interaction energy of the system $\mean{H_{\rm{int}}}$ that we have often encountered throughout this thesis and that is usually hard to measure separately from the total energy:
+\noindent with $\Omega$ the grand potential and $a_{\rm{1D}}$ the 1D scattering length whose expression will be discussed later. This result can also be rewritten \cite{yao:tel-03065015} to include the interaction energy of the system $\mean{H_{\rm{int}}}$ that we have often encountered throughout this thesis and that is usually hard to measure separately from the total energy:
 
 \begin{equation}
-    C=\frac{2 g m^{2}}{\hbar^{4}}\left\langle H_{\text {int }}\right\rangle
+    C=\frac{2 g_{\rm{1D}} m^{2}}{\hbar^{4}}\left\langle H_{\text {int }}\right\rangle
     \label{eq:C_with_int}
+\end{equation}
+
+\noindent with $g_{\rm{1D}}$ the 1D coupling constant that is defined from the 1D scattering length by \cite{olshanii1998atomic}:
+
+\begin{equation}
+    g_{\rm{1D}}=-\frac{2 \hbar^2}{m a_{\rm{1D}}}
 \end{equation}
 
 \subsection{Characterization of 1D Lieb-Liniger regimes}
 
-Another significant motivation to measure Tan's contact is to characterize the different regimes of Lieb-Liniger 1D systems of interacting bosons as a function of temperature and of the strength of the interactions. Tan's contact is indeed particularly suited to study the Lieb-Liniger model as it revolves around the approximation that the interactions between the atoms are repulsive, contact interactions:
+Another significant motivation to measure Tan's contact is to characterize the different regimes of Lieb-Liniger 1D systems of interacting bosons as a function of temperature and of the strength of the interactions. Tan's contact is indeed particularly suited to study the Lieb-Liniger model \cite{lieb1963exact} as it revolves around the approximation that the interactions between the atoms are repulsive, contact interactions:
 
 \begin{equation}
-    H = \sum_j \left[ - \frac{ \hbar^2}{2m} \frac{\partial^2}{\partial^2 {x_j}^2} + V(x_j) \right] + g \sum_{j<l} \delta(x_j - x_l) 
+    H = \sum_j \left[ - \frac{ \hbar^2}{2m} \frac{\partial^2}{\partial^2 {x_j}^2} + V(x_j) \right] + g_{\rm{1D}} \sum_{j<l} \delta(x_j - x_l) 
     \label{eq:lieb_liniger}
 \end{equation}
 
-\noindent with $g$ the strength of the interactions as we have seen on a few occasions in this thesis and $V$ an external trapping potential. 
+\noindent with $V$ an external trapping potential. 
 
 
-These different regimes have been widely investigated \cite{petrov2000regimes} and are illustrated on the state diagram of Fig.\ref{fig:1D_diagram}. The lower right part of the diagram corresponds to the strongly interacting or Tonks-Girardeau regime where the repulsive interactions are so strong that they mimic the Pauli exclusion principle for fermions, the gas is then said to fermionize. As the strength of the interactions decreases, the gas progressively goes to a weakly-interacting quasi-condensate phase characterized by suppressed density fluctuations but fluctuating phase, contrary to the true condensate. The weakly-degenerate ideal bosons region refers to the region where the effect of interactions are negligible compared to temperature. 
+These different regimes have been widely investigated \cite{petrov2000regimes} and are illustrated on the state diagram of Fig.\ref{fig:1D_diagram}. The lower right part of the diagram corresponds to the strongly interacting or Tonks-Girardeau regime where the repulsive interactions are so strong that they mimic the Pauli exclusion principle for fermions. The gas is then said to fermionize. As the strength of the interactions decreases, the gas progressively goes to a weakly-interacting quasi-condensate phase characterized by suppressed density fluctuations but fluctuating phase, contrary to the true condensate. The weakly-degenerate ideal bosons region refers to the region where the effect of interactions are negligible compared to temperature. 
 
 The main difficulty to experimentally characterize those regimes resides in the fact that most quantities show a smooth and monotonic behavior when crossing the transition points between the different regimes. This motivated theoretical studies of the dependency of the Tan's contact with the strength of interactions and temperature to determine if $C$ can be used as a probe to characterize these different regimes. Previous works have conducted such studies for homogeneous bosons at finite temperature \cite{kheruntsyan2003pair,kormos2009expectation}, trapped bosons at zero temperature \cite{minguzzi2002high,olshanii2003short} or for the trapped finite temperature Tonks-Girardeau regime \cite{vignolo2013universal}. They were recently completed by \cite{yao2018tan}, characterizing trapped Lieb-Liniger bosons for arbitrary values of the temperature and the interaction parameter.
 
-One of the main experimental difficulties for measuring Tan's contact comes from the fact that the high momentum $\kmf$ tails correspond to very low density values that are hard to detect with classic optical imaging techniques. This problem is however solved with the $\He$ detector thanks to his large dynamic momentum range. Interestingly, our experimental apparatus can be adapted to study 1D physics by transforming our 3D optical lattice into a 2D one as we will see in \ref{sec:1D_exp}, making it the perfect candidate to verify the predictions of \cite{yao2018tan}.
+One of the main experimental difficulties for measuring Tan's contact comes from the fact that the high momentum $\kmf$ tails correspond to very low density values that are hard to detect with classic optical imaging techniques. This problem is however solved with the $\He$ detector thanks to his large dynamic momentum range. Interestingly, our experimental apparatus can be adapted to study 1D physics by transforming our 3D optical lattice into a 2D one as we will see in \ref{sec:1D_exp}, making it a good candidate to verify the predictions of \cite{yao2018tan}.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{Fig/Chapter5/state_diagam_hepeng.png}
-    \caption[State diagram of trapped 1D Bose gases with repulsive interactions as a function of the reduced temperature $\xi_T$ and the reduced interaction strength $xi_{\gamma}$ for trapped 1D gases]{State diagram of trapped 1D Bose gases with repulsive interactions as a function of the reduced temperature $\xi_T$ and the reduced interaction strength $xi_{\gamma}$ for trapped 1D gases. The solid lines indicate smooth crossovers between the different regimes.}
+    \caption[State diagram of trapped 1D Bose gases with repulsive interactions as a function of the reduced temperature $\xi_T$ and the reduced interaction strength $xi_{\gamma}$ for trapped 1D gases]{State diagram of trapped 1D Bose gases with repulsive interactions as a function of the reduced temperature $\xi_T$ and the reduced interaction strength $xi_{\gamma}$ for trapped 1D gases. The solid lines indicate smooth crossovers between the different regimes. Taken from \cite{yao:tel-03065015}.}
     \label{fig:1D_diagram}
 \end{figure}
 
@@ -105,13 +111,13 @@ Before going into the experimental details, we start our study by summarizing th
 
 \subsection{Two-parameter scaling}
 
-At first glance, Tan's contact should depend from 4 parameters:
+At first glance, the physics of the system and in turn Tan's contact should depend from 4 parameters:
 
 \begin{itemize}
     \item The total number of particles $\NBEC$.
     \item The temperature $T$.
     \item The trapping frequency $\omega_{\rm{1D}}$.
-    \item The coupling constant $g$.
+    \item The coupling constant $g_{\rm{1D}}$.
 \end{itemize}
 
 \noindent The first result of \cite{yao2018tan} is to show that $C$ actually depends from only two parameters, the first one being the reduced interaction strength:
@@ -121,7 +127,7 @@ At first glance, Tan's contact should depend from 4 parameters:
     \label{eq:xi_gamma}
 \end{equation}
 
-\noindent with $a_{\rm{ho}}=\sqrt{\hbar/m \omega_{\rm{1D}}}$ the harmonic oscillator length. The second one is the reduced temperature:
+\noindent with $a_{\rm{ho}}=\sqrt{\hbar/m \omega_{\rm{1D}}}$ the harmonic oscillator length and $a_{\rm{1D}}$ the 1D scattering length. The second one is the reduced temperature:
 
 \begin{equation}
     \xi_T=-a_{\rm{1D}}/\lambda_T
@@ -214,7 +220,7 @@ Using the optical lattice in this configuration then allows us to emulate 1D phy
 
 \subsubsection{Number of atoms}
 
-The major difficulty of working with an array of 1D gases comes from the fact the atom number varies from one 1D tube to another. To determine the atom number distribution, we first need to determine the density profile of the cloud in the 2D lattice.
+The major difficulty of working with our array of 1D gases with comes from the fact the atom number varies from one 1D tube to another. To determine the atom number distribution, we first need to determine the density profile of the cloud in the 2D lattice.
 
 To do so, we first remind that under the Thomas-Fermi approximation \cite{pethick2008bose}, the density profile of a BEC in a 3D harmonic potential writes:
 
@@ -222,7 +228,7 @@ To do so, we first remind that under the Thomas-Fermi approximation \cite{pethic
      n(\bm{r}) = \frac{\mu}{g} \, \left[ 1 - \left( \frac{x}{R_x} \right)^2 - \left( \frac{y}{R_y} \right)^2 - \left( \frac{z}{R_z} \right)^2 \right]
 \end{equation}
 
-\noindent where $R_i = \sqrt{\frac{2 \mu}{m \omega_i^2}}$ is the Thomas-Fermi radius in direction $i$. Under the mean-field approximation, the chemical potential is:
+\noindent where $R_i = \sqrt{\frac{2 \mu}{m \omega_i^2}}$ is the Thomas-Fermi radius in direction $i$ and $g$ the 3D coupling constant already encountered a few times in this manuscript. Under the mean-field approximation, the chemical potential is:
 
 \begin{equation}
      \mu = \frac{\hbar \bar{\omega}}{2} \left(  15 \NBEC \frac{a_s}{a^{\rm{3D}}_{\rm{ho}}}\right)^{2/5}
@@ -230,10 +236,10 @@ To do so, we first remind that under the Thomas-Fermi approximation \cite{pethic
 
 \noindent with $\bar{\omega}=\omega_x \omega_y \omega_z/3$ the average trapping frequency with $a^{\rm{3D}}_{\rm{ho}}=\sqrt{\hbar/m \bar{\omega}}$
 
-Similarly to the method developed in \ref{sec:rescaled_interaction}, we rescale the coupling constant $g$ to account for the presence of the 2D lattice with as we did in \ref{sec:rescaled_interaction}:
+Similarly to the method developed in \ref{sec:rescaled_interaction}, we rescale the coupling constant $g$ \cite{kramer2002macroscopic} to account for the presence of the 2D lattice with as we did in \ref{sec:rescaled_interaction}:
 
 \begin{equation}
-    g'=g\left(\frac{\sqrt{\pi / 2} s^{1 / 4}}{\operatorname{Erf}\left[\pi s^{1 / 4} / 2\right]}\right)^{3}
+    g'=g\left(\frac{\sqrt{\pi / 2} s^{1 / 4}}{\operatorname{Erf}\left[\pi s^{1 / 4} / 2\right]}\right)^{2}
 \end{equation} 
 
 \noindent with the notable difference that we are using here a power 2 instead of power 3 in \ref{sec:rescaled_interaction} as we use here a 2D lattice. We then obtain the rescaled chemical potential:
@@ -277,7 +283,7 @@ Similarly to the method developed in \ref{sec:rescaled_interaction}, we rescale 
 \subsubsection{Density and interaction parameter}
 
 
-Knowing the number of atom in each tube, it is interesting to determine the density and reduced interaction strength parameter $\xi_{\gamma}$ in each of the tubes. To do so, we first introduce the effective 1D interaction strength $g_{\rm{1D}} = 2 \hbar \omega_{\perp} a_s$ \cite{olshanii1998atomic} that depends from the transverse trapping frequency and the 3D scattering length. With this definition, we can write the 1D chemical potential and 1D density for the different tubes, both functions of the number of atoms in the tube:
+Knowing the number of atom in each tube, it is interesting to determine the density and reduced interaction strength parameter $\xi_{\gamma}$ in each of the tubes. To do so, we first rewrite the 1D interaction strength $g_{\rm{1D}} = 2 \hbar \omega_{\perp} a_s$ \cite{olshanii1998atomic} from the transverse trapping frequency and the 3D scattering length which are our known experimental parameters. We then write the 1D chemical potential and 1D density for the different tubes, both functions of the number of atoms in the tube:
 
 \begin{equation}
     \mu_{1D}^{j,l} = \left( \frac{3}{4 \sqrt{2}} \, N_{j,l}\,  g_{1D} \, \omega_{1D}\,  \sqrt{m} \right)^{2/3}
@@ -326,7 +332,7 @@ We have proven in \ref{sec:adiabatic_prep} that the loading of the 3D lattice is
 \subsubsection{Independence of the tubes}
 
 
-In order to properly observe 1D physics, it is crucial that all the 1D tubes are independent from one another, \ie no coherence subsists in the transverse directions. This is in principle ensured by the fact that the typical loading time of the lattice is longer that the decoherence time of the cloud. Practically speaking, we can determine whether the 1D tubes are indeed incoherent or not by looking for diffraction peaks in the transverse directions, as their presence reveals coherent interferences between the different tubes. While we indeed observed no diffraction peaks in most data sets, there were a few occasions where they could be seen, especially for the coldest data sets and lower lattice amplitudes $s \simeq 22$. This calls for a proper study of the decoherence mechanisms happening during the loading of the lattice that has not yet been conducted at the moment where this manuscript is being written. We will for the remainder of this chapter assume that the tubes are indeed independent as the data was taken for relatively high lattice amplitudes $s=26$ at which we observed no diffraction peaks in the transverse direction.
+In order to properly observe 1D physics, it is crucial that all the 1D tubes are independent from one another, \ie no coherence subsists in the transverse directions. This is in principle true when the typical loading time of the lattice set by the slope of the lattice ramps of $0.3 \ \rm{Er}/\rm{ms}$ (see \ref{sec:loading_lattice}) is longer that the decoherence time of the cloud. Practically speaking, we can determine whether the 1D tubes are indeed incoherent or not by looking for diffraction peaks in the transverse directions, as their presence reveals coherent interferences between the different tubes. While we indeed observed no diffraction peaks in most data sets, there were a few occasions where they could be seen, especially for the coldest data sets and lower lattice amplitudes $s \simeq 22$. This calls for a proper study of the decoherence mechanisms happening during the loading of the lattice that has not yet been conducted at the moment where this manuscript is being written. We will for the remainder of this chapter assume that the tubes are indeed independent as the data was taken for relatively high lattice amplitudes $s=26$ at which we observed no diffraction peaks in the transverse direction.
 
 \section{Detection of large momentum components}
 
@@ -352,7 +358,7 @@ To solve this issue, we make use of the Landau-Zener effect that describes the p
     \item $\Delta \nu_{\rm{RF}}$ must be large enough to encapsulate all resonance frequencies shifted because of the residual magnetic gradient to properly transfer all relevant momentum classes. For an initial momentum $k=-k_d=-8.1 \ \mu \rm{m}^{-1}$, the resonance shift with respect to $k=0$ atoms is around $75 \ \rm{kHz}$ with $t_{\rm{grad}}=13 \ \rm{ms}$.
 \end{itemize}
 
-We then decide to set $\Delta \nu_{\rm{RF}}=2 \rm{MHz}$ to make sure that no momentum class is excluded, and set $t_{\rm{sweep}}=3 \ \rm{ms}$ so that $\alpha/\Omega^2_{\rm{RF}}=6.7$, yielding a detection efficiency $\eta_{\rm{sweep}}=0.10(1)$. We remind that this number accounts for the transfer efficiency which is limited to $50 \%$ because of the three level structure of $2 ^3 S_1$ and the efficiency of the detector itself.
+We then decide to set $\Delta \nu_{\rm{RF}}=2 \rm{MHz}$ to make sure that no momentum class is excluded, and set $t_{\rm{sweep}}=3 \ \rm{ms}$ so that $\alpha/\Omega^2_{\rm{RF}}=6.7$, yielding a total detection efficiency $\eta_{\rm{sweep}}=0.10(1)$. We remind that this number accounts for the transfer efficiency which is limited to $50 \%$ because of the three level structure of $2 ^3 S_1$ and the efficiency of the detector itself.
 
 \subsubsection{Generation of the magnetic gradient}
 
@@ -436,7 +442,7 @@ Having described the experimental procedure to collect the data, we detail in th
 
 \subsection{Analysis of the transverse shape}
 
-The first thing that we need to check is the transverse shape of the 3D distribution to know whether we can fully decouple what is happening in the 1D direction from what is happening in the other two transverse directions. The transverse momentum distribution is supposed to be a Gaussian distribution whose width depends on the transverse trapping frequency. If the atoms are in the harmonic oscillator ground state of the transverse direction, the RMS width of the distribution in momentum space is $\sigma_{\rm{theo}}=\sqrt{\frac{m \omega_{\perp}}{2 \hbar}}$. \NOTE{factor 2?}
+The first thing that we need to check is the transverse shape of the 3D distribution to know whether we can fully decouple what is happening in the 1D direction from what is happening in the other two transverse directions. The transverse momentum distribution is supposed to be a Gaussian distribution whose width depends on the transverse trapping frequency. If the atoms are in the harmonic oscillator ground state of the transverse direction, the RMS width of the distribution in momentum space is $\sigma_{\rm{theo}}=\sqrt{\frac{m \omega_{\perp}}{2 \hbar}}$. 
 
 On Fig.-\ref{fig:1D_transverse}, we plot the transverse distribution along gravity at different positions along the 1D direction and normalize it to 1. We observe that we get the same RMS size for every $k_{\rm{1D}}$ at which the cut is done meaning that the 1D direction is fully decoupled from what is happening in the transverse direction. We extract its RMS width \fcolorbox{red}{white}{$\sigma_{\rm{exp}}=5.96(2) \mu \rm{m}^{-1}$}. This data set was taken with $s=26$, meaning that $\omega_{\rm{site}}=2 \pi \times 1.33(3) \times 10^6$ Hz, giving \fcolorbox{red}{white}{$\sigma_{\rm{theo}}=6.4(1) \ \mu \rm{m}^{-1}$} so a rather reasonable agreement between the two values. 
 
@@ -538,9 +544,9 @@ The other relevant parameter affecting the value of Tan's contact besides temper
     \begin{tabular}{c|c|c}
         {\color{MainColor} $\NBEC$} &  {\color{MainColor}$\bar{N}$} & {\color{MainColor}$\bar{\xi}_{\gamma$} \\
         \hline
-        3.10 $\times 10^4$  & 58 & 0.167 \\
-        1.10 $\times 10^5$ & 125 & 0.113 \\
-        2.26 $\times 10^5$ & 192 & 0.092 \\
+        3.1 $\times 10^4$  & 58 & 0.167 \\
+        1.1 $\times 10^5$ & 125 & 0.113 \\
+        2.3 $\times 10^5$ & 192 & 0.092 \\
     \end{tabular}}
 \caption{Weighted average number of atoms per tube and average reduced interaction strength for 3 different total atom numbers $\NBEC$.}
 \label{tab:gamma_vs_N}
@@ -585,7 +591,7 @@ Coming back to the predictions of \cite{yao2018tan}, we have already seen that t
 
 \subsection{Qualitative evolution with temperature}
 
-We plot on Fig.-\ref{fig:C_tilde_vs_T} the experimental rescaled contact $\tilde{C}$ as a function of $\xi_T$ for a fixed atom number $N=1.1 \times 10^5$ corresponding to $\xi_{\gamma}=0.113$. The error bars corresponds to the standard deviation over the data points averaged to obtain the value of the contact. As we only have 3 data points at the moment, it is rather hard to see a clear trend appearing, but the point at high temperature is clearly lower than the other 2. This qualitative behavior is consistent with the predictions of \cite{yao2018tan}: with the reduced interaction strength $\xi_{\gamma}=0.113$, we should be somewhere close to the green curve of \ref{fig:C_theo} panel (b) in the region of $\xi_T$ where $\tilde{C}$ is decreasing. It seems however that we should increase $\xi_{\gamma}=0.113$ if we wished to observe the non-monotonic behavior of the contact with the current error bars of the experiment.
+We plot on Fig.-\ref{fig:C_tilde_vs_T} the experimental rescaled contact $\tilde{C}$ as a function of $\xi_T$ for a fixed atom number $N=1.1(1) \times 10^5$ corresponding to $\xi_{\gamma}=0.113$. The error bars corresponds to the standard deviation over the data points averaged to obtain the value of the contact. As we only have 3 data points at the moment, it is rather hard to see a clear trend appearing, but the point at high temperature is clearly lower than the other 2. This qualitative behavior is consistent with the predictions of \cite{yao2018tan}: with the reduced interaction strength $\xi_{\gamma}=0.113$, we should be somewhere close to the green curve of \ref{fig:C_theo} panel (b) in the region of $\xi_T$ where $\tilde{C}$ is decreasing. It seems however that we should increase $\xi_{\gamma}=0.113$ if we wished to observe the non-monotonic behavior of the contact with the current error bars of the experiment.
 
 \begin{figure}
     \centering
@@ -607,7 +613,7 @@ We plot on Fig.-\ref{fig:C_vs_N} the experimental bare contact $C$ as a function
 
 \subsection{Comparison with QMC calculations}
 
-So far, we have only discussed the qualitative evolution of $\tilde{C}$ with $\xi_T$ and $\xi_{\gamma}$ which seems to be encouraging and consistent with theory. We can now look to push our study one step further by comparing the experimental data to {\it ab-initio} QMC calculations simulating our experiment. The calculations were once again performed by Hepeng Yao and simulate the entire tube distribution to match the experiment as precisely as possible. The results are plotted on Fig.-\ref{fig:1D_QMC_comparison} for two interaction parameters $\xi_{\gamma}=0.113$ and $\xi_{\gamma}=0.167$ corresponding to $\NBEC=110 \times 10^3$ and $\NBEC=31 \times 10^3$ for a fixed temperature $\xi_T=1.57$. The agreement for the low $k$ part is slightly off for the $\NBEC=110 \times 10^3$ data set, possibly due to a slight misevaluation of the temperature, but very good for the $\NBEC=31 \times 10^3$ data set, meaning that the method we use to determine the temperature is rather accurate, at least for low atom numbers. There is however a very clear disagreement by two orders of magnitude in the high $k$ part where the $\kmf$ tails are supposed to be.
+So far, we have only discussed the qualitative evolution of $\tilde{C}$ with $\xi_T$ and $\xi_{\gamma}$ which seems to be encouraging and consistent with theory. We can now look to push our study one step further by comparing the experimental data to {\it ab-initio} QMC calculations simulating our experiment. The calculations were once again performed by Hepeng Yao and simulate the entire tube distribution to match the experiment as precisely as possible. The results are plotted on Fig.-\ref{fig:1D_QMC_comparison} for two interaction parameters $\xi_{\gamma}=0.113$ and $\xi_{\gamma}=0.167$ corresponding to $\NBEC=1.1(1) \times 10^5$ and $\NBEC=3.1(3) \times 10^4$ for a fixed temperature $\xi_T=1.57$. The agreement for the low $k$ part is slightly off for the $\NBEC=1.1(1) \times 10^5$ data set, possibly due to a slight misevaluation of the temperature, but very good for the $\NBEC=3.1(3) \times 10^4$ data set, meaning that the method we use to determine the temperature is rather accurate, at least for low atom numbers. There is however a very clear disagreement by two orders of magnitude in the high $k$ part where the $\kmf$ tails are supposed to be.
 
 \begin{figure}
     \centering
@@ -620,10 +626,10 @@ So far, we have only discussed the qualitative evolution of $\tilde{C}$ with $\x
 
 It is actually not the first time that our team tried to measure a $\kmf$ scaling as we already attempted to measure this kind of scaling in the quantum depletion of a Bose-Einstein condensate. In \cite{chang2016momentum}, we actually measured a $\kmf$ scaling that was first attributed to Tan's contact but with too high of an amplitude, like in the case of the data presented here. Further investigations \cite{cayla_these} revealed that this scaling was in fact caused by $m_j=0$ impurities in the condensate that cannot be prevented from falling unto the MCP as they do not interact with magnetic fields. It was then the first hypothesis that we thought of to explain this discrepancy with the QMC calculations.
 
-We then decided to characterize the effect of these $m_j=0$ atoms as well as the non-transferred $m_j=1$ that are not properly kicked that we will name ``background'' atoms by preparing the gases as we usually would and using the same displacement sequence, but did not perform the population transfer in the beginning of the TOF. We performed a first test of the kind by preparing a gas with a deliberately low atom number $\NBEC=26(3) \times 10^3$, taking low and high momentum data as usual, and then measuring the distribution of $m_j=0$ for the same experimental sequence than used for the high momentum data. Even though the $m_j=0$ are unaffected by the magnetic field, we plot the distribution as if it were displaced to clearly compare it to the ``true'' displaced 1D distribution, as shown on Fig-\ref{fig:background_low_N}. We repeated this experiment for two different methods of removing the remaining non-transferred $m_j=1$ atoms, the first one being the usual method of using the $x$ gradient coil and the second one consisting in abruptly ramping up the current in the $y$ and $z$ bias coils to effectively create a gradient in time and push the atoms by doing so. We learn several things from these measurements:
+We then decided to characterize the effect of these $m_j=0$ atoms as well as the non-transferred $m_j=1$ that are not properly kicked that we will name ``background'' atoms by preparing the gases as we usually would and using the same displacement sequence, but not performing the population transfer in the beginning of the TOF. We performed a first test of the kind by preparing a gas with a deliberately low atom number $\NBEC=26(3) \times 10^3$, taking low and high momentum data as usual, and then measuring the distribution of $m_j=0$ for the same experimental sequence than used for the high momentum data. Even though the $m_j=0$ are unaffected by the magnetic field, we plot the distribution as if it were displaced to clearly compare it to the ``true'' displaced 1D distribution, as shown on Fig-\ref{fig:background_low_N}. We repeated this experiment for two different methods of removing the remaining non-transferred $m_j=1$ atoms, the first one being the usual method of using the $x$ gradient coil and the second one consisting in abruptly ramping up the current in the $y$ and $z$ bias coils to effectively create a gradient in time and push the atoms by doing so. We learn several things from these measurements:
 
 \begin{itemize}
-    \item The background density is higher when using the $y$ and $z$ bias coils than the $x$ gradient coil for the magnetic removal kick. This is rather reassuring has it had always been our preferred method so far. However, as the shape are also slightly different, this could mean that the $m_j=0$ atoms are not fully decoupled from the $m_j=1$ atoms during the TOF and that there could be some interactions affecting the shape of the background density. 
+    \item The background density is higher when using the $y$ and $z$ bias coils than the $x$ gradient coil for the magnetic removal kick. This is rather reassuring has it had always been our preferred method so far. However, the shape of the two profiles are also slightly different. As these two data sets have been taken on the same day, this cannot be explained by day-to-day fluctuations of the state of the experiment. This could then mean that the $m_j=0$ atoms are not fully decoupled from the $m_j=1$ atoms during the TOF and that there could be some interactions affecting the shape of the background density. 
     \item The background density is however dangerously close to the measured 1D distribution, especially with the $y,z$ removal kick where they overlap. Even worse, the background density seems to show a $\kmf$ decay as observed in the past.
     \item Weirdly, the magnetic removal kick method does not affect the 1D momentum distribution even though it should considering that the $y,z$ removal data seems to tell that we are observing the background density rather than the true 1D distribution. This could mean that the background is low enough with the $x$ removal method. We cannot however safely take this statement to be true, considering that there is only a factor $2$-$3$ between the background density and the 1D density and that their shape is very similar.
     \item The plateau region that does not appear in the QMC data cannot however be explained by the effect of the background density which is roughly one order of magnitude lower in this momentum region.
