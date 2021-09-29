@@ -32,7 +32,7 @@ In this chapter, we will then first introduce the concept of correlation functio
 
 \section{Correlation functions in Classical and Quantum Optics}
 
-In the most general sense, correlation functions are a mathematical object characterizing the the statistical correlations between random variables. They are defined from the concept of statistical average or expected value of a random variable in mathematics which is intuitively understood as the value that we will get on average if we measure the random variable a large number of times. In the following, the statistical average of a random variable $X$ will be written $\mean{X}$.
+In the most general sense, correlation functions are a mathematical object characterizing the statistical correlations between random variables. They are defined from the concept of statistical average or expected value of a random variable in mathematics which is intuitively understood as the value that we will get on average if we measure the random variable a large number of times. In the following, the statistical average of a random variable $X$ will be written $\mean{X}$.
 
 The simplest correlation function correlating two random variables $X_1$ and $X_2$ simply writes:
 
@@ -50,7 +50,7 @@ The simplest correlation function correlating two random variables $X_1$ and $X_
 \noindent meaning that the expected value of the product $X_1 X_2$ is simply the product of the expected values of $X_1$ and $X_2$. However, if $X_1$ and $X_2$ are correlated, the probability distribution of $X_2$ changes if we already know the realisation of $X_1$, preventing us to write the simple equation \ref{eq:indep_variables}. The value of $\mean{X_1 X_2}$ thus quantifies the degree of correlation of the two random variables. The concept of correlation function can be generalized up to any order to involve several random variables. We also note that in physics, the random variables are often dependent from time, space etc.. In all generality, the correlation function correlating $n$ random variables writes:
 
 \begin{equation}
-    \text{Corr}(X_1(s_1),X_2(s_2),...,X_i(s_i),...,X_n(s_n)) = \mean{X_1(s_1) X_2(s_2) ... X_i(s_i) ... X_n(s_n)} 
+    \text{Corr}^{(n)}(X_1(s_1),X_2(s_2),...,X_i(s_i),...,X_n(s_n)) = \mean{X_1(s_1) X_2(s_2) ... X_i(s_i) ... X_n(s_n)} 
 \end{equation}
 \noindent where $s_i$ is the proper set of parameters describing the variable $X_i$.
 
@@ -113,7 +113,7 @@ I(x)= 2 I_0 \Big(1+\cos(\omega_0 \frac{2x}{c}) \Big)
     E(t)=E_0 e^{i (\omega_0 t + \phi(t))}
 \end{equation}
 
-\noindent To keep things simple, we will take $\phi(t)$ uniformly distributed on $[0,2\pi]$ and assume that the phase ``jumps'' from a value to another with a time-independent probability. This is the so called wave packet model. Between two times $t$ and $t+dt$, the probability for the phase to change writes:
+\noindent To keep things simple, we will take $\phi(t)$ uniformly distributed on $[0,2\pi]$ and assume that the phase ``jumps'' from a value to another with a time-independent probability. This is the so-called wave packet model. Between two times $t$ and $t+dt$, the probability for the phase to change writes:
 
 \begin{equation}
     \mathrm{d}P = \frac{\mathrm{d}t}{\tau_c}
@@ -196,7 +196,7 @@ Through this very simple example, we understand that the observed interference p
     I=2 I_{0}\left[1+\int_{-\infty}^{\infty} s(\omega) \cos (\omega \tau) \mathrm{d} \omega\right]
 \end{equation}
 
-\noindent As $S(\omega) = |\mathrm{FT}[E(t)]|^2$ where FT denotes the Fourier transform, $s(\omega)$ is real allowing us to write \cite{mandel1995optical} \NOTE{verifier}
+\noindent As $S(\omega) = |\mathrm{FT}[E(t)]|^2$ where FT denotes the Fourier transform, $s(\omega)$ is real allowing us to write \cite{mandel1995optical}:
 
 \begin{equation}
     I=2 I_{0}\left[1+\mathrm{Re} \left(\int_{-\infty}^{\infty} s(\omega) \cos (\omega \tau) \mathrm{d} \omega\right)\right]
@@ -357,7 +357,7 @@ To show the effect of $\hat{a}_{l}$ and $\hat{a}_{l}^{\dagger}$, we introduce th
 
 As we have seen in the last paragraphs, there is a strong connection between correlation functions and the notion of coherence. Motivated by the measurements of Hanbury Brown and Twiss, Roy J. Glauber introduced in a famous paper of 1963 \cite{glauber1963quantum} the notion of $n$-th order coherence in the formalism of Quantum Optics and linked it to $n$-th order correlation functions, as we will see now.
 
-We have discussed so far correlation functions up to the second order. We now study correlation functions can be extended of higher order $n$ describing the probability of joint detection of $n$ photons at a set of positions and times $\{(\bm{r}_1,t_1),(\bm{r}_2,t_2),...,(\bm{r}_n,t_n)\}$: 
+We have discussed so far correlation functions up to the second order. Correlation functions can be extended of higher order $n$ describing the probability of joint detection of $n$ photons at a set of positions and times $\{(\bm{r}_1,t_1),(\bm{r}_2,t_2),...,(\bm{r}_n,t_n)\}$: 
 
 \begin{equation}
     G^{(n)}\left(\bm{r}_{1}, t_{1}, ... , \bm{r}_{n}, t_{n}\right)=\left\langle \hat{\bm{E}}^{(-)}\left(\bm{r}_{1}, t_{1}\right) ... \hat{\bm{E}}^{(-)}\left(\bm{r}_{n}, t_{n}\right) \hat{\bm{E}}^{(+)}\left(\bm{r}_{n}, t_{n}\right) ... \hat{\bm{E}}^{(+)}\left(\bm{r}_{1}, t_{1}\right)\right\rangle
@@ -496,7 +496,7 @@ As shown in equations \ref{eq:p_alpha} and \ref{eq:rho_chaotic}, the density mat
     g^{(n)} (\bm{r}_1,...,\bm{r}_n,t_1,...,t_n) = n! \ \mathrm{for} \ \bm{r}_1=\bm{r}_2= ... =\bm{r}_n \ \mathrm{and} \ t_1=t_2=...=t_n
 \end{equation}
 
-\noindent which is a generalisation of the two particles bosonic bunching, seen previously, for $n$ particles. Importantly, the situation is very different with a coherent state $\ket{\alpha}$ as we have $\langle \hat{a} \rangle, \langle \hat{a}^{\dagger} \rangle, \mean{\hat{a} \hat{a}}, \langle \hat{a}^{\dagger} \hat{a}^{\dagger} \rangle \neq 0$. While the Wick's theorem is still valid, its expression is much more complicated and not helpful as the second order correlation function is much easier to compute:
+\noindent which is a generalisation of the two particles bosonic bunching, seen previously, for $n$ particles. Importantly, the situation is very different with a coherent state $\ket{\alpha}$ as we have $\langle \hat{a} \rangle, \langle \hat{a}^{\dagger} \rangle, \mean{\hat{a} \hat{a}}, \langle \hat{a}^{\dagger} \hat{a}^{\dagger} \rangle \neq 0$. While the Wick's theorem can still be applied in its generalized form, its expression is much more complicated and not helpful as the second order correlation function is much easier to compute:
 
 
 \begin{equation}
@@ -608,21 +608,21 @@ We have seen that the pairing process induces the presence of cross-correlations
 
 \begin{equation}
 \begin{split}
-   \langle \hat{a}_1(t) \hat{a}_2(t) \rangle = \mathrm{cosh} \chi t \mathrm{sinh} \chi t (\langle \hat{a}_1(0) \hat{a}_1^{\dagger}(0) \rangle+ \langle \hat{a}_2(0)^{\dagger} \hat{a}_2(0) \rangle) + \mathrm{cosh}^2 \chi t \langle \hat{a}_1(0) \hat{a}_2^{\dagger}(0) \rangle \\
-   + \mathrm{sinh}^2 \chi t \langle \hat{a}_2^{\dagger}(0) \hat{a}_1(0) \rangle 
+   \langle \hat{a}_1(t) \hat{a}_2(t) \rangle = \mathrm{cosh} (\chi t) \mathrm{sinh} (\chi t) (\langle \hat{a}_1(0) \hat{a}_1^{\dagger}(0) \rangle+ \langle \hat{a}_2(0)^{\dagger} \hat{a}_2(0) \rangle) + \mathrm{cosh}^2 (\chi t) \langle \hat{a}_1(0) \hat{a}_2^{\dagger}(0) \rangle \\
+   + \mathrm{sinh}^2 (\chi t) \langle \hat{a}_2^{\dagger}(0) \hat{a}_1(0) \rangle 
 \end{split}
 \end{equation}
 
 \noindent which gives:
 
 \begin{equation}
-    \langle \hat{a}_1(t) \hat{a}_2(t) \rangle = \langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \rangle = \mathrm{cosh} \chi t \mathrm{sinh} \chi t
+    \langle \hat{a}_1(t) \hat{a}_2(t) \rangle = \langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \rangle = \mathrm{cosh} (\chi t) \mathrm{sinh} (\chi t)
 \end{equation}
 
 \noindent Likewise,
 
 \begin{equation}
-     \langle \hat{a}_1^{\dagger}(t) \hat{a}_1(t) \rangle = \langle \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \rangle = \mathrm{sinh}^2 \chi t
+     \langle \hat{a}_1^{\dagger}(t) \hat{a}_1(t) \rangle = \langle \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \rangle = \mathrm{sinh}^2 (\chi t)
 \end{equation}
 \begin{equation}
     \langle \hat{a}_1^{\dagger}(t) \hat{a}_2(t) \rangle =  \langle \hat{a}_2^{\dagger}(t) \hat{a}_1(t) \rangle = 0
@@ -633,8 +633,8 @@ We have seen that the pairing process induces the presence of cross-correlations
 \begin{equation}
 \begin{aligned}
       g^{(2)}(1,2) & = \frac{\langle \hat{a}_1^{\dagger}(t) \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \hat{a}_1(t) \rangle}{\langle \hat{a}_1^{\dagger}(t) \hat{a}_1(t) \rangle \langle \hat{a}_2^{\dagger}(t) \hat{a}_2(t) \rangle} \\
-      & = 1 + \frac{\mathrm{cosh}^2 \chi t \mathrm{sinh}^2 \chi t}{\mathrm{sinh}^4 \chi t} \\
-      & = 1+\frac{(1+\mathrm{sinh}^2 \chi t)\mathrm{sinh}^2 \chi t}{\mathrm{sinh}^4 \chi t} \\
+      & = 1 + \frac{\mathrm{cosh}^2 (\chi t) \mathrm{sinh}^2 (\chi t)}{\mathrm{sinh}^4 (\chi t)} \\
+      & = 1+\frac{(1+\mathrm{sinh}^2 (\chi t))\mathrm{sinh}^2 (\chi t)}{\mathrm{sinh}^4 (\chi t)} \\
       & = 2 + \frac{1}{\langle n_1(t) \rangle} 
       \label{eq:amp_g2_A}
 \end{aligned}
@@ -696,7 +696,7 @@ In fact, violating the Cauchy-Schwarz inequality can be enough to demonstrate en
     \gtwo (1,2) > 2 \Longleftrightarrow \gtwo (1,2) > \gtwo (1,1), \gtwo (2,2)
 \end{equation}
 
-\noindent which is strictly equivalent to violating the Cauchy-Schwarz inequality, therefore proving that the emitted photon pairs form an entangled state. Note that this development holds only if \textit{(i)} the statistics of the system are Gaussian so that we can apply Wick's theorem and have $\gtwo (1,1)=\gtwo (2,2)=2$, \textit{(ii)} $\langle \hat{a}^{\dagger}_{1} \hat{a}_{2} \rangle \langle \hat{a}^{\dagger}_{2} \hat{a}_{1} \rangle = 0$ which is true here but not in general. The effect described in this paragraph is also known as \textbf{spontaneous parametric down conversion} and is in fact one of the simplest way to obtain entangled states of light and has been used in many landmarks experiments \cite{burnham1970,heidmann1987observation,rarity1990experimental}.
+\noindent which is strictly equivalent to violating the Cauchy-Schwarz inequality, therefore proving that the emitted photon pairs form an entangled state. Note that this development holds only if (1) the statistics of the system are Gaussian so that we can apply Wick's theorem and have $\gtwo (1,1)=\gtwo (2,2)=2$, (2) $\langle \hat{a}^{\dagger}_{1} \hat{a}_{2} \rangle \langle \hat{a}^{\dagger}_{2} \hat{a}_{1} \rangle = 0$ which is true here but not in general. The effect described in this paragraph is also known as \textbf{spontaneous parametric down conversion} and is in fact one of the simplest way to obtain entangled states of light and has been used in many landmarks experiments \cite{burnham1970,heidmann1987observation,rarity1990experimental}.
 
 We have thus seen so far a few examples of historical Quantum Optics results through which we have familiarized ourselves with the concept of correlation functions and the kind of information they contain. However, we are still overlooking one of the key ingredient of the problem we wish to study, namely \textbf{interactions}. Indeed, photons are essentially mass-less, non-interacting particles. In order to add interactions into these famous Quantum Optics problems, physicists naturally turned to atoms. As a matter of fact, the Quantum Optics formalism can be extended quite easily to matter and atoms and gives an incentive to reproduce famous quantum optics effects with massive particles.
   
@@ -740,7 +740,7 @@ Just as for photons, the Fock states are constructed by applying the creation op
 
 % \NOTE{Etapes avant?}
 
-We now go back to the problem of the weakly-interacting Bose gas of $N$ atoms with contact interactions. In the second quantization formalism, the Hamiltonian of the system writes:
+We now go back to the problem of the weakly-interacting Bose gas of $\N$ atoms with contact interactions. In the second quantization formalism, the Hamiltonian of the system writes \cite{bogoliubov1947}:
 
 
 \begin{equation}
@@ -748,7 +748,7 @@ We now go back to the problem of the weakly-interacting Bose gas of $N$ atoms wi
     \label{eq:bogo_general}
 \end{equation}
 
-\noindent with $\delta\left(\textbf{r}-\textbf{r}^{\prime}\right)$ the contact interaction potential and $g=\dfrac{4 \pi \hbar^2 a_s}{m}$ is the strength of the interactions with $a_s$ the s-wave scattering length \cite{landau2013quantum}. The approximation of contact interactions is reasonable in the case where the scattering length is much smaller than the distance between atoms, $|a| n^{1/3} \ll 1$, as it is the case in our experiment. For a homogeneous gas contained within a box of volume $V$, the field operator $\hat{\psi}$ can be written in the plane wave basis:
+\noindent with $\delta\left(\textbf{r}-\textbf{r}^{\prime}\right)$ the contact interaction potential and $g=\dfrac{4 \pi \hbar^2 a_s}{m}$ is the strength of the interactions with $a_s$ the s-wave scattering length \cite{landau2013quantum} with $a_s = 7.5 \times 10^{-9} \ \rm{nm}$ for $\He$. The approximation of contact interactions is reasonable in the case where the scattering length is much smaller than the distance between atoms, $|a_s| n^{1/3} \ll 1$, as it is the case in our experiment. For a homogeneous gas contained within a box of volume $V$, the field operator $\hat{\psi}$ can be written in the plane wave basis:
 
 \begin{equation}
     \hat{\psi}(\bm{r})=\frac{1}{\sqrt{V}} \sum_{\bm{k}} \hat{a}_{\bm{k}} e^{i \bm{k} \cdot \bm{r}}
@@ -871,7 +871,7 @@ The Bogoliubov approach describes the excitations of the weakly-interacting Bose
     \label{eq:bose_qp}
 \end{equation}
 
-\noindent At $T=0$, the population of quasi-particles is null: $\langle \hat{b}^{\dagger}_{\bm{k}}  \hat{b}_{\bm{k}} \rangle_{T=0}=0$. From using the Bogoliubov transform, one can express the population of particles for a given momentum $k \neq 0$:
+\noindent At $T=0$, the population of quasi-particles is null: $\langle \hat{b}^{\dagger}_{\bm{k}}  \hat{b}_{\bm{k}} \rangle_{T=0}=0$. What can we say about real particles? From using the Bogoliubov transform, one can express the population of particles for a given momentum $k \neq 0$:
 
 \begin{equation}
     \langle \hat{a}^{\dagger}_{\bm{k}}  \hat{a}_{\bm{k}} \rangle=\textcolor{blue}{(|u_k|^2+|v_k|^2)\langle \hat{b}^{\dagger}_{\bm{k}}  \hat{b}_{\bm{k}} \rangle} + \textcolor{green}{|v_k|^2}
@@ -1026,7 +1026,7 @@ In a nutshell, we have two correlation features of interest well separated in mo
 
 \label{sec:width_correlation_theo}
   
-The weakly-interacting \textbf{homogeneous} Bose gas Hamiltonian is actually quite hard to implement in an actual experiment as we require an external potential $V(r)$ to trap the atoms, making the system not homogeneous anymore. This makes the theoretical approach significantly more difficult, but still manageable through numerical calculations as it was recently done in \cite{butera2020} to evaluate the correlation functions in the trapped case.
+The weakly-interacting \textbf{homogeneous} Bose gas Hamiltonian is actually quite hard to implement in an actual experiment as we require an external harmonic potential $V(\bm{r})$ to trap the atoms, making the system not homogeneous anymore. This makes the theoretical approach significantly more difficult, but still manageable through numerical calculations as it was recently done in \cite{butera2020} to evaluate the correlation functions in the trapped case.
 
 The central point to understand the effects of the trap is the \textbf{finite-size} of the system. Indeed, as we have seen in the Hanbury Brown and Twiss experiment aiming to measure the size of Sirius through the measurement of the second order correlation function, the width of the correlation function is inversely proportional to the spatial size of the source. The effect of the trap will thus mainly concern the width of the correlation function.
 
@@ -1036,7 +1036,7 @@ The central point to understand the effects of the trap is the \textbf{finite-si
 
 As discussed in the last paragraph for the homogeneous case, we expect a perfect bosonic bunching $g^{(2)}(\bm{k},\bm{k})=2$ for both the thermal and the quantum depletion. This feature is actually the same in the trapped case as shown in \cite{butera2020} where the numerical calculations also give a perfect bosonic bunching, independently of the temperature and thus of the balance between the thermally and quantum depleted atoms. The width of the correlation peak shows however quite interesting dependencies on the momentum value $k$ and the temperature.
 
-At $T=0$ or very low temperatures, the RMS width $\sigma_k$ of the normal correlations is dominated by the contribution of the quantum depletion. As the quantum depletion is non-existent outside of the BEC, its spatial size is the one of the BEC, meaning that the width of the normal correlations at $T=0$ should be $\sim 1/L_{\rm{BEC}}$, and so independently of $k$. This is what we observe on Fig.-\ref{fig:butera_kk} from \cite{butera2020}, with however a small increase of the width with $k$ that the authors attribute to a stronger localisation of the highly-excited Bogoliubov modes associated to the quantum depletion.
+At $T=0$ or very low temperatures, the RMS width $\sigma_k$ of the normal correlations is dominated by the contribution of the quantum depletion. As the quantum depletion is non-existent outside of the BEC, its spatial size is the one of the BEC, meaning that the width of the normal correlations at $T=0$ should be $\sim 1/L_{\rm{BEC}}$ with $L_{\rm{BEC}}$ the spatial size of the BEC, and so independently of $k$. This is what we observe on Fig.-\ref{fig:butera_kk} from \cite{butera2020}, with however a small increase of the width with $k$ that the authors attribute to a stronger localisation of the highly-excited Bogoliubov modes associated to the quantum depletion.
 For $T \neq 0$ however, the dependency of the normal correlations width with $k$ is non-monotonic. At large $k$, we retrieve the same width than for $T=0$. Indeed, the thermal energy is not sufficient to populate such high $k$ values. The depletion is thus fully quantum and the width $\sim 1/L_{\rm{BEC}}$. As $k$ decreases, we progressively reach a momentum region where the depletion is mainly thermal. As the spatial size of the thermal excitations is larger than that of the BEC because of the increased kinetic energy, $\sigma_k$ is reduced. We then enter a plateau region that starts for higher values of $k$ and stabilizes around lower values of $\sigma_k$ as $T$ increases as shown on Fig.-\ref{fig:butera_kk}. The plateau region ends for very low values of $k$ as $\sigma_k$ slightly increases with decreasing $k$ that the authors of \cite{butera2020} attribute to the phononic character of the thermal excitations in this $k$ region.
 
 
@@ -1073,15 +1073,16 @@ In addition, there are several key features of the \kmk correlation signal that 
 
 A crucial aspect of studying the correlations in the depletion is the ability to separate the depleted atoms from the condensed ones. As a matter of fact, the BEC is a fully coherent state with macroscopic occupation of a single mode. In analogy with laser light in Optics, the statistics of the BEC are not chaotic and no bosonic bunching can therefore be observed. In addition, no \kmk correlations are expected for atoms belonging to the condensate. Furthermore, in the weakly-interacting BEC, the number of condensed atoms is much larger than the number of depleted atoms. This has a direct consequence for our measurement: if we are unable to remove condensed atoms from the analysis, they will entirely drown out the correlation signals of the depletion.
 
-Fortunately, the BEC and the depletion extents in momentum space are very different. Position and momentum are related to one other by means of Fourier transform. This tells us that the typical size of the momentum mode of the BEC is $1/L_{\rm{BEC}}$ \cite{stenger1999} where $L_{\rm{BEC}}$ is the spatial size of the BEC. On the other hand, the typical momentum width of the quantum depletion is $1/\xi$. Since $\xi \ll L_{\rm{BEC}}$, $1/\xi \gg 1/L_{\rm{BEC}}$ meaning that the quantum depletion extends on a much larger momentum area than the BEC. Likewise, for the typical temperatures accessible in our experiment, the momentum width of the thermal depletion is significantly larger than for the BEC. This provides us with a natural way to separate the condensate from its depletion and defines one of the experimental ingredients: we need an experimental setup capable of resolving the different regions of momentum space so that the region around $\bm{k}=\bm{0}$ corresponding to the BEC can be removed from the analysis. Luckily, while removing the BEC region we also remove the low $k$ part of the momentum space in which the Bogoliubov quasi-particles have a strong phononic character (see Chapter \ref{sec:chapter_4} for experimental numbers) and thus \kmk correlations between real particles, fulfilling the requirement described in \ref{sec:2nd_order_bogo}.
+Fortunately, the BEC and the depletion extents in momentum space are very different. As for the width of the correlation functions, the typical size of the momentum mode of the BEC is $1/L_{\rm{BEC}}$ \cite{stenger1999}. On the other hand, the typical momentum width of the quantum depletion is $1/\xi$. Since $\xi \ll L_{\rm{BEC}}$, $1/\xi \gg 1/L_{\rm{BEC}}$ meaning that the quantum depletion extends on a much larger momentum area than the BEC. Likewise, for the typical temperatures accessible in our experiment, the momentum width of the thermal depletion is significantly larger than for the BEC.
+This effect is illustrated on Fig.-\ref{fig:density_lattice_ch1}. This provides us with a natural way to separate the condensate from its depletion and defines one of the experimental ingredients: we need an experimental setup capable of resolving the different regions of momentum space so that the region around $\bm{k}=\bm{0}$ corresponding to the BEC can be removed from the analysis. Luckily, while removing the BEC region we also remove the low $k$ part of the momentum space in which the Bogoliubov quasi-particles have a strong phononic character (see Chapter \ref{sec:chapter_4} for experimental numbers) and thus \kmk correlations between real particles, fulfilling the requirement described in \ref{sec:2nd_order_bogo}.
 
-\NOTE{gérer ça}
+
 
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{Fig/Chapter1/cayla_2018.png}
-    \caption[Mo]{Caption}
-    \label{fig:my_label}
+    \caption[Illustration of the different momentum extents of the BEC and the depletion]{Experimental momentum density illustrating the different momentum extents of the BEC and the depletion. The condensed atoms correspond to the sharp and narrow peaks, as opposed to the wide background between the peaks that correspond the depletion. Note that the presence of several condensed peaks is linked to the presence of an optical lattice, as it will be explained in Chapter \ref{sec:chapter_2}. Taken from \cite{cayla2018single}.}
+    \label{fig:density_lattice_ch1}
 \end{figure}
 
 

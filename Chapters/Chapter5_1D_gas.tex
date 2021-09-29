@@ -93,7 +93,9 @@ These different regimes have been widely investigated \cite{petrov2000regimes} a
 
 The main difficulty to experimentally characterize those regimes resides in the fact that most quantities show a smooth and monotonic behavior when crossing the transition points between the different regimes. This motivated theoretical studies of the dependency of the Tan's contact with the strength of interactions and temperature to determine if $C$ can be used as a probe to characterize these different regimes. Previous works have conducted such studies for homogeneous bosons at finite temperature \cite{kheruntsyan2003pair,kormos2009expectation}, trapped bosons at zero temperature \cite{minguzzi2002high,olshanii2003short} or for the trapped finite temperature Tonks-Girardeau regime \cite{vignolo2013universal}. They were recently completed by \cite{yao2018tan}, characterizing trapped Lieb-Liniger bosons for arbitrary values of the temperature and the interaction parameter.
 
-One of the main experimental difficulties for measuring Tan's contact comes from the fact that the high momentum $\kmf$ tails correspond to very low density values that are hard to detect with classic optical imaging techniques. This problem is however solved with the $\He$ detector thanks to his large dynamic momentum range. Interestingly, our experimental apparatus can be adapted to study 1D physics by transforming our 3D optical lattice into a 2D one as we will see in \ref{sec:1D_exp}, making it a good candidate to verify the predictions of \cite{yao2018tan}.
+One of the main experimental difficulties for measuring Tan's contact from the momentum density $\rho(k)$ comes from the fact that the high momentum $\kmf$ tails correspond to very low density values that are hard to detect with classic optical imaging techniques. This problem is however solved with the $\He$ detector thanks to his large dynamic momentum range. Interestingly, our experimental apparatus can be adapted to study 1D physics by transforming our 3D optical lattice into a 2D one as we will see in \ref{sec:1D_exp}, making it a good candidate to verify the predictions of \cite{yao2018tan}.
+
+\NOTE{corriger ici}
 
 \begin{figure}
     \centering
@@ -181,7 +183,7 @@ The existence of a maximum value of the contact can be understood by the competi
 
 \subsubsection{Weakly-interacting regime}
 
-In the weakly-interacting regime, the interactions are not strong enough to fermionize the gas. In the low-temperature regime $1, \, \xi_T \leq \xi_\gamma^{-1}$, the gas forms a quasi-condensate and the contact is obtained from equation \ref{eq:C_with_int} with the mean-field expression of $\mean{H_{\text {int }}}$ and writes:
+In the weakly-interacting regime, the interactions are not strong enough to fermionize the gas. In the low-temperature regime $(1, \, \xi_T) \leq \xi_\gamma^{-1}$, the gas forms a quasi-condensate and the contact is obtained from equation \ref{eq:C_with_int} with the mean-field expression of $\mean{H_{\text {int }}}$ and writes:
 
 \begin{equation}
     C = \eta \frac{N^{5/2}}{a_{\rm{ho}}^3} \xi_\gamma^{5/3} 
@@ -203,7 +205,7 @@ In the weakly-interacting regime, the interactions are not strong enough to ferm
 
 \subsection{2D Lattice}
 
-Now that we have seen what Tan's contact is and how it could be used to characterize the regimes of Lieb-Liniger 1D gases, we show how our experimental apparatus can be adapted to study 1D physics with the objective of testing experimentally the predictions of \cite{yao2018tan}. The main idea to obtain an  experimental 1D system is to ``freeze'' the degrees of freedom of the atoms in two directions of space. To do so, the easiest solution is to use a harmonic trapping potential with trapping frequencies $\omega_{\perp}$ high enough so that the energy difference $\Delta E =\hbar \omega_{\perp}$ between the ground-state and the first excited state is much larger than the typical energy of the atoms $\Delta E \gg \kB T, \mu$ as illustrated on Fig-\ref{fig:1D_config}. Such high trapping frequencies are accessible in our experiment thanks to the optical lattice. Instead of using the 3 pairs of countra-propagating beam as we did so far, we use only 2 to produce a 2D lattice. Interestingly, the total laser power is divided amongst 2 pair of beams instead of 3, meaning that we can reach much higher values of the lattice depth, typically up to $s=30$. In the direction where there is no lattice, the trapping potential results from the Gaussian shape of the beams and has a trapping frequency $\omega_{\rm{1D}} =2 \pi \times 140 \sqrt{s} = 2 \pi  \times 713 \ \rm{Hz}$ for $s=26$. In the other 2 directions, the trapping frequency is on the contrary very large as a result of the lattice interference pattern $\omega_{\perp} \simeq 200 \ \rm{kHz}$, which is much larger than the energy of the atoms $\kB T, \mu \simeq 25 \ \rm{kHz}$ with typical experimental parameters.
+Now that we have seen what Tan's contact is and how it could be used to characterize the regimes of Lieb-Liniger 1D gases, we show how our experimental apparatus can be adapted to study 1D physics with the objective of testing experimentally the predictions of \cite{yao2018tan}. The main idea to obtain an  experimental 1D system is to ``freeze'' the degrees of freedom of the atoms in two directions of space. To do so, the easiest solution is to use a harmonic trapping potential with trapping frequencies $\omega_{\perp}$ large enough so that the energy difference $\Delta E =\hbar \omega_{\perp}$ between the ground-state and the first excited state is much larger than the typical energy of the atoms $\Delta E \gg \kB T, \mu$ as illustrated on Fig-\ref{fig:1D_config}. Such high trapping frequencies are accessible in our experiment thanks to the optical lattice. Instead of using the 3 pairs of countra-propagating beam as we did so far, we use only 2 such pairs to produce a 2D lattice. Interestingly, the total laser power is divided amongst 2 pair of beams instead of 3, meaning that we can reach much higher values of the lattice depth, typically up to $s=30$. In the direction where there is no lattice, the trapping potential results from the Gaussian shape of the beams and has a trapping frequency $\omega_{\rm{1D}} =2 \pi \times 140 \sqrt{s} = 2 \pi  \times 713 \ \rm{Hz}$ for $s=26$. In the other 2 directions, the trapping frequency is on the contrary very large as a result of the lattice interference pattern $\omega_{\perp} \simeq 200 \ \rm{kHz}$, which is much larger than the energy of the atoms $\kB T, \mu \simeq 25 \ \rm{kHz}$ with typical experimental parameters.
 
 \begin{figure}
     \centering
@@ -220,7 +222,7 @@ Using the optical lattice in this configuration then allows us to emulate 1D phy
 
 \subsubsection{Number of atoms}
 
-The major difficulty of working with our array of 1D gases with comes from the fact the atom number varies from one 1D tube to another. To determine the atom number distribution, we first need to determine the density profile of the cloud in the 2D lattice.
+One major difficulty of working with our array of 1D gases with comes from the fact the atom number varies from one 1D tube to another. To determine the atom number distribution, we first need to determine the density profile of the cloud in the 2D lattice.
 
 To do so, we first remind that under the Thomas-Fermi approximation \cite{pethick2008bose}, the density profile of a BEC in a 3D harmonic potential writes:
 
@@ -323,11 +325,11 @@ The reduced interaction strength $\xi_{\gamma}$ is rather straightforward to obt
     \bar{\xi}_{\gamma} = \sum_{j,l} \frac{N_{j,l}}{\NBEC} \xi_{\gamma}^{j,l}
 \end{equation}
 
-\noindent Note that this kind of averaging can be done for all relevant quantities that vary from one 1D tube to another.
+\noindent Note that this kind of weighted averaging can be done for all relevant quantities that vary from one 1D tube to another.
 
 \subsubsection{Temperature}
 
-We have proven in \ref{sec:adiabatic_prep} that the loading of the 3D lattice is adiabatic up to lattice depths of $s=18$. As we keep the same loading sequence for the 2D lattice preparing the 1D tubes, it is rather reasonable to assume that the loading is here adiabatic as well even though we go to higher amplitudes and the geometry of the lattice is different. Under this assumption, we then expect the temperature to be the same amongst all the 1D tubes. We will see later how it can be obtained from the measured momentum distribution.
+We have proven in \ref{sec:adiabatic_prep} that the loading of the 3D lattice is adiabatic up to lattice depths of $s=18$. As we keep the same loading sequence for the 2D lattice preparing the 1D tubes, it is rather reasonable to assume that the loading is here adiabatic as well even though we go to higher amplitudes and the geometry of the lattice is different. Under this assumption, we then expect the temperature to be the same amongst all the 1D tubes. We will see later how information on the temperature can be obtained from the measured momentum distribution.
 
 \subsubsection{Independence of the tubes}
 
@@ -340,7 +342,7 @@ In order to properly observe 1D physics, it is crucial that all the 1D tubes are
 
 While the great sensitivity of the $\He$ detector is perfectly suited to detect the very low density $\kmf$ momentum tails, its range is inherently limited by the size of the MCPs. This is a major drawback as the $\kmf$ decay only happens for large values of $k$ that might fall out of the range of the $\He$ detector. One solution could be to have the 1D direction vertical as the $\He$ detector range is not limited in this direction, but this is not possible due to the layout of the lattice beams (see \ref{fig:scheme_odt_lattice}). The most advantageous solution is then to set the 1D direction along the direction set by the $+45^{\circ}$ beam (the 2D lattice is then made by the $-45^{\circ}$ and horizontal beams), increasing the effective range of the detector by a factor $\sqrt{2}$. The maximum detectable momentum is then $k_{\rm{max}} \simeq 14 \ \mu \rm{m}^{-1}$.
 
-Actually, we can use the results of \cite{xu2015universal} that show that the $\kmf$ decay should start around $k_0 \sim 1.6 \times \bar{\rho}_{\rm{1D}}$ to determine whether the tails should be detectable or not. For $\NBEC \simeq 100 \times 10^3$, we find that $k_0 \simeq 10 \ \mu \rm{m}^{-1}$, meaning that even though we could see the beginning of the $\kmf$ decay, the range is too small to observe it on a sufficiently large momentum range. We therefore need a solution to effectively increase the range of the $\He$ detector.
+Actually, we can use the results of \cite{xu2015universal} that show that the $\kmf$ decay should start around $k_0 \sim 1.6 \times \bar{\rho}_{\rm{1D}}$ to determine whether the tails should be detectable or not. For $\NBEC \simeq 100 \times 10^3$, we find that $k_0 \simeq 10 \ \mu \rm{m}^{-1}$, meaning that even though we could see the beginning of the $\kmf$ decay, the range is too small to observe it on a sufficiently large momentum range. We therefore need a solution to effectively increase the momentum range of the $\He$ detector.
 
 \subsection{Magnetic gradient and displacement procedure}
 
@@ -354,7 +356,7 @@ To solve this issue, we make use of the Landau-Zener effect that describes the p
 
 \begin{itemize}
     \item The initial and final detunings must be much larger than the RF Rabi frequency $\Omega_{\rm{RF}}$ so that $\Delta \nu_{\rm{RF}} \gg 2 \Omega_{\rm{RF}} \simeq 20 \rm{kHz}$
-    \item The fraction of transferred atom depends from the rate $\alpha = \Delta \nu_{\rm{RF}}/ \Delta t_{\rm{sweep}}$ at which $\nu_{\rm{RF}}(t)$ changes. The transfer is more efficient as $\alpha$ is low. In practice, for a two-level atom, a $70 \%$ transfer rate is achieved when $\alpha \leq \Omega_{RF}^2$.
+    \item The fraction of transferred atom depends from the rate $\alpha = \Delta \nu_{\rm{RF}}/ \Delta t_{\rm{sweep}}$ at which $\nu_{\rm{RF}}(t)$ changes. The transfer is more efficient as $\alpha$ is low. 
     \item $\Delta \nu_{\rm{RF}}$ must be large enough to encapsulate all resonance frequencies shifted because of the residual magnetic gradient to properly transfer all relevant momentum classes. For an initial momentum $k=-k_d=-8.1 \ \mu \rm{m}^{-1}$, the resonance shift with respect to $k=0$ atoms is around $75 \ \rm{kHz}$ with $t_{\rm{grad}}=13 \ \rm{ms}$.
 \end{itemize}
 
@@ -418,7 +420,7 @@ As in \ref{sec:transverse_integration}, the transverse size of the voxels that w
 
 \subsection{Benchmarking with 3D lattice gases momentum distribution}
 
-To check that our method does not induce any distortion of the momentum distribution, we benchmark it with 3D lattice gas momentum distribution for different displacements. The lattice amplitude is set to $s=15$, \ie slightly above the Mott critical point so that the momentum distribution has a wide background but still sharp diffraction peaks. We can check the overlap of the data sets for different displacements with the wide background while precisely characterizing distortion effects by looking at the location of the diffraction peaks.
+To check that our method does not induce any distortion of the momentum distribution, we benchmark it with 3D lattice gas momentum distribution for different displacements. The lattice amplitude is set to $s=15$, \ie high enough so that the momentum distribution has a wide background but still sharp diffraction peaks. We can check the overlap of the data sets for different displacements with the wide background while precisely characterizing distortion effects by looking at the location of the diffraction peaks.
 
 \begin{figure}
     \centering
@@ -427,12 +429,24 @@ To check that our method does not induce any distortion of the momentum distribu
     \label{fig:1D_overlap_mott}
 \end{figure}
 
-The data is plotted on Fig-\ref{fig:1D_overlap_mott}. The overlap is voluntarily not perfect to highlight some caveats of the displacement procedure:
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Fig/Chapter5/bad_overlap.png}
+    \caption[Test of the displacement sequence on a 3D lattice $s=15$ momentum distribution]{Test of the displacement sequence on a 3D lattice $s=15$ momentum distribution. The blue curve corresponds to no displacement gradient, while the orange, green and red curves corresponds to displaced data with a command voltage $V_{\rm{c}}=450 \ \rm{mV}$ for the orange curve and $V_{\rm{c}}=1000 \ \rm{mV}$ for the green and red ones. The time $t_{\rm{grad}}$ before the RF transfer consists $1 \ \rm{ms}$ during which the current in the MOT coils is set to increase, and $8 \ \rm{ms}$ where it is left to decrease for the orange and green curves. This time is extended to $14 \ \rm{ms}$ for the red curve.}
+    \label{fig:1D_bad_overlap_mott}
+\end{figure}
+
+
+
+The data is plotted on Fig-\ref{fig:1D_overlap_mott} and Fig-\ref{fig:1D_bad_overlap_mott}. These two figures illustrate several crucial points:
 
 \begin{itemize}
-    \item Even though we get an almost perfect agreement between the blue (non-displaced) and the orange curve, the orange peak at $k=k_d$ is lower than expected. This is an effect that we attribute to the transverse integration that causes the measured distribution to decay faster than we would expect on the edges of the MCP as explained in the previous paragraph. 
-    \item While we still let the current in the MOT coils increase for $1 \ \rm{ms}$, we perform the RF transfer only $8 \ \rm{ms}$ after this step which is too short for the gradient to properly turn off, except for the red curve where we increase this time to $14 \ \rm{ms}$. As already explained, the atoms see different magnetic fields at the moment of the RF transfer depending on their initial momentum because of the residual gradient. If the displacement gradient is not properly turned off, some atoms interact longer with the field depending on the sweep time where their resonance frequency is crossed, causing a distortion of the distribution. This effect is striking on the green curve for which the diffraction peak appears at a lower $k$ than expected. On the other hand, if we wait long enough for the displacement gradient to be turned off, this effect disappear as illustrated by the diffraction peak of the red curve well centered on $k=k_d$.
+    \item Even though we get an almost perfect agreement between the blue (non-displaced) and the orange curve on Fig.-\ref{fig:1D_overlap_mott}, the orange peak at $k=k_d$ is lower than expected. This is an effect that we attribute to the transverse integration that causes the measured distribution to decay faster than we would expect on the edges of the MCP as explained in the previous paragraph. The green curve however well reproduces the shape of the $-1 \ k_d$ peak. 
+    
+    \item The data of Fig-\ref{fig:1D_bad_overlap_mott} illustrates an important caveat of the displacement procedure. While we still let the current in the MOT coils increase for $1 \ \rm{ms}$, we perform the RF transfer only $8 \ \rm{ms}$ after this step which is too short for the gradient to properly turn off, except for the red curve where we increase this time to $14 \ \rm{ms}$. As already explained, the atoms see different magnetic fields at the moment of the RF transfer depending on their initial momentum because of the residual gradient. If the displacement gradient is not properly turned off, some atoms interact longer with the field depending on the sweep time where their resonance frequency is crossed, causing a distortion of the distribution. This effect is striking on the green curve for which the diffraction peak appears at a lower $k$ than expected. On the other hand, if we wait long enough for the displacement gradient to be turned off, this effect disappear as illustrated by the diffraction peak of the red curve well centered on $k=k_d$.
 \end{itemize}
+
+\NOTE{reprendre là}
 
 These effects set aside, we get a nice overlap between the different data sets and therefore conclude that our displacement method does not induce any distortion of the measured momentum distribution. 
 
