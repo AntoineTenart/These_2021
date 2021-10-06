@@ -1,4 +1,5 @@
-\chapterimage{}
+\chapterimage{Fig/Chapter5/cover_ch5.png}
+
 
 \chapter{Towards measuring Tan's contact in 1D gases}
 
@@ -100,7 +101,7 @@ There have been many experiments aiming at measuring Tan's contact in strongly i
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{Fig/Chapter5/state_diagam_hepeng.png}
-    \caption[State diagram of trapped 1D Bose gases with repulsive interactions as a function of the reduced temperature $\xi_T$ and the reduced interaction strength $xi_{\gamma}$ for trapped 1D gases]{State diagram of trapped 1D Bose gases with repulsive interactions as a function of the reduced temperature $\xi_T$ and the reduced interaction strength $xi_{\gamma}$ for trapped 1D gases. The solid lines indicate smooth crossovers between the different regimes. Taken from \cite{yao:tel-03065015}.}
+    \caption[State diagram of trapped 1D Bose gases with repulsive interactions as a function of the reduced temperature $\xi_T$ and the reduced interaction strength $\xi_{\gamma}$ for trapped 1D gases]{State diagram of trapped 1D Bose gases with repulsive interactions as a function of the reduced temperature $\xi_T$ and the reduced interaction strength $\xi_{\gamma}$ for trapped 1D gases. The solid lines indicate smooth crossovers between the different regimes. Taken from \cite{yao:tel-03065015}.}
     \label{fig:1D_diagram}
 \end{figure}
 
@@ -170,7 +171,7 @@ In the asymptotic regime of low-temperature limit $\xi_\gamma^{-1} \leq \xi_T \l
     \label{eq:strong_int_lowT}
 \end{equation}
 
-\noindent In the opposite regime of high-temperature $\xi_\gamma^{-1}, \, 1 \leq \sqrt{\xi_T}$, we rather get:
+\noindent In the opposite regime of high-temperature $(\xi_\gamma^{-1}, \, 1) \leq \sqrt{\xi_T}$, we rather get:
 
 \begin{equation}
     C \simeq 2 \sqrt{2} \, \frac{N^{5/2}}{ \pi a_{\rm{ho}}^3} \, \frac{\xi_\gamma}{\xi_T} 
@@ -238,7 +239,7 @@ To do so, we first remind that under the Thomas-Fermi approximation \cite{pethic
 
 \noindent with $\bar{\omega}=\omega_x \omega_y \omega_z/3$ the average trapping frequency with $a^{\rm{3D}}_{\rm{ho}}=\sqrt{\hbar/m \bar{\omega}}$
 
-Similarly to the method developed in \ref{sec:rescaled_interaction}, we rescale the coupling constant $g$ \cite{kramer2002macroscopic} to account for the presence of the 2D lattice with as we did in \ref{sec:rescaled_interaction}:
+Similarly to the method developed in \ref{sec:rescaled_interaction}, we rescale the coupling constant $g$ \cite{kramer2002macroscopic} to account for the presence of the 2D lattice:
 
 \begin{equation}
     g'=g\left(\frac{\sqrt{\pi / 2} s^{1 / 4}}{\operatorname{Erf}\left[\pi s^{1 / 4} / 2\right]}\right)^{2}
@@ -366,7 +367,7 @@ We then decide to set $\Delta \nu_{\rm{RF}}=2 \rm{MHz}$ to make sure that no mom
 
 The procedure to create the magnetic gradient was mainly designed to fit the constraints set by the design of our experimental apparatus. As a matter of fact, the geometry of the science chamber makes it quite hard to install coils capable of producing a strong enough gradient along the direction of the $+45^{\circ}$ or $-45^{\circ}$ beams which are the best choice for the 1D direction in terms of momentum range of the detector. On the other hand, there is a gradient coil quite close to the atoms capable of producing a strong enough gradient along the horizontal beam direction that we will denote as the $x$ direction, as well as the MOT coils capable of producing a strong gradient 4 times stronger along $x$. We then decided to set the 1D direction along $x$. While this reduces the momentum range by a factor $\sqrt{2}$, this is not a big issue as we will use the gradient to compensate for it. 
 
-After quite a bit of testing, we decided to use the the MOT coils instead of the $x$ gradient coils as the former is capable a producing a stronger gradient, effectively reducing the time during which the gradient must be applied. This has the advantage of reducing the spatial spread of the atoms before the transfer to $m_j=0$ and thus the inhomogeneity in resonance frequencies because of the residual gradient.  
+After quite a bit of testing, we decided to use the the MOT coils instead of the $x$ gradient coils as the former is capable of producing a stronger gradient, effectively reducing the time during which the gradient must be applied. This has the advantage of reducing the spatial spread of the atoms before the transfer to $m_j=0$ and thus the inhomogeneity in resonance frequencies because of the residual gradient.  
 
 \subsubsection{Displacement procedure}
 
@@ -425,7 +426,7 @@ To check that our method does not induce any distortion of the momentum distribu
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{Fig/Chapter5/overlap.png}
-    \caption[Test of the displacement sequence on a 3D lattice $s=15$ momentum distribution]{Test of the displacement sequence on a 3D lattice $s=15$ momentum distribution. The blue curve corresponds to no displacement gradient, while the orange, and green curves corresponds to displaced data with a command voltage $V_{\rm{c}}=450 \ \rm{mV}$ for the orange curve and $V_{\rm{c}}=1000 \ \rm{mV}$ for the green one. The time $t_{\rm{grad}}$ before the RF transfer consists $1 \ \rm{ms}$ during which the current in the MOT coils is set to increase, and $8 \ \rm{ms}$ where it is left to decrease for the orange curve. This time is extended to $14 \ \rm{ms}$ for the red curve.}
+    \caption[Test of the displacement sequence on a 3D lattice $s=15$ momentum distribution]{Test of the displacement sequence on a 3D lattice $s=15$ momentum distribution. The blue curve corresponds to no displacement gradient, while the orange, and green curves corresponds to displaced data with a command voltage $V_{\rm{c}}=450 \ \rm{mV}$ for the orange curve and $V_{\rm{c}}=1000 \ \rm{mV}$ for the green one. The time $t_{\rm{grad}}$ before the RF transfer consists $1 \ \rm{ms}$ during which the current in the MOT coils is set to increase, and $8 \ \rm{ms}$ where it is left to decrease for the orange curve. This time is extended to $14 \ \rm{ms}$ for the green curve.}
     \label{fig:1D_overlap_mott}
 \end{figure}
 
@@ -638,7 +639,7 @@ So far, we have only discussed the qualitative evolution of $\tilde{C}$ with $\x
 
 It is actually not the first time that our team tried to measure a $\kmf$ scaling as we already attempted to measure this kind of scaling in the quantum depletion of a Bose-Einstein condensate. In \cite{chang2016momentum}, we actually measured a $\kmf$ scaling that was first attributed to Tan's contact but with too high of an amplitude, like in the case of the data presented here. Further investigations \cite{cayla_these} revealed that this scaling was in fact caused by $m_j=0$ impurities in the condensate that cannot be prevented from falling unto the MCP as they do not interact with magnetic fields. It was then the first hypothesis that we thought of to explain this discrepancy with the QMC calculations.
 
-We then decided to characterize the effect of these $m_j=0$ atoms as well as the non-transferred $m_j=1$ that are not properly kicked that we will name ``background'' atoms by preparing the gases as we usually would and using the same displacement sequence, but not performing the population transfer in the beginning of the TOF. We performed a first test of the kind by preparing a gas with a deliberately low atom number $\NBEC=26(3) \times 10^3$, taking low and high momentum data as usual, and then measuring the distribution of $m_j=0$ for the same experimental sequence than used for the high momentum data. Even though the $m_j=0$ are unaffected by the magnetic field, we plot the distribution as if it were displaced to clearly compare it to the ``true'' displaced 1D distribution, as shown on Fig-\ref{fig:background_low_N} \NOTE{verifier commentaire David}. We repeated this experiment for two different methods of removing the remaining non-transferred $m_j=1$ atoms, the first one being the usual method of using the $x$ gradient coil and the second one consisting in abruptly ramping up the current in the $y$ and $z$ bias coils to effectively create a gradient in time and push the atoms by doing so. We learn several things from these measurements:
+We then decided to characterize the effect of these $m_j=0$ atoms as well as the non-transferred $m_j=1$ that are not properly kicked that we will name ``background'' atoms by preparing the gases as we usually would and using the same displacement sequence, but not performing the population transfer in the beginning of the TOF. We performed a first test of the kind by preparing a gas with a deliberately low atom number $\NBEC=26(3) \times 10^3$, taking low and high momentum data as usual, and then measuring the distribution of $m_j=0$ for the same experimental sequence than used for the high momentum data. Even though the $m_j=0$ are unaffected by the magnetic field, we plot the distribution as if it were displaced to clearly compare it to the ``true'' displaced 1D distribution plotted in log-scale, as shown on Fig-\ref{fig:background_low_N}. We repeated this experiment for two different methods of removing the remaining non-transferred $m_j=1$ atoms, the first one being the usual method of using the $x$ gradient coil and the second one consisting in abruptly ramping up the current in the $y$ and $z$ bias coils to effectively create a gradient in time and push the atoms by doing so. We learn several things from these measurements:
 
 \begin{itemize}
     \item The background density is higher when using the $y$ and $z$ bias coils than the $x$ gradient coil for the magnetic removal kick. This is rather reassuring has it had always been our preferred method so far. However, the shape of the two profiles are also slightly different. As these two data sets have been taken on the same day, this cannot be explained by day-to-day fluctuations of the state of the experiment. This could then mean that the $m_j=0$ atoms are not fully decoupled from the $m_j=1$ atoms during the TOF and that there could be some interactions affecting the shape of the background density. In addition, as the magnetic bias used to separate the magnetic sub-levels for the population transfer is along the $x$ direction, the kick using the $y$ and $z$ bias coils is not oriented along the quantification axis. This could result in some uncontrolled population transfer between the $m_j=1$ and the $m_j=0$ sub-states.
@@ -650,7 +651,7 @@ We then decided to characterize the effect of these $m_j=0$ atoms as well as the
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{Fig/Chapter5/1D_background_low.png}
-    \caption[Effect of the background $m_j=0$ impurities for a total atom number $\NBEC=26(3) \times 10^3$]{Effect of the background $m_j=0$ impurities for a total atom number $\NBEC=26(3) \times 10^3$. The experiment is done twice with two different methods of removing the non-transferred $m_j=1$ atoms in the beginning of the TOF, one using a gradient along $x$ (labelled as $x$ kick), one abruptly ramping up the current in the $y$ and $z$ bias coils (labelled as $y,z$ kick).}
+    \caption[Effect of the background $m_j=0$ impurities for $\NBEC=26(3) \times 10^3$]{Effect of the background $m_j=0$ impurities for a total atom number $\NBEC=26(3) \times 10^3$. The experiment is done twice with two different methods of removing the non-transferred $m_j=1$ atoms in the beginning of the TOF, one using a gradient along $x$ (labelled as $x$ kick), one abruptly ramping up the current in the $y$ and $z$ bias coils (labelled as $y,z$ kick).}
     \label{fig:background_low_N}
 \end{figure}
 
@@ -659,7 +660,7 @@ Unfortunately, these first tests seem to indicate that the $m_j=0$ impurities co
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{Fig/Chapter5/1D_background_high.png}
-    \caption[Effect of the background $m_j=0$ impurities for a total atom number $\NBEC=1.1(1) \times 10^5$]{Effect of the background $m_j=0$ impurities for a total atom number $\NBEC=1.1(1) \times 10^5$}
+    \caption[Effect of the background $m_j=0$ impurities for $\NBEC=1.1(1) \times 10^5$]{Effect of the background $m_j=0$ impurities for a total atom number $\NBEC=1.1(1) \times 10^5$}
     \label{fig:background_high_N}
 \end{figure}
 

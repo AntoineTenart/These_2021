@@ -4,7 +4,7 @@
 
 \label{sec:chapter_2}
 
-Quantum gases loaded in optical lattices (lattice gases for short) are one of the paramount examples of Quantum Simulation systems. The periodical trapping potential indeed well reproduces the crystal structure of condensed matter system and allows to study relatively simple Hamiltonians such as the Bose- and Fermi-Hubbard Hamiltonians or the Ising model \cite{bloch2005ultracold} that however account for interactions and show strong correlations effects. The main advantages of this experimental platform is that the different parameters of the Hamiltonians are easily set and controlled, while information about the system are relatively easy to access via quantum microscopes \cite{bakr2009quantum} for the in-situ positions of the atoms or Time-Of-Flight experiments to access the momentum distribution as it is the case in this manuscript. Following the proposition of \cite{jaksch1998cold}, the experimental observation of the Superfluid to Mott Insulator transition in 2002 \cite{greiner2002quantum} sparked interest in the community and lead to the development of the field from the early 2000s up until this day.
+Quantum gases loaded in optical lattices (lattice gases for short) are one of the paramount examples of Quantum Simulation systems. The periodical trapping potential indeed well reproduces the crystal structure of condensed matter system and allows to study relatively simple Hamiltonians such as the Bose- and Fermi-Hubbard Hamiltonians or the Ising model \cite{bloch2005ultracold} that however account for interactions and show strong correlations effects. The main advantages of this experimental platform is that the different parameters of the Hamiltonians can be set and controlled, while information about the system can be accessed using a variety of experimental techniques as described in the introduction to this manuscript. Following the proposition of \cite{jaksch1998cold}, the experimental observation of the Superfluid to Mott Insulator transition in 2002 \cite{greiner2002quantum} sparked interest in the community and lead to the development of the field from the early 2000s up until this day.
 
 In this chapter, we expose the main elements of the Bose-Hubbard theory of lattice gases and briefly study the Superfluid to Mott insulator transition. We then show how and under which conditions the in-trap momentum distribution of the gas can be accessed through Time-Of-Flight measurements, before drawing the connection with the Bogoliubov theory exposed in Chapter \ref{sec:chapter_1}. The goal of this chapter is to give all the essential points necessary to obtain a system in which the \kmk pairs of the quantum depletion can be experimentally observed, rather than providing a detailled description of Bose-Hubbard physics. For a more thorough study of the superfluid-to-Mott Insulator transition with our experimental apparatus, we refer the reader to the manuscript of Cécile Carcy \cite{carcy_these}.
 
@@ -132,7 +132,7 @@ We can now re-write the Hamiltonian of the system with the newly introduced Wann
 
 \noindent This expression tells that the probability for a particle to tunnel from lattice site $j$ to $j'$ is reduced as the distance between the two sites $j$ and $j'$ increases and as the potential barrier, \ie the lattice depth, increases.
 
-As for the rest of this thesis, we will focus ourselves on the ground-state properties of the system and therefore assume that the lowest energy band is the only one populated. This assumption is valid as long as $V_0 \geq 2.2 \ E_{\rm{r}}$ at which the gap is opening and the typical excitation energy $\Delta E$ is smaller than the gap $\Delta=E_1-E_0$. In addition, for $V_0 \geq 5 \ E_{\rm{r}}$ \cite{gerbier_notes}, we can use the tight-binding approximation for which only the tunneling events between adjacent sites are non-negligible. We thus simplify the Hamiltonian \ref{eq:H_Jn} by replacing  $J_{n}\left(j-j^{\prime}\right)$ by a constant $J$ denoting the probability to tunnel between adjacent lattice sites that we define as:
+As for the rest of this thesis, we will focus on the ground-state properties of the system and therefore assume that the lowest energy band is the only one populated. This assumption is valid as long as $V_0 \geq 2.2 \ E_{\rm{r}}$ at which the gap is opening and the typical excitation energy $\Delta E$ is smaller than the gap $\Delta=E_1-E_0$. In addition, for $V_0 \geq 5 \ E_{\rm{r}}$ \cite{gerbier_notes}, we can use the tight-binding approximation for which only the tunneling events between adjacent sites are non-negligible. We thus simplify the Hamiltonian \ref{eq:H_Jn} by replacing  $J_{n}\left(j-j^{\prime}\right)$ by a constant $J$ denoting the probability to tunnel between adjacent lattice sites, 
 
 \begin{equation}
     J=-J_0(1)
@@ -161,7 +161,7 @@ We now turn to studying the interaction term that we had left out in the full Ha
     \label{eq:atom_operator_lattice}
 \end{equation}
 
-\noindent Note that we dropped the energy band number $n$ as we are studying the ground-state properties and thus only the lowest energy band. We approximate the interactions to be contact, repulsive interactions so that:
+\noindent Note that we dropped the energy band number $n$ as we are considering only the lowest energy band. We approximate the interactions to be contact, repulsive interactions so that:
 
 \begin{equation}
     U_{\rm{int}}= g \delta (x_1 - x_2)
@@ -174,7 +174,7 @@ We now turn to studying the interaction term that we had left out in the full Ha
     \label{eq:h_int_intermediate}
 \end{equation}
 
-\noindent which is still a fairly complicated expression. We can however greatly simplify it by considering that the Wannier functions become narrower as the lattice depth increases. The overlap between the Wannier functions of the different lattice sites then becomes increasingly negligible. This means that the integral of equation \ref{eq:h_int_intermediate} is non zero only if $j_1=j_2=j_3=j_4$, \ie if we only consider on-site interactions. This is another expression of the tight-binding approximation. In the end, the interaction Hamiltonian writes:
+\noindent which is still a fairly complicated expression. We can however greatly simplify it by considering that the Wannier functions become narrower as the lattice depth increases. The overlap between the Wannier functions of the different lattice sites then becomes increasingly negligible. This means that the integral of equation \ref{eq:h_int_intermediate} is non zero only if $j_1=j_2=j_3=j_4$, \ie if we only consider on-site interactions. This approximation is at the core of the tight-binding regime. In the end, the interaction Hamiltonian writes:
 
 \begin{equation}
     \hat{H}_{\rm{int}}=\frac{U_{\mathrm{1D}}}{2} \sum_j \hat{n}_j (\hat{n}_j -1)
@@ -182,7 +182,7 @@ We now turn to studying the interaction term that we had left out in the full Ha
 
 \noindent where we have introduced the on-site energy $U_{\mathrm{1D}}=g \int\left|w_{0,0}(x)\right|^{4} \mathrm{d}x$, easily generalized to the 3D case with $U=g (\int\left|w_{0,0}(x)\right|^{4} \mathrm{d}x)^3$. 
 
-Combining this Hamiltonian to the non-interacting Hamiltonian of equation \ref{eq:H_band}, we reach the form of the famous \textbf{Bose-Hubbard Hamiltonian}:
+Combining this Hamiltonian to the non-interacting Hamiltonian of equation \ref{eq:H_band}, we obtain the celebrated \textbf{Bose-Hubbard Hamiltonian}:
 
 \begin{equation}
     \hat{H}_{\mathrm{BH}}= -J \sum_{\mean{i,j}} \hat{b}^{\dagger}_i \hat{b}_j + \frac{U}{2} \sum_j \hat{n}_j (\hat{n}_j -1)
@@ -218,13 +218,13 @@ In this case, the particles are non-interacting. In these conditions, the ground
     \ket{\Psi_0}_{\mathrm{SF}} = \frac{1}{\sqrt{N!}} (\hat{c}^{\dagger}(\bm{q}=0))^N \ket{0} = \frac{1}{\sqrt{N !}}\left(\frac{1}{\sqrt{M}} \sum_{j=1}^{M} \hat{b}_{j}^{\dagger}\right)^{N} \ket{0}
 \end{equation}
 
-\noindent The ground-state is then an ideal Bose-Einstein condensate with a condensed fraction equal to 1. In the thermodynamic limit with $N \to \infty$, $M \to \infty$, it is possible to show at the price of a few lines of complex calculations \cite{gerbier_notes} that the probability to find $n_i$ atoms at a given site $i$ is:
+\noindent The ground-state is an ideal Bose-Einstein condensate with a condensed fraction equal to 1. In the thermodynamic limit with $N \to \infty$, $M \to \infty$, it is possible to show at the price of a few lines of complex calculations \cite{gerbier_notes} that the probability to find $n_i$ atoms at a given site $i$ is:
 
 \begin{equation}
     p\left(n_{i}\right) \approx e^{-\bar{n}} \frac{\bar{n}^{n_{i}}}{n_{i} !}
 \end{equation}
 
-\noindent We recognize the same Poissonian distribution that we would obtain for a bosonic coherent state as described in Chapter \ref{sec:chapter_1}. We can therefore write:
+\noindent We recognize the same Poissonian distribution that we obtained for a bosonic coherent state in Chapter \ref{sec:chapter_1}. We therefore write:
 
 \begin{equation}
     \ket{\Psi_0}_{\mathrm{SF}} \approx |\Psi\rangle_{\mathrm{coh}}=\mathcal{N} e^{\sqrt{N} \hat{c}^{\dagger}(\bm{q}=0)} \ket{0} = \mathcal{N} \prod_{i} e^{\sqrt{\bar{n}} \hat{b}_{i}^{\dagger}} \ket{0} = \prod_{i} \mathcal{N}_{i} \sum_{n_{i}=0}^{\infty} \frac{\alpha_{i}^{n_{i}}}{\sqrt{n_{i} !}}\left|n_{i}\right\rangle_{i}
@@ -242,7 +242,7 @@ As in Chapter \ref{sec:chapter_1}, we write the first-order correlation function
 \noindent In the limit $u \to 0$, $G^{(1)}(i,j)$ is easy to calculate and writes:
 
 \begin{equation}
-    G^{(1)}(i,j)= {}_{\mathrm{SF}} \bra{\Psi_0} \hat{b}^{\dagger}_i \hat{b}_j \ket{\Psi_0}_{\mathrm{SF}} = \alpha^*_i \alpha_j = \bar{n}
+    G^{(1)}(i,j)= {}_{u \to 0} \bra{\Psi_0} \hat{b}^{\dagger}_i \hat{b}_j \ket{\Psi_0}_{u \to 0} = \alpha^*_i \alpha_j = \bar{n}
 \end{equation}
 
 \noindent We see that the result does not depend from the chosen lattice sites $i$ and $j$ and thus from the distance between them, indicating an infinite range coherence.
@@ -250,7 +250,7 @@ As in Chapter \ref{sec:chapter_1}, we write the first-order correlation function
 
 \subsubsection{Perfect Mott Insulator (MI) phase $\bm{u \to \infty}$}
 
-In the opposite extreme limit, the tunneling probability goes to zero $J=0$ so that each of the lattice sites are independent from one another. The Hamiltonian reduces to:
+In the opposite extreme limit, one can consider that the tunneling probability goes to zero $J=0$ so that each of the lattice sites are independent from one another. The Hamiltonian reduces to:
 
 \begin{equation}
     \hat{H}_{\mathrm{BH}} = \frac{U}{2} \sum_j \hat{n}_j (\hat{n}_j -1)
@@ -266,7 +266,7 @@ Because of the strong repulsive interactions, the particle localize on the latti
 \noindent This state is called the \textbf{Mott insulator} state \cite{fisher1989boson}. The first-order correlation function now writes
 
 \begin{equation}
-     G^{(1)}(i,j)= {}_{\mathrm{MI}} \bra{\Psi_0} \hat{b}^{\dagger}_i \hat{b}_j \ket{\Psi_0}_{\mathrm{MI}} = \delta_{i,j} \bar{n}
+     G^{(1)}(i,j)= {}_{u \to \infty} \bra{\Psi_0} \hat{b}^{\dagger}_i \hat{b}_j \ket{\Psi_0}_{u \to \infty} = \delta_{i,j} \bar{n}
 \end{equation}
 
 \noindent and is zero when we consider any pair of different lattice sites with $i \neq j$. In the limit $J \to 0$, the system is therefore fully incoherent.
@@ -275,7 +275,7 @@ Because of the strong repulsive interactions, the particle localize on the latti
 
 \subsection{The zero-temperature Mott phase transition}
 
-What can then be said from intermediates values of $u=U/J$? If we start from the case $J=0$ and progressively start increasing $J$, it becomes possible for the atoms to hop from site to site. When an atom hops to an adjacent site, the occupancy is increased, increasing the energy by $U$. When the gain in kinetic energy $J$ is smaller than $U$, this process is unfavorable and the atoms remain localized on the lattice sites. However, when $J$ is larger than $U$, the gain in kinetic energy outweighs the effect of the interactions and the atoms hop through the different sites of the lattice. The ground-state of the Bose-Hubbard then undergoes a phase transition as $U/J$ varies from an \textbf{insulating phase} to a \textbf{superfluid phase} with very different properties.
+What can then be said for intermediates values of $u=U/J$? If we start from the case $J=0$ and progressively increase $J$, it becomes possible for the atoms to hop from site to site. When an atom hops to an adjacent site, the occupancy is increased, increasing the energy by $U$. When the gain in kinetic energy $J$ is smaller than $U$, this process is unfavorable and the atoms remain localized on the lattice sites. However, when $J$ is much larger than $U$, the gain in kinetic energy outweighs the effect of the interactions and the atoms hop through the different sites of the lattice. The ground-state of the Bose-Hubbard then undergoes a phase transition as $U/J$ varies from an \textbf{insulating phase} to a \textbf{superfluid phase} with very different properties.
 
 \begin{minipage}[t]{0.45\textwidth}
     \noindent \textbf{Superfluid phase}
@@ -345,7 +345,7 @@ In the remainder of this manuscript for clarity sake, the system will be said to
 
 \subsection{Finite temperature effects}
 
-If we finally consider the effect of temperature, we obtain the complete phase diagram of Fig.-\ref{fig:phase_diagram} function of $T/J$ and $u$ with the apparition of an additional phase, the normal (thermal) gas. For $u \leq u_c$, the transition between the normal gas phase and the superfluid phase driven by the temperature is similar to the well-known BEC transition. This transition is induced by the thermal fluctuations and is then called classical, in opposition to the $T=0$ Mott transition which is driven by a variations of physical parameters of the Hamiltonian and therefore is a quantum transition.
+If we finally consider the effect of temperature, we obtain the complete phase diagram of Fig.-\ref{fig:phase_diagram} function of $T/J$ and $u$ with the apparition of an additional phase, the normal (thermal) gas. For $u \leq u_c$, the transition between the normal gas phase and the superfluid phase driven by the temperature is similar to the well-known BEC transition. This transition is induced by the thermal fluctuations and is then called classical, in opposition to the $T=0$ Mott transition which is driven by a variations of physical parameters of the Hamiltonian in the presence of quantum fluctuations and therefore is a quantum transition.
 
 On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. When $T$ increases, excitations are created preferably near the edges of the Mott plateaus, progressively smoothing out the sharp density profile of the Mott insulator phase. A Mott-like region survives until $T^* \sim 0.2 \ U/k_B$ \cite{gerbier2007boson} also called the ``melting temperature'' of the Mott phase.
 
@@ -398,7 +398,7 @@ The Gutzwiller method is a \textbf{variational} approach, meaning that the groun
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{Fig/Chapter2/wedding_cake_gutzwiller.png}
-    \caption[2D Gutzwiller density profiles for various atom numbers at $s=18$]{Gutzwiller density profiles for various atom numbers at $s=18$.}
+    \caption[2D Gutzwiller density profiles for various atom numbers at $s=18$ with $n$ the number of atoms per site and $x$,$y$ the positions in units of lattice spacing.]{Gutzwiller density profiles for various atom numbers at $s=18$.}
     \label{fig:wedding_cake_gutzwiller}
 \end{figure}
 
@@ -407,13 +407,13 @@ The Gutzwiller method is a \textbf{variational} approach, meaning that the groun
 
 \label{sec:ch2_TOF}
 
-Now that we have laid down the main elements of lattice gases physics, we need to determine the proper experimental tools to characterize the system. As developed in Chapter \ref{sec:chapter_1}, the main focus of this thesis will be on the \textbf{momentum space} correlations, requiring us to devise a technique to effectively measure the momentum distribution of a lattice gas. The most natural idea for momentum space measurements is to use the well-known and widely used \textbf{Time-Of-Flight} (TOF) technique. This technique consists in suddenly turning off the trapping potential to let the atoms fall under the effect of gravity and measure their positions $\bm{r}$ after a given TOF $t_{\rm{TOF}}$. In a very simple picture with classical and non-interacting particles, this position gives information about the in-trap momentum of the particle through the simple \textbf{ballistic relation}:
+Now that we have laid down the main elements of lattice gases physics, we need to determine the proper experimental tools to characterize the system. As developed in Chapter \ref{sec:chapter_1}, the main focus of this thesis will be on the \textbf{momentum space} correlations, requiring us to devise a technique to effectively measure the momentum distribution of a lattice gas. The most natural idea for momentum space measurements is to use the well-known and widely used \textbf{Time-Of-Flight} (TOF) technique. This technique consists in suddenly turning off the trapping potential to let the atoms fall under the effect of gravity and measure their positions $\bm{r}$ after a given TOF $t_{\rm{TOF}}$. In a very simple picture with classical and non-interacting particles, the position \bm{r} gives information about the in-trap momentum of the particle through the simple \textbf{ballistic relation}:
 
 \begin{equation}
     \hbar \bm{k} = \frac{m \bm{r}}{t_{\rm{TOF}}}
 \end{equation}
 
-The validity of this simple relation is however far from being obvious for the quantum gases released from optical lattice. We will then describe in this section the TOF dynamics of an atomic gas released from an optical lattice to identify the conditions under which a TOF measurement can be used to properly measure the in-trap momentum of the gas.
+The validity of this simple relation is however far from being obvious for the quantum gases released from optical lattice. We will describe in this section the TOF dynamics of an atomic gas released from an optical lattice to identify the conditions under which a TOF measurement can be used to properly measure the in-trap momentum of the gas.
 
 % \subsection{The momentum distribution}
 
@@ -427,7 +427,7 @@ The validity of this simple relation is however far from being obvious for the q
 
 \subsection{Expansion from the lattice and Far Field regime}
 
-We start our calculations with the simplified case for which we neglect the effects of all interactions during the TOF. In this configuration, the problem is very similar to the diffraction of a light wave by a grating in optics, in which a diffraction interference pattern results from the coherent sum of the contribution of many source points associated to each of the diffraction grating holes. For the lattice gas, the source points correspond to the lattice sites associated to Wannier functions that will be able to interfere if the system is coherent. For simplicity sake, we will only consider the 1D case from which the 3D case can be easily obtained as the non-interacting Hamiltonian is separable.
+We start our calculations with the simplified case for which we neglect the effects of interactions during the TOF. In this configuration, the problem is very similar to the diffraction of a light wave by a grating in optics, in which a diffraction interference pattern results from the coherent sum of the contribution of many source points associated to each of the diffraction grating holes. For the lattice gas, the source points correspond to the lattice sites associated to Wannier functions that will be able to interfere if the system is coherent. For simplicity sake, we will only consider the 1D case from which the 3D case can be easily obtained as the non-interacting Hamiltonian is separable.
 
 At time $t=0$, right before the lattice potential is turned off, the atomic field operator writes (see \ref{eq:atom_operator_lattice})
 
@@ -508,7 +508,7 @@ Now that we have the general expression of $w\left(x-x_{j}, t\right)$, we genera
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{Fig/Chapter2/TOF_expansion.png}
-    \caption{Numerical simulation of the atomic density $\rho_{\rm{TOF}}(x,t)$ after various expansion times from a 1D lattice of 50 sites with $s=5$. The orange dashed line serves as a point of comparison with the asymptotic distribution for high TOF times representing the momentum distribution.}
+    \caption[Numerical simulation of the atomic density $\rho_{\rm{TOF}}(x,t)$ after various expansion times from a 1D lattice of 50 sites with $s=5$]{Numerical simulation of the atomic density $\rho_{\rm{TOF}}(x,t)$ after various expansion times from a 1D lattice of 50 sites with $s=5$. The orange dashed line serves as a point of comparison with the asymptotic distribution for high TOF times representing the momentum distribution.}
     \label{fig:sim_expansion}
 \end{figure}
 
@@ -537,7 +537,7 @@ In conclusion, under the conditions that there are no interactions during the TO
 
 \subsubsection{Momentum distribution across the Mott transition}
 
-As we have just seen, the momentum distribution is strongly dependent on the coherence properties of the system and in turn of the lattice depth.
+As discussed previously, the momentum distribution is strongly dependent on the coherence properties of the system and in turn of the lattice depth.
 
 \begin{itemize}
     \item In the superfluid phase $u \to 0$, the system is coherent $G^{(1)}(i,j) = \bar{n}$. From equation \ref{eq:momentum_distribution}, we get that the momentum distribution consists of sharp analog diffraction peaks located at $\bm{k} = j k_d \bm{e}_i$ with $j \in \Z$ and $\bm{e}_i$ the unitary vector in direction $i=x,y,z$. In terms of $\rho_{\rm{TOF}}(\bm{r},t)$, the amplitude of the different peaks is set by the Fourier transform of the Wannier function. 
@@ -577,13 +577,13 @@ We have conducted a thorough experimental study of the $s$-wave two-body collisi
 
 \section{Extension of the Bogoliubov theory to lattice gases}
 
-So far, we have focused on the description of the lattice Hamiltonian under the scope of Wannier functions, culminating in the Bose-Hubbard Hamiltonian describing the physics of the Mott transition. We now wish to go back to the central point developed in Chapter \ref{sec:chapter_1}, namely the \kmk correlations in the quantum depletion predicted by the Bogoliubov theory of the weakly-interacting, homogeneous Bose gas. We concluded by saying that using an optical lattice would be a fitting solution to efficiently increase the interactions as a means to reach the low temperature regime dominated by the interactions $\mu \gg \kB T$ for which we expect the pair correlation signal to be experimentally detectable. This however requires that we extend the method of the Bogoliubov theory to the case of the lattice gas to identify the condition under which the \kmk pairs should be observable.
+So far, we have focused on the description of the lattice Hamiltonian under the scope of Wannier functions, culminating in the Bose-Hubbard Hamiltonian describing the physics of the Mott transition. We now wish to go back to the central point developed in Chapter \ref{sec:chapter_1}, namely the \kmk correlations in the quantum depletion predicted by the Bogoliubov theory of the weakly-interacting, homogeneous Bose gas. We concluded by saying that using an optical lattice would be a solution to efficiently increase the interactions as a means to reach the low temperature regime dominated by the interactions $\mu \gg \kB T$ for which we expect the pair correlation signal to be experimentally detectable. This however requires that we extend the method of the Bogoliubov theory to the case of the lattice gas to identify the condition under which the \kmk pairs should be observable.
 
 \subsection{Effect of the lattice amplitude}
 
 As developed in \ref{sec:bogo_approx}, the central point of the Bogoliubov approximation for the weakly-interacting homogeneous Bose gas resides in the fact that the interactions are \textbf{weak}. This means that the system can be described as a BEC from which only a \textbf{small fraction} of the atoms, the depletion, are removed by the effect of interactions.
 
-For the lattice gas, the condensed atoms correspond to the sharp diffraction peaks of the momentum distribution, while the depleted atoms in high quasi-momentum states correspond to the diffuse background between the diffraction peaks that increases as $u$ and therefore the strength of interactions increases, as illustrated by Fig.-\ref{fig:mott_greiner}. We thus need to be in the shallow lattice regime to use the Bogoliubov approximation, \ie at low values of the lattice depth such as $u \ll u_c$. This corresponds to the superfluid phase where the condensed fraction is close to 1 and the fraction of depleted atoms is small.
+For the lattice gas, the condensed atoms correspond to the sharp diffraction peaks of the momentum distribution, while the depleted atoms in high quasi-momentum states correspond to the diffuse background between the diffraction peaks that increases as $u$ and therefore the strength of interactions increases, as illustrated by Fig.-\ref{fig:mott_greiner}. We thus need to be in the shallow lattice regime to use the Bogoliubov approximation, \ie at low values of the lattice depth such as $u \ll u_c$. This corresponds to the superfluid phase where the condensed fraction is close to 1 and the fraction of depleted atoms is small. We will typically use $u = 5 \ll u_c \approx 30$ for the \kmk correlations experiments presented in this manuscript (the value of the fraction of depleted atoms will be discussed in Chapter \ref{sec:chapter_4}).
 
 
 \subsection{Dispersion relation and effective mass}
@@ -619,7 +619,7 @@ The non-interacting term $\sum_{\bm{q}} E_{0}(\bm{q}) \hat{c}_{\bm{q}}^{\dagger}
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{Fig/Chapter2/dispersion_relation_harmonic.png}
-    \caption{Harmonic approximation of the dispersion relation of the first energy band $E_0$ for $s=5$.}
+    \caption[Harmonic approximation of the dispersion relation of the first energy band]{Harmonic approximation of the dispersion relation of the first energy band $E_0$ for $s=5$.}
     \label{fig:dispersion_relation_harmonic}
 \end{figure}
 
@@ -668,7 +668,7 @@ In conclusion, we obtain an Hamiltonian of the same form than the homogeneous ca
 
 We have then achieved the objective set at the beginning of this chapter, namely obtain a system with \kmk paired quantum depleted atoms as described by the Bogoliubov theory of the weakly-interacting Bose gas, but with increased interactions so that we should be able to reach the low temperature regime dominated by interactions $\kB T \ll \mu$ for which the \kmk correlation signal should be detectable. 
 
-Importantly, the predictions of the Bogoliubov theory detailled in Chapter \ref{sec:chapter_1} should not be taken at face value for the much more complicated system of the inhomogeneous lattice gas. In fact, there have not been clear experimental studies testing the validity of the Bogoliubov approach for this kind of system. It will then be of great interest to compare the predictions of the simple homogeneous case to the experimental data as a means to detect whether the Bogoliubov approach fails or not and under which conditions.
+Importantly, the predictions of the Bogoliubov theory detailled in Chapter \ref{sec:chapter_1} should not be taken at face value for the much more complicated system of the inhomogeneous lattice gas. In fact, there are no clear experimental studies testing the validity of the Bogoliubov approach for this kind of system. It will then be of great interest to compare the predictions of the simple homogeneous case to the experimental data as a means to detect whether the Bogoliubov approach fails or not and under which conditions.
 
 
 
