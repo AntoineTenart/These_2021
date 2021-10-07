@@ -64,7 +64,7 @@ We therefore look for eigenstates of the form:
     \left[\frac{\left(p_{x}+\hbar q\right)^{2}}{2 m}+V_{0} \sin ^{2}\left(\frac{k_{d}}{2} x\right)\right] u_{n, q}(x)=E_{n}(q) u_{n, q}(x)
 \end{equation}
 
-\noindent As $E_n (q)$ is periodic $E_n (q+k_d)= E_n(q) \ \forall (n,q)$, we can restric the definition interval of $q$ to $[-k_d/2, k_d/2]$ which is called the \textbf{first Brillouin zone}. This equation can be easily numerically solved to obtain $u_{n, q}(x)$ and $E_n (q)$. We plot on Fig.-\ref{fig:bloch_bands} the first five energy bands as a function of $q$ in the first Brillouin zone for various values of the lattice amplitude $V_0$. Interestingly, we see that a gap appears between the different bands as we increase $V_0$. For a 3D lattice, the total energy is the sum of the energies along each direction of the lattice. The first excited band then corresponds to two 1D lowest energy bands and one 1D excited band. In order for the gap to appear, the lattice amplitude must be above $V_0 \simeq 2.2 \ E_{\mathrm{r}}$, whereas it is present at all values of $V_0$ in the 1D case.
+\noindent As $E_n (q)$ is periodic $E_n (q+k_d)= E_n(q) \ \forall (n,q)$, we can restrict the definition interval of $q$ to $[-k_d/2, k_d/2]$ which is called the \textbf{first Brillouin zone}. This equation can be easily numerically solved to obtain $u_{n, q}(x)$ and $E_n (q)$. We plot on Fig.-\ref{fig:bloch_bands} the first five energy bands as a function of $q$ in the first Brillouin zone for various values of the lattice amplitude $V_0$. Interestingly, we see that a gap appears between the different bands as we increase $V_0$. For a 3D lattice, the total energy is the sum of the energies along each direction of the lattice. The first excited band then corresponds to two 1D lowest energy bands and one 1D excited band. In order for the gap to appear, the lattice amplitude must be above $V_0 \simeq 2.2 \ E_{\mathrm{r}}$, whereas it is present at all values of $V_0$ in the 1D case.
 
 \begin{figure}
     \centering
@@ -101,7 +101,7 @@ The Bloch waves can then be re-written with the definition of the Wannier functi
     \label{fig:bloch_wannier}
 \end{figure}
 
-\noindent The Bloch waves are the sum of the localized Wannier function $w_{n, j}$ that can be interpreted as the wave-function of a particle located in lattice site $j$. The Bloch and Wannier functions for various lattice depths are represented on Fig.-\ref{fig:bloch_wannier}.
+\noindent The Bloch waves are the sum of the localized Wannier functions $w_{n, j}$ that can be interpreted as the wave-functions of a particle located in lattice site $j$. The Bloch and Wannier functions for various lattice depths are represented on Fig.-\ref{fig:bloch_wannier}.
 
 We can now re-write the Hamiltonian of the system with the newly introduced Wannier functions. To do so, we start by writing it in the Bloch waves basis with the second quantification formalism, introducing the operator $\hat{c}_{n,q}$ that destroys a particle in the Bloch wave $\psi_{n,q}$.
 
@@ -250,13 +250,13 @@ As in Chapter \ref{sec:chapter_1}, we write the first-order correlation function
 
 \subsubsection{Perfect Mott Insulator (MI) phase $\bm{u \to \infty}$}
 
-In the opposite extreme limit, one can consider that the tunneling probability goes to zero $J=0$ so that each of the lattice sites are independent from one another. The Hamiltonian reduces to:
+In the opposite extreme limit, one can consider that the tunneling probability goes to zero ($J=0$) so that each of the lattice sites are independent from one another. The Hamiltonian reduces to:
 
 \begin{equation}
     \hat{H}_{\mathrm{BH}} = \frac{U}{2} \sum_j \hat{n}_j (\hat{n}_j -1)
 \end{equation}
 
-Because of the strong repulsive interactions, the particle localize on the lattice sites and cannot hop from site to site as $J=0$. The ground-state is then reached by distributing the particles among the different sites of the lattice so that the number of particles per site is as low as possible to minimize the interaction energy. This corresponds to putting $\bar{n}=N/M$ particles in each of the $M$ available lattice sites. For simplicity sake, we assume here that the filling is commensurate, \ie $\bar{n}$ is an integer. The ground-state then has the simple expression of a Fock state:
+Because of the strong repulsive interactions, the atoms localize on the lattice sites and cannot hop from site to site as $J=0$. The ground-state is then reached by distributing the particles among the different sites of the lattice so that the number of particles per site is as low as possible to minimize the interaction energy. This corresponds to putting $\bar{n}=N/M$ particles in each of the $M$ available lattice sites. For simplicity sake, we assume here that the filling is commensurate, \ie $\bar{n}$ is an integer. The ground-state then has the simple expression of a Fock state:
 
 \begin{equation}
     \left|\Psi_{0}\right\rangle_{\mathrm{MI}}=\frac{1}{\sqrt{N !}} \prod_{j=1}^{M}\left(\hat{b}_{j}^{\dagger}\right)^{\bar{n}}|0\rangle
@@ -312,7 +312,7 @@ In the homogeneous case, the properties of the system thus change dramatically w
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{Fig/Chapter2/mott_lobes.png}
-    \caption[Homogeneous phase diagram as a function of $\mu/U$ and $J/U$ and wedding-cake structure for the trapped gas]{(a) Homogeneous phase diagram as a function of $\mu/U$ and $J/U$. The dashed lines are iso-filling lines. We observe a Superfluid to Mott Insulator phase transition for commensurate fillings. (b) Wedding-cake structure for the trapped gas. The red arrow illustrate how $\mu_{\rm{eff}}$ varies and the corresponding phases as the distance from the center of the trap increases. Taken from \cite{bloch2008many}.}
+    \caption[Homogeneous phase diagram as a function of $\mu/U$ and $J/U$ and wedding-cake structure for the trapped gas]{(a) Homogeneous phase diagram as a function of $\mu/U$ and $J/U$. The dashed lines are iso-filling lines. We observe a superfluid-to-Mott insulator phase transition for commensurate fillings. (b) Wedding-cake structure for the trapped gas. The red arrow illustrate how $\mu_{\rm{eff}}$ varies and the corresponding phases as the distance from the center of the trap increases. Taken from \cite{bloch2008many}.}
     \label{fig:mott_lobes}
 \end{figure}
 
@@ -349,7 +349,7 @@ If we finally consider the effect of temperature, we obtain the complete phase d
 
 On the other hand, the Mott insulator phase also goes to the normal gas phase as the temperature increases, but with a smooth crossover. When $T$ increases, excitations are created preferably near the edges of the Mott plateaus, progressively smoothing out the sharp density profile of the Mott insulator phase. A Mott-like region survives until $T^* \sim 0.2 \ U/k_B$ \cite{gerbier2007boson} also called the ``melting temperature'' of the Mott phase.
 
-Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. At $T=0$ and at the QCP of the transition, the ground-state undergoes a macroscopic rearrangement characterized by the apparition of critical quantum fluctuations and complex correlation patterns. Importantly, the physics of the QCP affect a signficant part of the finite temperature phase diagram as signaled by the green area on Fig.\ref{fig:phase_diagram}. In this region, some observables such as the momentum density indeed show critical behavior, \ie a power law scaling with temperature with an exponent set by the critical exponents of the QCP. While the physics of the Quantum Critical Point are a very interesting and trending topic, they fall out of the scope of this thesis and we refer the reader to the works \cite{carcy_these,frerot2019reconstructing,sachdev2011quantum} for more informations on this aspect.
+Interestingly, the Superfluid to Mott Insulator transition subsists at low temperature. At $T=0$ and at the QCP of the transition, the ground-state undergoes a macroscopic rearrangement characterized by the apparition of critical quantum fluctuations and complex correlation patterns. Importantly, the physics of the QCP affect a signficant part of the finite temperature phase diagram as signaled by the green area on Fig.\ref{fig:phase_diagram}. In this region, some observables such as the momentum density indeed show critical behavior, \ie a power law scaling with temperature with an exponent set by the critical exponents of the QCP. While the physics of the QCP are a very interesting and trending topic, they fall out of the scope of this thesis and we refer the reader to the works \cite{carcy_these,frerot2019reconstructing,sachdev2011quantum} for more informations on this aspect.
 
 
 \begin{figure}
@@ -398,7 +398,7 @@ The Gutzwiller method is a \textbf{variational} approach, meaning that the groun
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{Fig/Chapter2/wedding_cake_gutzwiller.png}
-    \caption[2D Gutzwiller density profiles for various atom numbers at $s=18$ with $n$ the number of atoms per site and $x$,$y$ the positions in units of lattice spacing.]{Gutzwiller density profiles for various atom numbers at $s=18$.}
+    \caption[2D Gutzwiller density profiles for various atom numbers at $s=18$]{Gutzwiller density profiles for various atom numbers at $s=18$ with $n$ the number of atoms per site and $x$,$y$ the positions in units of lattice spacing.}
     \label{fig:wedding_cake_gutzwiller}
 \end{figure}
 
@@ -407,7 +407,7 @@ The Gutzwiller method is a \textbf{variational} approach, meaning that the groun
 
 \label{sec:ch2_TOF}
 
-Now that we have laid down the main elements of lattice gases physics, we need to determine the proper experimental tools to characterize the system. As developed in Chapter \ref{sec:chapter_1}, the main focus of this thesis will be on the \textbf{momentum space} correlations, requiring us to devise a technique to effectively measure the momentum distribution of a lattice gas. The most natural idea for momentum space measurements is to use the well-known and widely used \textbf{Time-Of-Flight} (TOF) technique. This technique consists in suddenly turning off the trapping potential to let the atoms fall under the effect of gravity and measure their positions $\bm{r}$ after a given TOF $t_{\rm{TOF}}$. In a very simple picture with classical and non-interacting particles, the position \bm{r} gives information about the in-trap momentum of the particle through the simple \textbf{ballistic relation}:
+Now that we have laid down the main elements of lattice gases physics, we need to determine the proper experimental tools to characterize the system. As developed in Chapter \ref{sec:chapter_1}, the main focus of this thesis will be on the \textbf{momentum space} correlations, requiring us to devise a technique to effectively measure the momentum distribution of a lattice gas. The most natural idea for momentum space measurements is to use the well-known and widely used \textbf{Time-Of-Flight} (TOF) technique. This technique consists in suddenly turning off the trapping potential to let the atoms fall under the effect of gravity and measure their positions $\bm{r}$ after a given TOF $t_{\rm{TOF}}$. In a very simple picture with classical and non-interacting particles, the position $\bm{r}$ gives information about the in-trap momentum of the particle through the simple \textbf{ballistic relation}:
 
 \begin{equation}
     \hbar \bm{k} = \frac{m \bm{r}}{t_{\rm{TOF}}}
@@ -443,7 +443,7 @@ At time $t=0$, right before the lattice potential is turned off, the atomic fiel
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{Fig/Chapter2/wannier_oh.png}
-    \caption[Comparison between the Wannier functions and and the Gaussian wave-function of the harmonic oscillator of frequency $\omega_L$ for various lattice depths.]{Comparison between the Wannier functions (blue) and and the Gaussian wave-function of the harmonic oscillator of frequency $\omega_L$ (orange) for various lattice depths.}
+    \caption[Comparison between the Wannier functions and and the Gaussian wave-function of the harmonic oscillator of frequency $\omega_L$ for various lattice depths.]{Comparison between the Wannier functions (blue) and and the Gaussian wave-function of the ground state of the harmonic oscillator of frequency $\omega_L$ (orange) for various lattice depths.}
     \label{fig:wannier_oh}
 \end{figure}
 
@@ -549,7 +549,7 @@ As discussed previously, the momentum distribution is strongly dependent on the 
 
 The experimental quantity $\rho_{\rm{TOF}}(\bm{r},t)$ is therefore a powerful tool to characterize the phase of the system across the Mott transition. This is illustrated on Fig-\ref{fig:mott_greiner} of the first experimental observation of the Mott transition with cold atoms \cite{greiner2002quantum}, on which we can clearly see the visibility of the interference pattern decreasing with $V_0$ (note that these images are not taken deep in the far-field regime, meaning that some details of the interference pattern are not resolved).
 
-Importantly, a characteristic of the Superfluid to Mott insulator transition is that even though the system is incoherent in the insulating phase, the coherence can be restored by ramping down the lattice depth to the superfluid phase. The standard procedure to characterize the presence of the Mott transition is then to set $V_0$ to be in the superfluid region, ramp up it up to see that the interference pattern disappear, and ramp it down to find back the interference pattern. This allows to certify that the loss of coherence is indeed an effect of the competition between $U$ and $J$ and not an experimental artifact, such as unwanted heating of the cloud. 
+Importantly, a characteristic of the superfluid-to-Mott insulator transition is that even though the system is incoherent in the insulating phase, the coherence can be restored by ramping down the lattice depth to the superfluid phase. The standard procedure to characterize the presence of the Mott transition is then to set $V_0$ to be in the superfluid region, ramp up it up to see that the interference pattern disappear, and ramp it down to find back the interference pattern. This allows to certify that the loss of coherence is indeed an effect of the competition between $U$ and $J$ and not an experimental artifact, such as unwanted heating of the cloud. 
 
 \begin{figure}
     \centering
@@ -563,9 +563,9 @@ Importantly, a characteristic of the Superfluid to Mott insulator transition is 
 
 The experimental technique described in the last paragraph holds if there are no interactions between the particles during the TOF. If it were otherwise, the interactions would affect the TOF dynamics of the gas, preventing us to use the ballistic relation and to map the TOF distribution $\rho_{\rm{TOF}}(\bm{r},t)$ to the in-trap momentum $\rho(\bm{k})$. As interactions cannot be effectively turned off by means of a Feshbach resonance, experimentally inaccessible for $^4 \He$, it is crucial to determine whether interactions during the TOF can be neglected or not and under which conditions.
 
-As mentioned in the introduction to this manuscript, describing the interactions between each of the individual particles would be impossible, even for numerical methods for which the calculation time would be prohibitive. To circumvent this issue, the problem can be simplified using the \textbf{mean-field approximation} as explained in the introduction of this manuscript.
+As mentioned in the introduction to this manuscript, describing the interactions between each of the individual particles would be impossible, even for numerical methods for which the calculation time would be prohibitive. To circumvent this issue, the problem can be simplified using the \textbf{mean-field approximation} (also explained in the introduction).
 
-To quantify the effect of the interactions treated at the mean-field level, we introduce the interaction energy $U_{\rm{int}} \sim gn$ with $g$ the strength of the interactions and $n$ the atomic density. To determine whether the interactions are affecting the expansion of the gas released from the lattice, $U_{\rm{int}}$ must be compared to the zero point energy of the ground-state of the approximate harmonic oscillator associated to a single lattice site, $\hbar \omega_L$. In typical experimental conditions, $U_{\rm{int}}/h \approx 10^3 \ \rm{Hz} \ll \omega_L/2 \pi \approx 10^5-10^6 \ \rm{Hz}$, meaning that the initial expansion is driven by the zero point energy of the lattice site and not the released interaction energy. In addition, after a small expansion time, the Wannier functions of the different sites overlap as their width become of the order of the lattice spacing $d$ and might then interact. However, on this time scale, the atomic density is reduced by a factor $(x_0/d)^3 \approx 10^2$ (for $s=10$), meaning that this interaction effect should also be negligible \cite{gerbier2008expansion}, provided that the initial density is not too high. This point will be discussed in further details in light of experimental data in Chapter \ref{sec:chapter_3}.
+To quantify the effect of the interactions treated at the mean-field level, we introduce the interaction energy $U_{\rm{int}} \sim gn$ with $g$ the strength of the interactions and $n$ the atomic density. To determine whether the interactions are affecting the expansion of the gas released from the lattice, $U_{\rm{int}}$ must be compared to the zero point energy of the ground-state of the approximate harmonic oscillator associated to a single lattice site, $\hbar \omega_L$. In typical experimental conditions, $U_{\rm{int}}/h \approx 10^3 \ \rm{Hz} \ll \omega_L/2 \pi \approx 10^5-10^6 \ \rm{Hz}$, meaning that the initial expansion is driven by the zero point energy of the lattice site and not the released interaction energy. In addition, after a small expansion time, the Wannier functions of the different sites overlap as their widths become of the order of the lattice spacing $d$ and might then interact. However, on this time scale, the atomic density is reduced by a factor $(x_0/d)^3 \approx 10^2$ (for $s=10$), meaning that this interaction effect should also be negligible \cite{gerbier2008expansion}, provided that the initial density is not too high. This point will be discussed in further details in light of experimental data in Chapter \ref{sec:chapter_3}.
 
 As developed in \cite{kupferschmidt2010role}, the interactions can also induce a dephasing between the different sites. As a matter of fact, the time evolution of the phase of the wave-function associated to a lattice site depends on its initial energy, and therefore of $U_{\rm{int}}$. If the lattice sites have different lattice fillings, which typically is the case in the superfluid phase where the on-site atom number fluctuations are large, the different interfering wave-functions can be dephased from one another, reducing the visibility of the interference pattern. This effect is however also negligible \cite{gerbier2008expansion,kupferschmidt2010role} in the case of our 3D lattice where $a_s \ll x_0$, provided that the filling is not too high.
 
