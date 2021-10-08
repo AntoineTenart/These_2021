@@ -3,9 +3,9 @@
 
 \chapter{Towards measuring Tan's contact in 1D gases}
 
-For the last chapter of this thesis, we will depart from the main line set by the \kmk correlations of the quantum depletion and shift our attention to a different topic that exploits another feature of the single atom resolution of our experiment. While we have used it so far to look for correlations between individual particles, another strong advantage of our apparatus is the possibility to detect very low densities signals inaccessible with optical measurements. An example of such a signal is the $k^{-4}$ tails in the momentum density of 1D gases, also known as Tan's contact \cite{tan2008large}. 
+For the last chapter of this thesis, we will depart from the main line set by the \kmk correlations of the quantum depletion and shift our attention to a different topic that exploits another feature of the single-atom resolution of our experiment. While we have used it so far to look for correlations between individual particles, another strong advantage of our apparatus is the possibility to detect very low densities signals inaccessible with optical measurements. An example of such a signal is the $k^{-4}$ tails in the momentum density of 1D gases, also known as Tan's contact \cite{tan2008large}. 
 
-As we will see in the first section of this chapter, Tan's contact is a fascinating and promising universal quantity that can be used the characterize many different systems, especially 1D gases, in level of details inaccessible with more common experimental techniques. We will then quickly summarize the main points of the theoretical work \cite{yao2018tan} on which we will rely to interpret our experimental data. We will next explain how 1D physics can be effectively implemented with our experimental apparatus and detail the procedure used to measure Tan's contact, before discussing the first preliminary results.
+As we will see in the first section of this chapter, Tan's contact is a fascinating and promising universal quantity that can be used to characterize many different systems, especially 1D gases, in level of details inaccessible with more common experimental techniques. We will then quickly summarize the main points of the theoretical work \cite{yao2018tan} on which we will rely to interpret our experimental data. We will next explain how 1D physics can be effectively implemented with our experimental apparatus and detail the procedure used to measure Tan's contact, before discussing the first preliminary results.
 
 
 \section{Tan's contact}
@@ -30,14 +30,14 @@ To understand what Tan's contact is, we consider two atoms with contact interact
      \rho(k) = |\tilde{\psi}(k) |^2 \propto \frac{1}{2(2 \pi k a_s)^4 - 2(2 \pi k a_s)^2 +1}
 \end{equation}
 
-\noindent Interestingly, if we look at the asymptotic behavior at high $k$ we find that:
+\noindent Interestingly, if we look at the asymptotic behavior at large $k$ we find that:
 
 \begin{equation}
     \rho(k) \underrel{k \to \infty} \to \frac{1}{k^4}
     \label{eq:kmf_scaling}
 \end{equation}
 
-\noindent The presence of contact interactions translates into a $\kmf$ scaling of the momentum distribution at high $k$. Importantly, this signature holds for higher dimensions, independently of temperature, interaction strength or quantum statistics making it a \textbf{universal relation}. From equation \ref{eq:kmf_scaling}, we define the Tan's Contact $C$ as:
+\noindent The presence of contact interactions translates into a $\kmf$ scaling of the momentum distribution at large $k$. Importantly, this signature holds for higher dimensions, independently of temperature, interaction strength or quantum statistics making it a \textbf{universal relation}. From equation \ref{eq:kmf_scaling}, we define the Tan's Contact $C$ as:
 
 \begin{equation}
     C = \lim_{k \to \infty} k^4 \rho(k)
@@ -110,7 +110,7 @@ There have been many experiments aiming at measuring Tan's contact in strongly i
 
 \label{sec:1D_theory}
 
-Before going into the experimental details, we start our study by summarizing the main results of \cite{yao2018tan}. In this work, the external trapping potential $V$ of equation \ref{eq:lieb_liniger} is taken to be harmonic like in most experiment, including ours. We will write the trapping frequency $\omega_{\rm{1D}}$. 
+Before going into the experimental details, we start our discussion by summarizing the main results of \cite{yao2018tan}. In this theoretical work, the external trapping potential $V$ of equation \ref{eq:lieb_liniger} is taken to be harmonic like in most experiment, including ours. We will write the trapping frequency $\omega_{\rm{1D}}$. 
 
 \subsection{Two-parameter scaling}
 
@@ -455,9 +455,9 @@ Having described the experimental procedure to collect the data, we detail in th
 
 \subsection{Analysis of the transverse shape}
 
-The first thing that we need to check is the transverse shape of the 3D distribution to know whether we can fully decouple what is happening in the 1D direction from what is happening in the other two transverse directions. The transverse momentum distribution is supposed to be a Gaussian distribution whose width depends on the transverse trapping frequency. If the atoms are in the harmonic oscillator ground state of the transverse direction, the RMS width of the distribution in momentum space is $\sigma_{\rm{theo}}=\sqrt{\frac{m \omega_{\perp}}{2 \hbar}}$. 
+The first point that we need to check is the transverse shape of the 3D distribution to know whether we can fully decouple what is happening in the 1D direction from what is happening in the other two transverse directions. The transverse momentum distribution is supposed to be a Gaussian distribution whose width depends on the transverse trapping frequency. If the atoms are in the harmonic oscillator ground state of the transverse direction, the RMS width of the distribution in momentum-space is $\sigma_{\rm{theo}}=\sqrt{\frac{m \omega_{\perp}}{2 \hbar}}$. 
 
-On Fig.-\ref{fig:1D_transverse}, we plot the transverse distribution along gravity at different positions along the 1D direction and normalize it to 1. We observe that we get the same RMS size for every $k_{\rm{1D}}$ at which the cut is done meaning that the 1D direction is fully decoupled from what is happening in the transverse direction. We extract its RMS width \fcolorbox{red}{white}{$\sigma_{\rm{exp}}=5.96(2) \mu \rm{m}^{-1}$}. This data set was taken with $s=26$, meaning that $\omega_{\rm{site}}=2 \pi \times 1.33(3) \times 10^6$ Hz, giving \fcolorbox{red}{white}{$\sigma_{\rm{theo}}=6.4(1) \ \mu \rm{m}^{-1}$} so a slight discrepancy. This could be explained by the fact that a few atoms are in the first excited state with a larger spatial extent and thus and smaller momentum width.
+On Fig.-\ref{fig:1D_transverse}, we plot the transverse distribution along gravity at different positions along the 1D direction and normalize it to 1. We observe that we get the same RMS size for every $k_{\rm{1D}}$ at which the cut is done meaning that the 1D direction is fully decoupled from what is happening in the transverse direction. We extract its RMS width \fcolorbox{red}{white}{$\sigma_{\rm{exp}}=5.96(2) \mu \rm{m}^{-1}$}. This data set was taken with $s=26$, meaning that $\omega_{\perp}= 1.33(3) \times 10^6 \ \rm{s}^{-1}$ (see \ref{label:formule_wL} for the detailled formula), giving \fcolorbox{red}{white}{$\sigma_{\rm{theo}}=6.4(1) \ \mu \rm{m}^{-1}$} so a slight discrepancy. This could be explained by the fact that a few atoms (a few percents of the total atom number) are in the first excited state with a larger spatial extent and thus and smaller momentum width.
 
 \begin{figure}
     \centering
@@ -486,7 +486,7 @@ In order to compare the experimental values of the Tan's contact to theory, it i
     \noindent $\eta_{\rm{sweep}}$ being the detection efficiency and $N_{\rm{vox}}$ the number of atoms in the voxel at a given $k$. From this, we obtain the expression of $\rho_{\rm{1D}}(k)$ that depends only on measured experimental values:
     
     \begin{equation}
-        \rho_{1D}(k) = 4\pi^2 \times \frac{N_{\rm{vox}}(k)}{\eta_{\rm{sweep}} \Delta k_{1D} \Delta k_{\perp}^2} \sigma_{\rm{exp}} 
+        \rho_{1D}(k) = 4\pi^2 \times \frac{N_{\rm{vox}}(k)}{\eta_{\rm{sweep}} \Delta k_{1D} \Delta k_{\perp}^2} \sigma_{\rm{exp}^2} 
     \end{equation}
 
     
@@ -499,7 +499,7 @@ In order to compare the experimental values of the Tan's contact to theory, it i
 
 \label{sec:1D_temperature}
 
-As we want to study the dependency of the Tan's contact with temperature and compare with {\it ab-initio} QMC calculations, we first need to extract the temperature from the experimental data. Actually, the width of the momentum distribution contains informations about the temperature under certain conditions that we will now discuss.
+As we want to study the dependency of the Tan's contact with temperature and compare with {\it ab-initio} QMC calculations, we first need to extract the temperature from the experimental data. Actually, the width of the momentum distribution contains information about the temperature under certain conditions that we will now discuss.
 
 We need to look at the properties of the first order spatial correlation function which is directly reflected in the momentum distribution. In 1D gases at $T=0$, the interactions induce an algebraic decay of the first order correlation function that translates into an algebraic decay of the momentum distribution \cite{gangardt2003stability,pitaevskii1991}. However, at $T \neq 0$, the temperature creates phase fluctuations that induce an exponential decay of the first order correlation function. In the weakly-interacting regime where $(1, \, \xi_T) \leq \xi_\gamma^{-1}$, this decay happens on shorter length scales than the one induced by interactions. This means that at low $k$, the momentum distribution is Lorentzian (Fourier transform of a damped exponential) \cite{cazalilla2004bosonizing,fabbri2011momentum,gerbier2004condensat}:
 
@@ -520,7 +520,7 @@ of atoms in the tube. Its width $\delta k$ is linked to the coherence length of 
     {L_{\phi}} = \frac{\hbar^2 \bar{\rho}_{\rm{1D}}(0)}{m \kB T}
 \end{equation}
 
-\noindent where $\alpha_{\rm{fit}}$ is a coefficient that depends from the 1D trapping frequency $\omega_{\rm{1D}}$ and the interaction parameter. It is not entirely clear whether this picture should hold for our typical experimental parameters putting us near the frontier between the the weakly-interacting and strongly interacting regimes. However, numerical QMC calculations performed by Hepeng Yao from Centre de Physique Théorique at Ecole Polytechnique have shown that this description agrees well with our experimental data, provided that the good $\alpha_{\rm{fit}}$ is used. Its value has been calibrated with the QMC calculations and is typically equal to $\alpha_{\rm{fit}} = [0.78,0.79]$ for the data sets presented here. The temperature of the system can then easily be extracted with a Lorentzian fit of the measured momentum distribution at low $k$ as illustrated on Fig-\ref{fig:1D_temperature}.
+\noindent where $\alpha_{\rm{fit}}$ is a coefficient that depends from the 1D trapping frequency $\omega_{\rm{1D}}$ and the interaction parameter. It is not entirely clear whether this picture should hold for our typical experimental parameters putting us near the frontier between the the weakly-interacting and strongly interacting regimes. However, numerical QMC calculations performed by Hepeng Yao from Centre de Physique Théorique at Ecole Polytechnique have shown that this description works, provided that the proper $\alpha_{\rm{fit}}$ is used. Its value has been calibrated with the QMC calculations and is typically equal to $\alpha_{\rm{fit}} = [0.78,0.79]$ for the data sets presented here. The temperature of the system can then easily be extracted with a Lorentzian fit of the measured momentum distribution at low $k$ as illustrated on Fig-\ref{fig:1D_temperature}.
 
 \begin{figure}
     \centering
@@ -570,7 +570,7 @@ The other relevant parameter affecting the value of Tan's contact besides temper
 The procedure to measure Tan's contact for a given data set is as follows:
 
 \begin{itemize}
-    \item We prepare the parameters of the experiment to reach the desired values of temperature and atom number. The latter is calibrated via absorption imaging while the former is set roughly by changing the holding time in the lattice and checking that the width of the 1D distribution increases. 
+    \item We prepare the parameters of the experiment to reach the desired values of temperature and atom number. The latter is calibrated via absorption imaging while the former is set by changing the holding time in the lattice and checking that the width of the 1D distribution increases. 
     \item We start by taking $\sim 100$ experimental shots with no gradient to measure the low $k$ distribution from which we can extract the temperature as explained in \ref{sec:1D_temperature}. We do not need to take a large number of shots as the signal is quite high and we do not require a very high signal to noise ratio to obtain the temperature.
     \item We set the gradient to shift the momentum distribution to access the momentum region where the the $\kmf$ tails are supposed to be present as explained in \ref{sec:large_momentum_detection}. Usually, the displacement is not too high so that the momentum range overlaps the natural momentum range of the $\He$ detector where no gradient is used, allowing to check that the displaced data matches nicely the non displaced data in the region of the overlap as shown on Fig.-\ref{fig:1D_plots} panels (a) and (b). In the following for clarity sake, we will plot one single curve obtained by merging the low and high momentum data.
     \item After computing the 1D distribution $\rho_{\rm{1D}} (k)$ with the method detailed in \ref{sec:1D_calculation_momentum_density}, we plot the quantity $\rho_{\rm{1D}} (k) \times k^4$. The presence of $\kmf$ tails is signaled by a flat zone that we can fit with a constant function to extract the bare value of the contact $C$ as illustrated on Fig.-\ref{fig:1D_plots}.
@@ -615,7 +615,7 @@ We plot on Fig.-\ref{fig:C_tilde_vs_T} the experimental rescaled contact $\tilde
 
 \subsection{Qualitative evolution with the interaction strength}
 
-We plot on Fig.-\ref{fig:C_vs_N} the experimental bare contact $C$ as a function of $\bar{N}$ and the experimental rescaled contact $\tilde{C}$ as a function of $\xi_{\gamma}$ for a fixed temperature $T=0.8 \ \mu \rm{K}$ corresponding to $\xi_T=1.57$. Interestingly, $C$ and $\tilde{C}$ behave very differently: while $C$ increases by roughly an order of magnitude because of the dependency in $N^{5/2}$, $\tilde{C}$ is found to be close to constant. This is rather reassuring as we are able to observe strong variations of the bare experimental contact that nevertheless look to be qualitatively consistent with theory. According to Fig.-\ref{fig:C_theo}, $\tilde{C}$ should indeed be slowly increasing with $\xi_{\gamma}$ as we observe here.
+We plot on Fig.-\ref{fig:C_vs_N} the experimental bare contact $C$ as a function of $\bar{N}$ and the experimental rescaled contact $\tilde{C}$ as a function of $\xi_{\gamma}$ for a fixed temperature $T=0.8 \ \mu \rm{K}$ corresponding to $\xi_T=1.57$. Interestingly, $C$ and $\tilde{C}$ behave very differently: while $C$ increases by roughly an order of magnitude because of the dependency in $N^{5/2}$, $\tilde{C}$ is found to be close to constant. This is rather reassuring as we are able to observe strong variations of the bare experimental contact that nevertheless look to be qualitatively consistent with theory. According to Fig.-\ref{fig:C_theo}, $\tilde{C}$ should indeed be slowly increasing with $\xi_{\gamma}$ as we may observe here.
 
 \begin{figure}
     \centering
@@ -626,7 +626,7 @@ We plot on Fig.-\ref{fig:C_vs_N} the experimental bare contact $C$ as a function
 
 \subsection{Comparison with QMC calculations}
 
-So far, we have only discussed the qualitative evolution of $\tilde{C}$ with $\xi_T$ and $\xi_{\gamma}$ which seems to be encouraging and consistent with theory. We can now look to push our study one step further by comparing the experimental data to {\it ab-initio} QMC calculations simulating our experiment. The calculations were once again performed by Hepeng Yao and simulate the distribution of tubes to match the experiment as precisely as possible. The results are plotted on Fig.-\ref{fig:1D_QMC_comparison} for two interaction parameters $\xi_{\gamma}=0.113$ and $\xi_{\gamma}=0.167$ corresponding to $\NBEC=1.1(1) \times 10^5$ and $\NBEC=3.1(3) \times 10^4$ for a fixed temperature $\xi_T=1.57$. The agreement for the low $k$ part is slightly off for the $\NBEC=1.1(1) \times 10^5$ data set, possibly due to a slight misevaluation of the temperature, but very good for the $\NBEC=3.1(3) \times 10^4$ data set, meaning that the method we use to determine the temperature is rather accurate, at least for low atom numbers. There is however a very clear disagreement by two orders of magnitude in the high $k$ part where the $\kmf$ tails are supposed to be.
+So far, we have only discussed the qualitative evolution of $\tilde{C}$ with $\xi_T$ and $\xi_{\gamma}$ which seems encouraging and consistent with theory. We now push our study one step further by comparing the experimental data to {\it ab-initio} QMC calculations simulating our experiment. The calculations were once again performed by Hepeng Yao and simulate the distribution of tubes to match the experiment as precisely as possible. The results are plotted on Fig.-\ref{fig:1D_QMC_comparison} for two interaction parameters $\xi_{\gamma}=0.113$ and $\xi_{\gamma}=0.167$ corresponding to $\NBEC=1.1(1) \times 10^5$ and $\NBEC=3.1(3) \times 10^4$ for a fixed temperature $\xi_T=1.57$. The agreement for the low $k$ part is slightly off for the $\NBEC=1.1(1) \times 10^5$ data set, possibly due to a slight misevaluation of the temperature, but very good for the $\NBEC=3.1(3) \times 10^4$ data set, meaning that the method we use to describe the entire 2D array of 1D tubes and to determine the temperature is rather accurate, at least for low atom numbers. There is however a very clear disagreement by two orders of magnitude in the high $k$ part where the $\kmf$ tails are supposed to be.
 
 \begin{figure}
     \centering
@@ -666,6 +666,6 @@ Unfortunately, these first tests seem to indicate that the $m_j=0$ impurities co
 
 \section{Conclusion}
 
-In conclusion, we observed a correct qualitative behaviors that seem to point towards the fact that we are measuring Tan's contact. However, the discrepancy with theory and QMC calculations is large and remains so far unexplained and an open question. While the first tests to quantify the effect of the $m_j=0$ impurities seem to indicate that they could partly explain the discrepancy at low atom numbers, this explanation does not hold for higher atom numbers. One of the principal questions to elucidate would be to understand what the intermediate algebraically decaying region means. We could indeed think that this is a physical feature related to the algebraic decay of the first order correlation function under the effect of interactions as explained in \ref{sec:1D_temperature}, but this is contradicted by the QMC calculations. We could however imagine that there is something that we did not properly understand in the way that the different 1D tubes contribute to the total distribution that the QMC calculations fail to reproduce. On the contrary, this could be the signature of some experimental defect that we have overlooked. 
+In conclusion, we observed qualitative behaviors of the amplitude of the $\kmf$ tails that seem to point towards the fact that we are measuring Tan's contact. However, the discrepancy with theory and QMC calculations is large and remains so far unexplained and an open question. While the first tests to quantify the effect of the $m_j=0$ impurities seem to indicate that they could partly explain the discrepancy at low atom numbers, this explanation does not hold for higher atom numbers. One of the principal questions to elucidate would be to understand what the intermediate algebraically decaying region means. We could indeed think that this is a physical feature related to the algebraic decay of the first order correlation function under the effect of interactions as explained in \ref{sec:1D_temperature}, but this is contradicted by the QMC calculations. We could however imagine that there is something that we did not properly understand in the way that the different 1D tubes contribute to the total distribution that the QMC calculations fail to reproduce. On the contrary, this could be the signature of some experimental defect that we have overlooked. 
 
 In the near future, we plan to reproduce these experiments using the newly implemented two-photon Raman transfer. We hope that the increased detection efficiency will help us to separate more clearly the signal from the background effects and maybe help us identify more clearly what the problem sources are to find new paths to explore. 
